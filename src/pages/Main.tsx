@@ -23,9 +23,9 @@ const Main = ({ linkClicked }: MainProps) => {
   console.log("Main link reference: " + linkClicked);
 
   return (
-    <main className="relative flex mb-auto h-full">
-      <PanelContainer content={loadContent} />
-      <GearBox animate={animateGearBox} />
+    <main className="relative h-full">
+        <PanelContainer content={loadContent} />
+        <GearBox animate={animateGearBox} />
     </main>
   );
 };
