@@ -6,7 +6,7 @@ import Main from "./pages/Main";
 import Footer from "./components/Footer";
 
 function App() {
-  const [linkClicked, setLinkClicked] = useState('');
+  const [linkClicked, setLinkClicked] = useState("");
 
   const handleLinkClicked = (link: string) => {
     console.log(`${link} was clicked`);
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <div className="flex flex-col h-screen overflow-hidden">
+      <div className="flex-col h-screen">
         <Header onLinkClicked={handleLinkClicked} />
 
         <Main linkClicked={linkClicked} />

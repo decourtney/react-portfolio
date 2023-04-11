@@ -26,8 +26,8 @@ const PanelContainer = ({ content }: PanelContainerProps) => {
   return (
     <>
       <div>
-        <LeftPanel position={panelPosition} />
-        <RightPanel position={panelPosition} />
+        <LeftPanel position={panelPosition} content={content} />
+        <RightPanel position={panelPosition} content={content} />
       </div>
     </>
   );
