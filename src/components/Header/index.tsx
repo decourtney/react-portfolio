@@ -34,22 +34,22 @@ const Header = ({ onLinkClicked }: HeaderProps) => {
             <div className="absolute top-full right-0 bg-gray-200 p-2 z-10 shadow-md">
               <ul className="flex flex-col space-y-2">
                 <li>
-                  <Link to="/" onClick={() => onLinkClicked("home")}>
+                  <Link to="/" className="">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/work" onClick={() => onLinkClicked("projects")}>
+                  <Link to="/projects" className="">
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" onClick={() => onLinkClicked("about")}>
+                  <Link to="/about" className="">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" onClick={() => onLinkClicked("contact")}>
+                  <Link to="/contact" className="">
                     Contact
                   </Link>
                 </li>

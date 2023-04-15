@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Header from "./components/Header";
-import Main from "./pages/Main";
 import Footer from "./components/Footer";
 
 function App() {
@@ -19,9 +22,12 @@ function App() {
     <Router>
       <div className="flex-col h-screen">
         <Header onLinkClicked={handleLinkClicked} />
-
-        <Main linkClicked={linkClicked} />
-
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
         <Footer />
       </div>
     </Router>

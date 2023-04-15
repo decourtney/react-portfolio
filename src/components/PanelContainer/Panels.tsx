@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {ProjectLeftPanel, ProjectRightPanel} from '../Projects'
 
 type PanelProps = {
   position: "close" | "open";
