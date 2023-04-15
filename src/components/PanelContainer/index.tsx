@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import { LeftPanel, RightPanel } from "./Panels";
+import GearBox from "./GearBox";
 
 type PanelContainerProps = {
   content: string;
@@ -10,6 +12,7 @@ type PanelContainerProps = {
 // Work component will have routes to display but this probably wont work. because the links would be on a panel
 const PanelContainer = ({ content }: PanelContainerProps) => {
   const [panelPosition, setPanelPosition] = useState<"close" | "open">("close");
+  const [animateGearBox, setAnimateGearBox] = useState(false);
 
   useEffect(() => {
     if (content) {
@@ -29,6 +32,7 @@ const PanelContainer = ({ content }: PanelContainerProps) => {
         <LeftPanel position={panelPosition} content={content} />
         <RightPanel position={panelPosition} content={content} />
       </div>
+      <GearBox animate={animateGearBox} />
     </>
   );
 };
