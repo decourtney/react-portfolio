@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-import PanelContainer from "../components/PanelContainer";
+import { setContent } from "../reducers/panelSlice";
+import { useAppDispatch, useAppSelector } from "../reducers/hooks";
 
-type HomeProps = {
-  linkClicked: string;
-};
+import { LeftPanel, RightPanel } from "../components/PanelController/Panels";
+import { HomeLeft, HomeRight } from "../components/Home";
 
-// As long as linkClicked stays empty the panels are closed on load. Can I use this time to make sure everything is loaded before loading home
+
 const Home = () => {
-  const [loadContent, setLoadContent] = useState("");
+  const dispatch = useAppDispatch();
+
+  dispatch(setContent('Home'));
 
 
 
   return (
     <main className="relative h-full">
-      <PanelContainer content={loadContent} />
+      <LeftPanel content={<HomeLeft data={"Home"} />} />
+      <RightPanel content={<HomeLeft data={"Home"} />} />
     </main>
   );
 };

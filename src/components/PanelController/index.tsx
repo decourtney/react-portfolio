@@ -7,9 +7,6 @@ type PanelContainerProps = {
   content: string;
 };
 
-// Load content from here and pass relavent Component based on 'content'
-// Home, About, Work, Contact components each have two exports for left and right panels.
-// Work component will have routes to display but this probably wont work. because the links would be on a panel
 const PanelContainer = ({ content }: PanelContainerProps) => {
   const [panelPosition, setPanelPosition] = useState<"close" | "open">("close");
   const [animateGearBox, setAnimateGearBox] = useState(false);
@@ -28,11 +25,11 @@ const PanelContainer = ({ content }: PanelContainerProps) => {
 
   return (
     <>
-      <div>
+      {/* <GearBox animate={animateGearBox} />
+      <div className="relative">
         <LeftPanel position={panelPosition} content={content} />
         <RightPanel position={panelPosition} content={content} />
-      </div>
-      <GearBox animate={animateGearBox} />
+      </div> */}
     </>
   );
 };

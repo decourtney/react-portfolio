@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 
-import PanelContainer from "../components/PanelContainer";
+import { setContent } from "../reducers/panelSlice";
+import { useAppDispatch, useAppSelector } from "../reducers/hooks";
+
+import { LeftPanel, RightPanel } from "../components/PanelController/Panels";
+import { ProjectLeft, ProjectRight } from "../components/Projects";
 
 const Projects = () => {
-  const [loadContent, setLoadContent] = useState("");
+  const dispatch = useAppDispatch();
+
+  dispatch(setContent('projects'));
+
+
 
   return (
     <main className="relative h-full">
-      <PanelContainer content={loadContent} />
+      <LeftPanel content={<ProjectLeft data={"Projects"} />} />
+      <RightPanel content={<ProjectLeft data={"Projects"} />} />
     </main>
   );
 };
