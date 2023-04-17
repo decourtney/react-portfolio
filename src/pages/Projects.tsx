@@ -5,18 +5,17 @@ import { useAppDispatch, useAppSelector } from "../reducers/hooks";
 
 import { LeftPanel, RightPanel } from "../components/PanelController/Panels";
 import { ProjectLeft, ProjectRight } from "../components/Projects";
+import PanelController from "../components/PanelController";
 
 const Projects = () => {
-  const dispatch = useAppDispatch();
-
-  dispatch(setContent('projects'));
-
-
+  
 
   return (
     <main className="relative h-full">
-      <LeftPanel content={<ProjectLeft data={"Projects"} />} />
-      <RightPanel content={<ProjectLeft data={"Projects"} />} />
+      <PanelController
+        contentLeft={<ProjectLeft data={"Projects Left"} />}
+        contentRight={<ProjectRight data={"Projects Right"} />}
+      />
     </main>
   );
 };
