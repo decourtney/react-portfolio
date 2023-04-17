@@ -1,23 +1,37 @@
 import React, { useEffect, useState } from "react";
-
-import { setContent } from "../reducers/panelSlice";
-import { useAppDispatch, useAppSelector } from "../reducers/hooks";
-
 import { LeftPanel, RightPanel } from "../components/PanelController/Panels";
-import { HomeLeft, HomeRight } from "../components/Home";
+import GearBox from "../components/GearBox/GearBox";
 
+import { useAppDispatch, useAppSelector } from "../reducers/hooks";
+import { setIsOpen, setIsOpening, setContent } from "../reducers/panelSlice";
+
+import { HomeLeft, HomeRight } from "../components/Home";
+import PanelController from "../components/PanelController";
 
 const Home = () => {
-  const dispatch = useAppDispatch();
+  const [animateGearBox, setAnimateGearBox] = useState(false);
 
-  dispatch(setContent('Home'));
+ console.log('home content rendered')
 
 
+
+
+//  return (
+//    <>
+//      <div className="relative h-full">
+//        <GearBox isAnimate={animateGearBox} />
+//        <LeftPanel contentLeft={contentLeft} />
+//        <RightPanel contentRight={currentContent.right} />
+//      </div>
+//    </>
+//  );
 
   return (
     <main className="relative h-full">
-      <LeftPanel content={<HomeLeft data={"Home"} />} />
-      <RightPanel content={<HomeLeft data={"Home"} />} />
+      <PanelController
+        contentLeft={<HomeLeft data={"Home Left"} />}
+        contentRight={<HomeRight data={"Home Right"} />}
+      />
     </main>
   );
 };

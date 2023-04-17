@@ -3,46 +3,56 @@ import { motion, useAnimationControls } from "framer-motion";
 import { setIsOpen, setIsOpening, setContent } from "../../reducers/panelSlice";
 import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
 
-import GearBox from "./GearBox";
-
-type PanelProps = {
-  content: React.ReactElement;
+type LeftPanelProps = {
+  contentLeft: React.ReactElement;
 };
 
-const LeftPanel = ({ content }: PanelProps) => {
+type RightPanelProps = {
+  contentRight: React.ReactElement;
+};
+
+const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
+  const [currentContent, setCurrentContent] = useState<React.ReactElement>();
+
   const dispatch = useAppDispatch();
   const [isContentLoaded, setIsContentLoaded] = useState(false);
-  // const [newContent, setNewContent] = useState<React.ReactElement>();
   const isOpen = useAppSelector((state) => state.panel.isOpen);
   const isOpening = useAppSelector((state) => state.panel.isOpening);
   // const content = useAppSelector((state) => state.panel.content);
 
-  const controls = useAnimationControls()
+  const controls = useAnimationControls();
 
   useEffect(() => {
-    if (!isOpening) {
-      // If not already opening then begin open animation and set isOpening to true
-      dispatch(setIsOpening(true));
-      controls.start(variants.open)
-    }
-  }, [content]);
+    // If not already opening then begin open animation and set isOpening to true
+    if (isOpening) controls.start(variants.open);
+    if (!isOpening) controls.start(variants.closed);
+  }, [isOpening]);
 
-  useEffect(()=>{
-    if(isOpen){
-      controls.start(variants.closed)
-      dispatch(setIsOpening(false))
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentContent(contentLeft);
     }
-  },[isOpen])
+  }, [isOpen]);
+
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     controls.start(variants.closed);
+  //     dispatch(setIsOpening(false));
+  //   }
+  // }, [isOpen]); // probably dont need the dependency??
 
   // useEffect(() => {
   //   if (content) setNewContent(content);
   // }, [isOpen]);
 
   const handleSetIsOpening = () => {
-    if(isOpening && !isOpen)
-      dispatch(setIsOpen(true))
-    if(!isOpening && isOpen)
-      dispatch(setIsOpen(false))
+    if (isOpening && !isOpen) {
+      dispatch(setIsOpen(true));
+      dispatch(setIsOpening(false));
+    }
+    if (!isOpening && isOpen) {
+      dispatch(setIsOpen(false));
+    }
   };
 
   const variants = {
@@ -62,11 +72,11 @@ const LeftPanel = ({ content }: PanelProps) => {
     },
   };
 
-  console.log(isOpening, isOpen);
+  console.log("Is panel open: ", isOpen);
+  console.log("Is panel opening: ", isOpening);
 
   return (
     <>
-      <GearBox isAnimate={isContentLoaded} />
       <motion.div
         id="left-panel"
         className="absolute h-full p-10 top-0 left-0 w-1/2 bg-orange-500"
@@ -77,7 +87,7 @@ const LeftPanel = ({ content }: PanelProps) => {
       >
         <div className="flex h-full justify-start bg-cyan-500">
           <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
-            <li className="cursor-pointer">{content}</li>
+            <li className="cursor-pointer">{currentContent}</li>
           </ul>
         </div>
       </motion.div>
@@ -87,7 +97,7 @@ const LeftPanel = ({ content }: PanelProps) => {
 
 export default LeftPanel;
 
-const RightPanel = ({ content }: PanelProps) => {
+const RightPanel = ({ contentRight }: RightPanelProps) => {
   return (
     <></>
     // <div
@@ -99,7 +109,7 @@ const RightPanel = ({ content }: PanelProps) => {
     //   {isContentLoaded && (
     //     <div className="flex h-full justify-start bg-cyan-500">
     //       <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
-    //         <li className="cursor-pointer">{content}</li>
+    //         <li className="cursor-pointer">{contentRight}</li>
     //       </ul>
     //     </div>
     //   )}
