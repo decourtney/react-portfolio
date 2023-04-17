@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import PanelContainer from "../components/PanelContainer";
+import PanelContainer from "../components/PanelController";
 
 const Contact = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
     <main className="relative h-full">
-      <PanelContainer content={loadContent} />
     </main>
   );
 };

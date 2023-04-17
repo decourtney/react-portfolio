@@ -5,18 +5,12 @@ type HeaderProps = {
   onLinkClicked: (link: string) => void;
 };
 
-const Header = ({ onLinkClicked }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMouseOver = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // const handleMenuClick = (link: string) => {
-  //   onLinkClicked(link);
-  // };
-
-  console.log("Header is rendered")
 
   return (
     <header>
