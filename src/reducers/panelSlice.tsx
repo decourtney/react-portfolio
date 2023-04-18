@@ -8,14 +8,16 @@ const panelSlice = createSlice({
   name: "panel",
   initialState: {
     isOpen: false,
-    isOpening: false,
+    isOpening: true,
+    // isOpen: true,
+    // isOpening: false,
     content: null,
   },
   reducers: {
     setIsOpen: (state, action) => {
       state.isOpen = action.payload;
     },
-    setIsOpening:(state, action) => {
+    setIsOpening: (state, action) => {
       state.isOpening = action.payload;
     },
     setContent: (state, action) => {

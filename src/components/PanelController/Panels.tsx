@@ -15,10 +15,8 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
   const [currentContent, setCurrentContent] = useState<React.ReactElement>();
 
   const dispatch = useAppDispatch();
-  const [isContentLoaded, setIsContentLoaded] = useState(false);
   const isOpen = useAppSelector((state) => state.panel.isOpen);
   const isOpening = useAppSelector((state) => state.panel.isOpening);
-  // const content = useAppSelector((state) => state.panel.content);
 
   const controls = useAnimationControls();
 
@@ -33,17 +31,6 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       setCurrentContent(contentLeft);
     }
   }, [isOpen]);
-
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     controls.start(variants.closed);
-  //     dispatch(setIsOpening(false));
-  //   }
-  // }, [isOpen]); // probably dont need the dependency??
-
-  // useEffect(() => {
-  //   if (content) setNewContent(content);
-  // }, [isOpen]);
 
   const handleSetIsOpening = () => {
     if (isOpening && !isOpen) {
@@ -81,6 +68,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
         id="left-panel"
         className="absolute h-full p-10 top-0 left-0 w-1/2 bg-orange-500"
         variants={variants}
+        // initial="open"
         initial="closed"
         animate={controls}
         onAnimationComplete={() => handleSetIsOpening()}

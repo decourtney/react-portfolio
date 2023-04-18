@@ -9,22 +9,8 @@ import { HomeLeft, HomeRight } from "../components/Home";
 import PanelController from "../components/PanelController";
 
 const Home = () => {
-  const [animateGearBox, setAnimateGearBox] = useState(false);
-
  console.log('home content rendered')
 
-
-
-
-//  return (
-//    <>
-//      <div className="relative h-full">
-//        <GearBox isAnimate={animateGearBox} />
-//        <LeftPanel contentLeft={contentLeft} />
-//        <RightPanel contentRight={currentContent.right} />
-//      </div>
-//    </>
-//  );
 
   return (
     <main className="relative h-full">
