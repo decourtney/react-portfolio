@@ -16,7 +16,7 @@ const PanelController = ({
   contentRight,
 }: PanelContainerProps) => {
   const [currentContent, setCurrentContent] = useState({
-    left: <></>,
+    left: <><h1>stuff</h1></>,
     right: <></>,
   });
 
@@ -27,36 +27,16 @@ const PanelController = ({
   const isOpen = useAppSelector((state) => state.panel.isOpen);
   const isOpening = useAppSelector((state) => state.panel.isOpening);
 
-  // useEffect(() => {
-  //   if (!isOpening) dispatch(setIsOpening(true));
-  //   console.log('Mounted and isOpening set to: ', isOpening)
-
-  // }, []);
-
   useEffect(() => {
     if (contentLeft || contentRight) {
       setCurrentContent({ left: contentLeft, right: contentRight });
       if (!isOpen && !isOpening) {
         dispatch(setIsOpening(true));
-        setIsPanelsReady(false);
       }
     }
   }, [contentLeft, contentRight]);
-  console.log('panelcontroller rendered')
+  // console.log('panelcontroller rendered')
 
-  // useEffect(() => {
-  //   if (!isOpen) {
-  //     dispatch(setIsOpening(true));
-  //     setIsPanelsReady(false);
-  //   }
-  // }, [isOpen]);
-
-  // useEffect(() => {
-  //   console.log("PanelController: setIsPanelsReady to true");
-  //   if (isOpen) setIsPanelsReady(true);
-  // }, [isOpen]);
-
-  // will probably have to change the GearBox a bit. Let the gear box trigger on reducers
   return (
     <>
       <div className="relative h-full">
