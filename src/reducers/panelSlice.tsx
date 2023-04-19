@@ -7,10 +7,10 @@ interface PanelState{
 const panelSlice = createSlice({
   name: "panel",
   initialState: {
-    isOpen: false,
-    isOpening: true,
-    // isOpen: true,
-    // isOpening: false,
+    // isOpen: false,
+    // isOpening: true,
+    isOpen: true,
+    isOpening: false,
     content: null,
   },
   reducers: {

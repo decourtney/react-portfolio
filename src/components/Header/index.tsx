@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
+import { setIsOpen, setIsOpening, setContent } from "../../reducers/panelSlice";
 
 type HeaderProps = {
   onLinkClicked: (link: string) => void;
@@ -7,6 +10,9 @@ type HeaderProps = {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+
 
   const handleMouseOver = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,24 +32,24 @@ const Header = () => {
           <span className="material-symbols-outlined cursor-pointer">MENU</span>
           {isMenuOpen && (
             <div className="absolute top-full right-0 bg-gray-200 p-2 z-10 shadow-md">
-              <ul className="flex flex-col space-y-2">
+              <ul className="flex flex-col space-y-4">
                 <li>
-                  <Link to="/" className="">
+                  <Link to="/" state={{ value: '/home' }} className={`mr-6 ${location.pathname === "/home" ? "pointer-events-none" : ""}`}>
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="">
+                  <Link to="/" state={{ value: '/projects' }} className={`mr-6 ${location.pathname === "/projects" ? "pointer-events-none" : ""}`}>
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="">
+                  <Link to="/" state={{ value: '/about' }} className={`mr-6 ${location.pathname === "/about" ? "pointer-events-none" : ""}`}>
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="">
+                  <Link to="/" state={{ value: '/contact' }} className={`mr-6 ${location.pathname === "/contact" ? "pointer-events-none" : ""}`}>
                     Contact
                   </Link>
                 </li>
