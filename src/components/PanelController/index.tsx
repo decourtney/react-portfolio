@@ -35,15 +35,14 @@ const PanelController = ({
       }
     }
   }, [contentLeft, contentRight]);
-  // console.log('panelcontroller rendered')
 
   return (
     <>
-      <div className="relative h-full">
+      {/* <div className="relative h-full">
         <GearBox isAnimate={animateGearBox} />
         <LeftPanel contentLeft={currentContent.left} />
         <RightPanel contentRight={currentContent.right} />
-      </div>
+      </div> */}
     </>
   );
 };

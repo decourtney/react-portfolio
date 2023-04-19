@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import { setIsOpen, setIsOpening, setContent } from "../../reducers/panelSlice";
 import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
 
@@ -20,27 +20,29 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
 
   const controls = useAnimationControls();
 
-  useEffect(() => {
-    // If not already opening then begin open animation and set isOpening to true
-    if (isOpening) controls.start(variants.open);
-    if (!isOpening) controls.start(variants.closed);
-  }, [isOpening]);
+  const [effinWork, setEffinWork] = useState(true);
 
-  useEffect(() => {
-    if (isOpen) {
-      setCurrentContent(contentLeft);
-    }
-  }, [isOpen]);
+  // useEffect(() => {
+  //   // If not already opening then begin open animation and set isOpening to true
+  //   if (isOpening) controls.start(variants.open);
+  //   if (!isOpening) controls.start(variants.closed);
+  // }, [isOpening]);
 
-  const handleSetIsOpening = () => {
-    if (isOpening && !isOpen) {
-      dispatch(setIsOpen(true));
-      dispatch(setIsOpening(false));
-    }
-    if (!isOpening && isOpen) {
-      dispatch(setIsOpen(false));
-    }
-  };
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     setCurrentContent(contentLeft);
+  //   }
+  // }, [isOpen]);
+
+  // const handleSetIsOpening = () => {
+  //   if (isOpening && !isOpen) {
+  //     dispatch(setIsOpen(true));
+  //     dispatch(setIsOpening(false));
+  //   }
+  //   if (!isOpening && isOpen) {
+  //     dispatch(setIsOpen(false));
+  //   }
+  // };
 
   const variants = {
     closed: {
@@ -59,26 +61,31 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
     },
   };
 
+  console.log("Is panel effin working: ", effinWork);
   console.log("Is panel open: ", isOpen);
-  console.log("Is panel opening: ", isOpening);
+  // console.log("Is panel opening: ", isOpening);
 
   return (
     <>
-      <motion.div
-        id="left-panel"
-        className="absolute h-full p-10 top-0 left-0 w-1/2 bg-orange-500"
-        variants={variants}
-        // initial="open"
-        initial="closed"
-        animate={controls}
-        onAnimationComplete={() => handleSetIsOpening()}
-      >
-        <div className="flex h-full justify-start bg-cyan-500">
-          <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
-            <li className="cursor-pointer">{currentContent}</li>
-          </ul>
-        </div>
-      </motion.div>
+  
+          <motion.div
+            id="left-panel"
+            key={contentLeft.props.data}
+            className="absolute h-full p-10 top-0 left-0 w-1/2 bg-orange-500"
+            variants={variants}
+            initial="open"
+            // initial="closed"
+            animate="closed"
+            // onAnimationComplete={() => handleSetIsOpening()}
+            exit="open"
+          >
+            {/* <div className="flex h-full justify-start bg-cyan-500">
+                <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
+                  <li className="cursor-pointer">{contentLeft}</li>
+                </ul>
+              </div> */}
+          </motion.div>
+
     </>
   );
 };

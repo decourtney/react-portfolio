@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
+import { setIsOpen, setIsOpening, setContent } from "../../reducers/panelSlice";
+
 type HeaderProps = {
   onLinkClicked: (link: string) => void;
 };
@@ -8,9 +11,18 @@ type HeaderProps = {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+   const dispatch = useAppDispatch();
+     const isOpen = useAppSelector((state) => state.panel.isOpen);
+
+
   const handleMouseOver = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleClick = () => {
+    console.log("change is open")
+    dispatch(setIsOpen(!isOpen))
+  }
 
   return (
     <header>
@@ -33,7 +45,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="">
+                  <Link to="/projects" className="" >
                     Projects
                   </Link>
                 </li>

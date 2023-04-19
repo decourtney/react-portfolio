@@ -12,10 +12,13 @@ const Projects = () => {
 
   return (
     <main className="relative h-full">
-      <PanelController
+      {/* <PanelController
         contentLeft={<ProjectLeft data={"Projects Left"} />}
         contentRight={<ProjectRight data={"Projects Right"} />}
-      />
+      /> */}
+
+      <LeftPanel contentLeft={<ProjectLeft data={"Project left"} />} />
+      <RightPanel contentRight={<ProjectRight data={"Project right"} />} />
     </main>
   );
 };
