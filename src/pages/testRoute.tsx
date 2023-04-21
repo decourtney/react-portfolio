@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate  } from "react-router-dom";
 import { LeftPanel, RightPanel } from "../components/PanelController/Panels";
 import GearBox from "../components/GearBox/GearBox";
 
@@ -10,16 +10,19 @@ import { HomeLeft, HomeRight } from "../components/Home";
 import PanelController from "../components/PanelController";
 import { AnimatePresence } from "framer-motion";
 
-const Home = () => {
-  const location = useLocation()
+const TestRoute = () => {
+  const {state} = useLocation()
+  const navigate = useNavigate();
+
+  setTimeout(()=>{
+    navigate(state ? `${state.value}`:'/home')
+  }, 1000)
 
   return (
     <main className="relative h-full">
-      <GearBox isAnimate={false} />
-      <LeftPanel contentLeft={<HomeLeft data={"Home Left"} />} />
-      <RightPanel contentRight={<HomeRight data={"Home Right"} />} />
+        <GearBox isAnimate={true}/>
     </main>
   );
 };
 
-export default Home;
+export default TestRoute;

@@ -11,18 +11,46 @@ type GearBoxProps = {
 
 // Still need to control direction of animation
 const GearBox = ({ isAnimate }: GearBoxProps) => {
-  const [direction, setDirection] = useState<"close" | "open">("close");
+  const [direction, setDirection] = useState<"close" | "open" | "none">("none");
 
-  useEffect(() => {
-    setDirection(isAnimate ? "open" : "close");
-  }, [isAnimate]);
+  // useEffect(() => {
+  //   setDirection(isAnimate ? "open" : "close");
+  // }, [isAnimate]);
+
+  const variants = {
+    open: {
+      rotate: -360,
+      transition: {
+        duration: 3,
+        ease: "easeIn"
+      }
+    },
+    close: {
+      rotate: 360,
+      transition: {
+        duration: 3,
+        ease: "easeIn"
+      }
+    }
+  }
 
   return (
     <div
       id="gear-box"
       className="absolute flex inset-0 top-0 left-0 justify-center items-center -z-20 bg-red-500"
     >
-      <Cog
+      <motion.img
+        src={smallDoubleCog}
+        key={'smallDoubleCog'}
+        variants={variants}
+        initial="close"
+        animate="open"
+        exit="close"
+        className={``}
+      />
+
+
+      {/* <Cog
         size={185}
         image={smallDoubleCog}
         rotate={direction === "open" ? 360 : -360}
@@ -39,7 +67,7 @@ const GearBox = ({ isAnimate }: GearBoxProps) => {
         duration={5}
         position={"ml-[320px] mt-[60px]"}
         animate={isAnimate}
-      />
+      /> */}
     </div>
   );
 };

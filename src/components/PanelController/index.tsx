@@ -15,11 +15,6 @@ const PanelController = ({
   contentLeft,
   contentRight,
 }: PanelContainerProps) => {
-  const [currentContent, setCurrentContent] = useState({
-    left: <><h1>stuff</h1></>,
-    right: <></>,
-  });
-
   const [animateGearBox, setAnimateGearBox] = useState(false);
   const [isPanelsReady, setIsPanelsReady] = useState(false);
 
@@ -27,21 +22,25 @@ const PanelController = ({
   const isOpen = useAppSelector((state) => state.panel.isOpen);
   const isOpening = useAppSelector((state) => state.panel.isOpening);
 
-  useEffect(() => {
-    if (contentLeft || contentRight) {
-      setCurrentContent({ left: contentLeft, right: contentRight });
-      if (!isOpen && !isOpening) {
-        dispatch(setIsOpening(true));
-      }
-    }
-  }, [contentLeft, contentRight]);
+  // useEffect(() => {
+  //   if (contentLeft || contentRight) {
+  //     console.log('PanelController set currentContent to:', contentLeft)
+      
+
+  //     if (isOpening) {
+  //       console.log('PanelController useEffect 2nd if block')
+  //       dispatch(setIsOpening(false));
+  //     }
+
+  //   }
+  // }, [contentLeft, contentRight]);
 
   return (
     <>
       {/* <div className="relative h-full">
         <GearBox isAnimate={animateGearBox} />
-        <LeftPanel contentLeft={currentContent.left} />
-        <RightPanel contentRight={currentContent.right} />
+        <LeftPanel contentLeft={contentLeft} />
+        <RightPanel contentRight={contentRight} />
       </div> */}
     </>
   );

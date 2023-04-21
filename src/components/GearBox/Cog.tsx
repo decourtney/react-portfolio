@@ -19,7 +19,7 @@ const Cog = ({ size, image, rotate, delay, duration, position, animate }: CogPro
       animate={animate ? { rotate }: {}}
       transition={{
         ease: "linear",
-        repeat: Infinity,
+        // repeat: Infinity,
         duration: duration,
         delay,
       }}
