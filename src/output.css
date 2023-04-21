@@ -562,6 +562,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .absolute {
   position: absolute;
 }
@@ -598,6 +602,7 @@ video {
   z-index: 10;
 }
 
+<<<<<<< Updated upstream
 .m-10 {
   margin: 2.5rem;
 }
@@ -610,20 +615,50 @@ video {
   margin-bottom: auto;
 }
 
+=======
+.m-1 {
+  margin: 0.25rem;
+}
+
+>>>>>>> Stashed changes
 .ml-\[320px\] {
   margin-left: 320px;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
 }
 
 .mt-\[60px\] {
   margin-top: 60px;
 }
 
+<<<<<<< Updated upstream
+=======
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+>>>>>>> Stashed changes
 .flex {
   display: flex;
 }
 
+<<<<<<< Updated upstream
 .h-10 {
   height: 2.5rem;
+=======
+.inline-flex {
+  display: inline-flex;
+>>>>>>> Stashed changes
 }
 
 .h-full {
@@ -634,6 +669,7 @@ video {
   height: 100vh;
 }
 
+<<<<<<< Updated upstream
 .h-\[\] {
   height: ;
 }
@@ -666,6 +702,8 @@ video {
   max-height: 100%;
 }
 
+=======
+>>>>>>> Stashed changes
 .max-h-screen {
   max-height: 100vh;
 }
@@ -678,6 +716,7 @@ video {
   width: 100%;
 }
 
+<<<<<<< Updated upstream
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -686,22 +725,30 @@ video {
   --tw-translate-x: -100%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+=======
+.w-screen {
+  width: 100vw;
+>>>>>>> Stashed changes
 }
 
-.translate-x-0 {
-  --tw-translate-x: 0px;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
 }
 
 .translate-x-\[120px\] {
   --tw-translate-x: 120px;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-full {
-  --tw-translate-x: 100%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -725,8 +772,16 @@ video {
   list-style-type: none;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -755,20 +810,23 @@ video {
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .overflow-auto {
   overflow: auto;
 }
 
+<<<<<<< Updated upstream
 .overflow-hidden {
   overflow: hidden;
 }
 
+=======
+>>>>>>> Stashed changes
 .overflow-scroll {
   overflow: scroll;
 }
@@ -831,9 +889,15 @@ video {
   padding-right: 5rem;
 }
 
+<<<<<<< Updated upstream
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+=======
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+>>>>>>> Stashed changes
 }
 
 .text-9xl {
