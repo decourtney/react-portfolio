@@ -18,11 +18,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="flex-col max-h-screen h-screen">
         <Router>      
           <AnimatedRoutes />
         </Router>
-      </div>
     </Provider>
   );
 }

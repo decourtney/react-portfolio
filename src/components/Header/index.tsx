@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
-import { setIsOpen, setIsOpening, setContent } from "../../reducers/panelSlice";
-
-type HeaderProps = {
-  onLinkClicked: (link: string) => void;
-};
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-
-
+      const location = useLocation();
 
   const handleMouseOver = () => {
     setIsMenuOpen(!isMenuOpen);
