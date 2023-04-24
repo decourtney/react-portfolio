@@ -1,26 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-<<<<<<< Updated upstream
-const WorkLeftPanel = () => {
-
-    return <></>
-};
-
-const WorkRightPanel = () => {
-
-    return <></>
-};
-
-export default { WorkLeftPanel, WorkRightPanel }
-=======
 interface Project {
-  name: string
-  date: string
-  description: string
-  tags: string[]
-  url: string
-  repo: string
-  image: string
+  name?: string
+  date?: string
+  description?: string
+  tags?: string[]
+  url?: string
+  repo?: string
+  image?: string
 }
 
 const ProjectLeft = ({ data }: { data: Project[] }) => {
@@ -46,4 +33,3 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
 };
 
 export { ProjectLeft, ProjectRight };
->>>>>>> Stashed changes
