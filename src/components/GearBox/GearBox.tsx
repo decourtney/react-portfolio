@@ -3,7 +3,7 @@ import { useAnimate, motion, stagger } from "framer-motion";
 import Cog from "./Cog";
 
 import smallDoubleCog from "../../images/small_double.svg";
-import smallSingleCog from "../../../../images/small_single.svg";
+import smallSingleCog from "../../images/small_single.svg";
 import spoke1 from "../../images/spoke1.svg";
 import spoke2 from "../../images/spoke2.svg";
 import leftStraight from "../../images/left_straight.svg";

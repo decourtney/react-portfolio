@@ -1,21 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-<<<<<<< Updated upstream
-type ProjectProps = {
-  data: string;
-};
-
-const ProjectLeft = ({ data }: ProjectProps) => {
-  const [loadContent, setLoadContent] = useState("");
-
-  return <>{data}</>;
-};
-
-const ProjectRight = ({ data }: ProjectProps) => {
-  const [loadContent, setLoadContent] = useState("");
-
-  return <>{data}</>;
-=======
 interface Project {
   name?: string
   date?: string
@@ -46,7 +30,6 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
         return (<div key={project.name}><p><span>{project.name}</span></p></div>)
       })}
     </>)
->>>>>>> Stashed changes
 };
 
 export { ProjectLeft, ProjectRight };

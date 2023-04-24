@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import projects from "../components/Projects/Projects.json";
+import projects from "../components/Projects/projects.json";
 
 import GearBox from "../components/GearBox/GearBox";
 
