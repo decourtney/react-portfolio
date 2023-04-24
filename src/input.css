@@ -25,3 +25,8 @@ code {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.panel-border {
+  border: 50px solid transparent;
+  border-image: url(./images/borderimg.png) 30 round;
+}
