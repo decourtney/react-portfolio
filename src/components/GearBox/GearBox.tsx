@@ -93,13 +93,23 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
   return (
     <div
       id="gear-box"
-      className="absolute flex items-center justify-center inset-0 top-0 left-0 -z-100 bg-black bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-black"
+      className="absolute flex items-center justify-center inset-0 top-0 left-0 -z-50 bg-black bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-black overflow-hidden"
     >
-      <img src={gearBoxBG} className={"absolute w-[40%]"} />
+      <img src={gearBoxBG} className={"absolute w-[40%] -z-50"} />
+      <motion.img src={gearBoxFG} className="absolute w-[40%] -z-20" />
+
+      <img
+        src={gearBoxPipe}
+        className={"absolute w-[8%] ml-[25%] mt-[22%] -z-10"}
+      />
+      <img
+        src={gearBoxDrum}
+        className={"absolute w-[10%] -ml-[27%] -mt-[33%] -z-10"}
+      />
 
       <motion.img
         src={spoke1}
-        className={`absolute w-[25%] ml-[13%] -mt-[4%] -z-80`}
+        className={`absolute w-[25%] ml-[13%] -mt-[4%] -z-40`}
         key={"spoke1"}
         variants={counterClockwise}
         initial="close"
@@ -109,7 +119,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
       <motion.img
         src={spoke2}
-        className={`absolute w-[18%] -ml-[20%] mt-[17%] -z-80`}
+        className={`absolute w-[18%] -ml-[20%] mt-[17%] -z-40`}
         key={"spoke2"}
         variants={clockwise}
         initial="close"
@@ -119,29 +129,27 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
       <motion.img
         src={smallDoubleCog}
+        className={`absolute w-[11%] -ml-[1%] mt-[5.5%] -z-30`}
         key={"smallDoubleCog"}
         variants={clockwise}
         initial="close"
         animate={animationDir}
         exit="close"
-        className={``}
       />
 
       <motion.img
         src={smallSingleCog}
+        className={`absolute w-[11%] ml-[16.5%] mt-[16.5%] -z-30`}
         key={"smallSingleCog"}
         variants={counterClockwise}
         initial="close"
         animate={animationDir}
         exit="close"
-        className={``}
       />
-
-      <motion.img src={gearBoxFG} className="=absolute w-[40%]" />
 
       <motion.img
         src={rightStraight}
-        className="absolute w-[70%] ml-[30%] mt-[12%]"
+        className="absolute w-[70%] ml-[30%] mt-[12%] -z-20"
         key={"rightStraight"}
         variants={slideRight}
         initial="close"
@@ -151,18 +159,12 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
       <motion.img
         src={leftStraight}
-        className="absolute w-[70%] ml-[30%] mt-[12%]"
+        className="absolute w-[70%] -ml-[30%] -mt-[1.5%] -z-20"
         key={"leftStraight"}
         variants={slideLeft}
         initial="close"
         animate={animationDir}
         exit="close"
-      />
-
-      <img src={gearBoxPipe} className={"absolute w-[8%] ml-[25%] mt-[22%]"} />
-      <img
-        src={gearBoxDrum}
-        className={"absolute w-[10%] -ml-[27%] -mt-[33%]"}
       />
     </div>
   );
