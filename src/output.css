@@ -961,5 +961,7 @@ code {
 
 .panel-border {
   border: 50px solid transparent;
-  border-image: url(./images/borderimg.png) 30 round;
+  border-image: url(./images/border.svg) 50;
+  border-image-width: 10%;
+  /* object-fit: fill; */
 }
