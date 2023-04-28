@@ -4,7 +4,8 @@ import { motion, useAnimationControls, AnimatePresence } from "framer-motion";
 import { setIsOpen, setIsOpening, setContent } from "../../reducers/panelSlice";
 import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
 import { current } from "@reduxjs/toolkit";
-import borderImage from "../../images/border.svg";
+import borderRightImage from "../../images/border_right.svg";
+import borderLeftImage from "../../images/border_left.svg";
 
 type LeftPanelProps = {
   contentLeft: React.ReactElement;
@@ -43,7 +44,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
         animate="close"
         exit="open"
       >
-        <div className="absolute w-full h-full panel-border pointer-events-none"></div>
+        <div className="leftpanel-border absolute w-full h-full pointer-events-none"></div>
 
         <div className="flex w-full m-[2%] justify-start bg-cyan-500">
           <ul className="flex-col list-none text-8xl space-y-10 scrollbar-hide overflow-auto">
@@ -86,7 +87,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
         animate="close"
         exit="open"
       >
-        <div className="absolute w-full h-full panel-border"></div>
+        <div className="rightpanel-border absolute w-full h-full"></div>
         <div className="flex w-full justify-start m-[2%] bg-cyan-500">
           <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
             <li className="cursor-pointer">{contentRight}</li>
