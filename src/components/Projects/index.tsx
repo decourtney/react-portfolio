@@ -27,7 +27,13 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   return (
     <>
       {data.map((project) => {
-        return (<div key={project.name}><p><span>{project.name}</span></p></div>)
+        return (
+          <div key={project.name}>
+            <p className="text-6xl">
+              <span>{project.name}</span>
+            </p>
+          </div>
+        );
       })}
     </>)
 };
