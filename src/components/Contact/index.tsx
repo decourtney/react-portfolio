@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-type HomeProps = {
+type ContactProps = {
   data: string;
-}
+};
 
-const HomeLeft = ({data}: HomeProps) => {
+const ContactLeft = ({ data }: ContactProps) => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
@@ -16,7 +16,7 @@ const HomeLeft = ({data}: HomeProps) => {
   );
 };
 
-const HomeRight = ({ data }: HomeProps) => {
+const ContactRight = ({ data }: ContactProps) => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
@@ -28,4 +28,4 @@ const HomeRight = ({ data }: HomeProps) => {
   );
 };
 
-export { HomeLeft, HomeRight };
+export { ContactLeft, ContactRight };

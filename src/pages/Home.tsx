@@ -15,8 +15,12 @@ const Home = () => {
   return (
     <main className="relative flex flex-grow w-full overflow-auto scrollbar-hide">
       <GearBox animationDir={"open"} />
-      <LeftPanel contentLeft={<HomeLeft data={"Home Left"} />} />
-      <RightPanel contentRight={<HomeRight data={"Home Right"} />} />
+      <LeftPanel
+        contentLeft={<HomeLeft data={"Home"} />}
+      />
+      <RightPanel
+        contentRight={<HomeRight data={"Under Construction"} />}
+      />
     </main>
   );
 };
