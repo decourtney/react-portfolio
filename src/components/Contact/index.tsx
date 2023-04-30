@@ -10,7 +10,7 @@ const ContactLeft = ({ data }: ContactProps) => {
   return (
     <>
       <div>
-        <p className="text-8xl">{data}</p>
+        <p className="text-6xl">{data}</p>
       </div>
     </>
   );
@@ -22,7 +22,7 @@ const ContactRight = ({ data }: ContactProps) => {
   return (
     <>
       <div>
-        <p className="text-8xl">{data}</p>
+        <p className="text-6xl">{data}</p>
       </div>
     </>
   );

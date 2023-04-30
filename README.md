@@ -14,16 +14,23 @@
 
 ## Description
 
+This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website.
 
+The site is currently under construction, but I'm working hard to make it as visually appealing and functional as possible. I'm using custom artwork and graphics to create a distinct and memorable visual identity for the site.
+
+Through this portfolio, I hope to highlight my skills and experience as a developer, as well as demonstrate my creative abilities. I'm excited to continue working on this project and share my progress as I bring my vision to life.
 
 Deployed Project: https://still-sea-34126.herokuapp.com/
    
-<img src="./assets/booksearch_ss.png" target="_blank" alt="Book Search" style="max-width: 384px; display: block;" /><br>
-<img src="./assets/mern-stack.png" target="_blank" alt="MERN Logo" style="max-width: 384px; display: block;" /><br>
+<img src="./portfolio.png" target="_blank" alt="Book Search" style="max-width: 384px; display: block;" /><br>
+
 
 ## Installation
 
+[![](https://skills.thijs.gg/icons?i=react,nodejs,typescript)](https://skills.thijs.gg)
+
 You'll need [Node.js](https://nodejs.org/) and [React](https://www.npmjs.com/package/react)
+
 
 Then:
 -  start:   node server/server.js,
