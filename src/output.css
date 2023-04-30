@@ -643,28 +643,20 @@ video {
   margin-left: -20%;
 }
 
-.-ml-\[27\%\] {
-  margin-left: -27%;
-}
-
-.-ml-\[30\%\] {
-  margin-left: -30%;
+.-ml-\[50\%\] {
+  margin-left: -50%;
 }
 
 .-mt-\[1\.5\%\] {
   margin-top: -1.5%;
 }
 
-.-mt-\[33\%\] {
-  margin-top: -33%;
-}
-
 .-mt-\[4\%\] {
   margin-top: -4%;
 }
 
-.ml-\[1\.1\%\] {
-  margin-left: 1.1%;
+.ml-\[1\%\] {
+  margin-left: 1%;
 }
 
 .ml-\[13\%\] {
@@ -679,16 +671,16 @@ video {
   margin-left: 25%;
 }
 
-.ml-\[30\%\] {
-  margin-left: 30%;
+.ml-\[50\%\] {
+  margin-left: 50%;
 }
 
 .mr-6 {
   margin-right: 1.5rem;
 }
 
-.mr-\[1\.1\%\] {
-  margin-right: 1.1%;
+.mr-\[1\%\] {
+  margin-right: 1%;
 }
 
 .mt-\[12\%\] {
@@ -709,94 +701,6 @@ video {
 
 .mt-\[5\.5\%\] {
   margin-top: 5.5%;
-}
-
-.mr-\[1\%\] {
-  margin-right: 1%;
-}
-
-.ml-\[1\%\] {
-  margin-left: 1%;
-}
-
-.ml-\[45\%\] {
-  margin-left: 45%;
-}
-
-.ml-\[\%\] {
-  margin-left: %;
-}
-
-.-ml-\[45\%\] {
-  margin-left: -45%;
-}
-
-.-ml-\[44\%\] {
-  margin-left: -44%;
-}
-
-.-ml-\[43\%\] {
-  margin-left: -43%;
-}
-
-.-ml-\[42\%\] {
-  margin-left: -42%;
-}
-
-.ml-\[42\%\] {
-  margin-left: 42%;
-}
-
-.ml-\[41\%\] {
-  margin-left: 41%;
-}
-
-.ml-\[40\%\] {
-  margin-left: 40%;
-}
-
-.-ml-\[0\%\] {
-  margin-left: -0%;
-}
-
-.ml-\[0\%\] {
-  margin-left: 0%;
-}
-
-.ml-\[43\%\] {
-  margin-left: 43%;
-}
-
-.-ml-\[40\%\] {
-  margin-left: -40%;
-}
-
-.-ml-\[41\%\] {
-  margin-left: -41%;
-}
-
-.ml-\[20\%\] {
-  margin-left: 20%;
-}
-
-.ml-\[15\%\] {
-  margin-left: 15%;
-}
-
-.ml-\[18\%\] {
-  margin-left: 18%;
-}
-
-.-ml-\[18\%\] {
-  margin-left: -18%;
-}
-
-.-ml-\[50\%\] {
-  margin-left: -50%;
-}
-
-.ml-\[50\%\] {
-  margin-left: 50%;
 }
 
 .block {
@@ -821,10 +725,6 @@ video {
 
 .w-1\/2 {
   width: 50%;
-}
-
-.w-\[10\%\] {
-  width: 10%;
 }
 
 .w-\[11\%\] {
@@ -853,22 +753,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[60\%\] {
-  width: 60%;
-}
-
-.w-\[50\%\] {
-  width: 50%;
-}
-
-.w-\[45\%\] {
-  width: 45%;
-}
-
-.w-\[70-\%\] {
-  width: 70-%;
 }
 
 .flex-grow {
@@ -998,6 +882,11 @@ video {
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .shadow-md {

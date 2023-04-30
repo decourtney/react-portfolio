@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# React Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License: MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
+  
+## Table of Contents
 
-## Available Scripts
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Testing](#testing)
+* [Questions](#questions)
+* [Licensing](#licensing)
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Deployed Project: https://still-sea-34126.herokuapp.com/
+   
+<img src="./assets/booksearch_ss.png" target="_blank" alt="Book Search" style="max-width: 384px; display: block;" /><br>
+<img src="./assets/mern-stack.png" target="_blank" alt="MERN Logo" style="max-width: 384px; display: block;" /><br>
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You'll need [Node.js](https://nodejs.org/) and [React](https://www.npmjs.com/package/react)
 
-### `npm run build`
+Then:
+-  start:   node server/server.js,
+-  develop: "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+-  install: "cd server && npm i && cd ../client && npm i",
+-  seed:    "cd server && npm run seed",
+-  build:   "cd client && npm run build"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The site is still under heavy construction and currently has basic information.
+- Home gives a basic instroduction
+- About provides a high level view of my goals and aspirations
+- Projects displays a clickable list of my recent or noteworthy projects that expand to more details
+- Contact provides a means of dropping me an email
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contribution
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Follow the "fork-and-pull" Git workflow.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  1. **Fork** the repo on GitHub
+  2. **Clone** the project to your own machine
+  3. **Commit** changes to your own branch
+  4. **Push** your work back up to your fork
+  5. Submit a **Pull request** so that we can review your changes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
-## Learn More
+## Testing
+  
+N/A
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Questions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to contact me with any questions or comments:  
+<donovan.courtney@gmail.com>  
+<https://github.com/decourtney>
+
+## Licensing
+
+Code and Docs released under [MIT License](https://choosealicense.com/licenses/mit/).
