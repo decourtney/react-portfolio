@@ -13,7 +13,7 @@ const Home = () => {
   const location = useLocation();
 
   return (
-    <main className="relative flex h-full w-full ">
+    <main className="relative flex flex-grow w-full overflow-auto scrollbar-hide">
       <GearBox animationDir={"open"} />
       <LeftPanel contentLeft={<HomeLeft data={"Home Left"} />} />
       <RightPanel contentRight={<HomeRight data={"Home Right"} />} />

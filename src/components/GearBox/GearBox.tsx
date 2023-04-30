@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useAnimate, motion, stagger } from "framer-motion";
 import Cog from "./Cog";
 
-import smallDoubleCog from "../../images/small_double.svg";
-import smallSingleCog from "../../images/small_single.svg";
-import spoke1 from "../../images/spoke1.svg";
-import spoke2 from "../../images/spoke2.svg";
-import leftStraight from "../../images/left_straight.svg";
-import rightStraight from "../../images/right_straight.svg";
-import gearBoxBG from "../../images/gearbox_bg.svg";
-import gearBoxFG from "../../images/gearbox_fg.svg";
-import gearBoxDrum from "../../images/gearbox_drum.svg";
-import gearBoxPipe from "../../images/gearbox_pipe.svg";
+import smallDoubleCog from "../../images/doubleCog.png";
+import smallSingleCog from "../../images/singleCog.png";
+import spoke1 from "../../images/largeCog.png";
+import spoke2 from "../../images/largeCog.png";
+import leftStraight from "../../images/straightLeftCog.png";
+import rightStraight from "../../images/straightRightCog.png";
+import gearBoxBG from "../../images/gearbox_bg.png";
+import gearBoxFG from "../../images/gearbox.png";
+import gearBoxPipe from "../../images/gearbox_pipe.png";
 
 
 type GearBoxProps = {
@@ -26,14 +25,14 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
     open: {
       rotate: -360,
       transition: {
-        duration: 1.6,
+        duration: 1.4,
         ease: "easeInOut",
       },
     },
     close: {
       rotate: 360,
       transition: {
-        duration: 2,
+        duration: 1.9,
         ease: "easeInOut",
       },
     },
@@ -43,14 +42,14 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
     open: {
       rotate: 360,
       transition: {
-        duration: 1.6,
+        duration: 1.4,
         ease: "easeInOut",
       },
     },
     close: {
       rotate: -360,
       transition: {
-        duration: 2,
+        duration: 1.9,
         ease: "easeInOut",
       },
     },
@@ -60,14 +59,14 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
     open: {
       translateX: 0,
       transition: {
-        duration: 1.5,
+        duration: 1.4,
         ease: "easeInOut",
       },
     },
     close: {
       translateX: "60%",
       transition: {
-        duration: 2,
+        duration: 1.9,
         ease: "easeInOut",
       },
     },
@@ -77,14 +76,14 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
     open: {
       translateX: 0,
       transition: {
-        duration: 1.5,
+        duration: 1.4,
         ease: "easeInOut",
       },
     },
     close: {
       translateX: "-60%",
       transition: {
-        duration: 2,
+        duration: 1.9,
         ease: "easeInOut",
       },
     },
@@ -101,10 +100,6 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
       <img
         src={gearBoxPipe}
         className={"absolute w-[8%] ml-[25%] mt-[22%] -z-10"}
-      />
-      <img
-        src={gearBoxDrum}
-        className={"absolute w-[10%] -ml-[27%] -mt-[33%] -z-10"}
       />
 
       <motion.img
@@ -148,20 +143,20 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
       />
 
       <motion.img
-        src={rightStraight}
-        className="absolute w-[70%] ml-[30%] mt-[12%] -z-20"
+        src={leftStraight}
+        className="absolute w-[70%] -ml-[50%] mt-[12%] -z-20"
         key={"rightStraight"}
-        variants={slideRight}
+        variants={slideLeft}
         initial="close"
         animate={animationDir}
         exit="close"
       />
 
       <motion.img
-        src={leftStraight}
-        className="absolute w-[70%] -ml-[30%] -mt-[1.5%] -z-20"
+        src={rightStraight}
+        className="absolute w-[70%] ml-[50%] -mt-[1.5%] -z-20"
         key={"leftStraight"}
-        variants={slideLeft}
+        variants={slideRight}
         initial="close"
         animate={animationDir}
         exit="close"
