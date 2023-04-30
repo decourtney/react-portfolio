@@ -26,10 +26,20 @@ code {
   scrollbar-width: none; /* Firefox */
 }
 
-.panel-border {
+.leftpanel-border {
   /* border: 1rem solid transparent; */
-  border-image-source: url(./images/border.svg);
+  border-image-source: url(./images/border_left.png);
   border-image-width: 100%;
   border-image-slice: 50%;
   /* border-width: 100px; */
 }
+
+.rightpanel-border {
+  /* border: 1rem solid transparent; */
+  border-image-source: url(./images/border_right.png);
+  border-image-width: 100%;
+  border-image-slice: 50%;
+  /* border-width: 100px; */
+}
+
+
