@@ -42,4 +42,10 @@ code {
   /* border-width: 100px; */
 }
 
+.navbar-bg{
+  background-image: url('./images/navbar.png');
+  background-size: 100%;
+  background-repeat: no-repeat
+}
+
 

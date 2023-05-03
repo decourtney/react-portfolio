@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import navbar from "../../images/navbar.png"
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
       const location = useLocation();
@@ -11,7 +13,8 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="flex justify-between w-full py-5 px-10 bg-slate-400">
+      {/* Need to work on positioning and styling of navbar and background */}
+      <nav className="navbar-bg flex justify-between w-full  px-10 bg-slate-400">
         <div className="flex justify-start">
           <h1>DC</h1>
         </div>

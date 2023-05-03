@@ -83,9 +83,9 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
         animate="close"
         exit="open"
       >
-        <div className="flex w-full justify-start bg-cyan-500">
+        <div className="flex w-full bg-cyan-500">
           <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
-            <li className="cursor-pointer" >{contentRight}</li>
+            <li className="cursor-pointer">{contentRight}</li>
           </ul>
         </div>
       </motion.div>

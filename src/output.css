@@ -755,6 +755,10 @@ video {
   width: 100%;
 }
 
+.flex-shrink {
+  flex-shrink: 1;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -874,28 +878,13 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.text-8xl {
-  font-size: 6rem;
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
 .text-9xl {
   font-size: 8rem;
-  line-height: 1;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -954,6 +943,12 @@ code {
   border-image-width: 100%;
   border-image-slice: 50%;
   /* border-width: 100px; */
+}
+
+.navbar-bg{
+  background-image: url('./images/navbar.png');
+  background-size: 100%;
+  background-repeat: no-repeat
 }
 
 
