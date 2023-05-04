@@ -32,9 +32,11 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
       {data.map((project) => {
         return (
           <div key={project.name}>
-            <p className="text-6xl">
-              <span>{project.name}</span>
-            </p>
+            <a href={project.url || project.repo} target="_blank">
+              <p className="text-6xl">
+                <span>{project.name}</span>
+              </p>
+            </a>
           </div>
         );
       })}
