@@ -44,7 +44,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       >
         <div className="flex w-full justify-start bg-cyan-500">
           <ul className="flex-col list-none text-9xl space-y-10 scrollbar-hide overflow-auto">
-            <li className="cursor-pointer" >{contentLeft}</li>
+            <li className="cursor-pointer">{contentLeft}</li>
           </ul>
         </div>
       </motion.div>

@@ -43,9 +43,14 @@ code {
 }
 
 .navbar-bg{
-  background-image: url('./images/navbar.png');
-  background-size: 100%;
-  background-repeat: no-repeat
+  background-image: url(./images/navbar.png);
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar-image{
+  visibility: hidden;
 }
 
 
