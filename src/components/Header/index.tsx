@@ -14,8 +14,8 @@ const Header = () => {
   return (
     <header>
       {/* Need to work on positioning and styling of navbar and background */}
-      <nav className="navbar-bg relative flex justify-between w-full bg-slate-400">
-        <img src={navbar} className="navbar-image float" />
+      <nav className="navbar-bg relative flex justify-between w-full shadow- bg-slate-400">
+        <img src={navbar} className="navbar-image w-full" />
 
         <div
           className=" absolute flex top-[15%] right-[8%] bg-emerald-500"
