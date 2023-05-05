@@ -47,7 +47,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       >
         <img src={borderPad} />
         <div className="leftpanel-border absolute w-full h-full left-0 ml-[1%] pointer-events-none"></div>
-        <div className="flex items-center justify-center w-full m-[2%] overflow-auto bg-cyan-500">
+        <div className="flex items-center justify-center w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
           {/* Temporary styling. This will be handled by each page index */}
           <ul className="flex-col list-none space-y-10">
             <li className="cursor-pointer">{contentLeft}</li>
@@ -90,7 +90,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
         exit="open"
       >
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex items-center justify-center w-full m-[2%] overflow-auto bg-cyan-500">
+        <div className="flex items-center justify-center w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
           {/* This is temporary styling. This will be handled by each page index */}
           <ul className="flex-col list-none space-y-10">
             <li className="cursor-pointer">{contentRight}</li>
