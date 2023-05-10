@@ -36,7 +36,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
 
   return (
     <>
-      {/* <motion.div
+      <motion.div
         id="left-panel"
         className="relative flex w-1/2"
         key={contentLeft ? contentLeft.props.data : null}
@@ -52,7 +52,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
             <li className="cursor-pointer">{contentLeft}</li>
           </ul>
         </div>
-      </motion.div> */}
+      </motion.div>
     </>
   );
 };
@@ -79,7 +79,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
 
   return (
     <>
-      {/* <motion.div
+      <motion.div
         id="left-panel"
         className="relative flex w-1/2 z-0"
         key={contentRight ? contentRight.props.data : null}
@@ -95,7 +95,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
           </ul>
         </div>
         <img src={borderPad} className="" />
-      </motion.div> */}
+      </motion.div>
     </>
   );
 };
