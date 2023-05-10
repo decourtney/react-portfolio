@@ -47,11 +47,8 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       >
         <img src={borderPad} />
         <div className="leftpanel-border absolute w-full h-full left-0 ml-[1%] pointer-events-none"></div>
-        <div className="flex items-center justify-center w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
-          {/* Temporary styling. This will be handled by each page index */}
-          <ul className="flex-col list-none space-y-10">
-            <li className="cursor-pointer">{contentLeft}</li>
-          </ul>
+        <div className="flex w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
+          {contentLeft}
         </div>
       </motion.div>
     </>
@@ -82,7 +79,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
     <>
       <motion.div
         id="left-panel"
-        className="relative flex w-1/2"
+        className="relative flex w-1/2 z-0"
         key={contentRight ? contentRight.props.data : null}
         variants={variants}
         initial="open"
@@ -90,11 +87,8 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
         exit="open"
       >
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex items-center justify-center w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
-          {/* This is temporary styling. This will be handled by each page index */}
-          <ul className="flex-col list-none space-y-10">
-            <li className="cursor-pointer">{contentRight}</li>
-          </ul>
+        <div className="flex w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
+          {contentRight}
         </div>
         <img src={borderPad} className="" />
       </motion.div>
