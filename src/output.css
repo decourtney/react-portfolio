@@ -679,12 +679,17 @@ video {
   z-index: 20;
 }
 
+.m-\[2\%\] {
+  margin: 2%;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
 
-.m-\[2\%\] {
-  margin: 2%;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .-ml-\[1\%\] {
@@ -755,6 +760,10 @@ video {
   margin-top: 5.5%;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .block {
   display: block;
 }
@@ -823,12 +832,6 @@ video {
   width: 8%;
 }
 
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .w-full {
   width: 100%;
 }
@@ -871,6 +874,10 @@ video {
   flex-direction: column;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -879,8 +886,18 @@ video {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .space-y-10 > :not([hidden]) ~ :not([hidden]) {
@@ -893,6 +910,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
 .overflow-auto {
@@ -912,9 +935,14 @@ video {
   background-color: rgb(146 146 146 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#d1d1d1\] {
+.bg-\[\#b6b6b6\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 209 209 / var(--tw-bg-opacity));
+  background-color: rgb(182 182 182 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#c4ca13\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 202 19 / var(--tw-bg-opacity));
 }
 
 .bg-black {
@@ -947,24 +975,14 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-green-400 {
+.bg-orange-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 .bg-orange-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 115 22 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#c4ca13\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(196 202 19 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#b6b6b6\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(182 182 182 / var(--tw-bg-opacity));
 }
 
 .bg-\[radial-gradient\(circle_at_center\2c _var\(--tw-gradient-stops\)\)\] {
