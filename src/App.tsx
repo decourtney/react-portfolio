@@ -12,15 +12,20 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Loading from "./pages/Loading"
 import { AnimatePresence } from "framer-motion";
 
 function App() {
 
   return (
     <Provider store={store}>
-        <Router>      
-          <AnimatedRoutes />
-        </Router>
+      <Router>
+        <AnimatedRoutes />
+        {/* Below if for testing */}
+        {/* <Header />
+          <Loading/>
+          <Footer />       */}
+      </Router>
     </Provider>
   );
 }
