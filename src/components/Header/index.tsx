@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { HTMLAttributes, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Menu from "./Menu";
 
@@ -13,21 +13,40 @@ const Header = () => {
   const location = useLocation();
   const [isHover, setIsHover] = useState(false);
   const [isClick, setIsClick] = useState(false);
+  const buttonGlow = useRef<HTMLDivElement>(null);
 
-  const handleMouseOver = () => {
-    setIsHover(!isHover);
+  const handleMouseEnter = () => {
+    if(!buttonGlow !== null){
+      const ele = buttonGlow.current;
+      ele?.classList.remove("bg-[#929292]", "animate-pulse");
+      ele?.classList.add("bg-[#b6b6b6]");
+    }
   };
+
+  const handleMouseLeave = () =>{
+    if (!buttonGlow !== null) {
+      const ele = buttonGlow.current;
+      ele?.classList.remove("bg-[#b6b6b6]");
+      ele?.classList.add("bg-[#929292]", "animate-pulse");
+    }
+  }
 
   const handleMouseClick = (event: React.MouseEvent) => {
     setIsMenuOpen(!isMenuOpen);
-  };
 
-  const handleMouseDown = () => {
-    setIsClick(!isClick);
-  };
+    if (!buttonGlow !== null) {
+      const ele = buttonGlow.current;
+      ele?.classList.remove("bg-[#929292]" || "bg-[#b6b6b6]", "animate-pulse");
+      ele?.classList.add("blink");
 
-  const handleMouseUp = () => {
-    setIsClick(!isClick);
+      setTimeout(() =>{
+        ele?.classList.remove("blink");
+        ele?.classList.add(
+          "bg-[#929292]" || "bg-[#b6b6b6]",
+          "animate-pulse"
+        );
+      }, 1400)
+    }
   };
 
   return (
@@ -42,50 +61,33 @@ const Header = () => {
             className="absolute w-[5.5%] -top-[23%] right-[8%] z-20"
           />
 
-          {/* <div
-            className="bg-blue-500 z-50"
+          <button
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             onClick={(e) => {
               handleMouseClick(e);
             }}
-            onMouseEnter={handleMouseOver}
-            onMouseLeave={handleMouseOver}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-          > */}
-          <div
-            className={`button-backlit absolute top-[17%] right-[10.5%] w-[1.8%] h-[40%] rounded-full z-20 ${
-              isClick
-                ? "bg-[#c4ca13]"
-                : isHover
-                ? "bg-[#b6b6b6]"
-                : "bg-[#929292] animate-pulse" // #b7b7b7  #42a036
-            }  transition ease-in-out`}
-          />
-          <img
-            src={button}
-            className="absolute w-[2%] top-[10%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.45%]"
-            onClick={(e) => {
-              handleMouseClick(e);
-            }}
-            onMouseEnter={handleMouseOver}
-            onMouseLeave={handleMouseOver}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-          />
+          >
+            <div
+              ref={buttonGlow}
+              className={`button-backlit absolute top-[17%] right-[10.5%] w-[1.8%] h-[40%] rounded-full z-20 transition ease-in-out bg-[#929292] animate-pulse`}
+            />
+            <img
+              src={button}
+              className="absolute w-[2%] top-[10%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.45%]"
+              onClick={(e) => {
+                handleMouseClick(e);
+              }}
+              // onMouseEnter={handleMouseEnter}
+              // onMouseLeave={handleMouseLeave}
+            />
 
-          <AnimatePresence mode="wait">
-            {/* {isMenuOpen && <Menu isMenuOpen={isMenuOpen} />} */}
-            <Menu isMenuOpen={isMenuOpen} />
-          </AnimatePresence>
-          {/* </div> */}
+            <AnimatePresence mode="wait">
+              {/* {isMenuOpen && <Menu isMenuOpen={isMenuOpen} />} */}
+              <Menu isMenuOpen={isMenuOpen} />
+            </AnimatePresence>
+          </button>
         </div>
-
-        {/* <div className=" absolute flex top-[100%] right-[8%] z-10 bg-emerald-500">
-          <p>Menu POS</p>
-          <AnimatePresence mode="wait">
-            {isMenuOpen && <Menu isMenuOpen={isMenuOpen} />}
-          </AnimatePresence>
-        </div> */}
       </nav>
     </header>
   );

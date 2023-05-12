@@ -49,7 +49,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
       rotate: 0,
       transition: {
         type: "spring",
-        duration: .5,
+        duration: 0.5,
         ease: "easeOut",
       },
     },
@@ -57,7 +57,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
 
   return (
     <motion.div
-      className="absolute bottom-[35%] right-[8.2%] w-full z-10"
+      className="absolute bottom-[35%] right-[8.2%] w-full z-10 pointer-events-none"
       key="Menu"
       variants={direction}
       initial="close"
@@ -70,19 +70,12 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
       />
 
       {pages.map((page, index) => {
-        console.log(index)
         return (
           <Link
             key={page}
             to="/"
             state={{ value: page }}
-            className={`absolute bottom-[${
-              17 * (index + 1)
-            }%] -right-[2.5%] w-full ${
-              location.pathname === '/'+page
-                ? "pointer-events-none"
-                : "cursor-pointer"
-            }`}
+            className={`absolute bottom-[${17 * (index + 1)}%] -right-[2.5%] w-full ${location.pathname === "/" + page ? "pointer-events-none" : "cursor-pointer pointer-events-auto" }`}
           >
             <span className="absolute top-0 right-0 bg-green-500 z-50">
               {page}

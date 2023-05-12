@@ -5,7 +5,12 @@ module.exports = {
     "./public/**/*.{js,jsx,ts,tsx,html}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        swiss: ["Swiss Grit", "normal"],
+        swissSymbol: ["Swiss Grit Dingbats"]
+      }
+    },
   },
   plugins: [],
 };
