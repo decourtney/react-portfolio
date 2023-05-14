@@ -30,7 +30,7 @@ const TestRoute = () => {
           />
           <img
             src={panelCog}
-            className="absolute top-[50%] -right-[2.2%] w-[4%] transform -translate-y-[50%]"
+            className="absolute top-[50.2%] -right-[2.2%] w-[4%] transform -translate-y-[50%]"
           />
           <img
             src={loadingPanelRight}

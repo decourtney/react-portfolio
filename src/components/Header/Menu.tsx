@@ -24,7 +24,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
       },
     },
     open: {
-      y: "100%",
+      y: "97%",
       transition: {
         type: "spring",
 

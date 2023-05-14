@@ -9,6 +9,7 @@ import borderLeftImage from "../../images/border_left.svg";
 import borderPad from "../../images/border_pad.png";
 import panelCogBase from "../../images/panel_cog_base.png";
 import panelCog from "../../images/panel_cog.png";
+import panelCogAlt from "../../images/panel_cogALT.png"
 
 
 
@@ -96,7 +97,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
       >
         <img
           src={panelCog}
-          className="absolute top-[50%] -left-[3.7%] w-[8%] transform -translate-y-[50%] z-10"
+          className="absolute top-[50.2%] -left-[3.7%] w-[8%] h-auto transform -translate-y-[50%] z-10"
         />
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
         <div className="flex w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">

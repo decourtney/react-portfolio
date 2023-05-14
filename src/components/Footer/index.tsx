@@ -2,7 +2,6 @@ import React from "react";
 import nameplate from "../../images/nameplate.png"
 
 const Footer = () => {
-  
   return (
     <footer className="footer-bg">
       <div className="relative flex flex-shrink justify-center">
