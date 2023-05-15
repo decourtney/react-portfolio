@@ -8,11 +8,11 @@ const About = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
-    <main className="relative flex flex-grow w-full overflow-auto scrollbar-hide">
+    <>
       <GearBox animationDir={"open"} />
       <LeftPanel contentLeft={<AboutLeft data={"About Me"} />} />
       <RightPanel contentRight={<AboutRight data={"Under Construction"} />} />
-    </main>
+    </>
   );
 };
 

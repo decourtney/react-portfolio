@@ -10,24 +10,26 @@ import { AnimatePresence } from "framer-motion";
 import Loading from "../pages/Loading";
 
 function AnimatedRoutes() {
-    const location = useLocation();
+  const location = useLocation();
 
-    return (
-        <>
-            <Header />
-            <AnimatePresence mode="wait">
-                <Routes key={location.pathname} location={location}>
-                    <Route path='/' element={<Loading />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/projects/:project" element={<Projects />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
-            </AnimatePresence>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <main className="relative flex flex-grow w-full overflow-hidden scrollbar-hide">
+        <AnimatePresence mode="wait">
+          <Routes key={location.pathname} location={location}>
+            <Route path="/" element={<Loading />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:project" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default AnimatedRoutes;

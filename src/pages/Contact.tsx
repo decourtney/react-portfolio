@@ -8,11 +8,11 @@ const Contact = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
-    <main className="relative flex flex-grow w-full overflow-auto scrollbar-hide">
+    <>
       <GearBox animationDir={"open"} />
       <LeftPanel contentLeft={<ContactLeft data={"Contact Me"} />} />
       <RightPanel contentRight={<ContactRight data={"Under Construction"} />} />
-    </main>
+    </>
   );
 };
 

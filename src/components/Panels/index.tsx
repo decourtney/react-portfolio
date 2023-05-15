@@ -100,7 +100,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
           className="absolute top-[50.2%] -left-[3.7%] w-[8%] h-auto transform -translate-y-[50%] z-10"
         />
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%] overflow-auto scrollbar-hide bg-cyan-500">
+        <div className="flex w-full m-[2%] overflow-clipped scrollbar-hide bg-cyan-500">
           {contentRight}
         </div>
         <img src={borderPad} />

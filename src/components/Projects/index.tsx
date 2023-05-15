@@ -37,7 +37,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
     <>
       <div className="flex  w-full">
         <ul className="flex-col list-none space-y-1">
-          {data.map((project) => {
+          {data.map((project, index) => {
             return (
               <li key={project.name} className="cursor-pointer bg-orange-400">
                 <a href={project.url || project.repo} target="_blank">

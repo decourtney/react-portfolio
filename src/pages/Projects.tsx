@@ -13,11 +13,11 @@ const Projects = () => {
   const data = projects;
 
   return (
-    <main className="relative flex flex-grow w-full overflow-auto scrollbar-hide">
-      <GearBox animationDir={"open"} />
-      <LeftPanel contentLeft={<ProjectLeft data={data} />} />
-      <RightPanel contentRight={<ProjectRight data={data} />} />
-    </main>
+    <>
+        <GearBox animationDir={"open"} />
+        <LeftPanel contentLeft={<ProjectLeft data={data} />} />
+        <RightPanel contentRight={<ProjectRight data={data} />} />
+    </>
   );
 };
 

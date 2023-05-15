@@ -1001,6 +1001,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-clip {
+  overflow: clip;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
