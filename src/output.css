@@ -751,6 +751,11 @@ video {
   margin: 2%;
 }
 
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .-ml-\[1\%\] {
   margin-left: -1%;
 }
@@ -819,12 +824,16 @@ video {
   display: flex;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-\[40\%\] {
   height: 40%;
 }
 
-.h-auto {
-  height: auto;
+.h-\[8\%\] {
+  height: 8%;
 }
 
 .h-full {
@@ -987,22 +996,12 @@ video {
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
-.space-y-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
 .overflow-auto {
   overflow: auto;
 }
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-clip {
-  overflow: clip;
 }
 
 .rounded-full {
@@ -1027,6 +1026,11 @@ video {
 .bg-cyan-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity));
+}
+
+.bg-green-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
 
 .bg-green-500 {
@@ -1095,10 +1099,9 @@ video {
 }
 
 body {
-  margin: 0;
-  font-family: "Swiss Grit",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Swiss Grit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1161,29 +1164,29 @@ code {
   /* background-color: #c4ca13; */
   -webkit-animation-name: blink;
           animation-name: blink;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
 
 @-webkit-keyframes blink {
-  0%{
+  0% {
     background-color: #929292;
   }
 
-  100%{
+  100% {
     background-color: #f6ff00;
   }
 }
 
 @keyframes blink {
-  0%{
+  0% {
     background-color: #929292;
   }
 
-  100%{
+  100% {
     background-color: #f6ff00;
   }
 }
@@ -1194,30 +1197,30 @@ code {
   background-color: #010101;
   -webkit-animation-name: loading;
           animation-name: loading;
-  -webkit-animation-duration: .5s;
-          animation-duration: .5s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
 
-@-webkit-keyframes loading{
-  0%{
+@-webkit-keyframes loading {
+  0% {
     background-color: #010101;
   }
 
-  100%{
-    background-color: #FE0101;
+  100% {
+    background-color: #fe0101;
   }
 }
 
-@keyframes loading{
-  0%{
+@keyframes loading {
+  0% {
     background-color: #010101;
   }
 
-  100%{
-    background-color: #FE0101;
+  100% {
+    background-color: #fe0101;
   }
 }
 
@@ -1235,6 +1238,11 @@ code {
 
 .bottom-\[68\%\] {
   bottom: 68%;
+}
+
+.hover\:bg-green-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
 .active\:right-\[10\.45\%\]:active {

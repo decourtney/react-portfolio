@@ -15,7 +15,7 @@ function AnimatedRoutes() {
   return (
     <>
       <Header />
-      <main className="relative flex flex-grow w-full overflow-hidden scrollbar-hide">
+      <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
         <AnimatePresence mode="wait">
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<Loading />} />

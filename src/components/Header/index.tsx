@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="navbar-bg relative w-full h-full bg-black">
+      <nav className="navbar-bg relative w-full h-full overflow-hidden bg-black">
         <div className="loading-backlit absolute top-[25%] left-[45%] pointer-events-none" />
         <img src={loading} className="absolute w-[16%] top-0 left-[44%]" />
 
