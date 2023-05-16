@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
-import { motion, useAnimationControls, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useAnimationControls,
+  AnimatePresence,
+  AnimateSharedLayout,
+} from "framer-motion";
 
 interface Project {
   name?: string;
@@ -13,56 +18,71 @@ interface Project {
   image?: string;
 }
 
+const variants = {
+  enter: (direction: number) => ({
+    y: direction > 0 ? "100%" : "-100%",
+    opacity: 1,
+    // transition: {
+    //   duration: 2,
+    //   ease: "easeInOut",
+    // },
+  }),
+  active: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      // delay: 0.2,
+      // duration: 2,
+      // ease: "easeInOut",
+    },
+  },
+  exit: (direction: number) => ({
+    y: direction > 0 ? "-100%" : "100%",
+    opacity: 1,
+    // transition: {
+    //   duration: 2,
+    //   ease: "easeInOut",
+    // },
+  }),
+};
+
 const ProjectLeft = ({ data }: { data: Project[] }) => {
   const nextIndex = useAppSelector((state) => state.project.nextIndex);
+  const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
 
-  const direction = {
-    up: {
-      y: "-100%",
-      transition: {
-        duration: 2,
-        ease: "easeInOut",
-      },
-    },
-    center: {
-      y: "0%",
-      transition: {
-        duration: 2,
-        ease: "easeInOut",
-      },
-    },
-    down: {
-      y: "100%",
-      transition: {
-        duration: 2,
-        ease: "easeInOut",
-      },
-    },
-  };
+  useEffect(() => {
+    const newDirection = nextIndex - currentPage;
+    setCurrentPage([nextIndex, newDirection]);
+  }, [nextIndex]);
 
   return (
     <>
-      <AnimatePresence initial={false} mode="sync">
-        <motion.div
-          className="flex w-full justify-center items-center -z-10 bg-green-300"
-          key={data[nextIndex].name}
-          variants={direction}
-          initial="up"
-          animate="center"
-          exit="down"
-        >
-          <img
-            src={
-              !data[nextIndex].image
-                ? "images/project-management.jpg"
-                : data[nextIndex].image
-            }
-            alt={data[nextIndex].name}
-            className=""
-            draggable="false"
-          />
-        </motion.div>
-      </AnimatePresence>
+      {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
+      <div className="relative flex items-center w-[100%] mx-auto bg-green-400 ">
+        <AnimatePresence custom={direction} initial={false}>
+          <motion.div
+            key={currentPage}
+            className="absolute"
+            data-page={currentPage}
+            variants={variants}
+            initial="enter"
+            animate="active"
+            exit="exit"
+            custom={direction}
+          >
+            {/* Need to normalize pic sizes for proper animations */}
+            <img
+              src={
+                !data[currentPage].image
+                  ? "images/project-management.jpg"
+                  : data[currentPage].image
+              }
+              alt={data[currentPage].name}
+              draggable="false"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </>
   );
 };
@@ -71,13 +91,15 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
 const ProjectRight = ({ data }: { data: Project[] }) => {
   const dispatch = useAppDispatch();
 
+  const handleMouseClick = () => {};
+
   const handleMouseEnter = (index: number) => {
     dispatch(setNextIndex(index));
   };
   return (
     <>
-      <div className="flex  w-full">
-        <ul className="flex-col list-none space-y-1">
+      <div className="flex w-full justify-end">
+        <ul className="flex-col list-none space-y-10">
           {data.map((project, index) => {
             return (
               <li key={project.name} className="cursor-pointer bg-orange-400">

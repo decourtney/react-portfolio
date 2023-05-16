@@ -11,7 +11,7 @@
         ],
         "url": "https://polar-plateau-51344.herokuapp.com/",
         "repo": "https://github.com/decourtney/tech-messages",
-        "image": "./images/techmessages.png"
+        "image": "images/proj1.png"
     },
     {
         "name": "Employee Tracker",
@@ -25,7 +25,7 @@
         ],
         "url": "",
         "repo": "https://github.com/decourtney/employee-tracker",
-        "image": ""
+        "image": "images/proj2.png"
     },
     {
         "name": "Weather Ornought",
@@ -37,7 +37,7 @@
         ],
         "url": "https://decourtney.github.io/weather-ornought/",
         "repo": "https://github.com/decourtney/weather-ornought",
-        "image": "images/weatherornought.png"
+        "image": "images/proj3.png"
     },
     {
         "name": "Coding Kombat Quiz",
@@ -50,7 +50,7 @@
         ],
         "url": "https://decourtney.github.io/coding-kombat-quiz/",
         "repo": "https://github.com/decourtney/coding-kombat-quiz",
-        "image": "images/codingkombat.png"
+        "image": "images/proj4.png"
     },
     {
         "name": "Project 5",
@@ -59,7 +59,7 @@
         "tags": [],
         "url": "",
         "repo": "",
-        "image": ""
+        "image": "images/proj5.png"
     },
     {
         "name": "Project 6",
@@ -68,6 +68,6 @@
         "tags": [],
         "url": "",
         "repo": "",
-        "image": ""
+        "image": "images/proj6.png"
     }
 ]
