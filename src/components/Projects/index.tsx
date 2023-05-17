@@ -115,6 +115,31 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
             );
           })}
         </ul>
+        <div className="absolute top-[50%] left-0 transform -translate-y-[50%] -translate-x-[50%] w-[75%] h-[75%] z-50 bg-red-300">
+          <div className="holo flex-col justify-center p-[5%]">
+            <h1 className="text-center text-5xl pb-[5%]">Lorem ipsum</h1>
+            <p className="text-xl pb-[5%]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tristique commodo nibh. In luctus suscipit mauris at dictum.
+              Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit
+              lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis
+              pellentesque, velit tortor sollicitudin neque, nec condimentum
+              risus orci a orci. Sed quis nisi elit. In hac habitasse platea
+              dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed
+              feugiat sodales lobortis. Cras et urna quam.
+            </p>
+            <p className="text-xl pb-[5%]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tristique commodo nibh. In luctus suscipit mauris at dictum.
+              Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit
+              lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis
+              pellentesque, velit tortor sollicitudin neque, nec condimentum
+              risus orci a orci. Sed quis nisi elit. In hac habitasse platea
+              dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed
+              feugiat sodales lobortis. Cras et urna quam.
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

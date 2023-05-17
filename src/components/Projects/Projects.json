@@ -1,73 +1,60 @@
 [
-    {
-        "name": "Tech Messages",
-        "date": "March 2023",
-        "description": "Tech Messages is a simplistic forum application that allows you to share thoughts and comments with a like minded community. The app utilizes Sequelize for database queries, Express for routing and API requests, and Handlebars for HTML templating. Initially, I thought Handlebars was as a basic templating tool with limited dynamic page creation capabilities. However, with further exploration, it has revealed more techniques for creating dynamic pages, leading to several code refactoring instances. ",
-        "tags": [
-            "MySQL",
-            "Express",
-            "Handlebars",
-            "Node"
-        ],
-        "url": "https://polar-plateau-51344.herokuapp.com/",
-        "repo": "https://github.com/decourtney/tech-messages",
-        "image": "images/proj1.png"
+  {
+    "name": "Tech Messages",
+    "date": "March 2023",
+    "description": "Tech Messages is a simplistic forum application that allows you to share thoughts and comments with a like minded community. The app utilizes Sequelize for database queries, Express for routing and API requests, and Handlebars for HTML templating. Initially, I thought Handlebars was as a basic templating tool with limited dynamic page creation capabilities. However, with further exploration, it has revealed more techniques for creating dynamic pages, leading to several code refactoring instances. ",
+    "tags": ["MySQL", "Express", "Handlebars", "Node"],
+    "url": "https://polar-plateau-51344.herokuapp.com/",
+    "repo": "https://github.com/decourtney/tech-messages",
+    "image": "images/proj1.png"
+  },
+  {
+    "name": "Employee Tracker",
+    "date": "February 2023",
+    "description": "Workforce Tracker allows you to keep track of Departments, Roles, and the Employees that populate those departments. The Tracker supports viewing each table with some filters applied and modifying the database by creating, updating and deleting records from each table. The primary goal of this project was to use Inquirer to prompt a user for input and manipulate the SQL DB based on selections. Upon selection to view specific data the columns and rows will be displayed using Console-table-printer for a more readable format on command-line. All SQL queries are constructed in a JS module and passed to either the terminal or via Insomnia via HTML request methods.",
+    "tags": ["MySQL", "Express", "Inquirer", "Node"],
+    "url": "",
+    "repo": "https://github.com/decourtney/employee-tracker",
+    "image": "images/proj2.png"
+  },
+  {
+    "name": "Weather Ornought",
+    "date": "January 2023",
+    "description": "Weather Ornought is a simple weather app that provides current weather data and a 5 day forecast for a searched location. The app also saves up to 5 recent searches for easy weather retreival. Currently, the site will only search for U.S. cities and states. The purpose of this project was to apply my understanding of JQuery, Bootstrap, and making API calls. So, most of the design and html elements are programmatically built and updated via the JS script. Bootstrap is utilized in the HTML doc and JS script and the Openweathermap API is used to query for weather data.",
+    "tags": ["JQuery", "Bootstrap"],
+    "url": "https://decourtney.github.io/weather-ornought/",
+    "repo": "https://github.com/decourtney/weather-ornought",
+    "image": "images/proj3.png"
+  },
+  {
+    "name": "Coding Kombat Quiz",
+    "date": "December 2023",
+    "description": "The objective of this project was to develop a timed quiz using advanced Javascript techniques to dynamically manipulate HTML elements. I aimed to enhance the user experience by incorporating visually appealing features such as an HTML canvas and animated spritesheets that respond to the user's selected answers. While the combat aspect of the quiz is purely aesthetic and does not affect the user's score, it serves to engage the user and adds an extra layer of interactivity.",
+    "tags": ["JS", "HTML", "CSS"],
+    "url": "https://decourtney.github.io/coding-kombat-quiz/",
+    "repo": "https://github.com/decourtney/coding-kombat-quiz",
+    "image": "images/proj4.png"
+  },
+  {
+    "name": "Project 5",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "url": "",
+    "repo": "",
+    "image": "images/proj5.png"
+  },
+  {
+    "name": "Project 6",
+    "date": "",
+    "description": {
+      "title": "Lorem ipsum",
+      "pOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam.",
+      "pTwo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam."
     },
-    {
-        "name": "Employee Tracker",
-        "date": "February 2023",
-        "description": "Workforce Tracker allows you to keep track of Departments, Roles, and the Employees that populate those departments. The Tracker supports viewing each table with some filters applied and modifying the database by creating, updating and deleting records from each table. The primary goal of this project was to use Inquirer to prompt a user for input and manipulate the SQL DB based on selections. Upon selection to view specific data the columns and rows will be displayed using Console-table-printer for a more readable format on command-line. All SQL queries are constructed in a JS module and passed to either the terminal or via Insomnia via HTML request methods.",
-        "tags": [
-            "MySQL",
-            "Express",
-            "Inquirer",
-            "Node"
-        ],
-        "url": "",
-        "repo": "https://github.com/decourtney/employee-tracker",
-        "image": "images/proj2.png"
-    },
-    {
-        "name": "Weather Ornought",
-        "date": "January 2023",
-        "description": "Weather Ornought is a simple weather app that provides current weather data and a 5 day forecast for a searched location. The app also saves up to 5 recent searches for easy weather retreival. Currently, the site will only search for U.S. cities and states. The purpose of this project was to apply my understanding of JQuery, Bootstrap, and making API calls. So, most of the design and html elements are programmatically built and updated via the JS script. Bootstrap is utilized in the HTML doc and JS script and the Openweathermap API is used to query for weather data.",
-        "tags": [
-            "JQuery",
-            "Bootstrap"
-        ],
-        "url": "https://decourtney.github.io/weather-ornought/",
-        "repo": "https://github.com/decourtney/weather-ornought",
-        "image": "images/proj3.png"
-    },
-    {
-        "name": "Coding Kombat Quiz",
-        "date": "December 2023",
-        "description": "The objective of this project was to develop a timed quiz using advanced Javascript techniques to dynamically manipulate HTML elements. I aimed to enhance the user experience by incorporating visually appealing features such as an HTML canvas and animated spritesheets that respond to the user's selected answers. While the combat aspect of the quiz is purely aesthetic and does not affect the user's score, it serves to engage the user and adds an extra layer of interactivity.",
-        "tags": [
-            "JS",
-            "HTML",
-            "CSS"
-        ],
-        "url": "https://decourtney.github.io/coding-kombat-quiz/",
-        "repo": "https://github.com/decourtney/coding-kombat-quiz",
-        "image": "images/proj4.png"
-    },
-    {
-        "name": "Project 5",
-        "date": "",
-        "description": "",
-        "tags": [],
-        "url": "",
-        "repo": "",
-        "image": "images/proj5.png"
-    },
-    {
-        "name": "Project 6",
-        "date": "",
-        "description": "",
-        "tags": [],
-        "url": "",
-        "repo": "",
-        "image": "images/proj6.png"
-    }
+    "tags": [],
+    "url": "",
+    "repo": "",
+    "image": "images/proj6.png"
+  }
 ]
