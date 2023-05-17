@@ -10,7 +10,7 @@ const HomeLeft = ({data}: HomeProps) => {
   return (
     <>
       <div>
-        <p className="text-6xl">{data}</p>
+        <p className="font-swiss text-6xl">{data} &copy; &reg; {Date()}</p>
       </div>
     </>
   );

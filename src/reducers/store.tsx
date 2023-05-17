@@ -1,7 +1,7 @@
-import panelSlice from "./panelSlice";
-import {configureStore} from '@reduxjs/toolkit'
+import projectSlice from "./projectSlice";
+import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({ reducer: { panel: panelSlice } });
+const store = configureStore({ reducer: { project: projectSlice } });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

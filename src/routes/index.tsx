@@ -7,27 +7,29 @@ import About from "../pages/About";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { AnimatePresence } from "framer-motion";
-import TestRoute from "../pages/testRoute";
+import Loading from "../pages/Loading";
 
 function AnimatedRoutes() {
-    const location = useLocation();
+  const location = useLocation();
 
-    return (
-        <>
-            <Header />
-            <AnimatePresence mode="wait">
-                <Routes key={location.pathname} location={location}>
-                    <Route path='/' element={<TestRoute />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/projects/:project" element={<Projects />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
-            </AnimatePresence>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
+        <AnimatePresence mode="wait">
+          <Routes key={location.pathname} location={location}>
+            <Route path="/" element={<Loading />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:project" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default AnimatedRoutes;
