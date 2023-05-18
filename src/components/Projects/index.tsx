@@ -115,8 +115,8 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
             );
           })}
         </ul>
-        <div className="absolute top-[50%] left-0 transform -translate-y-[50%] -translate-x-[50%] w-[100%] h-[75%] z-50 bg-slate-800">
-          <motion.div className="holo flex-col m-[2%] text-cyan-200 overflow-hidden">
+        <div className="fadinglight absolute top-1/2 left-0 flex justify-center items-center w-fit h-fit z-50 transform -translate-y-[50%] -translate-x-[50%] bg-cyan-50 rounded-full">
+          <motion.div className="holo flex-col w-full h-fit p-[5%] text-cyan-400 overflow-hidden">
             <h1 className="text-center text-7xl pb-[2%]">Lorem ipsum</h1>
             <p className="text-3xl pb-[2%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
@@ -128,7 +128,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
               dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed
               feugiat sodales lobortis. Cras et urna quam.
             </p>
-            {/* <p className="text-xl">
+            {/* <p className="text-3xl pb-[2%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
               tristique commodo nibh. In luctus suscipit mauris at dictum.
               Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit

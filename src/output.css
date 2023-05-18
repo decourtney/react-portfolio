@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -435,6 +435,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -482,6 +485,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -529,6 +535,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -672,6 +681,10 @@ video {
 
 .top-0 {
   top: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .top-\[0\%\] {
@@ -819,12 +832,14 @@ video {
   height: 40%;
 }
 
-.h-\[75\%\] {
-  height: 75%;
-}
-
 .h-\[8\%\] {
   height: 8%;
+}
+
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .h-full {
@@ -833,6 +848,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .max-h-screen {
@@ -905,6 +924,12 @@ video {
 
 .w-\[8\.5\%\] {
   width: 8.5%;
+}
+
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full {
@@ -1007,6 +1032,18 @@ video {
   border-radius: 9999px;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-\[100px\] {
+  border-width: 100px;
+}
+
+.border-\[\] {
+  border-color: ;
+}
+
 .bg-\[\#929292\] {
   --tw-bg-opacity: 1;
   background-color: rgb(146 146 146 / var(--tw-bg-opacity));
@@ -1020,6 +1057,11 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-cyan-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 254 255 / var(--tw-bg-opacity));
 }
 
 .bg-cyan-500 {
@@ -1042,26 +1084,22 @@ video {
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
 .bg-\[radial-gradient\(circle_at_center\2c _var\(--tw-gradient-stops\)\)\] {
   background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
 }
 
 .from-transparent {
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-black {
   --tw-gradient-to: #000 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
+}
+
+.p-\[5\%\] {
+  padding: 5%;
 }
 
 .pb-\[2\%\] {
@@ -1095,14 +1133,9 @@ video {
   line-height: 1;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-cyan-200 {
+.text-cyan-400 {
   --tw-text-opacity: 1;
-  color: rgb(165 243 252 / var(--tw-text-opacity));
+  color: rgb(34 211 238 / var(--tw-text-opacity));
 }
 
 .transition {
@@ -1270,52 +1303,94 @@ code {
   bottom: 68%;
 }
 
-.holo{
-  --c: #ffffffa0;
-  /* color: #1dd3b01a; */
-  text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 3px var(--c), 8px 8px 10px var(--c);
+.fadinglight {
+  -webkit-mask-image: radial-gradient(circle at center, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 100% 0%, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 0% 100%, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 0% 0%, rgb(34, 211, 238) 0%, transparent 45%);
+          mask-image: radial-gradient(circle at center, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 100% 0%, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 0% 100%, rgb(34, 211, 238) 0%, transparent 45%),
+    radial-gradient(circle at 0% 0%, rgb(34, 211, 238) 0%, transparent 45%);
+  /* mask-image: radial-gradient(circle at 50%, #85f5ff 5%, transparent 50%);
+  mask-image: radial-gradient(circle at 100% 0%, #85f5ff 5%, transparent 50%); */
+  /* mask-image: radial-gradient(circle,transparent 10%, #85f5ff); */
+  /* animation: flicker 5s infinite ease-in-out;  */
+}
+
+.holo {
+  --c: #000000a0;
+  /* color: #9df4fffb; */
+  /* text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 3px var(--c),
+    8px 8px 10px var(--c); */
+  /* color: #47f3ff; */
+  text-shadow: 1px 1px 1px var(--c);
+  /* mask-image: radial-gradient(circle, transparent 100%, black 10%); */
   -webkit-transform: skew(-1deg, 1deg);
           transform: skew(-1deg, 1deg);
-  opacity: 0.8;
-  -webkit-animation: ani1 5s infinite ease-in-out alternate;
-          animation: ani1 5s infinite ease-in-out alternate;
-  -webkit-animation: ani2 5s infinite ease-in-out;
-          animation: ani2 5s infinite ease-in-out;
+  opacity: 1;
+}
+
+/* .holo {
+  animation: ani1 5s infinite ease-in-out alternate;
+} */
+
+.flicker {
+  -webkit-animation: flicker 5s infinite ease-in-out;
+          animation: flicker 5s infinite ease-in-out;
 }
 
 @-webkit-keyframes ani1 {
-  10%, 20%, 40%, 60%{
-    text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 4px var(--c), 8px 8px 20px var(--c);
+  10%,
+  20%,
+  40%,
+  60% {
+    text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 4px var(--c),
+      8px 8px 20px var(--c);
     -webkit-transform: skew(-1deg, 1deg);
             transform: skew(-1deg, 1deg);
   }
 }
 
 @keyframes ani1 {
-  10%, 20%, 40%, 60%{
-    text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 4px var(--c), 8px 8px 20px var(--c);
+  10%,
+  20%,
+  40%,
+  60% {
+    text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 4px var(--c),
+      8px 8px 20px var(--c);
     -webkit-transform: skew(-1deg, 1deg);
             transform: skew(-1deg, 1deg);
   }
 }
 
-@-webkit-keyframes ani2 {
-  20%, 50%, 90%{
+@-webkit-keyframes flicker {
+  20%,
+  50%,
+  90% {
     opacity: 0.7;
   }
 
-  32%, 65%, 83%{
-    opacity: .9;
+  32%,
+  65%,
+  83% {
+    opacity: 0.9;
   }
 }
 
-@keyframes ani2 {
-  20%, 50%, 90%{
+@keyframes flicker {
+  20%,
+  50%,
+  90% {
     opacity: 0.7;
   }
 
-  32%, 65%, 83%{
-    opacity: .9;
+  32%,
+  65%,
+  83% {
+    opacity: 0.9;
   }
 }
 
