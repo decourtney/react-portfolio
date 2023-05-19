@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate, useFetcher } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
 import {
@@ -7,9 +8,11 @@ import {
   AnimatePresence,
   AnimateSharedLayout,
 } from "framer-motion";
+import ProjectDetails from "./Project";
+import projBorder from "../../images/proj_border.png";
 
 interface Project {
-  name?: string;
+  name: string;
   date?: string;
   description?: string;
   tags?: string[];
@@ -18,7 +21,7 @@ interface Project {
   image?: string;
 }
 
-const variants = {
+const carouselVariants = {
   enter: (direction: number) => ({
     y: direction > 0 ? "100%" : "-100%",
     opacity: 1,
@@ -64,7 +67,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             key={currentPage}
             className="absolute"
             data-page={currentPage}
-            variants={variants}
+            variants={carouselVariants}
             initial="enter"
             animate="active"
             exit="exit"
@@ -90,12 +93,31 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
 // Need to make the list of projects and ul/li
 const ProjectRight = ({ data }: { data: Project[] }) => {
   const dispatch = useAppDispatch();
+  const [isDetails, setIsDetails] = useState(false);
 
-  const handleMouseClick = () => {};
+  // const handleDetails = () => {
+  //   setIsDetails(!isDetails);
+  //   !isDetails ? setIsDetails(true) : 
+  // };
 
   const handleMouseEnter = (index: number) => {
     dispatch(setNextIndex(index));
   };
+
+  // Listen
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.code === "Escape") {
+        if (isDetails) setIsDetails(false)
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
   return (
     <>
       <div className="flex w-full justify-end">
@@ -103,43 +125,25 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
           {data.map((project, index) => {
             return (
               <li key={project.name} className="cursor-pointer bg-orange-400">
-                <a href={project.url || project.repo} target="_blank">
-                  <p
-                    className="text-6xl hover:bg-green-400"
-                    onMouseEnter={() => handleMouseEnter(index)}
-                  >
-                    <span>{project.name}</span>
-                  </p>
-                </a>
+                <p
+                  className="text-6xl hover:bg-green-400"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onClick={() => {setIsDetails(true)}}
+                >
+                  <span>{project.name}</span>
+                </p>
               </li>
             );
           })}
         </ul>
-        <div className="fadinglight absolute top-1/2 left-0 flex justify-center items-center w-fit h-fit z-50 transform -translate-y-[50%] -translate-x-[50%] bg-cyan-50 rounded-full">
-          <motion.div className="holo flex-col w-full h-fit p-[5%] text-cyan-400 overflow-hidden">
-            <h1 className="text-center text-7xl pb-[2%]">Lorem ipsum</h1>
-            <p className="text-3xl pb-[2%]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              tristique commodo nibh. In luctus suscipit mauris at dictum.
-              Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit
-              lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis
-              pellentesque, velit tortor sollicitudin neque, nec condimentum
-              risus orci a orci. Sed quis nisi elit. In hac habitasse platea
-              dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed
-              feugiat sodales lobortis. Cras et urna quam.
-            </p>
-            {/* <p className="text-3xl pb-[2%]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              tristique commodo nibh. In luctus suscipit mauris at dictum.
-              Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit
-              lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis
-              pellentesque, velit tortor sollicitudin neque, nec condimentum
-              risus orci a orci. Sed quis nisi elit. In hac habitasse platea
-              dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed
-              feugiat sodales lobortis. Cras et urna quam.
-            </p> */}
-          </motion.div>
-        </div>
+
+        {isDetails ? (
+          <div
+            className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px]"
+            onClick={() => {setIsDetails(false)}}
+          />
+        ) : null}
+        {isDetails ? <ProjectDetails /> : null}
       </div>
     </>
   );

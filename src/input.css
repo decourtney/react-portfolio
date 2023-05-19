@@ -35,19 +35,15 @@ code {
 }
 
 .leftpanel-border {
-  /* border: 1rem solid transparent; */
   border-image-source: url(./images/border_left.png);
   border-image-width: 100%;
   border-image-slice: 50%;
-  /* border-width: 100px; */
 }
 
 .rightpanel-border {
-  /* border: 1rem solid transparent; */
   border-image-source: url(./images/border_right.png);
   border-image-width: 100%;
   border-image-slice: 50%;
-  /* border-width: 100px; */
 }
 
 .navbar-bg {
@@ -56,7 +52,6 @@ code {
   background-size: cover;
   border: none;
   width: 100%;
-  /* height: 0; */
   padding-top: 2.9%;
 }
 
@@ -70,7 +65,6 @@ code {
 }
 
 .blink {
-  /* background-color: #c4ca13; */
   animation-name: blink;
   animation-duration: 0.2s;
   animation-iteration-count: infinite;
@@ -118,64 +112,73 @@ code {
   bottom: 68%;
 }
 
-.fadinglight {
-  mask-image: radial-gradient(circle at center, rgb(34, 211, 238) 0%, transparent 45%),
-    radial-gradient(circle at 100% 0%, rgb(34, 211, 238) 0%, transparent 45%),
-    radial-gradient(circle at 100% 100%, rgb(34, 211, 238) 0%, transparent 45%),
-    radial-gradient(circle at 0% 100%, rgb(34, 211, 238) 0%, transparent 45%),
-    radial-gradient(circle at 0% 0%, rgb(34, 211, 238) 0%, transparent 45%);
-
-  
-  /* mask-image: radial-gradient(circle at 50%, #85f5ff 5%, transparent 50%);
-  mask-image: radial-gradient(circle at 100% 0%, #85f5ff 5%, transparent 50%); */
-
-  /* mask-image: radial-gradient(circle,transparent 10%, #85f5ff); */
-  /* animation: flicker 5s infinite ease-in-out;  */
+.details-border {
+  border-image-source: url(./images/proj_border.png);
+  border-image-width: 100%;
+  border-image-slice: 50%;
 }
 
-.holo {
-  --c: #000000a0;
-  /* color: #9df4fffb; */
-  /* text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 3px var(--c),
-    8px 8px 10px var(--c); */
-  /* color: #47f3ff; */
+.details-lighting {
+    --c: #ffffff;
+  text-shadow: 0px 0px 1px var(--c), 0px 0px 5px var(--c);
+  background-image: radial-gradient(circle at center, #00e1ff, transparent 20%),
+    radial-gradient(circle at 100% 0%, #00e1ff, transparent 20%),
+    radial-gradient(circle at 100% 100%, #00e1ff, transparent 20%),
+    radial-gradient(circle at 0% 100%, #00e1ff, transparent 20%),
+    radial-gradient(circle at 0% 0%, #00e1ff, transparent 20%);
+  mask-image: radial-gradient(circle at center, #000000 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%),
+    radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
+  backdrop-filter: blur(20px);
 
-  text-shadow: 1px 1px 1px var(--c);
-
-  /* mask-image: radial-gradient(circle, transparent 100%, black 10%); */
-
-  transform: skew(-1deg, 1deg);
-  opacity: 1;
+  animation: glitch1 10s infinite;
 }
 
-/* .holo {
-  animation: ani1 5s infinite ease-in-out alternate;
-} */
-
-.flicker {
-  animation: flicker 5s infinite ease-in-out;
+.details-text {
+  --c: #ffffff;
+  text-shadow: 0px 0px 10px var(--c);
 }
 
-@keyframes ani1 {
-  10%,
-  20%,
-  40%,
-  60% {
-    text-shadow: 1px 1px var(--c), 2px 2px var(--c), 3px 4px var(--c),
-      8px 8px 20px var(--c);
-    transform: skew(-1deg, 1deg);
+@keyframes glitch1 {
+  0% {
+    opacity: 1;
   }
-}
-
-@keyframes flicker {
-  20%,
-  50%,
-  90% {
-    opacity: 0.7;
+  7% {
+    opacity: 0.75;
   }
-  32%,
-  65%,
-  83% {
-    opacity: 0.9;
+  10% {
+    opacity: 1;
+  }
+  27% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.75;
+  }
+  35% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }

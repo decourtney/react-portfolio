@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link,
-  useLocation,
+  useLocation
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
@@ -24,9 +24,9 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router >
         <AnimatedRoutes />
-        {/* Below if for testing */}
+        {/* Below is for testing */}
         {/* <Header />
           <Loading/>
           <Footer />       */}
