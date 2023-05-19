@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import GearBox from "../components/GearBox/GearBox";
 import { HomeLeft, HomeRight } from "../components/Home";
-import testimg from "../images/panel_cog_base.png";
 
 const Home = () => {
   const location = useLocation();

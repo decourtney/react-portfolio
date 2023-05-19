@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import { setIsLoading } from "../../reducers/projectSlice";
 import { motion, stagger, useAnimation, useAnimate } from "framer-motion";
 
 import menu_pole from "../../images/menu_pole.png";
@@ -10,8 +12,10 @@ type MenuProps = {
 };
 
 const Menu = ({ isMenuOpen }: MenuProps) => {
+  const isLoading = useAppSelector((state) => state.project.isLoading);
   const location = useLocation();
   const pages = ["contact", "about", "projects", "home"];
+  const dispatch = useAppDispatch();
 
   const direction = {
     close: {
@@ -55,13 +59,16 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
     },
   };
 
+  {
+    /* Currently checking isLoading for panel animation completion before enabling 'to' prop. However still doesnt work - spam clicking routes breaks the routes */
+  }
   return (
     <motion.div
-      className="absolute bottom-[35%] right-[8.2%] w-full z-10 pointer-events-none"
+      className="absolute bottom-[35%] right-[8.2%] w-full z-10 pointer-events-none drop-shadow-2xl"
       key="Menu"
       variants={direction}
       initial="close"
-      animate={isMenuOpen ? "open" : "close"}
+      animate={isMenuOpen && !isLoading ? "open" : "close"}
       exit="close"
     >
       <img
@@ -72,10 +79,18 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
       {pages.map((page, index) => {
         return (
           <Link
+            // style={{ pointerEvents: "none" }}
+            onClick={() => dispatch(setIsLoading(true))}
             key={page}
             to="/"
             state={{ value: page }}
-            className={`absolute bottom-[${17 * (index + 1)}%] -right-[2.5%] w-full ${location.pathname === "/" + page ? "pointer-events-none" : "cursor-pointer pointer-events-auto" }`}
+            className={`absolute bottom-[${
+              17 * (index + 1)
+            }%] -right-[2.5%] w-full ${
+              location.pathname === "/" + page
+                ? "pointer-events-none"
+                : "cursor-pointer pointer-events-auto"
+            }`}
           >
             <span className="absolute top-0 right-0 bg-green-500 z-50">
               {page}

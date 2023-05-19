@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../pages/Home";
 import Projects from "../pages/Projects";
-import ProjectDetails from "../components/Projects/Project";
 import Contact from "../pages/Contact";
 import About from "../pages/About";
 import Header from "../components/Header";
@@ -21,9 +20,7 @@ function AnimatedRoutes() {
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<Loading />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/projects" element={<Projects />}>
-              {/* <Route path="/projects/:project" element={<Projects />}/> */}
-            </Route>
+            <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="*" element={<Home />}/> */}{/*Need to make a 404 not found page here*/}
