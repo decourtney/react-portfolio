@@ -18,38 +18,53 @@ const ContactLeft = ({ data }: ContactProps) => {
 };
 
 const ContactRight = ({ data }: ContactProps) => {
-  const form = React.useRef<HTMLFormElement>(null);
+  // const form = React.useRef<HTMLFormElement>('');
 
-  const sendEmail = (e: React.FormEvent) => {
+  const sendEmail = (e: any) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
         "contact_service",
         "contact_form",
+        e.target,
         "WiUmD3gJ4iafdCR1R"
       )
       .then(
         (result) => {
           console.log(result.text);
+          // e.target.reset();
         },
         (error) => {
           console.log(error.text);
         }
       );
+    e.target.reset();
   };
 
   return (
     <>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
-      </form>
+      <div className="flex w-full justify-center items-center bg-green-400">
+        <form className="flex-col space-y-5 bg-pink-300" onSubmit={sendEmail}>
+          <div>
+            <input type="text" name="user_name" placeholder="Name" required />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div>
+            <textarea name="message" placeholder="Message" required />
+          </div>
+          <div>
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </div>
     </>
   );
 };
