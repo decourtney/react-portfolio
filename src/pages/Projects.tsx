@@ -5,6 +5,7 @@ import { LeftPanel, RightPanel } from "../components/Panels";
 import { ProjectLeft, ProjectRight } from "../components/Projects";
 
 const Projects = () => {
+  // Pull project data from local JSON file for now
   const projects = JSON.parse(JSON.stringify(projectsData))
 
   return (

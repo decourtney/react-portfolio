@@ -10,10 +10,10 @@ import ProjectDetails from "./Project";
 interface Project {
   name: string;
   date?: string;
-  description?: string;
+  description: string[];
   tags?: string[];
   url?: string;
-  repo?: string;
+  repo: string;
   image?: string;
 }
 
@@ -89,7 +89,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
 // Need to make the list of projects and ul/li
 const ProjectRight = ({ data }: { data: Project[] }) => {
   const dispatch = useAppDispatch();
-  const [isDetails, setIsDetails] = useState(false);
+  const [isDetails, setIsDetails] = useState({ check: false, index: -1 });
 
   const handleMouseEnter = (index: number) => {
     dispatch(setNextIndex(index));
@@ -100,7 +100,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        setIsDetails(false);
+        setIsDetails({ ...isDetails, check: false });
       }
     };
     document.addEventListener("keydown", handleEsc);
@@ -121,24 +121,24 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                   className="text-6xl hover:bg-green-400"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onClick={() => {
-                    setIsDetails(true);
+                    setIsDetails({ ...isDetails, check: true, index: index });
                   }}
                 >
                   <span>{project.name}</span>
                 </p>
               </li>
-            );
+            )
           })}
         </ul>
-        {isDetails && (
+        {isDetails.check && (
           <>
             <div
               className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px]"
               onClick={() => {
-                setIsDetails(false);
+                setIsDetails({ ...isDetails, check: false, index: -1 });
               }}
             />
-            <ProjectDetails />
+            <ProjectDetails  data={data[isDetails.index]} />
           </>
         )}
       </div>
