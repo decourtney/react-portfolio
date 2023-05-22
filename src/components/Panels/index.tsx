@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, useAnimationControls, AnimatePresence } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
+import { setIsLoading } from "../../reducers/projectSlice";
 import { current } from "@reduxjs/toolkit";
 import borderRightImage from "../../images/border_right.svg";
 import borderLeftImage from "../../images/border_left.svg";
@@ -9,7 +10,6 @@ import borderPad from "../../images/border_pad.png";
 import panelCogBase from "../../images/panel_cog_base.png";
 import panelCog from "../../images/panel_cog.png";
 import panelCogAlt from "../../images/panel_cogALT.png";
-
 
 type LeftPanelProps = {
   contentLeft: React.ReactElement;
@@ -20,6 +20,8 @@ type RightPanelProps = {
 };
 
 const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
+  const dispatch = useAppDispatch();
+
   const direction = {
     close: {
       x: "0%",
@@ -37,6 +39,12 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
     },
   };
 
+  // Currently this prevents the menu from dropping down until this panel has finished the close animation.
+  // For now this is the easiest fix to prevent breaking the routes from spam clicking page links
+  const handleAnimationComplete = (variant: any) => {
+    if(variant === 'close') dispatch(setIsLoading(false))
+  };
+
   return (
     <>
       <motion.div
@@ -47,6 +55,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
         initial="open"
         animate="close"
         exit="open"
+        onAnimationComplete={(variant) => handleAnimationComplete(variant)}
       >
         <img src={borderPad} />
         <img
@@ -61,8 +70,6 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
     </>
   );
 };
-
-// export default LeftPanel; // Shouldnt need this but leaving here just in case something breaks
 
 const RightPanel = ({ contentRight }: RightPanelProps) => {
   const variants = {

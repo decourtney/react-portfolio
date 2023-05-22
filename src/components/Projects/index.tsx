@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate, useFetcher } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
 import {
   motion,
-  useAnimationControls,
   AnimatePresence,
-  AnimateSharedLayout,
 } from "framer-motion";
 import ProjectDetails from "./Project";
-import projBorder from "../../images/proj_border.png";
 
 interface Project {
   name: string;
@@ -77,7 +73,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             <img
               src={
                 !data[currentPage].image
-                  ? "images/project-management.jpg"
+                  ? "/images/project-management.jpg"
                   : data[currentPage].image
               }
               alt={data[currentPage].name}
@@ -95,26 +91,22 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   const dispatch = useAppDispatch();
   const [isDetails, setIsDetails] = useState(false);
 
-  // const handleDetails = () => {
-  //   setIsDetails(!isDetails);
-  //   !isDetails ? setIsDetails(true) : 
-  // };
-
   const handleMouseEnter = (index: number) => {
     dispatch(setNextIndex(index));
   };
 
-  // Listen
+  // Listen for ESC key press
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
-      if (event.code === "Escape") {
-        if (isDetails) setIsDetails(false)
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsDetails(false);
       }
     };
-    window.addEventListener("keydown", handleEsc);
+    document.addEventListener("keydown", handleEsc);
 
     return () => {
-      window.removeEventListener("keydown", handleEsc);
+      document.removeEventListener("keydown", handleEsc);
     };
   }, []);
 
@@ -128,7 +120,9 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                 <p
                   className="text-6xl hover:bg-green-400"
                   onMouseEnter={() => handleMouseEnter(index)}
-                  onClick={() => {setIsDetails(true)}}
+                  onClick={() => {
+                    setIsDetails(true);
+                  }}
                 >
                   <span>{project.name}</span>
                 </p>
@@ -136,14 +130,17 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
             );
           })}
         </ul>
-
-        {isDetails ? (
-          <div
-            className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px]"
-            onClick={() => {setIsDetails(false)}}
-          />
-        ) : null}
-        {isDetails ? <ProjectDetails /> : null}
+        {isDetails && (
+          <>
+            <div
+              className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px]"
+              onClick={() => {
+                setIsDetails(false);
+              }}
+            />
+            <ProjectDetails />
+          </>
+        )}
       </div>
     </>
   );

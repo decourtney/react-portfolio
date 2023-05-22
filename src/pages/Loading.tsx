@@ -7,13 +7,17 @@ import loadingPanelLeft from "../images/loading_panel_left.png";
 import loadingPanelRight from "../images/loading_panel_right.png";
 import panelCog from "../images/panel_cog.png";
 
-const TestRoute = () => {
+const Loading = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  setTimeout(() => {
-    navigate(state ? `${state.value}` : "/home");
-  }, 1000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate(state ? `${state.value}` : "/home");
+    }, 1000);
+
+    return () => {clearTimeout(timer)}
+  }, []);
 
   return (
     <>
@@ -40,4 +44,4 @@ const TestRoute = () => {
   );
 };
 
-export default TestRoute;
+export default Loading;

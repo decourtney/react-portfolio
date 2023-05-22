@@ -5,14 +5,18 @@ const projectSlice = createSlice({
   initialState: {
     // state: value
     nextIndex: 0,
+    isLoading: true,
   },
   reducers: {
     setNextIndex: (state, action) => {
       state.nextIndex = action.payload;
     },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    }
   },
 });
 
-export const { setNextIndex } = projectSlice.actions;
+export const { setNextIndex, setIsLoading } = projectSlice.actions;
 
 export default projectSlice.reducer;

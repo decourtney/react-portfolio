@@ -8,6 +8,8 @@ import button from "../../images/button.png";
 import loading from "../../images/loading.png";
 import { AnimatePresence } from "framer-motion";
 
+// Header button animations are still using CSS 'blink' class = change to framer-motion for conditional colors red/green
+// animate-pulse is Tailwind class
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
