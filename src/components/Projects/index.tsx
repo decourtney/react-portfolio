@@ -57,11 +57,11 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
-      <div className="relative flex items-center w-[100%] mx-auto bg-green-400 ">
+      <div className="relative flex justify-center items-center w-[100%]">
         <AnimatePresence custom={direction} initial={false}>
           <motion.div
             key={currentPage}
-            className="absolute"
+            className="absolute h-full"
             data-page={currentPage}
             variants={carouselVariants}
             initial="enter"
@@ -71,6 +71,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
           >
             {/* Need to normalize pic sizes for proper animations */}
             <img
+            className="h-full"
               src={
                 !data[currentPage].image
                   ? "/images/project-management.jpg"
@@ -112,13 +113,13 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
 
   return (
     <>
-      <div className="flex w-full justify-end">
-        <ul className="flex-col list-none space-y-10">
+      <div className="flex w-full justify-end overflow-auto scrollbar-hide">
+        <ul className="flex-col list-none space-y-24">
           {data.map((project, index) => {
             return (
               <li key={project.name} className="cursor-pointer bg-orange-400">
                 <p
-                  className="text-6xl hover:bg-green-400"
+                  className="text-8xl hover:bg-green-400"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onClick={() => {
                     setIsDetails({ ...isDetails, check: true, index: index });
