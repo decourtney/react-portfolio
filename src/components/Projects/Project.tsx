@@ -29,9 +29,9 @@ const ProjectDetails = ({ data }: { data: Project }) => {
   console.log(data);
   return (
     <>
-      <div className="absolute top-1/2 left-0 h-full transform -translate-y-[50%] -translate-x-[50%]">
+      <div className="absolute top-1/2 left-0 h-[90%] transform -translate-y-[50%] -translate-x-[50%]">
         <motion.div
-          className="w-full h-full"
+          className="w-full h-full z-10"
           initial="close"
           animate="open"
           variants={detailsVariants}
@@ -48,11 +48,13 @@ const ProjectDetails = ({ data }: { data: Project }) => {
                     <img src={githubIcon} className="w-full" />
                   </a>
                 </div>
-                <div className="w-[35%]">
-                  <a href={data.url} target="blank">
-                    <img src={websiteLinkIcon} className="w-full" />
-                  </a>
-                </div>
+                {data.url && (
+                  <div className="w-[35%]">
+                    <a href={data.url} target="blank">
+                      <img src={websiteLinkIcon} className="w-full" />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
             {data.description &&

@@ -49,7 +49,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
     <>
       <motion.div
         id="left-panel"
-        className="relative flex h-full w-1/2"
+        className="relative flex w-1/2 h-full"
         key={contentLeft ? contentLeft.props.data : null}
         variants={direction}
         initial="open"
@@ -63,7 +63,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
           className="absolute top-[50%] -right-[4.5%] w-[17%] transform -translate-y-[50%] -z-10"
         />
         <div className="leftpanel-border absolute w-full h-full left-0 ml-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%] overflow-auto scrollbar-hide -z-10 bg-cyan-500">
+        <div className="flex w-full m-[3%] transform -translate-x-[1%] -translate-y-[2%] -z-10 bg-cyan-500">
           {contentLeft}
         </div>
       </motion.div>
@@ -92,8 +92,8 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
   return (
     <>
       <motion.div
-        id="left-panel"
-        className="relative flex w-1/2"
+        id="right-panel"
+        className="relative flex w-1/2 h-full"
         key={contentRight ? contentRight.props.data : null}
         variants={variants}
         initial="open"
@@ -105,7 +105,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
           className="absolute top-[50.2%] -left-[3.7%] w-[8%] h-[8%] transform -translate-y-[50%]"
         />
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%] bg-cyan-500">
+        <div className="flex w-full m-[3%] transform -translate-y-[2%] translate-x-[1%] bg-cyan-500">
           {contentRight}
         </div>
         <img src={borderPad} />

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence, transform } from "framer-motion";
 import ProjectDetails from "./Project";
 
 interface Project {
@@ -19,29 +16,37 @@ interface Project {
 
 const carouselVariants = {
   enter: (direction: number) => ({
-    y: direction > 0 ? "100%" : "-100%",
+    y: direction > 0 ? "50%" : "-50%",
     opacity: 1,
-    // transition: {
-    //   duration: 2,
-    //   ease: "easeInOut",
-    // },
+    scale: 0.7,
+    rotateX: direction > 0 ? -90 : 90,
+    transformPerspective: 5000,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
   }),
   active: {
     y: "0%",
     opacity: 1,
+    scale: 1,
+    rotateX: 0,
     transition: {
-      // delay: 0.2,
-      // duration: 2,
-      // ease: "easeInOut",
+      delay: 0.2,
+      duration: 1,
+      ease: "easeInOut",
     },
   },
   exit: (direction: number) => ({
-    y: direction > 0 ? "-100%" : "100%",
+    y: direction > 0 ? "-50%" : "50%",
     opacity: 1,
-    // transition: {
-    //   duration: 2,
-    //   ease: "easeInOut",
-    // },
+    scale: 0.7,
+    rotateX: direction > 0 ? 90 : -90,
+    transformPerspective: 5000,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
   }),
 };
 
@@ -57,11 +62,11 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
-      <div className="relative flex justify-center items-center w-[100%]">
+      <div className="relative w-full details-image">
         <AnimatePresence custom={direction} initial={false}>
           <motion.div
             key={currentPage}
-            className="absolute h-full"
+            className="details-image absolute top-0 left-0 w-full h-full"
             data-page={currentPage}
             variants={carouselVariants}
             initial="enter"
@@ -69,9 +74,9 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             exit="exit"
             custom={direction}
           >
-            {/* Need to normalize pic sizes for proper animations */}
+            <div className="image-border absolute top-0 left-0 w-full h-full"></div>
             <img
-            className="h-full"
+              className="h-full w-full px-[4%] py-[3%]"
               src={
                 !data[currentPage].image
                   ? "/images/project-management.jpg"
@@ -128,7 +133,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                   <span>{project.name}</span>
                 </p>
               </li>
-            )
+            );
           })}
         </ul>
         {isDetails.check && (
@@ -139,7 +144,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                 setIsDetails({ ...isDetails, check: false, index: -1 });
               }}
             />
-            <ProjectDetails  data={data[isDetails.index]} />
+            <ProjectDetails data={data[isDetails.index]} />
           </>
         )}
       </div>
