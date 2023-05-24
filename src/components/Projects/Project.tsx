@@ -5,7 +5,7 @@ import githubIcon from "../../images/github-mark-white.svg";
 import websiteLinkIcon from "../../images/websiteLink.svg";
 import detailsBorder from "../../images/proj_border.png";
 
-interface Project {
+interface ProjectProps {
   name: string;
   date?: string;
   description: string[];
@@ -13,56 +13,73 @@ interface Project {
   url?: string;
   repo: string;
   image?: string;
+  handleMouseClick: (d?: boolean | undefined, i?: number | undefined) => void
+
 }
+
+// interface MouseClickProp {
+//   handleMouseClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+
+// }
+
 
 const detailsVariants = {
   open: {
     scale: 1,
+    transition: {
+      duration: 1,
+      ease: "easeIn",
+    }
   },
   close: {
     scale: 0,
-    // opacity: 0
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    }
   },
 };
 
-const ProjectDetails = ({ data }: { data: Project }) => {
-  console.log(data);
+const ProjectDetails = (props: ProjectProps) => {
   return (
     <>
+      <div
+        className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px]"
+        onClick={() => props.handleMouseClick}
+      />
       <div className="absolute top-1/2 left-0 h-[90%] transform -translate-y-[50%] -translate-x-[50%]">
         <motion.div
+          key={props.name}
           className=" w-full h-full z-10"
           initial="close"
           animate="open"
           variants={detailsVariants}
           exit="close"
-          layout
+
         >
           <div className="details-border absolute flex flex-grow top-0 left-0 w-full h-full pointer-events-none z-50"></div>
           <div className="details-lighting flex flex-col h-full px-[10%] py-[10%] text-[#ffffff] overflow-scroll scrollbar-hide">
             <div className="flex w-full justify-between items-center">
-              <h1 className="text-7xl pb-[2%] mr-[1%]">{data.name}</h1>
+              <h1 className="text-7xl pb-[2%] mr-[1%]">{props.name}</h1>
               <div className="flex flex-row h-0 space-x-2 ml-[5%]">
                 <div className="w-[30%] ">
-                  <a href={data.repo}>
+                  <a href={props.repo}>
                     <img src={githubIcon} className="w-full" />
                   </a>
                 </div>
-                {data.url && (
+                {props.url && (
                   <div className="w-[35%]">
-                    <a href={data.url} target="blank">
+                    <a href={props.url} target="blank">
                       <img src={websiteLinkIcon} className="w-full" />
                     </a>
                   </div>
                 )}
               </div>
             </div>
-            {data.description &&
-              data.description.map((p) => {
+            {props.description &&
+              props.description.map((p, i) => {
                 return (
-                  <>
-                    <p className="text-3xl pb-[2%]">{p}</p>
-                  </>
+                  <p key={i} className="text-3xl pb-[2%]">{p}</p>
                 );
               })}
           </div>

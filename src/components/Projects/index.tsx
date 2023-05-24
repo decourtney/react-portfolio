@@ -95,18 +95,14 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
 // Need to make the list of projects and ul/li
 const ProjectRight = ({ data }: { data: Project[] }) => {
   const dispatch = useAppDispatch();
-  const [isDetails, setIsDetails] = useState({ check: false, index: -1 });
-
-  const handleMouseEnter = (index: number) => {
-    dispatch(setNextIndex(index));
-  };
+  const [isDetails, setIsDetails] = useState({ display: false, projIndex: -1 });
 
   // Listen for ESC key press
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        setIsDetails({ ...isDetails, check: false });
+        setIsDetails({ ...isDetails, display: false });
       }
     };
     document.addEventListener("keydown", handleEsc);
@@ -115,6 +111,15 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
       document.removeEventListener("keydown", handleEsc);
     };
   }, []);
+
+  const handleMouseEnter = (index: number) => {
+    dispatch(setNextIndex(index));
+  };
+
+  const handleMouseClick = (d = false, i = -1) => {
+    setIsDetails({ ...isDetails, display: d, projIndex: i });
+    console.log('details set to: '+ isDetails)
+  };
 
   return (
     <>
@@ -126,9 +131,8 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                 <p
                   className="text-8xl hover:bg-green-400"
                   onMouseEnter={() => handleMouseEnter(index)}
-                  onClick={() => {
-                    setIsDetails({ ...isDetails, check: true, index: index });
-                  }}
+                  onClick={() => handleMouseClick(true, index)
+                  }
                 >
                   <span>{project.name}</span>
                 </p>
@@ -136,15 +140,13 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
             );
           })}
         </ul>
-        {isDetails.check && (
+        {isDetails.display && (
           <>
-            <div
+            {/* <div
               className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px]"
-              onClick={() => {
-                setIsDetails({ ...isDetails, check: false, index: -1 });
-              }}
-            />
-            <ProjectDetails data={data[isDetails.index]} />
+              onClick={() => handleMouseClick(false)}
+            /> */}
+            <ProjectDetails {...data[isDetails.projIndex]} handleMouseClick={handleMouseClick} />
           </>
         )}
       </div>
