@@ -105,7 +105,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
           className="absolute top-[50.2%] -left-[3.7%] w-[8%] h-[8%] transform -translate-y-[50%]"
         />
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%] bg-blue-400">
+        <div className="flex w-full m-[2%]">
           {contentRight}
         </div>
         <img src={borderPad} />

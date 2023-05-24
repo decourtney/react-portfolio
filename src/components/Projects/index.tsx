@@ -62,7 +62,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
-      <div className="relative w-full transform -translate-x-[1%] -translate-y-[2%] -z-10">
+      <div className="relative w-full transform -translate-x-[1%] -translate-y-[2%] -z-10 bg-black">
         <AnimatePresence custom={direction} initial={false}>
           <motion.div
             key={currentPage}
@@ -118,7 +118,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
 
   return (
     <>
-      <div className="flex w-full justify-end overflow-auto scrollbar-hide">
+      <div className="flex w-full justify-end overflow-auto scrollbar-hide bg-black">
         <ul className="flex-col list-none space-y-24">
           {data.map((project, index) => {
             return (
