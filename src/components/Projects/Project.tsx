@@ -31,7 +31,7 @@ const ProjectDetails = ({ data }: { data: Project }) => {
     <>
       <div className="absolute top-1/2 left-0 h-[90%] transform -translate-y-[50%] -translate-x-[50%]">
         <motion.div
-          className="w-full h-full z-10"
+          className=" w-full h-full z-10"
           initial="close"
           animate="open"
           variants={detailsVariants}

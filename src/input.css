@@ -124,15 +124,6 @@ code {
   border-image-slice: 50%;
 }
 
-.details-image {
-    /* -webkit-transform: perspective(200px) rotateX(10deg); */
-
-    /* -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%; */
-}
-
 .details-lighting {
   --c: #ffffff;
   text-shadow: 0px 0px 1px var(--c), 0px 0px 5px var(--c);

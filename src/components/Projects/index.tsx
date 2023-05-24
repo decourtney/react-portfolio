@@ -62,7 +62,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
-      <div className="relative w-full details-image">
+      <div className="relative w-full transform -translate-x-[1%] -translate-y-[2%] -z-10">
         <AnimatePresence custom={direction} initial={false}>
           <motion.div
             key={currentPage}
