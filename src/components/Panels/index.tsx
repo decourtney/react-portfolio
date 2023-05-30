@@ -63,7 +63,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
           className="absolute top-[50%] -right-[4.5%] w-[17%] transform -translate-y-[50%] -z-10"
         />
         <div className="leftpanel-border absolute w-full h-full left-0 ml-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%]">
+        <div className="flex w-full">
           {contentLeft}
         </div>
       </motion.div>
@@ -105,10 +105,10 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
           className="absolute top-[50.2%] -left-[3.7%] w-[8%] h-[8%] transform -translate-y-[50%]"
         />
         <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%]">
+        <div className="flex w-full">
           {contentRight}
         </div>
-        <img src={borderPad} />
+        <img src={borderPad}/>
       </motion.div>
     </>
   );

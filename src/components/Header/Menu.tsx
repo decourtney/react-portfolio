@@ -73,7 +73,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
     >
       <img
         src={menu_pole}
-        className="transform translate-x-[0%] w-[2%] float-right"
+        className="transform translate-x-[0%] w-[2%] float-right drop-shadow-lg"
       />
 
       {pages.map((page, index) => {
@@ -97,7 +97,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
             </span>
             <motion.img
               src={menu_plate}
-              className={`absolute bottom-0 right-0 w-[7%]`}
+              className={`absolute bottom-0 right-0 w-[7%] drop-shadow-2xl`}
               variants={options}
             />
           </Link>

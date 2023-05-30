@@ -57,7 +57,6 @@ const ProjectDetails = (props: DetailsProps) => {
       <div className="absolute top-1/2 left-0 h-[90%] transform -translate-y-[50%] -translate-x-[50%]">
         <motion.div
           key={props.name}
-          key={props.name}
           className=" w-full h-full z-10"
           initial="close"
           animate="open"
@@ -72,14 +71,11 @@ const ProjectDetails = (props: DetailsProps) => {
               <div className="flex flex-row h-0 space-x-2 ml-[5%]">
                 <div className="w-[30%] ">
                   <a href={props.repo}>
-                  <a href={props.repo}>
                     <img src={githubIcon} className="w-full" />
                   </a>
                 </div>
                 {props.url && (
-                {props.url && (
                   <div className="w-[35%]">
-                    <a href={props.url} target="blank">
                     <a href={props.url} target="blank">
                       <img src={websiteLinkIcon} className="w-full" />
                     </a>
@@ -87,8 +83,6 @@ const ProjectDetails = (props: DetailsProps) => {
                 )}
               </div>
             </div>
-            {props.description &&
-              props.description.map((p, i) => {
             {props.description &&
               props.description.map((p, i) => {
                 return (

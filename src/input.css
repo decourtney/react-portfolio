@@ -46,6 +46,12 @@ code {
   border-image-slice: 50%;
 }
 
+.panel-bg {
+  border-image-source: url(./images/panel_background.png);
+  border-image-width: 100%;
+  border-image-slice: 50%;
+}
+
 .navbar-bg {
   background-image: url(./images/navbar.png);
   background-repeat: no-repeat;

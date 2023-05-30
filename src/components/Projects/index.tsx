@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
-import { motion, AnimatePresence, transform, LayoutGroup, useAnimate } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  transform,
+  LayoutGroup,
+  useAnimate,
+  useAnimation,
+} from "framer-motion";
 import ProjectDetails from "./Project";
-import imageArm from "../../images/image_arm.png";
 
 interface Project {
   name: string;
@@ -51,93 +57,43 @@ const carouselVariants = {
   }),
 };
 
-const test = {
-  spin: (direction: number) => ({
-    // transformPerspective: 5000,
-    rotateX: direction > 0 ? 180 : -180,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    },
-  }),
-};
-
 const ProjectLeft = ({ data }: { data: Project[] }) => {
   const nextIndex = useAppSelector((state) => state.project.nextIndex);
   const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
-  const [scope, animate] = useAnimate()
 
   useEffect(() => {
     const newDirection = nextIndex - currentPage;
     setCurrentPage([nextIndex, newDirection]);
-    // animate(scope.current, {
-    //   // y: direction > 0 ? "51%" : "-51%",
-    //   // opacity: 1,
-    //   // scale: 0.7,
-    //   // rotateX: 90,
-    //   style: { WebkitTransform: "rotateX(90deg)" }
-    //   // transformPerspective: 5000,
-    //   // transition: {
-    //   //   duration: 3,
-    //   //   ease: "easeInOut",
-    //   // },
-    // });
   }, [nextIndex]);
+
 
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
       <div className="relative w-full transform -translate-x-[1%] -translate-y-[2%] -z-10 bg-black">
-        <AnimatePresence custom={direction} initial={false}>
+        <AnimatePresence custom={direction} >
           <motion.div
-            key={nextIndex}
-            ref={scope}
-            className="absolute flex justify-center top-0 left-0 w-full h-full"
-            variants={test}
-            // initial="enter"
-            animate="spin"
-            // exit="exit"
+            key={currentPage}
+            className="details-image absolute top-0 left-0 w-full h-full"
+            data-page={currentPage}
+            variants={carouselVariants}
+            initial="enter"
+            animate="active"
+            exit="exit"
             custom={direction}
           >
+            <div className="image-border absolute top-0 left-0 w-full h-full"></div>
             <img
-              src={imageArm}
-              className="absolute w-full h-1/2 top-0 left-0"
+              className="h-full w-full px-[4%] py-[3%]"
+              src={
+                !data[currentPage].image
+                  ? "/images/project-management.jpg"
+                  : data[currentPage].image
+              }
+              alt={data[currentPage].name}
+              draggable="false"
             />
-            {/* <img
-              src={imageArm}
-              className="absolute w-full h-1/2 top-0 left-0"
-            /> */}
-            <img
-              src={imageArm}
-              className="absolute w-full h-1/2 bottom-0 left-0 rotate-180"
-            />
-            {/* <img
-              src={imageArm}
-              className="absolute w-full h-1/2 top-1/2 left-0"
-            /> */}
           </motion.div>
-          <motion.div
-              key={currentPage}
-              className="details-image absolute top-0 left-0 w-full h-full"
-              data-page={currentPage}
-              variants={carouselVariants}
-              initial="enter"
-              animate="active"
-              exit="exit"
-              custom={direction}
-            >
-              <div className="image-border absolute top-0 left-0 w-full h-full"></div>
-              <img
-                className="h-full w-full px-[4%] py-[3%]"
-                src={
-                  !data[currentPage].image
-                    ? "/images/project-management.jpg"
-                    : data[currentPage].image
-                }
-                alt={data[currentPage].name}
-                draggable="false"
-              />
-            </motion.div>
         </AnimatePresence>
       </div>
     </>
