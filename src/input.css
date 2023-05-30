@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "Swiss Grit";
-  src: url("./SwissGrit.otf");
+  src: url("./fonts/SwissGrit.otf");
 }
 @font-face {
   font-family: "Swiss Grit Dingbats";
-  src: url("./SwissGritDingbats.otf");
+  src: url("./fonts/SwissGritDingbats.otf");
 }
 
 body {

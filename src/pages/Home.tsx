@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <GearBox animationDir={"open"} />
-      <LeftPanel contentLeft={<HomeLeft data={"Home"} />} />
-      <RightPanel contentRight={<HomeRight data={"Under Construction"} />} />
+      <LeftPanel contentLeft={<HomeLeft />} />
+      <RightPanel contentRight={<HomeRight />} />
     </>
   );
 };
