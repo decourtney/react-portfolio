@@ -51,10 +51,11 @@ const Header = () => {
   return (
     <header>
       <nav className="navbar-bg relative w-full h-full bg-black">
-        {/* Will likely need to pass props to Marquee based on site status */}
-        <Marquee />
-        <div className="loading-backlit absolute top-[25%] left-[45%] pointer-events-none" />
-        <img src={loading} className="absolute w-[16%] top-0 left-[44%]" />
+        <Marquee message={"This is Only a Test"}/>
+        <img
+          src={loading}
+          className="absolute w-[24%] -top-[2%] left-[48.5%] -translate-x-[50%]"
+        />
 
         <div id="navbar-button" className="absolute w-full h-full top-0 left-0">
           <img

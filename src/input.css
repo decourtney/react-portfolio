@@ -87,8 +87,8 @@ code {
 }
 
 .loading-backlit {
-  width: 11%;
-  height: 50%;
+  width: 21%;
+  height: 75%;
   background-color: #010101;
   animation-name: loading;
   animation-duration: 0.5s;

@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setIsLoading } from "../../reducers/projectSlice";
 import { motion, stagger, useAnimation, useAnimate } from "framer-motion";
-
 import menu_pole from "../../images/menu_pole.png";
 import menu_plate from "../../images/menu_plate.png";
 
@@ -61,42 +60,40 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
 
   return (
     <motion.div
-      className="absolute bottom-[35%] right-[8.2%] w-full z-10 pointer-events-none drop-shadow-2xl"
+      className="absolute bottom-[35%] right-[0%] w-full z-10 pointer-events-none drop-shadow-2xl"
       key="Menu"
       variants={direction}
       initial="close"
       animate={isMenuOpen && !isLoading ? "open" : "close"}
       exit="close"
     >
-      <div className=""></div>
       <img
         src={menu_pole}
-        className="transform translate-x-[0%] w-[2%] float-right drop-shadow-lg"
+        className="translate-x-[0%] w-[2%] ml-[89.85%] drop-shadow-lg"
       />
 
       {pages.map((page, index) => {
         return (
-          <Link
-            // style={{ pointerEvents: "none" }}
-            onClick={() => dispatch(setIsLoading(true))}
-            key={page}
-            to="/"
-            state={{ value: page }}
-            className={`absolute bottom-[${17 * (index + 1)}%] 
-                -right-[2.5%] w-full ${location.pathname === "/" + page
-                ? "pointer-events-none"
-                : "cursor-pointer pointer-events-auto"
+          <div key={page} className={`absolute bottom-0 left-0 w-full h-full `}>
+            <Link
+              className={`${
+                location.pathname === "/" + page
+                  ? "pointer-events-none"
+                  : "cursor-pointer pointer-events-auto"
               }`}
-          >
-            <span className="absolute top-0 right-0 bg-green-500 z-50">
-              {page}
-            </span>
-            <motion.img
-              src={menu_plate}
-              className={`absolute bottom-0 right-0 w-[7%] drop-shadow-lg`}
-              variants={options}
-            />
-          </Link>
+              onClick={() => dispatch(setIsLoading(true))}
+              to="/"
+              state={{ value: page }}
+            >
+              <motion.img
+                src={menu_plate}
+                className={`absolute bottom-[${
+                  17 * (index + 1)
+                }%] right-[5.6%] w-[7%] drop-shadow-lg`}
+                variants={options}
+              />
+            </Link>
+          </div>
         );
       })}
     </motion.div>
