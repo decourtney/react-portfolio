@@ -86,25 +86,6 @@ code {
   }
 }
 
-.loading-backlit {
-  width: 21%;
-  height: 75%;
-  background-color: #010101;
-  animation-name: loading;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
-}
-
-@keyframes loading {
-  0% {
-    background-color: #010101;
-  }
-  100% {
-    background-color: #fe0101;
-  }
-}
-
 .bottom-\[17\%\] {
   bottom: 17%;
 }

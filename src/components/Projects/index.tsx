@@ -9,7 +9,7 @@ import {
   useAnimate,
   useAnimation,
 } from "framer-motion";
-import ProjectDetails from "./Project";
+import ProjectDetails from "./ProjectDetails";
 
 interface Project {
   name: string;
@@ -70,7 +70,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
-      <div className="relative w-full transform -translate-x-[1%] -translate-y-[2%] -z-10 bg-black">
+      <div className="relative w-full mx-[3%] my-[4%] -translate-x-[1%] -translate-y-[2%] -z-10 bg-black">
         <AnimatePresence custom={direction} >
           <motion.div
             key={currentPage}
@@ -137,7 +137,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   };
 
   return (
-    <div className="flex w-full justify-end overflow-auto scrollbar-hide bg-black">
+    <div className="flex w-full mx-[3%] mt-[4%] mb-[5%] justify-end overflow-auto scrollbar-hide bg-black">
       <ul className="flex-col list-none space-y-24">
         {data.map((project, index) => {
           return (

@@ -67,7 +67,6 @@ const ProjectDetails = (props: DetailsProps) => {
           <div className="details-lighting flex flex-col h-full px-[10%] py-[10%] text-[#ffffff] bg-black overflow-scroll scrollbar-hide">
             <div className="flex w-full justify-between items-center">
               <h1 className="text-7xl pb-[2%] mr-[1%]">{props.name}</h1>
-              <h1 className="text-7xl pb-[2%] mr-[1%]">{props.name}</h1>
               <div className="flex flex-row h-0 space-x-2 ml-[5%]">
                 <div className="w-[30%] ">
                   <a href={props.repo}>
