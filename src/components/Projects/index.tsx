@@ -137,7 +137,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   };
 
   return (
-    <div className="flex w-full mx-[3%] mt-[4%] mb-[5%] justify-end overflow-auto scrollbar-hide bg-black">
+    <div className="flex w-full mx-[3%] mt-[2%] mb-[5%] justify-end overflow-auto scrollbar-hide bg-black">
       <ul className="flex-col list-none space-y-24">
         {data.map((project, index) => {
           return (
