@@ -51,7 +51,9 @@ const Header = () => {
   return (
     <header>
       <nav className="navbar-bg relative w-full h-full bg-black">
-        <Marquee message={"This is Only a Test"}/>
+        <AnimatePresence mode="wait">
+          <Marquee />
+        </AnimatePresence>
         <img
           src={loading}
           className="absolute w-[24%] -top-[2%] left-[48.5%] -translate-x-[50%]"

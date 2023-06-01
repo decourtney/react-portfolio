@@ -6,17 +6,23 @@ import panelCogBase from "../images/panel_cog_base.png";
 import loadingPanelLeft from "../images/loading_panel_left.png";
 import loadingPanelRight from "../images/loading_panel_right.png";
 import panelCog from "../images/panel_cog.png";
+import { useAppSelector, useAppDispatch } from "../reducers/hooks";
+import { setMarqueeMsg } from "../reducers/projectSlice";
 
 const Loading = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(setMarqueeMsg(`Loading please wait...`));
     const timer = setTimeout(() => {
       navigate(state ? `${state.value}` : "/home");
     }, 1000);
 
-    return () => {clearTimeout(timer)}
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

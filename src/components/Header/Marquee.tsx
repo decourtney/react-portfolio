@@ -1,9 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-type MarqueeProps = {
-    message: string
-}
+import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 
 const marqueeVariants = {
     animate: {
@@ -18,16 +15,27 @@ const marqueeVariants = {
         },
     },
 };
-const Marquee = ({message}: MarqueeProps) => {
+
+const Marquee = () => {
+    const message = useAppSelector((state) => state.project.marqueeMsg);
+
     return (
-      <div className="absolute top-[10%] left-[50%] w-[21%] h-[75%] -translate-x-[50%] overflow-x-hidden scrollbar-hide pointer-events-none bg-neutral-900">
-        <motion.div
-          className="w-full"
-          variants={marqueeVariants}
-          animate="animate"
-        >
-          <h1 className="text-5xl text-red-700">{message}</h1>
-        </motion.div>
+      <div className="absolute top-[10%] left-[50%] w-[21%] h-[75%] -translate-x-[50%] pointer-events-none bg-neutral-900">
+        <div className="relative w-full h-full overflow-x-hidden scrollbar-hide">
+          <motion.div
+            className="absolute left-[0%] w-fit min-w-full will-change-transform whitespace-nowrap"
+            variants={marqueeVariants}
+            animate="animate"
+          >
+            <h1
+              className="text-4xl text-center text-red-700"
+              // variants={marqueeVariants}
+              // animate="animate"
+            >
+              {message}
+            </h1>
+          </motion.div>
+        </div>
       </div>
     );
 };
