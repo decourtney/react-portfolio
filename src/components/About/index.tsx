@@ -1,30 +1,22 @@
 import React, { useEffect, useState } from "react";
 
-type AboutProps = {
-  data: string;
-};
-
-const AboutLeft = ({ data }: AboutProps) => {
+const AboutLeft = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
-    <>
-      <div>
-        <p className="text-6xl">{data}</p>
-      </div>
-    </>
+    <div className="w-full mx-[3%] mt-[2%] mb-[5%] bg-black">
+      <p className="text-6xl">{ }</p>
+    </div>
   );
 };
 
-const AboutRight = ({ data }: AboutProps) => {
+const AboutRight = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
-    <>
-      <div>
-        <p className="text-6xl">{data}</p>
-      </div>
-    </>
+    <div>
+      <p className="text-6xl">{ }</p>
+    </div>
   );
 };
 

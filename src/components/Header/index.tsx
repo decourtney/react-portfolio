@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Menu from "./Menu";
-
+import Marquee from "./Marquee";
 import navbar from "../../images/navbar.png";
 import button_housing from "../../images/button_housing.png";
 import button from "../../images/button.png";
@@ -51,8 +51,13 @@ const Header = () => {
   return (
     <header>
       <nav className="navbar-bg relative w-full h-full bg-black">
-        <div className="loading-backlit absolute top-[25%] left-[45%] pointer-events-none" />
-        <img src={loading} className="absolute w-[16%] top-0 left-[44%]" />
+        <AnimatePresence mode="wait">
+          <Marquee />
+        </AnimatePresence>
+        <img
+          src={loading}
+          className="absolute w-[24%] -top-[2%] left-[48.5%] -translate-x-[50%]"
+        />
 
         <div id="navbar-button" className="absolute w-full h-full top-0 left-0">
           <img

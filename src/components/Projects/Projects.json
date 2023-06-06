@@ -8,18 +8,18 @@
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://polar-plateau-51344.herokuapp.com/",
     "repo": "https://github.com/decourtney/tech-messages",
-    "image": "images/proj1.png"
+    "image": "images/techmessages.png"
   },
   {
-    "name": "Employee Tracker",
+    "name": "Break-Sweat",
     "date": "February 2023",
     "description": [
-      "Workforce Tracker allows you to keep track of Departments, Roles, and the Employees that populate those departments. The Tracker supports viewing each table with some filters applied and modifying the database by creating, updating and deleting records from each table. The primary goal of this project was to use Inquirer to prompt a user for input and manipulate the SQL DB based on selections. Upon selection to view specific data the columns and rows will be displayed using Console-table-printer for a more readable format on command-line. All SQL queries are constructed in a JS module and passed to either the terminal or via Insomnia via HTML request methods."
+      "Break Sweat is a fitness web application that empowers users to achieve their workout goals. With access to a comprehensive database of exercises and workouts, personalized recommendations, and progress tracking features, Break Sweat provides a tailored fitness experience for users of all levels."
     ],
-    "tags": ["MySQL", "Express", "Inquirer", "Node"],
-    "url": "",
-    "repo": "https://github.com/decourtney/employee-tracker",
-    "image": "images/proj2.png"
+    "tags": ["MySQL", "Express", "Handlebars", "Node"],
+    "url": "https://intense-everglades-85455.herokuapp.com/",
+    "repo": "https://github.com/decourtney/break-sweat",
+    "image": "images/techmessages.png"
   },
   {
     "name": "Weather Ornought",
@@ -44,28 +44,25 @@
     "image": "images/proj4.png"
   },
   {
-    "name": "Project 5",
-    "date": "",
+    "name": "RealityCheck News",
+    "date": "April 2023",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam."
+      "This is a news application that allows users to browse articles and search for specific topics. Users can view trending articles, filter articles by category, and search for articles by keyword."
     ],
-    "tags": [],
-    "url": "",
-    "repo": "",
+    "tags": ["Mongo", "Express", "React", "Node"],
+    "url": "https://sleepy-brushlands-04075.herokuapp.com/",
+    "repo": "https://github.com/decourtney/reality-check-news",
     "image": "images/proj5.png"
   },
   {
-    "name": "Project 6",
-    "date": "",
+    "name": "React Portfolio",
+    "date": "May 2023",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique commodo nibh. In luctus suscipit mauris at dictum. Suspendisse eget ex eleifend, tristique nisl vitae, hendrerit lorem. Sed nec iaculis ante. Aliquam laoreet, mi eget facilisis pellentesque, velit tortor sollicitudin neque, nec condimentum risus orci a orci. Sed quis nisi elit. In hac habitasse platea dictumst. Mauris rhoncus ligula vitae tortor faucibus auctor. Sed feugiat sodales lobortis. Cras et urna quam."
+      "This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website"
     ],
-    "tags": [],
+    "tags": ["Express", "React", "Node", "Typescript"],
     "url": "",
-    "repo": "",
+    "repo": "https://github.com/decourtney/react-portfolio",
     "image": "images/proj6.png"
   }
 ]

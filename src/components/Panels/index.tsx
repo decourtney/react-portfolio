@@ -22,7 +22,7 @@ type RightPanelProps = {
 const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
   const dispatch = useAppDispatch();
 
-  const direction = {
+  const variantsLeft = {
     close: {
       x: "0%",
       transition: {
@@ -42,28 +42,27 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
   // Currently this prevents the menu from dropping down until this panel has finished the close animation.
   // For now this is the easiest fix to prevent breaking the routes from spam clicking page links
   const handleAnimationComplete = (variant: any) => {
-    if(variant === 'close') dispatch(setIsLoading(false))
+    if (variant === 'close') dispatch(setIsLoading(false))
   };
 
   return (
     <>
       <motion.div
         id="left-panel"
-        className="relative flex h-full w-1/2"
+        className="relative flex w-1/2 h-full"
         key={contentLeft ? contentLeft.props.data : null}
-        variants={direction}
+        variants={variantsLeft}
         initial="open"
         animate="close"
         exit="open"
         onAnimationComplete={(variant) => handleAnimationComplete(variant)}
       >
-        <img src={borderPad} />
         <img
           src={panelCogBase}
           className="absolute top-[50%] -right-[4.5%] w-[17%] transform -translate-y-[50%] -z-10"
         />
-        <div className="leftpanel-border absolute w-full h-full left-0 ml-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%] overflow-auto scrollbar-hide -z-10 bg-cyan-500">
+        <div className="leftpanel-border absolute w-[101%] h-full left-0 pointer-events-none"></div>
+        <div className="flex w-full">
           {contentLeft}
         </div>
       </motion.div>
@@ -72,7 +71,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
 };
 
 const RightPanel = ({ contentRight }: RightPanelProps) => {
-  const variants = {
+  const variantsRight = {
     close: {
       x: "0%",
       transition: {
@@ -92,23 +91,25 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
   return (
     <>
       <motion.div
-        id="left-panel"
-        className="relative flex w-1/2"
+        id="right-panel"
+        className="relative flex w-1/2 h-full"
         key={contentRight ? contentRight.props.data : null}
-        variants={variants}
+        variants={variantsRight}
         initial="open"
         animate="close"
         exit="open"
       >
-        <img
-          src={panelCog}
-          className="absolute top-[50.2%] -left-[3.7%] w-[8%] h-[8%] transform -translate-y-[50%]"
-        />
-        <div className="rightpanel-border absolute w-full h-full right-0 mr-[1%] pointer-events-none"></div>
-        <div className="flex w-full m-[2%] bg-cyan-500">
+        {/* Moving the cog has gotten weird. Trying to animate it made it weirder.
+        Stick with simple solution - have cog display page icon and move(scale) up maybe. 
+        Can probably get rid of the cog. Can adjust PNGs to match changes*/}
+        {/* <img
+          src={panelCogAlt}
+          className="absolute top-[50%] -left-[4%] w-[8%] h-[8%] z-10"
+        /> */}
+        <div className="rightpanel-border absolute w-[101%] h-full right-0 pointer-events-none"></div>
+        <div className="flex w-full">
           {contentRight}
         </div>
-        <img src={borderPad} />
       </motion.div>
     </>
   );

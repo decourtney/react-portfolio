@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from "react";
+import label from "../../images/home_label.png"
+import cert from "../../images/home_cert.png"
 
-type HomeProps = {
-  data: string;
-}
-
-const HomeLeft = ({data}: HomeProps) => {
+const HomeLeft = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
     <>
-      <div>
-        <p className="font-swiss text-6xl">{data} &copy; &reg; {Date()}</p>
+      <div className="panel-bg flex justify-center w-full ml-[0%] mr-[4%] -z-10">
+        <div className="mt-[20%]">
+          <img src={label} className="drop-shadow-md"/>
+        </div>
       </div>
     </>
   );
 };
 
-const HomeRight = ({ data }: HomeProps) => {
+const HomeRight = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
     <>
-      <div>
-        <p className="text-6xl">{data}</p>
+      <div className="panel-bg flex justify-center w-full ml-[4%] mr-[0%] -z-10">
+        <div className="mt-[25%]">
+          <img src={cert} className="drop-shadow-md"/>
+        </div>
       </div>
     </>
   );
