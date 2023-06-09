@@ -191,14 +191,21 @@ code {
 }
 
 .image-container .img .image-1 {
-  background-image: url(./images/forrest.jpg);
+  background-image: url(./images/forrest1.png);
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: hidden;
 }
 
 .image-container .img .image-2 {
-  background-image: url(./images/forrest.jpg);
+  background-image: url(./images/forrest2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.image-container .img .image-3 {
+  background-image: url(./images/forrest3.png);
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: hidden;
