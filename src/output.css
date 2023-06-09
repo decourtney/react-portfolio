@@ -651,24 +651,12 @@ video {
   left: 0%;
 }
 
-.left-\[100\%\] {
-  left: 100%;
-}
-
-.left-\[25\%\] {
-  left: 25%;
-}
-
 .left-\[48\.5\%\] {
   left: 48.5%;
 }
 
 .left-\[50\%\] {
   left: 50%;
-}
-
-.left-\[75\%\] {
-  left: 75%;
 }
 
 .right-0 {
@@ -723,14 +711,6 @@ video {
   top: 50.2%;
 }
 
-.left-\[20\%\] {
-  left: 20%;
-}
-
-.left-\[2\%\] {
-  left: 2%;
-}
-
 .-z-10 {
   z-index: -10;
 }
@@ -761,10 +741,6 @@ video {
 
 .z-50 {
   z-index: 50;
-}
-
-.m-\[1\%\] {
-  margin: 1%;
 }
 
 .m-\[5\%\] {
@@ -1069,18 +1045,6 @@ video {
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.rotate-2 {
-  --tw-rotate: 2deg;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-45 {
-  --tw-rotate: 45deg;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .transform {
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1233,34 +1197,6 @@ video {
 
 .to-black {
   --tw-gradient-to: #000 var(--tw-gradient-to-position);
-}
-
-.object-none {
-  object-fit: none;
-}
-
-.object-\[0\%\] {
-  object-position: 0%;
-}
-
-.object-\[100\%\] {
-  object-position: 100%;
-}
-
-.object-\[25\%\] {
-  object-position: 25%;
-}
-
-.object-\[50\%\] {
-  object-position: 50%;
-}
-
-.object-\[75\%\] {
-  object-position: 75%;
-}
-
-.p-\[1\%\] {
-  padding: 1%;
 }
 
 .px-\[10\%\] {
@@ -1634,43 +1570,20 @@ code {
   }
 }
 
-.image-container {
-  /* background: url(./images/forrest.jpg);
+.image-container .img .image-1 {
+  background-image: url(./images/forrest.jpg);
   background-repeat: no-repeat;
-  background-size: auto; */
-}
-
-/* .image-container::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background-color: rgba(51, 43, 48, 0.85);
-} */
-
-.image-container .img {
-  /* position: absolute;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; */
-}
-
-.image-container .img span {
-  /* background-image: url(./images/forrest.jpg); */
-  /* background-repeat: no-repeat; */
-  /* background-size: scale-down; */
-  /* width: 20%; */
-  /* height: 100%; */
-  /* src: "./images/forrest.jpg"; */
-  /* width: 100%; */
-  /* height: 100%; */
-  /* background: url(./images/forrest.jpg);
   background-size: cover;
-  background-repeat: no-repeat; */
-  /* align-items: center; */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.image-container .img .image-2 {
+  background-image: url(./images/forrest.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .image-container .img span:nth-child(1) {
