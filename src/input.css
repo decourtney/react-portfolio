@@ -194,7 +194,7 @@ code {
   background-image: url(./images/forrest1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .image-container .img .image-2 {
@@ -211,7 +211,7 @@ code {
   backface-visibility: hidden;
 }
 
-.image-container .img span:nth-child(1) {
+/* .image-container .img span:nth-child(1) {
   background-position: 0%;
 }
 
@@ -229,4 +229,4 @@ code {
 
 .image-container .img span:nth-child(5) {
   background-position: 100%;
-}
+} */

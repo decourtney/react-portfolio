@@ -711,6 +711,10 @@ video {
   top: 0%;
 }
 
+.top-\[0\] {
+  top: 0;
+}
+
 .top-\[10\%\] {
   top: 10%;
 }
@@ -753,6 +757,10 @@ video {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .z-50 {
@@ -881,6 +889,10 @@ video {
   height: 0px;
 }
 
+.h-\[100\%\] {
+  height: 100%;
+}
+
 .h-\[40\%\] {
   height: 40%;
 }
@@ -921,6 +933,10 @@ video {
 
 .w-\[1\.8\%\] {
   width: 1.8%;
+}
+
+.w-\[100\%\] {
+  width: 100%;
 }
 
 .w-\[101\%\] {
@@ -1174,6 +1190,11 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
 .bg-green-400 {
@@ -1590,8 +1611,7 @@ code {
   background-image: url(./images/forrest1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .image-container .img .image-2 {
@@ -1610,7 +1630,7 @@ code {
           backface-visibility: hidden;
 }
 
-.image-container .img span:nth-child(1) {
+/* .image-container .img span:nth-child(1) {
   background-position: 0%;
 }
 
@@ -1628,7 +1648,7 @@ code {
 
 .image-container .img span:nth-child(5) {
   background-position: 100%;
-}
+} */
 
 .hover\:bg-green-400:hover {
   --tw-bg-opacity: 1;

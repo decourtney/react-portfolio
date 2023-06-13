@@ -1,42 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import forrest from "../../images/forrest1.png";
 
 const variants1 = {
   rotate: {
-    rotateY: [0, 120, 240, 360],
+    // rotateY: 300,
+    rotateY: [-60, 60, 180],
     transformPerspective: [1000], // backfacing could be incorrect
-    x: ["0%", "25%", "-25%", "0%"],
+    x: ["-25%", "25%", "0%"],
     transition: {
       repeat: Infinity,
-      duration: 10,
-      ease: "easeInOut",
+      duration: 9,
+      ease: "linear",
     },
   },
 };
 
 const variants2 = {
   rotate: {
-    rotateY: [-240, 0, 120, 240],
+    rotateY: [180],
+    // rotateY: -180,
     transformPerspective: [1000], // backfacing could be incorrect
-    x: ["-25%", "0%", "25%", "-25%"],
+    x: ["0%"],
     transition: {
       repeat: Infinity,
-      duration: 10,
-      ease: "easeInOut",
+      duration: 9,
+      ease: "linear",
     },
   },
 };
 
 const variants3 = {
   rotate: {
-    rotateY: [-120, -240, 0, 120],
+    // rotateY: 420,
+    rotateY: [60],
     transformPerspective: [1000], // backfacing could be incorrect
-    x: ["25%", "-25%", "0%", "25%"],
+    x: ["25%"],
     transition: {
       repeat: Infinity,
-      duration: 10,
-      ease: "easeInOut",
+      duration: 9,
+      ease: "linear",
     },
   },
 };
@@ -57,28 +60,30 @@ const AboutRight = () => {
   const [loadContent, setLoadContent] = useState("");
 
   return (
-    <div className="w-full m-[5%]">
-      <div className="image-container relative w-full h-fit overflow-hidden bg-slate-600 text-4xl">
-        <img src={forrest} className="w-full invisible" />
-        <div className="img absolute top-0 flex w-full h-full">
-          <>
+    <AnimatePresence>
+      <div className="w-full m-[5%]">
+        <div className="image-container relative w-full h-fit  bg-slate-600 text-4xl">
+          <img src={forrest} className="w-full invisible" />
+          <div className="img absolute top-[0%] flex w-[20%] h-full bg-blue-400">
             <motion.span
+              initial={{ rotateY: -60 }}
               variants={variants1}
               animate="rotate"
-              className="image-1 absolute top-0 left-[0%] h-full w-[20%] border"
+              className="image-1 absolute top-[0] left-[0%] h-[100%] w-[100%] border z-30"
             />
-            <motion.span
+            {/* <motion.span
+              initial={{ rotateY: -180 }}
               variants={variants2}
               animate="rotate"
-              className="image-2 absolute top-0 left-[0%] h-full w-[20%] border"
-            />
+              className="image-2 absolute top-[0%] left-[0%] h-[100%] w-[100%] border"
+            /> */}
             <motion.span
+              initial={{ rotateY: 60 }}
               variants={variants3}
               animate="rotate"
-              className="image-3 absolute top-0 left-[0%] h-full w-[20%] border"
+              className="image-3 absolute top-0 left-[0%] h-full w-[100%] border"
             />
-          </>
-          {/* <>
+            {/* <>
             <motion.span
               variants={variants1}
               animate="rotate"
@@ -154,9 +159,10 @@ const AboutRight = () => {
               className="image-2 absolute top-0 left-[80%] h-full w-[20%] border"
             />
           </> */}
+          </div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
 
