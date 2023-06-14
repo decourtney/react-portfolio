@@ -194,7 +194,7 @@ code {
   background-image: url(./images/forrest1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  /* backface-visibility: hidden; */
+  backface-visibility: hidden;
 }
 
 .image-container .img .image-2 {
@@ -211,22 +211,22 @@ code {
   backface-visibility: hidden;
 }
 
-/* .image-container .img span:nth-child(1) {
+.image-container .img:nth-child(1) span {
   background-position: 0%;
 }
 
-.image-container .img span:nth-child(2) {
+.image-container .img:nth-child(2) span {
   background-position: 25%;
 }
 
-.image-container .img span:nth-child(3) {
+.image-container .img:nth-child(3) span {
   background-position: 50%;
 }
 
-.image-container .img span:nth-child(4) {
+.image-container .img:nth-child(4) span {
   background-position: 75%;
 }
 
-.image-container .img span:nth-child(5) {
+.image-container .img:nth-child(5) span {
   background-position: 100%;
-} */
+}
