@@ -211,7 +211,7 @@ code {
   backface-visibility: hidden;
 }
 
-.image-container .img:nth-child(1) span {
+/* .image-container .img:nth-child(1) span {
   background-position: 0%;
 }
 
@@ -229,4 +229,4 @@ code {
 
 .image-container .img:nth-child(5) span {
   background-position: 100%;
-}
+} */
