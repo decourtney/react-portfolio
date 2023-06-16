@@ -5,16 +5,6 @@ import forrest from "../../images/forrest1.png";
 
 const AboutLeft = () => {
   const [loadContent, setLoadContent] = useState("");
-
-  return (
-    <div className="w-full mx-[3%] mt-[2%] mb-[5%] bg-black">
-      <p className="text-6xl">{}</p>
-    </div>
-  );
-};
-
-const AboutRight = () => {
-  const [loadContent, setLoadContent] = useState("");
   const numberOfSlices = 5;
   const slicesArray = [];
 
@@ -25,18 +15,28 @@ const AboutRight = () => {
   }
 
   return (
-    <AnimatePresence>
-      <div className="w-full m-[5%]">
-        <div className="image-container relative w-full h-fit   text-4xl">
-          <img src={forrest} className="w-full invisible" />
-          <div className="absolute top-0 left-0 flex w-[100%] h-full">
-            {slicesArray.map((s) => {
-              return s;
-            })}
-          </div>
+    <div className="flex justify-center items-center w-full mr-[4%] pl-[4%] pr-[2%] -z-10 bg-blue-400">
+      <div className="image-container relative w-full h-fit ">
+        <img src={forrest} className="w-full invisible" />
+        <div className="absolute top-0 left-0 flex w-[100%] h-full">
+          {slicesArray.map((s) => {
+            return s;
+          })}
         </div>
       </div>
-    </AnimatePresence>
+    </div>
+  );
+};
+
+const AboutRight = () => {
+  const [loadContent, setLoadContent] = useState("");
+
+  return (
+    <div className="flex justify-center items-center w-full ml-[4%] -z-10 bg-blue-400">
+      <div className="aboutme-container relative flex justify-center items-center w-full ml-[3%] mr-[6%]">
+        <img src={forrest} className="img w-full -z-10"/>
+      </div>
+    </div>
   );
 };
 

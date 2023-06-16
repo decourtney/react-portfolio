@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 
 type ImageSliceProps = {
   i: number;
@@ -7,6 +7,7 @@ type ImageSliceProps = {
 };
 
 const ImageSlice = ({ i, s }: ImageSliceProps) => {
+  const [scope, animate] = useAnimate();
   const pos = (100 / (s - 1)) * i;
   const w = 100 / s;
   const duration = 20;
@@ -29,12 +30,13 @@ const ImageSlice = ({ i, s }: ImageSliceProps) => {
     x: ["45%", "-45%", "0%", "45%"],
   };
 
-  const testVar = {
-    
-  }
 
   return (
-    <div className={`img relative h-full`} style={{ width: `${w}%` }}>
+    <div
+      ref={scope}
+      className={`img relative h-full`}
+      style={{ width: `${w}%` }}
+    >
       <motion.span
         initial={{ rotateY: 0, x: "0%" }}
         animate={variants1}

@@ -210,3 +210,7 @@ code {
   background-size: cover;
   backface-visibility: hidden;
 }
+
+.aboutme-container {
+  background-image: radial-gradient(transparent 70%, black);
+}
