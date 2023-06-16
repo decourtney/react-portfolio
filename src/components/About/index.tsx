@@ -15,7 +15,7 @@ const AboutLeft = () => {
 
 const AboutRight = () => {
   const [loadContent, setLoadContent] = useState("");
-  const numberOfSlices = 20;
+  const numberOfSlices = 5;
   const slicesArray = [];
 
   for (let i = 0; i < numberOfSlices; i++) {

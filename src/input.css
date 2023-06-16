@@ -210,23 +210,3 @@ code {
   background-size: cover;
   backface-visibility: hidden;
 }
-
-/* .image-container .img:nth-child(1) span {
-  background-position: 0%;
-}
-
-.image-container .img:nth-child(2) span {
-  background-position: 25%;
-}
-
-.image-container .img:nth-child(3) span {
-  background-position: 50%;
-}
-
-.image-container .img:nth-child(4) span {
-  background-position: 75%;
-}
-
-.image-container .img:nth-child(5) span {
-  background-position: 100%;
-} */
