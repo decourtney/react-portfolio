@@ -30,7 +30,6 @@ const ImageSlice = ({ i, s }: ImageSliceProps) => {
     x: ["45%", "-45%", "0%", "45%"],
   };
 
-
   return (
     <div
       ref={scope}
