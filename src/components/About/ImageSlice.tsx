@@ -12,23 +12,23 @@ const ImageSlice = ({ i, s }: ImageSliceProps) => {
   const w = 100 / s;
   const duration = 20;
 
-  const variants1 = {
-    rotateY: [0, 120, 240, 360],
-    transformPerspective: [1000, 2000, 2000, 1000],
-    x: ["0%", "45%", "-45%", "0%"],
-  };
+    const variants1 = {
+      rotateY: [0, 0, 120, 120, 240, 240, 360],
+      transformPerspective: [1000, 1000, 2000, 2000, 2000, 2000, 1000],
+      x: ["0%", "0%", "45%", "45%", "-45%", "-45%", "0%"],
+    };
 
-  const variants2 = {
-    rotateY: [240, 360, 480, 600],
-    transformPerspective: [2000, 1000, 2000, 2000],
-    x: ["-45%", "-0%", "45%", "-45%"],
-  };
+    const variants2 = {
+      rotateY: [240, 240, 360, 360, 480, 480, 600],
+      transformPerspective: [2000, 2000, 1000, 1000, 2000, 2000, 2000],
+      x: ["-45%", "-45%", "-0%", "-0%", "45%", "45%", "-45%"],
+    };
 
-  const variants3 = {
-    rotateY: [120, 240, 360, 480],
-    transformPerspective: [2000, 2000, 1000, 2000],
-    x: ["45%", "-45%", "0%", "45%"],
-  };
+    const variants3 = {
+      rotateY: [120, 120, 240, 240, 360, 360, 480],
+      transformPerspective: [2000, 2000, 2000, 2000, 1000, 1000, 2000],
+      x: ["45%", "45%", "-45%", "-45%", "0%", "0%", "45%"],
+    };
 
   return (
     <div
