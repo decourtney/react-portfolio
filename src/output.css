@@ -793,10 +793,6 @@ video {
   margin-left: 25%;
 }
 
-.ml-\[3\%\] {
-  margin-left: 3%;
-}
-
 .ml-\[4\%\] {
   margin-left: 4%;
 }
@@ -823,10 +819,6 @@ video {
 
 .mr-\[4\%\] {
   margin-right: 4%;
-}
-
-.mr-\[6\%\] {
-  margin-right: 6%;
 }
 
 .mt-\[12\%\] {
@@ -987,6 +979,10 @@ video {
   width: 8.5%;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1011,6 +1007,11 @@ video {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.origin-left {
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .-translate-x-\[1\%\] {
@@ -1101,6 +1102,12 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1272,6 +1279,12 @@ video {
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .drop-shadow-2xl {
@@ -1582,29 +1595,33 @@ code {
   background-image: url(./images/forrest1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .image-container .img .image-2 {
   background-image: url(./images/forrest2.png);
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .image-container .img .image-3 {
   background-image: url(./images/forrest3.png);
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
-.aboutme-container {
-  background-image: radial-gradient(transparent 70%, black);
+.image-container .img{
+  -webkit-transform-origin: center center ;
+          transform-origin: center center ;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
+
+/* .aboutme-container {
+  background-image: radial-gradient(transparent 70%, black);
+} */
 
 .hover\:bg-green-400:hover {
   --tw-bg-opacity: 1;

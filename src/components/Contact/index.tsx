@@ -44,25 +44,12 @@ const ContactRight = ({ data }: ContactProps) => {
 
   return (
     <>
-      <div className="flex w-full justify-center items-center bg-green-400">
+      <div className="flex justify-center items-center w-full bg-green-400">
         <form className="flex-col space-y-5 bg-pink-300" onSubmit={sendEmail}>
-          <div>
-            <input type="text" name="user_name" placeholder="Name" required />
-          </div>
-          <div>
-            <input
-              type="email"
-              name="user_email"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div>
-            <textarea name="message" placeholder="Message" required />
-          </div>
-          <div>
-            <input type="submit" value="Send" />
-          </div>
+          <input type="text" name="user_name" placeholder="Name" required />
+          <input type="email" name="user_email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" required />
+          <input type="submit" value="Send" />
         </form>
       </div>
     </>
