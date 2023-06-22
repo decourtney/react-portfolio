@@ -211,6 +211,10 @@ code {
   backface-visibility: hidden;
 }
 
+.image-container .img {
+  transform-style: preserve-3d;
+}
+
 /* .aboutme-container {
   background-image: radial-gradient(transparent 70%, black);
 } */

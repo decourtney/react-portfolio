@@ -5,7 +5,7 @@ import forrest from "../../images/forrest1.png";
 
 const AboutLeft = () => {
   const [loadContent, setLoadContent] = useState("");
-  const numberOfSlices = 5;
+  const numberOfSlices = 3;
   const slicesArray = [];
 
   for (let i = 0; i < numberOfSlices; i++) {
@@ -18,7 +18,7 @@ const AboutLeft = () => {
     <div className="flex justify-center items-center w-full mr-[4%] pl-[4%] pr-[2%] -z-10 bg-blue-400">
       <div className="image-container relative w-full h-fit ">
         <img src={forrest} className="w-full invisible" />
-        <div className="absolute top-0 left-0 flex w-[100%] h-full">
+        <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
           {slicesArray.map((s) => {
             return s;
           })}
@@ -30,10 +30,33 @@ const AboutLeft = () => {
 
 const AboutRight = () => {
   const [loadContent, setLoadContent] = useState("");
+  const [mousePos, setMousePos] = useState({});
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+      setX(event.clientX);
+      setY(event.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [mousePos]);
 
   return (
     <div className="flex justify-center items-center w-full ml-[4%] -z-10 bg-blue-400">
-      <div className="aboutme-container relative flex justify-center items-center w-[80%] h-[75%] shadow-md before:">
+      <div className="aboutme-container relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl">
+        <p>
+          Mouse is at position 
+          <b>
+            x:{x} y:{y}
+          </b>
+        </p>
         <span className="h-full">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           laoreet mi at mollis pretium. Integer ac est vulputate, malesuada elit

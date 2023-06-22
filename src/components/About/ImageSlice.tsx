@@ -32,7 +32,6 @@ const ImageSlice = ({ i, s }: ImageSliceProps) => {
 
   return (
     <div
-      ref={scope}
       className={`img relative h-full`}
       style={{ width: `${w}%` }}
     >
