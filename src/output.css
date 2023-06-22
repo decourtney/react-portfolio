@@ -1616,7 +1616,7 @@ code {
           backface-visibility: hidden;
 }
 
-.image-container .img {
+.image-container .img  {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }

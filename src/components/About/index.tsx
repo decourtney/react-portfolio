@@ -5,7 +5,7 @@ import forrest from "../../images/forrest1.png";
 
 const AboutLeft = () => {
   const [loadContent, setLoadContent] = useState("");
-  const numberOfSlices = 3;
+  const numberOfSlices = 10;
   const slicesArray = [];
 
   for (let i = 0; i < numberOfSlices; i++) {

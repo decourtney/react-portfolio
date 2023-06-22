@@ -36,25 +36,25 @@ const ImageSlice = ({ i, s }: ImageSliceProps) => {
       style={{ width: `${w}%` }}
     >
       <motion.span
+        className={`image-1 absolute top-0 left-0 w-full h-full `}
+        style={{ backgroundPosition: `${pos}%` }}
         initial={{ rotateY: 0, x: "0%" }}
         animate={variants1}
         transition={{ repeat: Infinity, duration: duration, ease: "easeInOut" }}
-        className={`image-1 absolute top-0 left-0 w-full h-full `}
-        style={{ backgroundPosition: `${pos}%` }}
       />
       <motion.span
+        className={`image-2 absolute top-0 left-0 w-full h-full `}
+        style={{ backgroundPosition: `${pos}%` }}
         initial={{ rotateY: 240, x: "-45%" }}
         animate={variants2}
         transition={{ repeat: Infinity, duration: duration, ease: "easeInOut" }}
-        className={`image-2 absolute top-0 left-0 w-full h-full `}
-        style={{ backgroundPosition: `${pos}%` }}
       />
       <motion.span
+        className={`image-3 absolute top-0 left-0 w-full h-full `}
+        style={{ backgroundPosition: `${pos}%` }}
         initial={{ rotateY: 120, x: "45%" }}
         animate={variants3}
         transition={{ repeat: Infinity, duration: duration, ease: "easeInOut" }}
-        className={`image-3 absolute top-0 left-0 w-full h-full `}
-        style={{ backgroundPosition: `${pos}%` }}
       />
     </div>
   );
