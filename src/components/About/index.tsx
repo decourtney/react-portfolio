@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ImageSlice from "./ImageSlice";
 import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import forrest from "../../images/forrest1.png";
@@ -30,15 +30,13 @@ const AboutLeft = () => {
 
 const AboutRight = () => {
   const [loadContent, setLoadContent] = useState("");
-  const [mousePos, setMousePos] = useState({});
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  const container = useRef<HTMLDivElement>(null); // unclear on useRef use
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [middlePos, setMiddlePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePos({ x: event.clientX, y: event.clientY });
-      setX(event.clientX);
-      setY(event.clientY);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -48,13 +46,38 @@ const AboutRight = () => {
     };
   }, [mousePos]);
 
+
+  const checkDivSize = (el: HTMLDivElement) => {
+    const newMiddlePos = {
+      x: el.getBoundingClientRect().width,
+      y: el.getBoundingClientRect().height,
+    };
+
+    if (middlePos.x === newMiddlePos.x && middlePos.y === newMiddlePos.y)
+      return;
+
+    setMiddlePos(newMiddlePos);
+    // console.log(middlePos);
+  };
+
+  useEffect(()=>{
+    if(!container.current) return;
+    
+    // console.log(container.current.getBoundingClientRect().width);
+    
+  },[])
+
   return (
     <div className="flex justify-center items-center w-full ml-[4%] -z-10 bg-blue-400">
-      <div className="aboutme-container relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl">
+      <div
+        ref={(el) => (el ? checkDivSize(el) : null)}
+        // ref={container}
+        className="aboutme-container relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
+      >
         <p>
-          Mouse is at position 
+          Mouse is at position
           <b>
-            x:{x} y:{y}
+            x:{mousePos.x} y:{mousePos.y}
           </b>
         </p>
         <span className="h-full">
