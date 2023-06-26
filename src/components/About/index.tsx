@@ -35,17 +35,27 @@ const AboutRight = () => {
   const [middlePos, setMiddlePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    let div = document.getElementById("right-panel");
+
     const handleMouseMove = (event: MouseEvent) => {
-      setMousePos({ x: event.clientX, y: event.clientY });
+      if (div) {
+        let rect = div.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
+        setMousePos({x: x, y: y})
+      }
+
+      // setMousePos({ x: event.clientX, y: event.clientY });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    div?.addEventListener("mousemove", handleMouseMove);
+    // window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      div?.removeEventListener("mousemove", handleMouseMove);
+      // window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [mousePos]);
-
+  }, []);
 
   const checkDivSize = (el: HTMLDivElement) => {
     const newMiddlePos = {
@@ -60,12 +70,11 @@ const AboutRight = () => {
     // console.log(middlePos);
   };
 
-  useEffect(()=>{
-    if(!container.current) return;
-    
+  useEffect(() => {
+    if (!container.current) return;
+
     // console.log(container.current.getBoundingClientRect().width);
-    
-  },[])
+  }, []);
 
   return (
     <div className="flex justify-center items-center w-full ml-[4%] -z-10 bg-blue-400">
@@ -75,9 +84,9 @@ const AboutRight = () => {
         className="aboutme-container relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
       >
         <p>
-          Mouse is at position
+          Mouse is at position{" "}
           <b>
-            x:{mousePos.x} y:{mousePos.y}
+            x: {mousePos.x} y: {mousePos.y}
           </b>
         </p>
         <span className="h-full">
