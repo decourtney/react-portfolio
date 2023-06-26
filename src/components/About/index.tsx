@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import ImageSlice from "./ImageSlice";
 import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import forrest from "../../images/forrest1.png";
+import { isEditable } from "@testing-library/user-event/dist/utils";
 
 const AboutLeft = () => {
-  const [loadContent, setLoadContent] = useState("");
   const numberOfSlices = 10;
   const slicesArray = [];
 
@@ -29,59 +29,72 @@ const AboutLeft = () => {
 };
 
 const AboutRight = () => {
-  const [loadContent, setLoadContent] = useState("");
-  const container = useRef<HTMLDivElement>(null); // unclear on useRef use
+  const [windowSize, setWindowSize] = useState({
+    x: window.innerWidth,
+    y: window.innerHeight,
+  });
+  const [middlePos, setMiddlePos] = useState({
+    x: windowSize.x / 2,
+    y: windowSize.y / 2,
+  });
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [middlePos, setMiddlePos] = useState({ x: 0, y: 0 });
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
 
+  // Monitor for mouse movement and window resize
   useEffect(() => {
-    let div = document.getElementById("right-panel");
+    const div = document.getElementById("right-panel");
 
     const handleMouseMove = (event: MouseEvent) => {
       if (div) {
         let rect = div.getBoundingClientRect();
-        let x = event.clientX - rect.left;
-        let y = event.clientY - rect.top;
-        setMousePos({x: x, y: y})
-      }
+        let x = Math.round(event.clientX - rect.left);
+        let y = Math.round(event.clientY - rect.top);
 
-      // setMousePos({ x: event.clientX, y: event.clientY });
+        setMousePos({ x: x, y: y });
+      }
+    };
+
+    const handleResize = () => {
+      setWindowSize({ x: window.innerWidth, y: window.innerHeight });
     };
 
     div?.addEventListener("mousemove", handleMouseMove);
-    // window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       div?.removeEventListener("mousemove", handleMouseMove);
-      // window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  const checkDivSize = (el: HTMLDivElement) => {
-    const newMiddlePos = {
-      x: el.getBoundingClientRect().width,
-      y: el.getBoundingClientRect().height,
-    };
-
-    if (middlePos.x === newMiddlePos.x && middlePos.y === newMiddlePos.y)
-      return;
-
-    setMiddlePos(newMiddlePos);
-    // console.log(middlePos);
-  };
-
+  // Calc mouse pos offset relative to middle of panel div
   useEffect(() => {
-    if (!container.current) return;
+    setOffset({
+      x: ((mousePos.x - middlePos.x) / middlePos.x) * 15,
+      y: ((mousePos.y - middlePos.y) / middlePos.y) * 15,
+    });
+  }, [mousePos]);
 
-    // console.log(container.current.getBoundingClientRect().width);
-  }, []);
+  // Track the center of this panel when window resizes
+  useEffect(() => {
+    const div = document.getElementById("right-panel");
+
+    if (div) {
+      const newMiddlePos = {
+        x: div.getBoundingClientRect().width / 2,
+        y: div.getBoundingClientRect().height / 2,
+      };
+
+      setMiddlePos(newMiddlePos);
+    }
+  }, [windowSize]);
 
   return (
     <div className="flex justify-center items-center w-full ml-[4%] -z-10 bg-blue-400">
-      <div
-        ref={(el) => (el ? checkDivSize(el) : null)}
-        // ref={container}
+      <motion.div
         className="aboutme-container relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
+        animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
+        transition={{ ease: "linear", type: "tween" }}
       >
         <p>
           Mouse is at position{" "}
@@ -110,7 +123,7 @@ const AboutRight = () => {
           fermentum. Maecenas tristique elit eget risus sollicitudin, vitae
           egestas est ornare.
         </span>
-      </div>
+      </motion.div>
     </div>
   );
 };
