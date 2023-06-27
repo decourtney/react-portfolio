@@ -11,10 +11,7 @@ const ImageSlice = ({ currentIndex, numberOfSlices }: ImageSliceProps) => {
   const pos = (100 / (numberOfSlices - 1)) * currentIndex;
   const sliceWidth = 100 / numberOfSlices;
   const duration = 20;
-  
-  // Delay needs some fine tuning
-  const delay = 0.5 + (currentIndex + Math.random()) / 100;
-  console.log("Slice ", currentIndex, " delayed ", delay);
+  const delay = ((currentIndex + 1) * Math.random()) / 10; ; // Delay makes the trivision board imperfectly animate sequentially 
 
   const variants1 = {
     rotateY: [0, 0, 120, 120, 240, 240, 360],
