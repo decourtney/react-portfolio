@@ -165,13 +165,22 @@ const AboutRight = () => {
           className="shadow-box absolute top-0 left-0 w-full h-full pointer-events-none"
           style={{ transformStyle: "preserve-3d" }}
         >
-          <motion.div
-            className="glass absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-[50%] -translate-y-[50%] opacity-50 bg-gradient-to-tl from-transparent via-white to-transparent pointer-events-none"
-            style={{ transform: "translateZ(40px)" }}
-            animate={{
-              transform: `translate((${-1 * offset.y})%, ${offset.x}%)`,
-            }}
-          />
+          <div
+            className="relative w-full h-full"
+            style={{ transform: "translateZ(60px)" }}
+          >
+            <motion.div
+              className="glass absolute top-1/2 left-1/2 w-[200%] h-[200%] pointer-events-none"
+              style={{
+                transform: "translate(-50%, -50%)",
+                background:
+                  "linear-gradient(0.4turn, #00000000 35%, #ffffff, #00000000 50%)",
+              }}
+              animate={{
+                transform: `translate((${-1 * offset.y})%, ${offset.x}%)`,
+              }}
+            />
+          </div>
           <div
             className="left-wall absolute top-0 left-0 w-[50px] h-full origin-left bg-slate-500"
             style={{ transform: "rotateY(-90deg)" }}
