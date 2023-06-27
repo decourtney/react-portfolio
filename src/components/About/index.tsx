@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import ImageSlice from "./ImageSlice";
 import { AnimatePresence, motion, useAnimate, useScroll } from "framer-motion";
 import forrest from "../../images/forrest1.png";
+import lilith from "../../images/lilith.png";
+import biden from "../../images/biden.png";
 
 const AboutLeft = () => {
   const numberOfSlices = 15;
@@ -73,8 +75,8 @@ const AboutRight = () => {
   // Calc mouse pos offset relative to middle of panel div
   useEffect(() => {
     setOffset({
-      x: ((mousePos.x - middlePos.x) / middlePos.x) * 45,
-      y: ((mousePos.y - middlePos.y) / middlePos.y) * 45,
+      x: ((mousePos.x - middlePos.x) / middlePos.x) * 30,
+      y: ((mousePos.y - middlePos.y) / middlePos.y) * 30,
     });
   }, [mousePos]);
 
@@ -100,85 +102,34 @@ const AboutRight = () => {
         animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
         transition={{ ease: "linear", type: "tween" }}
       >
-        <div className="flex w-full h-full overflow-scroll scrollbar-hide bg-gradient-to-b from-green-500 to-blue-500">
-          <p className="w-full h-full p-[3%] select-none">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            laoreet mi at mollis pretium. Integer ac est vulputate, malesuada
-            elit eu, lacinia erat. Maecenas volutpat fringilla elit at molestie.
-            Morbi ac justo eu neque tempus venenatis sit amet vitae nisl. Nunc
-            eu tristique arcu, sit amet gravida magna. Donec in lectus eget
-            magna placerat sodales malesuada a elit. Vivamus ultricies urna nec
-            placerat auctor. Vestibulum auctor vehicula maximus. Curabitur
-            posuere gravida nibh id varius. Aliquam sed venenatis odio, id
-            ultricies ipsum. Curabitur interdum gravida nisi, vel finibus massa
-            finibus ut. Phasellus eu lorem venenatis, fermentum dolor malesuada,
-            ullamcorper ante. Nunc sed porta lorem. In laoreet est et lacus
-            placerat vehicula. Praesent sollicitudin ullamcorper velit id
-            lacinia. Cras in maximus nisl, sed pharetra ligula. Pellentesque
-            nunc dui, vestibulum tristique purus sed, rhoncus vulputate neque.
-            Vivamus id turpis risus. Ut sed est tempus justo semper viverra quis
-            ac mauris. Quisque id semper diam, a consequat velit. Mauris
-            fringilla erat mauris, consectetur pellentesque urna sodales sit
-            amet. Vivamus pulvinar enim quis congue fermentum. Maecenas
-            tristique elit eget risus sollicitudin, vitae egestas est ornare.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            laoreet mi at mollis pretium. Integer ac est vulputate, malesuada
-            elit eu, lacinia erat. Maecenas volutpat fringilla elit at molestie.
-            Morbi ac justo eu neque tempus venenatis sit amet vitae nisl. Nunc
-            eu tristique arcu, sit amet gravida magna. Donec in lectus eget
-            magna placerat sodales malesuada a elit. Vivamus ultricies urna nec
-            placerat auctor. Vestibulum auctor vehicula maximus. Curabitur
-            posuere gravida nibh id varius. Aliquam sed venenatis odio, id
-            ultricies ipsum. Curabitur interdum gravida nisi, vel finibus massa
-            finibus ut. Phasellus eu lorem venenatis, fermentum dolor malesuada,
-            ullamcorper ante. Nunc sed porta lorem. In laoreet est et lacus
-            placerat vehicula. Praesent sollicitudin ullamcorper velit id
-            lacinia. Cras in maximus nisl, sed pharetra ligula. Pellentesque
-            nunc dui, vestibulum tristique purus sed, rhoncus vulputate neque.
-            Vivamus id turpis risus. Ut sed est tempus justo semper viverra quis
-            ac mauris. Quisque id semper diam, a consequat velit. Mauris
-            fringilla erat mauris, consectetur pellentesque urna sodales sit
-            amet. Vivamus pulvinar enim quis congue fermentum. Maecenas
-            tristique elit eget risus sollicitudin, vitae egestas est ornare.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            laoreet mi at mollis pretium. Integer ac est vulputate, malesuada
-            elit eu, lacinia erat. Maecenas volutpat fringilla elit at molestie.
-            Morbi ac justo eu neque tempus venenatis sit amet vitae nisl. Nunc
-            eu tristique arcu, sit amet gravida magna. Donec in lectus eget
-            magna placerat sodales malesuada a elit. Vivamus ultricies urna nec
-            placerat auctor. Vestibulum auctor vehicula maximus. Curabitur
-            posuere gravida nibh id varius. Aliquam sed venenatis odio, id
-            ultricies ipsum. Curabitur interdum gravida nisi, vel finibus massa
-            finibus ut. Phasellus eu lorem venenatis, fermentum dolor malesuada,
-            ullamcorper ante. Nunc sed porta lorem. In laoreet est et lacus
-            placerat vehicula. Praesent sollicitudin ullamcorper velit id
-            lacinia. Cras in maximus nisl, sed pharetra ligula. Pellentesque
-            nunc dui, vestibulum tristique purus sed, rhoncus vulputate neque.
-            Vivamus id turpis risus. Ut sed est tempus justo semper viverra quis
-            ac mauris. Quisque id semper diam, a consequat velit. Mauris
-            fringilla erat mauris, consectetur pellentesque urna sodales sit
-            amet. Vivamus pulvinar enim quis congue fermentum. Maecenas
-            tristique elit eget risus sollicitudin, vitae egestas est ornare.
-          </p>
+        <div className="flex w-full h-full text-2xl overflow-scroll scrollbar-hide">
+          <img src={lilith} className="w-full" />
         </div>
         <div
           className="shadow-box absolute top-0 left-0 w-full h-full pointer-events-none"
           style={{ transformStyle: "preserve-3d" }}
         >
+          {/* Container for the glass glare effect */}
           <div
-            className="relative w-full h-full"
-            style={{ transform: "translateZ(60px)" }}
+            className="glass relative w-full h-full overflow-clip backdrop-blur-[1px]"
+            style={{
+              transform: "translateZ(50px)",
+              backgroundImage:
+                "radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0) 65%, rgba(103, 74, 49, 0.5) 84%, rgba(43, 23, 0, 0.81) 100%)",
+            }}
           >
             <motion.div
-              className="glass absolute top-1/2 left-1/2 w-[200%] h-[200%] pointer-events-none"
+              className="absolute top-1/2 left-1/2 w-[600%] h-[600%] opacity-20 blur-sm pointer-events-none"
               style={{
-                transform: "translate(-50%, -50%)",
                 background:
-                  "linear-gradient(0.4turn, #00000000 35%, #ffffff, #00000000 50%)",
+                  "linear-gradient(0.4turn, #00000000 58%, #ffffff, #00000000 60%)",
               }}
+              initial={{ translateX: "-50%", translateY: "-50%" }}
               animate={{
-                transform: `translate((${-1 * offset.y})%, ${offset.x}%)`,
+                translateX: offset.x + -50 + "%",
+                translateY: offset.y + -50 + "%",
               }}
+              transition={{ ease: "linear", type: "tween" }}
             />
           </div>
           <div
@@ -190,7 +141,7 @@ const AboutRight = () => {
             style={{ transform: "rotateY(90deg)" }}
           />
           <div
-            className="top-wall absolute top-0 right-0 w-full h-[50px] origin-top bg-slate-500"
+            className="top-wall absolute top-0 right-0 w-full h-[50px] origin-top shadow-lg bg-slate-500"
             style={{ transform: "rotateX(90deg)" }}
           />
           <div
