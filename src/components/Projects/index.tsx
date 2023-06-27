@@ -74,7 +74,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
         <AnimatePresence custom={direction} >
           <motion.div
             key={currentPage}
-            className="details-image absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 w-full h-full"
             data-page={currentPage}
             variants={carouselVariants}
             initial="enter"

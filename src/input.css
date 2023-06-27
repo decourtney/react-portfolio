@@ -6,6 +6,7 @@
   font-family: "Swiss Grit";
   src: url("./fonts/SwissGrit.otf");
 }
+
 @font-face {
   font-family: "Swiss Grit Dingbats";
   src: url("./fonts/SwissGritDingbats.otf");
@@ -30,8 +31,10 @@ code {
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .leftpanel-border {
@@ -81,6 +84,7 @@ code {
   0% {
     background-color: #929292;
   }
+
   100% {
     background-color: #f6ff00;
   }
@@ -89,12 +93,15 @@ code {
 .bottom-\[17\%\] {
   bottom: 17%;
 }
+
 .bottom-\[34\%\] {
   bottom: 34%;
 }
+
 .bottom-\[51\%\] {
   bottom: 51%;
 }
+
 .bottom-\[68\%\] {
   bottom: 68%;
 }
@@ -129,45 +136,81 @@ code {
   animation: glitch1 10s infinite;
 }
 
-
 @keyframes glitch1 {
   0% {
     opacity: 1;
   }
+
   7% {
     opacity: 0.75;
   }
+
   10% {
     opacity: 1;
   }
+
   27% {
     opacity: 1;
   }
+
   30% {
     opacity: 0.75;
   }
+
   35% {
     opacity: 1;
   }
+
   52% {
     opacity: 1;
   }
+
   55% {
     opacity: 0.75;
   }
+
   50% {
     opacity: 1;
   }
+
   72% {
     opacity: 1;
   }
+
   75% {
     opacity: 0.75;
   }
+
   80% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
+}
+
+.image-container .img .image-1 {
+  background-image: url(./images/forrest1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.image-container .img .image-2 {
+  background-image: url(./images/forrest2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.image-container .img .image-3 {
+  background-image: url(./images/forrest3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.image-container .img {
+  transform-style: preserve-3d;
 }
