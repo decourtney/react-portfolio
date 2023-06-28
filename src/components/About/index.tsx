@@ -42,16 +42,17 @@ const AboutRight = () => {
     x: windowSize.x / 2,
     y: windowSize.y / 2,
   });
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: middlePos.x, y: middlePos.y });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   // Monitor for mouse movement and window resize
   useEffect(() => {
-    const div = document.getElementById("right-panel");
+    const div: HTMLElement | null = document.getElementById("info-box");
 
     const handleMouseMove = (event: MouseEvent) => {
       if (div) {
-        let rect = div.getBoundingClientRect();
+        const rect: DOMRect = div.getBoundingClientRect();
+
         let x = Math.round(event.clientX - rect.left);
         let y = Math.round(event.clientY - rect.top);
 
@@ -95,7 +96,11 @@ const AboutRight = () => {
   }, [windowSize]);
 
   return (
-    <div className="flex justify-center items-center w-full ml-[4%] bg-blue-400">
+    <div
+      id="info-box"
+      className="flex justify-center items-center w-full ml-[4%] bg-blue-400"
+      onMouseLeave={() => setMousePos({ x: middlePos.x, y: middlePos.y })} // Reset box if not mouse over panel
+    >
       <motion.div
         className="relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
         style={{ transformStyle: "preserve-3d" }}
@@ -106,12 +111,14 @@ const AboutRight = () => {
           <img src={lilith} className="w-full" />
         </div>
         <div
-          className="shadow-box absolute top-0 left-0 w-full h-full pointer-events-none"
+          id="box-top"
+          className="absolute top-0 left-0 w-full h-full pointer-events-none"
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Container for the glass glare effect */}
           <div
-            className="glass relative w-full h-full overflow-clip backdrop-blur-[1px]"
+            id="glass"
+            className="relative w-full h-full overflow-clip backdrop-blur-[1px]"
             style={{
               transform: "translateZ(50px)",
               backgroundImage:
@@ -119,6 +126,7 @@ const AboutRight = () => {
             }}
           >
             <motion.div
+              id="glass-glare"
               className="absolute top-1/2 left-1/2 w-[600%] h-[600%] opacity-20 blur-sm pointer-events-none"
               style={{
                 background:
@@ -133,19 +141,23 @@ const AboutRight = () => {
             />
           </div>
           <div
-            className="left-wall absolute top-0 left-0 w-[50px] h-full origin-left bg-slate-500"
+            id="left-wall"
+            className="absolute top-0 left-0 w-[50px] h-full origin-left bg-slate-500"
             style={{ transform: "rotateY(-90deg)" }}
           />
           <div
-            className="right-wall absolute top-0 right-0 w-[50px] h-full origin-right bg-slate-500"
+            id="right-wall"
+            className="absolute top-0 right-0 w-[50px] h-full origin-right bg-slate-500"
             style={{ transform: "rotateY(90deg)" }}
           />
           <div
-            className="top-wall absolute top-0 right-0 w-full h-[50px] origin-top shadow-lg bg-slate-500"
+            id="top-wall"
+            className="absolute top-0 right-0 w-full h-[50px] origin-top shadow-lg bg-slate-500"
             style={{ transform: "rotateX(90deg)" }}
           />
           <div
-            className="bottom-wall absolute bottom-0 left-0 w-full h-[50px] origin-bottom bg-slate-500"
+            id="bottom-wall"
+            className="absolute bottom-0 left-0 w-full h-[50px] origin-bottom bg-slate-500"
             style={{ transform: "rotateX(-90deg)" }}
           />
         </div>
