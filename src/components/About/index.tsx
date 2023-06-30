@@ -119,7 +119,7 @@ const AboutRight = () => {
         className="relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
         style={{ transformStyle: "preserve-3d" }}
         animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
-        transition={{ type: "spring" }}
+        transition={{ type: "spring", ease: "easeInOut" }}
       >
         <div className="flex w-full h-full text-2xl overflow-scroll scrollbar-hide">
           <img src={lilith} className="w-full" />
@@ -151,7 +151,7 @@ const AboutRight = () => {
                 translateX: offset.x + -50 + "%",
                 translateY: offset.y + -50 + "%",
               }}
-              transition={{ type: "spring" }}
+              transition={{ type: "spring", ease: "easeInOut" }}
             />
           </div>
           <div
