@@ -7,24 +7,38 @@ import biden from "../../images/biden.png";
 
 const AboutLeft = () => {
   const numberOfSlices = 15;
-  const slicesArray = [];
+  const duration = 20;
 
-  for (let i = 0; i < numberOfSlices; i++) {
-    slicesArray.push(
-      <ImageSlice
-        key={`image-slice-${i}`}
-        currentIndex={i}
-        numberOfSlices={numberOfSlices}
-      />
-    );
-  }
+  // const slicesArray = [];
+  const getDivSlices = () => {
+    const slicesArray = [];
+
+    for (let i = 0; i < numberOfSlices; i++) {
+      const delay = ((i + 1) + Math.random() * 100) / 100;
+      const pos = (100 / (numberOfSlices - 1)) * i;
+      const sliceWidth = 100 / numberOfSlices;
+
+      console.log(`Index ${i}: `,delay)
+
+      slicesArray.push(
+        <ImageSlice
+          key={`div-slice-${i}`}
+          sliceWidth={sliceWidth}
+          slicePos={pos}
+          delay={delay}
+          duration={duration}
+        />
+      );
+    }
+    return slicesArray;
+  };
 
   return (
     <div className="flex justify-center items-center w-full mr-[4%] pl-[4%] pr-[2%] -z-10 bg-blue-400">
       <div className="image-container relative w-full h-fit ">
         <img src={forrest} className="w-full invisible" />
         <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
-          {slicesArray.map((s) => {
+          {getDivSlices().map((s) => {
             return s;
           })}
         </div>
@@ -105,7 +119,7 @@ const AboutRight = () => {
         className="relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
         style={{ transformStyle: "preserve-3d" }}
         animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
-        transition={{ ease: "linear", type: "tween" }}
+        transition={{ type: "spring" }}
       >
         <div className="flex w-full h-full text-2xl overflow-scroll scrollbar-hide">
           <img src={lilith} className="w-full" />
@@ -137,7 +151,7 @@ const AboutRight = () => {
                 translateX: offset.x + -50 + "%",
                 translateY: offset.y + -50 + "%",
               }}
-              transition={{ ease: "linear", type: "tween" }}
+              transition={{ type: "spring" }}
             />
           </div>
           <div
