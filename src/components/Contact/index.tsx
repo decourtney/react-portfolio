@@ -43,29 +43,42 @@ const ContactRight = ({ data }: ContactProps) => {
   };
 
   return (
-    <>
-      <div className="flex w-full justify-center items-center bg-green-400">
-        <form className="flex-col space-y-5 bg-pink-300" onSubmit={sendEmail}>
-          <div>
-            <input type="text" name="user_name" placeholder="Name" required />
-          </div>
-          <div>
-            <input
-              type="email"
-              name="user_email"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div>
-            <textarea name="message" placeholder="Message" required />
-          </div>
-          <div>
-            <input type="submit" value="Send" />
-          </div>
-        </form>
-      </div>
-    </>
+    <div className="flex w-full ml-[4%] justify-center items-center bg-green-400">
+      <form
+        className="flex-col w-[60%] max-h-[60%] p-[1%] space-y-5 bg-pink-300"
+        onSubmit={sendEmail}
+      >
+        <input
+          type="text"
+          name="user_name"
+          className="w-full"
+          placeholder="Name"
+          required
+        />
+        <input
+          type="email"
+          name="user_email"
+          className="w-full"
+          placeholder="Email"
+          required
+        />
+        <div className="h-full">
+          <textarea
+            name="message"
+            className="w-full min-h-[100%] resize-none"
+            placeholder="Message"
+            required
+          />
+        </div>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Send
+          {/* <input type="submit" value="Send" /> */}
+        </button>
+      </form>
+    </div>
   );
 };
 

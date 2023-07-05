@@ -61,11 +61,12 @@ const AboutRight = () => {
 
   // Monitor for mouse movement and window resize
   useEffect(() => {
-    const div: HTMLElement | null = document.getElementById("info-box");
+    const div = document.getElementById("info-box");
 
+    // Track mouse movement in and relative to right panel info-box
     const handleMouseMove = (event: MouseEvent) => {
       if (div) {
-        const rect: DOMRect = div.getBoundingClientRect();
+        const rect = div.getBoundingClientRect();
 
         let x = Math.round(event.clientX - rect.left);
         let y = Math.round(event.clientY - rect.top);
@@ -74,6 +75,7 @@ const AboutRight = () => {
       }
     };
 
+    // Track changes to window resize
     const handleResize = () => {
       setWindowSize({ x: window.innerWidth, y: window.innerHeight });
     };
