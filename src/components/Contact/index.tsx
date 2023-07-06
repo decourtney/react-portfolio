@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { isEditable } from "@testing-library/user-event/dist/utils";
 
 type ContactProps = {
   data: string;
@@ -44,11 +45,11 @@ const ContactRight = ({ data }: ContactProps) => {
 
   return (
     <div className="flex w-full justify-center bg-green-400">
-      <div className="relative w-[80%] h-[60%] my-[5%] text-green-500 text-3xl">
+      <div className="relative w-[80%] h-[60%] my-[5%] text-green-500 text-3xl font-vt323">
         <div className="video-overlay pointer-events-none" />
-        <div className="flex w-full h-full p-[2%] bg-black">
+        <div className=" w-full h-full p-[2%] bg-black">
           <form
-            className="flex-col w-full p-[1%] space-y-0 bg-gray-800"
+            className="flex-col w-full h-full p-[1%] space-y-0 bg-gray-800 "
             onSubmit={sendEmail}
           >
             <div className="flex space-x-2">
@@ -57,7 +58,8 @@ const ContactRight = ({ data }: ContactProps) => {
                 id="username"
                 type="text"
                 name="user_name"
-                className="w-full bg-inherit"
+                className="w-full bg-inherit outline-none"
+                style={{ fontVariant: "normal" }}
                 placeholder=""
                 required
               />
@@ -68,18 +70,20 @@ const ContactRight = ({ data }: ContactProps) => {
                 id="email"
                 type="email"
                 name="user_email"
-                className="w-full bg-inherit"
+                className="w-full bg-inherit outline-none"
                 placeholder=""
                 required
               />
             </div>
-            <div className="flex space-x-2  bg-blue-200">
+            <div className="flex-col bg-blue-200">
               <label htmlFor="message">Message:</label>
-              {/* <div className="w-full break-words h-full">TESTdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div> */}
+              <div className="w-full h-full bg-pink-500">
+                <span>stuff</span>
+              </div>
               {/* <textarea
                 id="message"
                 name="message"
-                className="flex w-full h-full mt-1 scrollbar-hide"
+                className="flex w-full h-full mt-1 resize-none scrollbar-hide"
                 placeholder=""
                 required
               /> */}
@@ -92,37 +96,3 @@ const ContactRight = ({ data }: ContactProps) => {
 };
 
 export { ContactLeft, ContactRight };
-
-{
-  /* <form
-            className="flex-col h-full p-[1%] space-y-5 bg-orange-300"
-            onSubmit={sendEmail}
-          >
-            <input
-              type="text"
-              name="user_name"
-              className="w-full"
-              placeholder="Name"
-              required
-            />
-            <input
-              type="email"
-              name="user_email"
-              className="w-full"
-              placeholder="Email"
-              required
-            />
-            <textarea
-              name="message"
-              className="w-full resize-none"
-              placeholder="Message"
-              required
-            />
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Send
-            </button>
-          </form> */
-}

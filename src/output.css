@@ -762,11 +762,6 @@ video {
   margin-bottom: 5%;
 }
 
-.my-\[10\%\] {
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
-
 .-ml-\[1\%\] {
   margin-left: -1%;
 }
@@ -867,32 +862,20 @@ video {
   margin-top: 25%;
 }
 
-.mt-\[5\%\] {
-  margin-top: 5%;
-}
-
 .mt-\[5\.5\%\] {
   margin-top: 5.5%;
 }
 
-.mb-\[\] {
-  margin-bottom: ;
+.box-border {
+  box-sizing: border-box;
 }
 
-.mb-\[4\%\] {
-  margin-bottom: 4%;
+.block {
+  display: block;
 }
 
-.mb-\[10\%\] {
-  margin-bottom: 10%;
-}
-
-.mb-\[40\%\] {
-  margin-bottom: 40%;
-}
-
-.mb-\[50\%\] {
-  margin-bottom: 50%;
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -905,10 +888,6 @@ video {
 
 .h-\[40\%\] {
   height: 40%;
-}
-
-.h-\[50\%\] {
-  height: 50%;
 }
 
 .h-\[50px\] {
@@ -953,24 +932,32 @@ video {
   height: ;
 }
 
-.h-\[calc\] {
-  height: calc;
+.h-\[5\%\] {
+  height: 5%;
 }
 
-.h-\[calc\(\)\] {
-  height: calc();
+.h-\[10\%\] {
+  height: 10%;
 }
 
-.h-\[100\] {
-  height: 100;
+.h-\[80\%\] {
+  height: 80%;
+}
+
+.h-\[80\%\%\] {
+  height: 80%%;
+}
+
+.h-\[70\%\] {
+  height: 70%;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-\[100\%\] {
   height: 100%;
-}
-
-.h-\[60\] {
-  height: 60;
 }
 
 .max-h-screen {
@@ -1201,10 +1188,6 @@ video {
   flex-direction: column;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .items-center {
   align-items: center;
 }
@@ -1275,11 +1258,6 @@ video {
   white-space: nowrap;
 }
 
-.break-normal {
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
 .break-words {
   overflow-wrap: break-word;
 }
@@ -1292,8 +1270,8 @@ video {
   border-radius: 9999px;
 }
 
-.border-none {
-  border-style: none;
+.border {
+  border-width: 1px;
 }
 
 .bg-\[\#929292\] {
@@ -1309,6 +1287,11 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
 }
 
 .bg-blue-400 {
@@ -1355,9 +1338,14 @@ video {
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
-.bg-blue-200 {
+.bg-yellow-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+.bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 
 .bg-\[radial-gradient\(circle_at_center\2c _var\(--tw-gradient-stops\)\)\] {
@@ -1424,20 +1412,16 @@ video {
   padding-right: 2%;
 }
 
-.pb-\[\] {
-  padding-bottom: ;
-}
-
-.pb-\[75\%\] {
-  padding-bottom: 75%;
-}
-
 .text-center {
   text-align: center;
 }
 
 .font-swissSymbol {
   font-family: Swiss Grit Dingbats;
+}
+
+.font-vt323 {
+  font-family: VT323;
 }
 
 .text-2xl {
@@ -1510,6 +1494,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .blur-sm {
   --tw-blur: blur(4px);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1575,7 +1564,7 @@ video {
 }
 
 body {
-  font-family: "Swiss Grit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Swiss Grit", 'VT323', 'Courier New', Courier, monospace, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -1922,10 +1911,6 @@ code {
 .hover\:bg-green-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
-}
-
-.focus\:border-none:focus {
-  border-style: none;
 }
 
 .focus\:outline-none:focus {

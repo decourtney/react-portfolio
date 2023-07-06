@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily:{
         swiss: ["Swiss Grit", "normal"],
-        swissSymbol: ["Swiss Grit Dingbats"]
+        swissSymbol: ["Swiss Grit Dingbats"],
+        vt323: ["VT323"]
       }
     },
   },

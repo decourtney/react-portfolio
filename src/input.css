@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: "Swiss Grit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Swiss Grit", 'VT323', 'Courier New', Courier, monospace, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
