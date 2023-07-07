@@ -1260,16 +1260,6 @@ video {
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
-.bg-pink-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 114 182 / var(--tw-bg-opacity));
-}
-
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-
 .bg-\[radial-gradient\(circle_at_center\2c _var\(--tw-gradient-stops\)\)\] {
   background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
 }
@@ -1282,6 +1272,10 @@ video {
 
 .to-black {
   --tw-gradient-to: #000 var(--tw-gradient-to-position);
+}
+
+.p-\[2\%\] {
+  padding: 2%;
 }
 
 .px-\[10\%\] {
@@ -1363,9 +1357,28 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
+}
+
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.placeholder-green-400::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-green-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-placeholder-opacity));
 }
 
 .opacity-20 {
@@ -1743,9 +1756,9 @@ code {
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
     linear-gradient(
       90deg,
-      rgba(255, 0, 0, 0.06),
+      rgba(255, 0, 0, 0.02),
       rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
+      rgba(0, 0, 255, 0.02)
     );
   background-size: 100% 4px, 30px 100%;
   z-index: 1;
