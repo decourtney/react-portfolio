@@ -11,7 +11,7 @@ const ContactLeft = ({ data }: ContactProps) => {
 
   return (
     <>
-      <div>
+      <div className="w-full bg-blue-400">
         <p className="text-6xl">{data}</p>
       </div>
     </>
@@ -45,51 +45,47 @@ const ContactRight = ({ data }: ContactProps) => {
 
   return (
     <div className="flex w-full justify-center bg-green-400">
-      <div className="relative w-[80%] h-[60%] my-[5%] text-green-500 text-3xl font-vt323">
-        <div className="video-overlay pointer-events-none" />
-        <div className=" w-full h-full p-[2%] bg-black">
-          <form
-            className="flex-col w-full h-full p-[1%] space-y-0 bg-gray-800 "
-            onSubmit={sendEmail}
-          >
-            <div className="flex space-x-2">
-              <label htmlFor="username">Name:</label>
-              <input
-                id="username"
-                type="text"
-                name="user_name"
-                className="w-full bg-inherit outline-none"
-                style={{ fontVariant: "normal" }}
-                placeholder=""
-                required
-              />
-            </div>
-            <div className="flex space-x-2">
-              <label htmlFor="email">Email:</label>
-              <input
-                id="email"
-                type="email"
-                name="user_email"
-                className="w-full bg-inherit outline-none"
-                placeholder=""
-                required
-              />
-            </div>
-            <div className="flex-col bg-blue-200">
-              <label htmlFor="message">Message:</label>
-              <div className="w-full h-full bg-pink-500">
-                <span>stuff</span>
-              </div>
-              {/* <textarea
-                id="message"
-                name="message"
-                className="flex w-full h-full mt-1 resize-none scrollbar-hide"
-                placeholder=""
-                required
-              /> */}
-            </div>
-          </form>
-        </div>
+      <div className="relative flex-col w-[80%] h-[60%] mt-[10%] text-3xl font-vt323 bg-gray-800">
+        {/* <div className="video-overlay pointer-events-none" /> */}
+        <form
+          className="inline-flex flex-col w-full h-full space-y-0"
+          onSubmit={sendEmail}
+        >
+          <div className="flex">
+            <label htmlFor="username">Name:</label>
+            <input
+              id="username"
+              type="text"
+              name="user_name"
+              className="w-full bg-inherit outline-none"
+              style={{ fontVariant: "normal" }}
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div className="flex bg-pink-400">
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              type="email"
+              name="user_email"
+              className="w-full bg-inherit outline-none"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div className="flex h-full bg-blue-600">
+            <label htmlFor="message">Message:</label>
+            <div><span></span></div>
+            {/* <textarea
+              id="message"
+              name="message"
+              className="h-full w-full bg-inherit resize-none outline-none scrollbar-hide"
+              placeholder="Message"
+              required
+            /> */}
+          </div>
+        </form>
       </div>
     </div>
   );
