@@ -73,7 +73,7 @@ code {
   padding-top: 1.5%;
 }
 
-.blink {
+/* .blink {
   animation-name: blink;
   animation-duration: 0.2s;
   animation-iteration-count: infinite;
@@ -88,7 +88,7 @@ code {
   100% {
     background-color: #f6ff00;
   }
-}
+} */
 
 .bottom-\[17\%\] {
   bottom: 17%;
@@ -216,11 +216,6 @@ code {
 }
 
 .video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
     linear-gradient(
       90deg,
@@ -229,31 +224,13 @@ code {
       rgba(0, 0, 255, 0.02)
     );
   background-size: 100% 4px, 30px 100%;
-  z-index: 1;
-  animation: flicker 100ms infinite;
 }
 
 .video-overlay:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: rgb(255, 255, 255);
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0) 70%,
     rgba(0, 0, 0, 1) 100%
   );
-  z-index: 2;
-}
-
-@keyframes flicker {
-  0% {
-    transform: translateY(1px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { isEditable } from "@testing-library/user-event/dist/utils";
+import { motion } from "framer-motion";
 
 type ContactProps = {
   data: string;
@@ -11,7 +11,7 @@ const ContactLeft = ({ data }: ContactProps) => {
 
   return (
     <>
-      <div className="w-full bg-blue-400">
+      <div className="w-full mr-[4%] bg-blue-400">
         <p className="text-6xl">{data}</p>
       </div>
     </>
@@ -44,9 +44,13 @@ const ContactRight = ({ data }: ContactProps) => {
   };
 
   return (
-    <div className="flex w-full justify-center bg-green-400">
+    <div className="flex w-full justify-center ml-[4%] bg-green-400">
       <div className="relative flex-col w-[80%] h-[60%] mt-[10%] text-3xl font-vt323 text-green-500 bg-gray-800">
-        <div className="video-overlay pointer-events-none" />
+        <motion.div
+          className="video-overlay absolute top-0 left-0 w-full h-full after:absolute after:w-full after:h-full pointer-events-none"
+          animate={{translateY: "1px"}}
+          transition={{duration: .1, repeat: Infinity, ease:"linear"}}
+        />
         <form
           className="inline-flex flex-col w-full h-full p-[2%] space-y-0"
           onSubmit={sendEmail}
@@ -61,7 +65,6 @@ const ContactRight = ({ data }: ContactProps) => {
               title="Name"
               placeholder="<Name>"
               required
-              autoFocus
             />
           </div>
           <div className="flex text-inherit">
