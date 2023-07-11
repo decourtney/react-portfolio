@@ -13,9 +13,9 @@
 }
 
 body {
-  font-family: "Swiss Grit", 'VT323', 'Courier New', Courier, monospace, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: "Swiss Grit", "VT323", "Courier New", Courier, monospace,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -213,6 +213,12 @@ code {
 
 .image-container .img {
   transform-style: preserve-3d;
+}
+
+.terminal-frame {
+  border-image-source: url(./images/terminal_frame.png);
+  border-image-width: 100%;
+  border-image-slice: 60% 70%;
 }
 
 .video-overlay {
