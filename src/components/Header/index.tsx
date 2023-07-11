@@ -33,6 +33,7 @@ const Header = () => {
     }
   };
 
+  // Add code to close the menu if user clicks anywhere else on screen
   const handleMouseClick = (event: React.MouseEvent) => {
     setIsMenuOpen(!isMenuOpen);
 
