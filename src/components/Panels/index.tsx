@@ -31,7 +31,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       },
     },
     open: {
-      x: "-99.5%",
+      x: "-99%",
       transition: {
         duration: 2,
         ease: "easeInOut",
@@ -59,7 +59,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       >
         <img
           src={panelCogBase}
-          className="absolute top-[50%] -right-[4.5%] w-[17%] transform -translate-y-[50%] -z-20"
+          className="absolute top-[50%] -right-[4.5%] w-[17%] h-[10%] transform -translate-y-[50%] -z-20"
         />
         <div className="leftpanel-border absolute w-[101%] h-full left-0 pointer-events-none"></div>
         <div className="flex w-full -z-10">
@@ -80,7 +80,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
       },
     },
     open: {
-      x: "100%",
+      x: "99%",
       transition: {
         duration: 2,
         ease: "easeInOut",

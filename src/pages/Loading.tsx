@@ -31,19 +31,15 @@ const Loading = () => {
       <div className="absolute top-[0%] left-[0%] w-full h-full">
         <img
           src={panelCogBase}
-          className="absolute top-[50%] -left-[6.1%] w-[8.5%] transform -translate-y-[50%]"
+          className="absolute top-[50%] -left-[6.1%] w-[8.5%] h-[10%] transform -translate-y-[50%]"
         />
         <img
           src={loadingPanelLeft}
-          className="absolute top-[50%] -left-[.2%] h-full transform -translate-y-[50%]"
-        />
-        <img
-          src={panelCog}
-          className="absolute top-[50.2%] -right-[2.2%] w-[4%] transform -translate-y-[50%]"
+          className="absolute top-[50%] -left-[0%] h-full transform -translate-y-[50%]"
         />
         <img
           src={loadingPanelRight}
-          className="absolute top-[50%] -right-[.5%] h-full transform -translate-y-[50%]"
+          className="absolute top-[50%] -right-[0%] h-full transform -translate-y-[50%]"
         />
       </div>
     </>

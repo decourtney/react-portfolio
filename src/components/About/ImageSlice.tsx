@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimate } from "framer-motion";
 
 type ImageSliceProps = {
-  currentIndex: number;
-  numberOfSlices: number;
+  sliceWidth: number;
+  slicePos: number;
+  delay: number;
+  duration: number;
 };
 
-const ImageSlice = ({ currentIndex, numberOfSlices }: ImageSliceProps) => {
-  const [scope, animate] = useAnimate();
-  const pos = (100 / (numberOfSlices - 1)) * currentIndex;
-  const sliceWidth = 100 / numberOfSlices;
-  const duration = 20;
-  const delay = ((currentIndex + 1) * Math.random()) / 10; ; // Delay makes the trivision board imperfectly animate sequentially 
+const ImageSlice = ({ sliceWidth, slicePos, delay, duration }: ImageSliceProps) => {
 
   const variants1 = {
     rotateY: [0, 0, 120, 120, 240, 240, 360],
@@ -42,21 +39,21 @@ const ImageSlice = ({ currentIndex, numberOfSlices }: ImageSliceProps) => {
     <div className={`img relative h-full`} style={{ width: `${sliceWidth}%` }}>
       <motion.span
         className={`image-1 absolute top-0 left-0 w-full h-full `}
-        style={{ backgroundPosition: `${pos}%` }}
+        style={{ backgroundPosition: `${slicePos}%` }}
         initial={{ rotateY: 0, x: "0%" }}
         animate={variants1}
         transition={transition}
       />
       <motion.span
         className={`image-2 absolute top-0 left-0 w-full h-full `}
-        style={{ backgroundPosition: `${pos}%` }}
+        style={{ backgroundPosition: `${slicePos}%` }}
         initial={{ rotateY: 240, x: "-45%" }}
         animate={variants2}
         transition={transition}
       />
       <motion.span
         className={`image-3 absolute top-0 left-0 w-full h-full `}
-        style={{ backgroundPosition: `${pos}%` }}
+        style={{ backgroundPosition: `${slicePos}%` }}
         initial={{ rotateY: 120, x: "45%" }}
         animate={variants3}
         transition={transition}

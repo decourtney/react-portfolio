@@ -54,9 +54,9 @@ const options = {
 
 const Menu = ({ isMenuOpen }: MenuProps) => {
   const isLoading = useAppSelector((state) => state.project.isLoading);
+  const dispatch = useAppDispatch();
   const location = useLocation();
   const pages = ["contact", "about", "projects", "home"];
-  const dispatch = useAppDispatch();
 
   return (
     <motion.div

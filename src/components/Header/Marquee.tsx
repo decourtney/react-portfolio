@@ -16,6 +16,7 @@ const marqueeVariants = {
     },
 };
 
+// Marquee needs more styling and breakpoints
 const Marquee = () => {
     const message = useAppSelector((state) => state.project.marqueeMsg);
 
