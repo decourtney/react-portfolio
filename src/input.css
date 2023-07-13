@@ -218,7 +218,7 @@ code {
 .terminal-frame {
   border-image-source: url(./images/terminal_frame.png);
   border-image-width: 100%;
-  border-image-slice: 60% 70%;
+  border-image-slice: 60% 60%;
 }
 
 .video-overlay {
@@ -233,7 +233,6 @@ code {
 }
 
 .video-overlay:after {
-  background: rgb(255, 255, 255);
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0) 70%,

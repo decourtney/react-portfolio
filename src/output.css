@@ -631,6 +631,10 @@ video {
   bottom: 0%;
 }
 
+.bottom-\[12\%\] {
+  bottom: 12%;
+}
+
 .bottom-\[35\%\] {
   bottom: 35%;
 }
@@ -673,6 +677,10 @@ video {
 
 .right-\[10\.5\%\] {
   right: 10.5%;
+}
+
+.right-\[21\%\] {
+  right: 21%;
 }
 
 .right-\[5\.6\%\] {
@@ -817,10 +825,6 @@ video {
   margin-right: 4%;
 }
 
-.mt-\[10\%\] {
-  margin-top: 10%;
-}
-
 .mt-\[12\%\] {
   margin-top: 12%;
 }
@@ -857,16 +861,16 @@ video {
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .h-0 {
   height: 0px;
 }
 
 .h-\[10\%\] {
   height: 10%;
+}
+
+.h-\[100\%\] {
+  height: 100%;
 }
 
 .h-\[40\%\] {
@@ -877,8 +881,12 @@ video {
   height: 50px;
 }
 
-.h-\[60\%\] {
-  height: 60%;
+.h-\[57\%\] {
+  height: 57%;
+}
+
+.h-\[59\%\] {
+  height: 59%;
 }
 
 .h-\[600\%\] {
@@ -895,10 +903,6 @@ video {
 
 .h-\[90\%\] {
   height: 90%;
-}
-
-.h-\[95\%\] {
-  height: 95%;
 }
 
 .h-fit {
@@ -987,6 +991,14 @@ video {
   width: 50px;
 }
 
+.w-\[53\%\] {
+  width: 53%;
+}
+
+.w-\[54\%\] {
+  width: 54%;
+}
+
 .w-\[600\%\] {
   width: 600%;
 }
@@ -1009,10 +1021,6 @@ video {
 
 .w-\[80\%\] {
   width: 80%;
-}
-
-.w-\[95\%\] {
-  width: 95%;
 }
 
 .w-fit {
@@ -1091,6 +1099,12 @@ video {
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-translate-y-\[66\%\] {
+  --tw-translate-y: -66%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-x-\[0\%\] {
   --tw-translate-x: 0%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1143,6 +1157,10 @@ video {
   flex-direction: column;
 }
 
+.content-center {
+  align-content: center;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1169,12 +1187,6 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 
 .space-y-24 > :not([hidden]) ~ :not([hidden]) {
@@ -1207,12 +1219,12 @@ video {
   white-space: nowrap;
 }
 
-.rounded-full {
-  border-radius: 9999px;
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-xl {
@@ -1234,9 +1246,19 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+}
+
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.bg-blue-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }
 
 .bg-gray-800 {
@@ -1282,8 +1304,8 @@ video {
   --tw-gradient-to: #000 var(--tw-gradient-to-position);
 }
 
-.p-\[2\%\] {
-  padding: 2%;
+.p-8 {
+  padding: 2rem;
 }
 
 .px-\[10\%\] {
@@ -1358,6 +1380,11 @@ video {
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-\[\#ffffff\] {
@@ -1745,7 +1772,7 @@ code {
 .terminal-frame {
   border-image-source: url(./images/terminal_frame.png);
   border-image-width: 100%;
-  border-image-slice: 60% 70%;
+  border-image-slice: 60% 60%;
 }
 
 .video-overlay {
@@ -1760,7 +1787,6 @@ code {
 }
 
 .video-overlay:after {
-  background: rgb(255, 255, 255);
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0) 70%,

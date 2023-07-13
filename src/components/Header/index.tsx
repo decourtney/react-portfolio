@@ -66,6 +66,7 @@ const Header = () => {
             className="absolute w-[5.5%] -top-[23%] right-[8%] z-20"
           />
 
+          {/* Not sure why I was using two onClick with the menu button - could be because of flashing animation that is currently disabled?? */}
           <button
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -80,9 +81,9 @@ const Header = () => {
             <img
               src={button}
               className="absolute w-[2%] top-[10%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.45%]"
-              onClick={(e) => {
-                handleMouseClick(e);
-              }}
+              // onClick={(e) => {
+              //   handleMouseClick(e);
+              // }}
             />
 
             <AnimatePresence mode="wait">

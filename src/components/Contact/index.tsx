@@ -1,23 +1,39 @@
 import React, { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
-import tFrame from "../../images/terminal_frame.png"
+import { AnimatePresence, motion } from "framer-motion";
+import TerminalDisplay from "./Terminal";
+import tFrame from "../../images/terminal_frame.png";
+import tPwr from "../../images/terminal_pwr.jpg";
 
 type ContactProps = {
   data: string;
 };
 
 const ContactLeft = ({ data }: ContactProps) => {
-  const [loadContent, setLoadContent] = useState("");
-
   return (
-      <div className="w-full mr-[4%] bg-blue-400">
-        <p className="text-6xl">{data}</p>
-      </div>
+    <div className="w-full mr-[4%] bg-blue-400">
+      <p className="text-6xl">{data}</p>
+    </div>
   );
 };
 
 const ContactRight = ({ data }: ContactProps) => {
+  const [terminalPower, setTerminalPower] = useState(false);
+  const variants = {
+    initial: {
+      translateX: "-50%",
+      translateY: "-65%",
+    },
+    on: {
+      translateY: "-64.5%",
+      transition: { duration: 0.2, repeat: Infinity, ease: "linear" },
+    },
+    off: {
+      opacity: [0],
+      x: "100%",
+      transition: { duration: 2, ease: "linear" },
+    },
+  };
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -41,25 +57,62 @@ const ContactRight = ({ data }: ContactProps) => {
     e.target.reset();
   };
 
-  return (
-    <div className="flex w-full justify-center ml-[4%] bg-green-400">
-      <div className="relative flex-col w-[80%] h-[60%] mt-[10%] rounded-lg text-3xl font-vt323 text-green-500 bg-gray-800">
-        {/* <img
-          src={tFrame}
-          className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none"
-        /> */}
-        <div className="terminal-frame absolute top-0 left-0 h-full w-full z-20" />
+  const handleButtonClick = (event: React.MouseEvent) => {
+    setTerminalPower(!terminalPower);
+  };
 
-        <motion.div
-          className="video-overlay absolute top-1/2 left-1/2 w-[95%] h-[95%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full pointer-events-none"
-          initial={{ translateX: "-50%", translateY: "-50%" }}
-          animate={{ translateY: "-49%" }}
-          transition={{ duration: 0.1, repeat: Infinity, ease: "linear" }}
-        />
-        <form
-          className="inline-flex flex-col w-full h-full p-[2%] space-y-0"
-          onSubmit={sendEmail}
+  return (
+    <div className="relative flex w-full ml-[4%] bg-green-400">
+      <div className="absolute flex justify-center content-center top-1/2 left-1/2 w-full -translate-x-[50%] -translate-y-[50%] bg-blue-300">
+        <div className="relative flex justify-center w-full h-full items-center">
+          <img
+            src={tFrame}
+            className="w-[70%] rounded-3xl z-20 pointer-events-none"
+          />
+          <button
+            className="z-20 bg-blue-800"
+            onClick={(e) => {
+              handleButtonClick(e);
+            }}
+          >
+            <img
+              src={tPwr}
+              className="absolute bottom-[12%] right-[21%] w-[7%]"
+            />
+          </button>
+        </div>
+
+        <AnimatePresence mode="wait">
+          {terminalPower ? (
+            <TerminalDisplay key={"terminal"} />
+          ) : (
+            <div className="absolute top-1/2 left-1/2 w-[53%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
+          )}
+        </AnimatePresence>
+
+        {/* <motion.div
+          className="absolute top-1/2 left-1/2 w-[53%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] text-xl font-vt323 text-green-500"
+          initial={{
+            background: "rgba(0,0,0,1)",
+          }}
+          animate={{
+            background: [
+              "radial-gradient(rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 0%)",
+              "radial-gradient(rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 75%)",
+              "radial-gradient(rgba(31, 41, 55, 1) 0%, rgba(31, 41, 55, 1) 100%)",
+              "rgba(31, 41, 55, 1)",
+            ],
+          }}
+          transition={{
+            duration: 1,
+            delay: 1,
+            ease: "linear",
+          }}
         >
+          
+        </motion.div> */}
+
+        {/* <form className="absolute top-1/2 left-1/2 w-[53%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] text-xl font-vt323 text-green-500 bg-gray-800">
           <div className="flex text-inherit">
             <input
               id="username"
@@ -92,7 +145,17 @@ const ContactRight = ({ data }: ContactProps) => {
               required
             />
           </div>
-        </form>
+        </form> */}
+        {/* {terminalPower ? (
+          <motion.div
+            className="video-overlay absolute top-1/2 left-1/2 w-[54%] h-[59%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full pointer-events-none"
+            key="video-overlay"
+            variants={variants}
+            initial="initial"
+            animate="on"
+            exit="off"
+          />
+        ) : null} */}
       </div>
     </div>
   );
