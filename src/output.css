@@ -1483,30 +1483,6 @@ video {
   will-change: transform;
 }
 
-.will-change-auto {
-  will-change: auto;
-}
-
-.will-change-contents {
-  will-change: contents;
-}
-
-.\[menuState\:any\] {
-  menu-state: any;
-}
-
-.\[state\:any\] {
-  state: any;
-}
-
-.\[state\:string\] {
-  state: string;
-}
-
-.\[key\:string\] {
-  key: string;
-}
-
 @font-face {
   font-family: "Swiss Grit";
 
