@@ -63,32 +63,33 @@ const ContactRight = ({ data }: ContactProps) => {
 
   return (
     <div className="flex w-full mr-[3%] ml-[4%] mt-[2%] mb-[5%] justify-center items-center bg-green-400">
-      <div className="absolute flex justify-center content-center top-1/2 left-1/2 w-full -translate-x-[50%] -translate-y-[50%] bg-blue-300">
-        <div className="relative flex justify-center w-full h-full items-center">
-          <img
-            src={tFrame}
-            className="w-[70%] rounded-3xl z-20 pointer-events-none"
-          />
-          <button
-            className="z-20 bg-blue-800"
-            onClick={(e) => {
-              handleButtonClick(e);
-            }}
-          >
+      <div className="relative w-full h-full">
+        <div className="absolute top-1/2 left-1/2 w-full h-full -translate-x-[50%] -translate-y-[50%]">
+          <div className="relative flex w-full h-full">
             <img
-              src={tPwr}
-              className="absolute bottom-[12%] right-[21%] w-[7%]"
+              src={tFrame}
+              className="w-[100%] rounded-3xl z-20 pointer-events-none"
             />
-          </button>
-        </div>
+            <div className="absolute w-full h-full z-20 pointer-events-none">
+              <button
+              className="pointer-events-auto"
+                onClick={(e) => {
+                  handleButtonClick(e);
+                }}
+              >
+                <img src={tPwr} className="absolute bottom-[12%] right-[9%] w-[10%] h-[10%]" />
+              </button>
+            </div>
+          </div>
 
-        <AnimatePresence mode="wait">
-          {terminalPower ? (
-            <TerminalDisplay key={"terminal"} />
-          ) : (
-            <div className="absolute top-1/2 left-1/2 w-[53%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
-          )}
-        </AnimatePresence>
+          <AnimatePresence mode="wait">
+            {terminalPower ? (
+              <TerminalDisplay key={"terminal"} />
+            ) : (
+              <div className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
