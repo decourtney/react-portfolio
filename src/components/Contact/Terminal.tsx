@@ -84,7 +84,7 @@ const TerminalDisplay = () => {
 
   return (
     <motion.div
-      className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] text-xl font-vt323 text-green-500"
+      className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] font-vt323 text-xl text-green-400 text-green-glow screen-glow"
       variants={tPowerVariants}
       initial="initial"
       animate="on"
