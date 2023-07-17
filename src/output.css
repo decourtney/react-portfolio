@@ -869,6 +869,14 @@ video {
   margin-top: 5.5%;
 }
 
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -1399,6 +1407,11 @@ video {
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 .placeholder-green-400::-webkit-input-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(74 222 128 / var(--tw-placeholder-opacity));
@@ -1486,11 +1499,15 @@ video {
   font-family: "Swiss Grit";
 
   src: url("./fonts/SwissGrit.otf");
+}
 
+@font-face{
   font-family: "Swiss Grit Dingbats";
 
   src: url("./fonts/SwissGritDingbats.otf");
+}
 
+@font-face{
   font-family: "VT323";
 
   src: url("./fonts/VT323.ttf");

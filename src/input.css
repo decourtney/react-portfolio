@@ -5,8 +5,14 @@
 @font-face {
   font-family: "Swiss Grit";
   src: url("./fonts/SwissGrit.otf");
+}
+
+@font-face{
   font-family: "Swiss Grit Dingbats";
   src: url("./fonts/SwissGritDingbats.otf");
+}
+
+@font-face{
   font-family: "VT323";
   src: url("./fonts/VT323.ttf");
 }
