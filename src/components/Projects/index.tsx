@@ -66,12 +66,11 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
     setCurrentPage([nextIndex, newDirection]);
   }, [nextIndex]);
 
-
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
       <div className="relative w-full mx-[3%] my-[4%] -translate-x-[1%] -translate-y-[2%] -z-10 bg-black">
-        <AnimatePresence custom={direction} >
+        <AnimatePresence custom={direction}>
           <motion.div
             key={currentPage}
             className="absolute top-0 left-0 w-full h-full"
@@ -137,31 +136,33 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   };
 
   return (
-    <div className="flex w-full mx-[3%] mt-[2%] mb-[5%] justify-end overflow-auto scrollbar-hide bg-black">
-      <ul className="flex-col list-none space-y-24">
-        {data.map((project, index) => {
-          return (
-            <li key={project.name} className="cursor-pointer bg-orange-400">
-              <p
-                className="text-8xl hover:bg-green-400"
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleDetailsDisplay(true, index)}
-              >
-                <span>{project.name}</span>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-      <AnimatePresence>
-        {isDetails.display && (
-          <ProjectDetails
-            {...data[isDetails.index]}
-            handleDetailsDisplay={handleDetailsDisplay}
-          />
-        )}
-      </AnimatePresence>
+    <div className="flex w-full mx-[3%] mt-[2%] mb-[5%] overflow-auto scrollbar-hide bg-black">
+      <div className="flex justify-end w-full h-full">
+        <ul className="flex-col list-none space-y-24">
+          {data.map((project, index) => {
+            return (
+              <li key={project.name} className="cursor-pointer bg-orange-400">
+                <p
+                  className="text-8xl hover:bg-green-400"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={() => handleDetailsDisplay(true, index)}
+                >
+                  <span>{project.name}</span>
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+        <AnimatePresence mode="wait">
+          {isDetails.display && (
+            <ProjectDetails
+              {...data[isDetails.index]}
+              handleDetailsDisplay={handleDetailsDisplay}
+            />
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

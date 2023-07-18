@@ -7,9 +7,14 @@
   src: url("./fonts/SwissGrit.otf");
 }
 
-@font-face {
+@font-face{
   font-family: "Swiss Grit Dingbats";
   src: url("./fonts/SwissGritDingbats.otf");
+}
+
+@font-face{
+  font-family: "VT323";
+  src: url("./fonts/VT323.ttf");
 }
 
 body {
@@ -23,6 +28,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.text-red-glow {
+  text-shadow: 0 0 15px rgb(239 68 68);
+}
+.text-green-glow {
+  text-shadow: 0 0 15px rgb(74 222 128);
+}
+.text-blue-glow {
+  text-shadow: 0 0 15px rgb(59 130 246);
 }
 
 .scrollbar-hide::-webkit-scrollbar {
