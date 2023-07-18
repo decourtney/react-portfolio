@@ -11,7 +11,7 @@ const Contact = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg(`Contact page`));
+    dispatch(setMarqueeMsg(`This is a really long message to test the emergency broadcast system`));
   }, []);
   
   return (

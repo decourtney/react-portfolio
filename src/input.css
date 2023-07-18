@@ -79,6 +79,10 @@ code {
   padding-top: 2.9%;
 }
 
+.marquee-container{
+  container-type: inline-size;
+}
+
 .footer-bg {
   background-image: url(./images/footer.png);
   background-repeat: no-repeat;

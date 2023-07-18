@@ -57,7 +57,7 @@ const Header = () => {
         </AnimatePresence>
         <img
           src={loading}
-          className="absolute w-[24%] -top-[2%] left-[48.5%] -translate-x-[50%]"
+          className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"
         />
 
         <div id="navbar-button" className="absolute w-full h-full top-0 left-0">
@@ -65,8 +65,6 @@ const Header = () => {
             src={button_housing}
             className="absolute w-[5.5%] -top-[23%] right-[8%] z-20"
           />
-
-          {/* Not sure why I was using two onClick with the menu button - could be because of flashing animation that is currently disabled?? */}
           <button
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -81,11 +79,7 @@ const Header = () => {
             <img
               src={button}
               className="absolute w-[2%] top-[10%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.45%]"
-              // onClick={(e) => {
-              //   handleMouseClick(e);
-              // }}
             />
-
             <AnimatePresence mode="wait">
               <Menu isMenuOpen={isMenuOpen} />
             </AnimatePresence>
