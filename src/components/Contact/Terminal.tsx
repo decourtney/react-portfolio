@@ -6,7 +6,6 @@ import React, {
   ReactElement,
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import MainMenu from "./MainMenu";
 import EmailForm from "./EmailForm";
 
 const tPowerVariants = {
@@ -61,7 +60,7 @@ const tOverlayVariants = {
 
 const TerminalDisplay = () => {
   const [displayMenu, setDisplayMenu] = useState(false);
-  const [menuSelection, setMenuSelection] = useState("mainMenu");
+  const [menuSelection, setMenuSelection] = useState("emailForm");
   const [menuOption, setMenuOption] = useState(0);
 
   const animComplete = (anim: any) => {
@@ -73,8 +72,9 @@ const TerminalDisplay = () => {
 
   const selectMenu = (selection: string) => {
     switch (selection) {
-      case "mainMenu":
-        return <MainMenu />;
+      // Main Menu is further expansion of terminal functionality
+      // case "mainMenu":
+      //   return <MainMenu />;
       case "emailForm":
         return <EmailForm />;
       default:
@@ -84,7 +84,7 @@ const TerminalDisplay = () => {
 
   return (
     <motion.div
-      className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] font-vt323 text-xl text-green-400 text-green-glow screen-glow"
+      className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-[5%] -translate-x-[50%] -translate-y-[66%] font-vt323 text-xl text-green-400 text-green-glow screen-glow"
       variants={tPowerVariants}
       initial="initial"
       animate="on"
@@ -93,7 +93,7 @@ const TerminalDisplay = () => {
       onAnimationStart={(definition) => animStart(definition)}
     >
       <motion.div
-        className="video-overlay absolute top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-[50%] -translate-y-[50%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full will-change-transform pointer-events-none"
+        className="video-overlay absolute flex justify-center content-center top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-[50%] -translate-y-[50%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full will-change-transform pointer-events-none"
         key="video-overlay"
         variants={tOverlayVariants}
         initial="initial"

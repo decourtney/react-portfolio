@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "framer-motion";
 import TerminalDisplay from "./Terminal";
 import tFrame from "../../images/terminal_frame.png";
@@ -33,28 +32,6 @@ const ContactRight = ({ data }: ContactProps) => {
       x: "100%",
       transition: { duration: 2, ease: "linear" },
     },
-  };
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "contact_service",
-        "contact_form",
-        e.target,
-        "WiUmD3gJ4iafdCR1R"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // e.target.reset();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
   };
 
   const handleButtonClick = (event: React.MouseEvent) => {
