@@ -11,9 +11,9 @@ const Contact = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg(`This is a really long message to test the emergency broadcast system`));
+    dispatch(setMarqueeMsg(`Contact Page`));
   }, []);
-  
+
   return (
     <>
       <GearBox animationDir={"open"} />

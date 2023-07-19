@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Menu from "./Menu";
 import Marquee from "./Marquee";
@@ -7,6 +7,7 @@ import button_housing from "../../images/button_housing.png";
 import button from "../../images/button.png";
 import loading from "../../images/loading.png";
 import { AnimatePresence } from "framer-motion";
+import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 
 // Header button animations are still using CSS 'blink' class = change to framer-motion for conditional colors red/green
 // animate-pulse is Tailwind class
@@ -16,6 +17,18 @@ const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isClick, setIsClick] = useState(false);
   const buttonGlow = useRef<HTMLDivElement>(null);
+  const incMessage = useAppSelector((state) => state.project.marqueeMsg);
+  const [displayMessage, setDisplayMessage] = useState(false);
+
+  useEffect(() => {
+    if (incMessage) {
+      setDisplayMessage(false)
+      setDisplayMessage(true);
+      setTimeout(() => {
+        setDisplayMessage(false);
+      }, 1000 * (incMessage.length / 3)); // this is a rough hack for message length
+    }
+  }, [incMessage]);
 
   const handleMouseEnter = () => {
     if (!buttonGlow !== null) {
@@ -52,9 +65,13 @@ const Header = () => {
   return (
     <header>
       <nav className="navbar-bg relative w-full h-full bg-black">
-        <AnimatePresence mode="wait">
-          <Marquee />
-        </AnimatePresence>
+        <div className="absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[51%] pointer-events-none bg-neutral-900 overflow-hidden">
+          <div className="marquee-overlay absolute w-full h-full z-10" />
+          <div className=" absolute w-full h-full z-20"/>
+          <AnimatePresence mode="wait">
+            {displayMessage ? <Marquee msg={incMessage} /> : null}
+          </AnimatePresence>
+        </div>
         <img
           src={loading}
           className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"

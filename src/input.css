@@ -7,12 +7,12 @@
   src: url("./fonts/SwissGrit.otf");
 }
 
-@font-face{
+@font-face {
   font-family: "Swiss Grit Dingbats";
   src: url("./fonts/SwissGritDingbats.otf");
 }
 
-@font-face{
+@font-face {
   font-family: "VT323";
   src: url("./fonts/VT323.ttf");
 }
@@ -79,8 +79,15 @@ code {
   padding-top: 2.9%;
 }
 
-.marquee-container{
+.marquee-container {
   container-type: inline-size;
+  text-shadow: 0 0 5px rgb(74 222 128);
+}
+
+.marquee-overlay {
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px, 4px 100%;
 }
 
 .footer-bg {

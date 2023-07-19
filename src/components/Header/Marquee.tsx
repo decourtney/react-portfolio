@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, stagger, useAnimation } from "framer-motion";
-import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+
+interface MarqueeProps {
+  msg: string;
+}
 
 // Marquee needs more styling and breakpoints
-const Marquee = () => {
-  const message = useAppSelector((state) => state.project.marqueeMsg);
+const Marquee = (prop: MarqueeProps) => {
+  const [newMessage, setNewMessage] = useState("");
 
   const containerVariants = {
     start: {},
@@ -13,56 +16,49 @@ const Marquee = () => {
   };
 
   const marqueeVariants = {
-    start: { x: "0cqw" },
+    start: { x: "100cqw" },
     scroll: {
       x: ["100cqw", "0cqw"],
       transition: {
-        // repeat: Infinity,
         type: "tween",
         ease: "linear",
-        duration: 3,
+        duration: 0.5
       },
     },
-    exit: { x: "-100cqw" },
+    exit: {
+      x: `calc(-7cqw * ${prop.msg.length})`, // This is roughly the minimum space necessary to be off screen
+      transition: { type: "tween", ease: "linear", duration: 0.5 },
+    },
   };
 
   return (
-    <div className="absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[50%] pointer-events-none bg-neutral-900 z-50">
-      <div className="marquee-container flex w-full h-full text-xl text-blue-500">
-        {/* <h1 className="marquee-container  w-full"> */}
-        {message.split(" ").map<React.ReactNode>((word, i) => (
+    <div className="marquee-container flex justify-center items-center w-full h-full -translate-y-[10%]">
+      <h1 className="inline-flex font-vt323 text-3xl text-green-400">
+        {prop.msg.split("").map<React.ReactNode>((word, i) => (
           <motion.span
             key={i}
-            className="inline-flex "
+            className="inline-flex"
             variants={containerVariants}
             initial="start"
             animate="scroll"
+            exit="exit"
             transition={{
-              delayChildren: i * 0.25,
+              delayChildren: i * 0.1,
               staggerChildren: 0.5,
             }}
           >
-            <motion.span
-              key={word + i + Math.random()}
-              className="inline-flex "
-              variants={marqueeVariants}
-            >
-              {word}
-            </motion.span>
-
-            {/* {word.split("").map<React.ReactNode>((character, j) => (
-                <motion.span
-                  key={j}
-                  className="inline will-change-transform"
-                  variants={marqueeVariants}
-                >
-                  {character}
-                </motion.span>
-              ))} */}
+            {word.split("").map<React.ReactNode>((character, j) => (
+              <motion.span
+                key={j}
+                className="whitespace-pre will-change-transform"
+                variants={marqueeVariants}
+              >
+                {character}
+              </motion.span>
+            ))}
           </motion.span>
         ))}
-        {/* </h1> */}
-      </div>
+      </h1>
     </div>
   );
 };

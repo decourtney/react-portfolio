@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import { setMarqueeMsg } from "../../reducers/projectSlice";
 
 const TerminalEmailForm = () => {
   const [resultMessage, setResultMessage] = useState("");
+  const dispatch = useAppDispatch();
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -11,16 +14,18 @@ const TerminalEmailForm = () => {
     emailjs
       .sendForm(
         "contact_service",
-        // "contact_form",
+        "contact_form",
         e.target,
         "WiUmD3gJ4iafdCR1R"
       )
       .then(
         (result) => {
-          console.log(result.status, result.text);
+          dispatch(setMarqueeMsg("Thank You!"));
+          // console.log(result.status, result.text);
         },
         (error) => {
-          console.log(error.status, error.text);
+          dispatch(setMarqueeMsg("Something Went Wrong!"));
+          // console.log(error.status, error.text);
         }
       );
     e.target.reset();
@@ -28,8 +33,9 @@ const TerminalEmailForm = () => {
 
   return (
     <div className="relative flex w-full h-full justify-center items-center -z-10 ">
-      <div>TEST</div>
-      {/* <form
+      {/* add intro splash stuff */}
+      {/* <div>TEST</div> */}
+      <form
         className="w-full h-full text-inherit text-5xl"
         onSubmit={sendEmail}
       >
@@ -68,7 +74,7 @@ const TerminalEmailForm = () => {
         <div className="absolute top-0 right-0">
           <button className="button-border">SEND</button>
         </div>
-      </form> */}
+      </form>
     </div>
   );
 };
