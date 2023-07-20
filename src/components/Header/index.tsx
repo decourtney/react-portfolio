@@ -13,16 +13,14 @@ import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 // animate-pulse is Tailwind class
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const [isHover, setIsHover] = useState(false);
-  const [isClick, setIsClick] = useState(false);
   const buttonGlow = useRef<HTMLDivElement>(null);
   const incMessage = useAppSelector((state) => state.project.marqueeMsg);
-  // const [newMessage, setNewMessage] = useState("");
   const [isDisplayMessage, setIsDisplayMessage] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const waitingMessage = useRef("");
   const displayedMessage = useRef("");
+  const displayTimer = 2000;
+  const timeouts: NodeJS.Timeout[] = [];
 
   // Save message in case one is already being displayed
   useEffect(() => {
@@ -37,14 +35,26 @@ const Header = () => {
       displayedMessage.current = waitingMessage.current;
       setIsAnimating(true);
       setIsDisplayMessage(true);
+
+      // Clear waiting messages - can be converted to array if necessary
       waitingMessage.current = "";
     }
   }, [isAnimating, incMessage]);
 
-  // Lets us know when a scroll or exit anim is complete
+  // Let us know when a scroll or exit anim is complete
   const marqueeAnimComplete = (def: string) => {
-    // Need to add a timeout so the message stays for a little bit
-    def === "scroll" ? setIsDisplayMessage(false) : setIsAnimating(false);
+    if (def === "scroll") {
+      const t = setTimeout(() => {
+        setIsDisplayMessage(false);
+      }, displayTimer);
+      timeouts.push(t);
+    } else {
+      // Clear timers for any standing displayed messages
+      for (var i = 0; i < timeouts.length; i++) {
+        clearTimeout(timeouts[i]);
+      }
+      setIsAnimating(false);
+    }
   };
 
   const handleMouseEnter = () => {
