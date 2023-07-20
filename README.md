@@ -14,13 +14,15 @@
 
 ## Description
 
-This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website.
+This is my current WIP project - I'm investing extra effort since my portfolio will be the first impression.
 
-The site is currently under construction, but I'm working hard to make it as visually appealing and functional as possible. I'm using custom artwork and graphics to create a distinct and memorable visual identity for the site.
+Explore a diverse collection of my projects, each showcasing my skills and expertise in various technologies and frameworks. From innovative web applications to captivating front-end designs, my portfolio reflects my passion for creating engaging and user-friendly digital experiences.
 
-Through this portfolio, I hope to highlight my skills and experience as a developer, as well as demonstrate my creative abilities. I'm excited to continue working on this project and share my progress as I bring my vision to life.
+I've infused my own art style into the design, adding a unique and visually appealing touch. As I continue to evolve as a web developer, this portfolio will grow with new projects and updates, providing an authentic reflection of my progress and journey in the world of web development.
 
-Deployed Project: https://still-sea-34126.herokuapp.com/
+Thank you for visiting my portfolio project, and I hope you enjoy the experience!
+
+Deployed Project: SOON!
    
 <img src="./portfolio.png" target="_blank" alt="Book Search" style="max-width: 384px; display: block;" /><br>
 
