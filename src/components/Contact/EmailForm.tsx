@@ -1,12 +1,45 @@
-import React, { useEffect, useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useState, useRef, ChangeEventHandler } from "react";
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import { setMarqueeMsg } from "../../reducers/projectSlice";
+import TextareaAutosize from "react-textarea-autosize";
 
 const TerminalEmailForm = () => {
+  const [isButtonDisabled, setIsButtonDisenabled] = useState(false);
+  const [formValues, setFormValues] = useState({
+    user_name: "",
+    user_email: "",
+    user_message: "",
+  });
+  const dispatch = useAppDispatch();
+  const [scope, animate] = useAnimate();
+
+  const buttonVariants = {
+    hidden: { x: "80%" },
+    visible: { x: "5%" },
+  };
+
+  useEffect(() => {
+    const formValuesArray = Object.values(formValues);
+
+    setIsButtonDisenabled(!formValuesArray.every((value) => value !== ""));
+  }, [formValues]);
+
+  useEffect(() => {
+    if (!isButtonDisabled)
+      animate(
+        scope.current,
+        { x: ["50%", "5%"], opacity: [0, 100] },
+        { duration: 0.3 }
+      );
+  }, [isButtonDisabled]);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-    console.log(e.target);
+    e.target.reset();
+    setIsButtonDisenabled(true);
+
     emailjs
       .sendForm(
         "contact_service",
@@ -16,56 +49,83 @@ const TerminalEmailForm = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          // e.target.reset();
+          dispatch(setMarqueeMsg("Thank You!"));
+          // console.log(result.status, result.text);
         },
         (error) => {
-          console.log(error.text);
+          dispatch(setMarqueeMsg("Something Went Wrong!"));
+          // console.log(error.status, error.text);
         }
       );
-    e.target.reset();
   };
 
   return (
-    <div className="relative flex w-full h-full justify-center items-center -z-10 ">
+    <div className="flex w-full h-full justify-center items-center py-[5%] px-[5%]">
+      {/* add intro splash stuff eventually */}
       <form
-        className="w-full h-full text-inherit text-5xl"
+        className="w-full h-full font-vt323 text-5xl text-green-400"
         onSubmit={sendEmail}
       >
-        <div className="flex">
+        <motion.div ref={scope}>
+          <button
+            className={`text-green-400 text-green-glow ${
+              isButtonDisabled ? "invisible" : "visible"
+            }`}
+            disabled={isButtonDisabled}
+          >
+            SEND
+          </button>
+        </motion.div>
+        <div>
           <input
             id="user_name"
             type="text"
             name="user_name"
-            className="w-full bg-inherit outline-none placeholder-green-400"
+            className="w-full bg-inherit outline-none placeholder-green-400 text-green-glow indent-[1%]"
             title="Name"
             placeholder="<Name>"
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                user_name: e.target.value.trim(),
+              });
+            }}
             required
           />
         </div>
-        <div className="flex">
+        <div>
           <input
             id="user_email"
             type="email"
             name="user_email"
-            className="w-full bg-inherit outline-none placeholder-green-400"
+            className="w-full bg-inherit outline-none placeholder-green-400 text-green-glow indent-[1%]"
             title="Email"
             placeholder="<Email>"
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                user_email: e.target.value.trim(),
+              });
+            }}
             required
           />
         </div>
-        <div className="flex w-full h-full">
-          <textarea
+        <div>
+          <TextareaAutosize
+            maxRows={5}
             id="user_message"
             name="user_message"
-            className="w-full h-full bg-inherit resize-none outline-none placeholder-green-400 scrollbar-hide"
+            className="w-full bg-inherit resize-none outline-none placeholder-green-400 text-green-glow indent-[1%] scrollbar-hide overflow-hidden"
             title="Message"
             placeholder="<Message>"
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                user_message: e.target.value.trim(),
+              });
+            }}
             required
           />
-        </div>
-        <div className="absolute top-0 right-0">
-          <button className="button-border">SEND</button>
         </div>
       </form>
     </div>

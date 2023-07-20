@@ -1,40 +1,78 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion, stagger, useAnimation } from "framer-motion";
 
-const marqueeVariants = {
-  animate: {
-    x: ["100%", "-100%"],
-    transition: {
-      repeat: Infinity,
-      // repeatType: "loop",
-      duration: 5,
-      ease: "linear",
-    },
-  },
-};
+interface MarqueeProps {
+  msg: string;
+  marqueeAnimComplete(def: string): void;
+}
 
 // Marquee needs more styling and breakpoints
-const Marquee = () => {
-  const message = useAppSelector((state) => state.project.marqueeMsg);
+const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
+  const [numberOfAnims, setNumberOfAnims] = useState(1);
+
+  const containerVariants = {
+    start: {},
+    scroll: {},
+    exit: {},
+  };
+
+  const marqueeVariants = {
+    start: { x: "100cqw" },
+    scroll: {
+      x: ["100cqw", "0cqw"],
+      transition: {
+        type: "tween",
+        ease: "linear",
+        duration: 0.5,
+      },
+    },
+    exit: {
+      x: `calc(-7cqw * ${msg.length})`, // This is roughly the minimum space necessary to be off screen
+      transition: {
+        type: "tween",
+        ease: "linear",
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
-    <div className="absolute top-[10%] left-[50%] w-[21%] h-[75%] -translate-x-[50%] pointer-events-none bg-neutral-900">
-      <div className="relative w-full h-full overflow-x-hidden scrollbar-hide">
-        <motion.div
-          className="absolute left-[0%] w-fit min-w-full will-change-transform whitespace-nowrap"
-          variants={marqueeVariants}
-          animate="animate"
-        >
-          <h1
-            className="text-4xl text-center text-red-700"
-            // variants={marqueeVariants}
-            // animate="animate"
+    <div className="flex justify-center items-center w-full h-full -translate-y-[10%]">
+      <h1 className="inline-flex font-vt323 text-3xl text-green-400">
+        {msg.split("").map<React.ReactNode>((word, i) => (
+          <motion.span
+            key={i}
+            className="inline-flex"
+            variants={containerVariants}
+            initial="start"
+            animate="scroll"
+            exit="exit"
+            transition={{
+              delayChildren: i * 0.1,
+              staggerChildren: 0.5,
+            }}
           >
-            {message}
-          </h1>
-        </motion.div>
-      </div>
+            {word.split("").map<React.ReactNode>((character, j) => (
+              <motion.span
+                key={j}
+                className="whitespace-pre will-change-transform"
+                variants={marqueeVariants}
+                // Once all Exit or Scroll anims are complete 
+                onAnimationComplete={(definition) => {
+                  if (numberOfAnims === msg.length) {
+                    marqueeAnimComplete(definition.toString());
+                    setNumberOfAnims(1);
+                  } else {
+                    setNumberOfAnims(numberOfAnims + 1);
+                  }
+                }}
+              >
+                {character}
+              </motion.span>
+            ))}
+          </motion.span>
+        ))}
+      </h1>
     </div>
   );
 };

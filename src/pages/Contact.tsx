@@ -11,9 +11,9 @@ const Contact = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg(`Contact page`));
+    dispatch(setMarqueeMsg(`Contact Page`));
   }, []);
-  
+
   return (
     <>
       <GearBox animationDir={"open"} />

@@ -7,12 +7,12 @@
   src: url("./fonts/SwissGrit.otf");
 }
 
-@font-face{
+@font-face {
   font-family: "Swiss Grit Dingbats";
   src: url("./fonts/SwissGritDingbats.otf");
 }
 
-@font-face{
+@font-face {
   font-family: "VT323";
   src: url("./fonts/VT323.ttf");
 }
@@ -31,13 +31,13 @@ code {
 }
 
 .text-red-glow {
-  text-shadow: 0 0 15px rgb(239 68 68);
+  text-shadow: 0 0 10px rgb(239 68 68);
 }
 .text-green-glow {
-  text-shadow: 0 0 15px rgb(74 222 128);
+  text-shadow: 0 0 10px rgb(74 222 128);
 }
 .text-blue-glow {
-  text-shadow: 0 0 15px rgb(59 130 246);
+  text-shadow: 0 0 10px rgb(59 130 246);
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -77,6 +77,17 @@ code {
   border: none;
   width: 100%;
   padding-top: 2.9%;
+}
+
+.marquee-container {
+  container-type: inline-size;
+  text-shadow: 0 0 5px rgb(74 222 128);
+}
+
+.marquee-overlay {
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px, 4px 100%;
 }
 
 .footer-bg {
