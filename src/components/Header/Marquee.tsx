@@ -3,11 +3,12 @@ import { AnimatePresence, motion, stagger, useAnimation } from "framer-motion";
 
 interface MarqueeProps {
   msg: string;
+  marqueeAnimComplete(def: string): void;
 }
 
 // Marquee needs more styling and breakpoints
-const Marquee = (prop: MarqueeProps) => {
-  const [newMessage, setNewMessage] = useState("");
+const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
+  const [numberOfAnims, setNumberOfAnims] = useState(1);
 
   const containerVariants = {
     start: {},
@@ -22,19 +23,23 @@ const Marquee = (prop: MarqueeProps) => {
       transition: {
         type: "tween",
         ease: "linear",
-        duration: 0.5
+        duration: 0.5,
       },
     },
     exit: {
-      x: `calc(-7cqw * ${prop.msg.length})`, // This is roughly the minimum space necessary to be off screen
-      transition: { type: "tween", ease: "linear", duration: 0.5 },
+      x: `calc(-7cqw * ${msg.length})`, // This is roughly the minimum space necessary to be off screen
+      transition: {
+        type: "tween",
+        ease: "linear",
+        duration: 0.5,
+      },
     },
   };
 
   return (
-    <div className="marquee-container flex justify-center items-center w-full h-full -translate-y-[10%]">
+    <div className="flex justify-center items-center w-full h-full -translate-y-[10%]">
       <h1 className="inline-flex font-vt323 text-3xl text-green-400">
-        {prop.msg.split("").map<React.ReactNode>((word, i) => (
+        {msg.split("").map<React.ReactNode>((word, i) => (
           <motion.span
             key={i}
             className="inline-flex"
@@ -52,6 +57,15 @@ const Marquee = (prop: MarqueeProps) => {
                 key={j}
                 className="whitespace-pre will-change-transform"
                 variants={marqueeVariants}
+                // Once all Exit or Scroll anims are complete 
+                onAnimationComplete={(definition) => {
+                  if (numberOfAnims === msg.length) {
+                    marqueeAnimComplete(definition.toString());
+                    setNumberOfAnims(1);
+                  } else {
+                    setNumberOfAnims(numberOfAnims + 1);
+                  }
+                }}
               >
                 {character}
               </motion.span>

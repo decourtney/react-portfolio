@@ -18,17 +18,34 @@ const Header = () => {
   const [isClick, setIsClick] = useState(false);
   const buttonGlow = useRef<HTMLDivElement>(null);
   const incMessage = useAppSelector((state) => state.project.marqueeMsg);
-  const [displayMessage, setDisplayMessage] = useState(false);
+  // const [newMessage, setNewMessage] = useState("");
+  const [isDisplayMessage, setIsDisplayMessage] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const waitingMessage = useRef("");
+  const displayedMessage = useRef("");
 
+  // Save message in case one is already being displayed
   useEffect(() => {
-    if (incMessage) {
-      setDisplayMessage(false)
-      setDisplayMessage(true);
-      setTimeout(() => {
-        setDisplayMessage(false);
-      }, 1000 * (incMessage.length / 3)); // this is a rough hack for message length
-    }
+    waitingMessage.current = incMessage;
   }, [incMessage]);
+
+  // Triggered when either an Exit anim stops or new incoming message
+  useEffect(() => {
+    if (isAnimating && waitingMessage.current) setIsDisplayMessage(false);
+
+    if (!isAnimating && waitingMessage.current) {
+      displayedMessage.current = waitingMessage.current;
+      setIsAnimating(true);
+      setIsDisplayMessage(true);
+      waitingMessage.current = "";
+    }
+  }, [isAnimating, incMessage]);
+
+  // Lets us know when a scroll or exit anim is complete
+  const marqueeAnimComplete = (def: string) => {
+    // Need to add a timeout so the message stays for a little bit
+    def === "scroll" ? setIsDisplayMessage(false) : setIsAnimating(false);
+  };
 
   const handleMouseEnter = () => {
     if (!buttonGlow !== null) {
@@ -65,11 +82,16 @@ const Header = () => {
   return (
     <header>
       <nav className="navbar-bg relative w-full h-full bg-black">
-        <div className="absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[51%] pointer-events-none bg-neutral-900 overflow-hidden">
+        <div className="marquee-container absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[51%] pointer-events-none bg-neutral-900 overflow-hidden">
           <div className="marquee-overlay absolute w-full h-full z-10" />
-          <div className=" absolute w-full h-full z-20"/>
+          <div className=" absolute w-full h-full z-20" />
           <AnimatePresence mode="wait">
-            {displayMessage ? <Marquee msg={incMessage} /> : null}
+            {isDisplayMessage ? (
+              <Marquee
+                msg={displayedMessage.current}
+                marqueeAnimComplete={marqueeAnimComplete}
+              />
+            ) : null}
           </AnimatePresence>
         </div>
         <img
