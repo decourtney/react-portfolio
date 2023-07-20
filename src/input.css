@@ -31,13 +31,13 @@ code {
 }
 
 .text-red-glow {
-  text-shadow: 0 0 15px rgb(239 68 68);
+  text-shadow: 0 0 10px rgb(239 68 68);
 }
 .text-green-glow {
-  text-shadow: 0 0 15px rgb(74 222 128);
+  text-shadow: 0 0 10px rgb(74 222 128);
 }
 .text-blue-glow {
-  text-shadow: 0 0 15px rgb(59 130 246);
+  text-shadow: 0 0 10px rgb(59 130 246);
 }
 
 .scrollbar-hide::-webkit-scrollbar {

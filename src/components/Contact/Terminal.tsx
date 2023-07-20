@@ -84,7 +84,7 @@ const TerminalDisplay = () => {
 
   return (
     <motion.div
-      className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-[5%] -translate-x-[50%] -translate-y-[66%] font-vt323 text-xl text-green-400 text-green-glow"
+      className="absolute top-1/2 left-1/2 w-[75%] h-[57%] -translate-x-[50%] -translate-y-[66%]"
       variants={tPowerVariants}
       initial="initial"
       animate="on"
@@ -93,14 +93,14 @@ const TerminalDisplay = () => {
       onAnimationStart={(definition) => animStart(definition)}
     >
       <motion.div
-        className="video-overlay absolute flex justify-center content-center top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-[50%] -translate-y-[50%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full will-change-transform pointer-events-none"
+        className="video-overlay absolute flex justify-center content-center top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-[50%] -translate-y-[50%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full will-change-transform pointer-events-none z-10 "
         key="video-overlay"
         variants={tOverlayVariants}
         initial="initial"
         animate="on"
         exit="off"
       />
-      {displayMenu ? selectMenu(menuSelection) : null}
+      <div className="">{displayMenu ? selectMenu(menuSelection) : null}</div>
     </motion.div>
   );
 };

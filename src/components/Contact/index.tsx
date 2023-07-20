@@ -49,23 +49,25 @@ const ContactRight = ({ data }: ContactProps) => {
             />
             <div className="absolute w-full h-full z-20 pointer-events-none">
               <button
-              className="pointer-events-auto"
+                className="pointer-events-auto"
                 onClick={(e) => {
                   handleButtonClick(e);
                 }}
               >
-                <img src={tPwr} className="absolute bottom-[12%] right-[9%] w-[10%] h-[10%]" />
+                <img
+                  src={tPwr}
+                  className="absolute bottom-[12%] right-[9%] w-[10%] h-[10%]"
+                />
               </button>
             </div>
           </div>
-
-          <AnimatePresence mode="wait">
-            {terminalPower ? (
-              <TerminalDisplay key={"terminal"} />
-            ) : (
-              <div className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
-            )}
-          </AnimatePresence>
+            <AnimatePresence mode="wait">
+              {terminalPower ? (
+                <TerminalDisplay key={"terminal"} />
+              ) : (
+                <div className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
+              )}
+            </AnimatePresence>
         </div>
       </div>
     </div>
