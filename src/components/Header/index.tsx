@@ -94,7 +94,6 @@ const Header = () => {
       <nav className="navbar-bg relative w-full h-full bg-black">
         <div className="marquee-container absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[51%] pointer-events-none bg-neutral-900 overflow-hidden">
           <div className="marquee-overlay absolute w-full h-full z-10" />
-          <div className=" absolute w-full h-full z-20" />
           <AnimatePresence mode="wait">
             {isDisplayMessage ? (
               <Marquee

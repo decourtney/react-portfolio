@@ -65,7 +65,7 @@ const ProjectDetails = (props: DetailsProps) => {
           <div className="details-border absolute flex flex-grow top-0 left-0 w-full h-full pointer-events-none z-50"></div>
           <div className="details-lighting flex flex-col h-full px-[10%] py-[10%] text-[#ffffff] bg-black overflow-scroll scrollbar-hide">
             <div className="flex w-full justify-between items-center">
-              <h1 className="text-7xl pb-[2%] mr-[1%]">{props.name}</h1>
+              <h1 className="text-[5vw] pb-[2%] mr-[1%]">{props.name}</h1>
               <div className="flex flex-row h-0 space-x-2 ml-[5%]">
                 <div className="w-[30%]">
                   <a href={props.repo}>
@@ -84,7 +84,7 @@ const ProjectDetails = (props: DetailsProps) => {
             {props.description &&
               props.description.map((p, i) => {
                 return (
-                  <p key={i} className="text-3xl pb-[2%]">
+                  <p key={i} className="text-[2vw] pb-[2%]">
                     {p}
                   </p>
                 );

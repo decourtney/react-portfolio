@@ -38,7 +38,7 @@ const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
 
   return (
     <div className="flex justify-center items-center w-full h-full -translate-y-[10%]">
-      <h1 className="inline-flex font-vt323 text-3xl text-green-400">
+      <h1 className="inline-flex font-vt323 text-[2vw] text-green-400">
         {msg.split("").map<React.ReactNode>((word, i) => (
           <motion.span
             key={i}

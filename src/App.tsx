@@ -1,4 +1,4 @@
-import React, { useState  } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,10 +26,6 @@ function App() {
     <Provider store={store}>
       <Router >
         <AnimatedRoutes />
-        {/* Below is for testing */}
-        {/* <Header />
-          <Loading/>
-          <Footer />       */}
       </Router>
     </Provider>
   );
