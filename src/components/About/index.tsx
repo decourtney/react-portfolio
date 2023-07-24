@@ -18,7 +18,7 @@ const AboutLeft = () => {
       const pos = (100 / (numberOfSlices - 1)) * i;
       const sliceWidth = 100 / numberOfSlices;
 
-      console.log(`Index ${i}: `,delay)
+      // console.log(`Index ${i}: `,delay)
 
       slicesArray.push(
         <ImageSlice
