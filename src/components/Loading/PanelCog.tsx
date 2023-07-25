@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef, Component } from "react";
+import { Route, useLocation, useNavigate } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import {
   AnimatePresence,
   motion,
@@ -8,24 +9,26 @@ import {
 } from "framer-motion";
 import panelCogBase from "../../images/panel_cog_base.png";
 
-export enum RouteToIndex {
-  home = 0,
-  about = 1,
-  projects = 2,
-  contact = 3,
-}
+// export enum RouteToIndex {
+//   home = 0,
+//   about = 1,
+//   projects = 2,
+//   contact = 3,
+// }
 
-interface Props {
-  nextRoute: RouteToIndex;
-}
+interface RouteType { [key: string]: number }
+const RouteToIndex: RouteType = { home: 0, about: 1, projects: 2, contact: 3 }
+
+// interface Props {
+//   nextRoute: RouteToIndex;
+// }
 
 // component primed for animation but need to save previous state - will probably have to use redux slice
-const PanelCog = ({ nextRoute }: Props) => {
+const PanelCog = ({ nextRoute }: RouteType) => {
+  const prevState = useAppSelector((state) => state.project.prevState);
   const [isPresent, safeToRemove] = usePresence();
   const [scope, animate] = useAnimate();
-  const { state } = useLocation();
-
-  useEffect(() => {}, [nextRoute]);
+  const state = useLocation();
 
   useEffect(() => {
     if (isPresent) {
@@ -42,14 +45,16 @@ const PanelCog = ({ nextRoute }: Props) => {
     }
   }, [isPresent]);
 
-  //   console.log(RouteToIndex[nextRoute]);
+  console.log('previous state: ', prevState, RouteToIndex[prevState])
+  console.log('next state: ', nextRoute, RouteToIndex[nextRoute])
+  console.log('Difference ', RouteToIndex[nextRoute] - RouteToIndex[prevState])
 
   return (
     <AnimatePresence>
       <motion.div
         ref={scope}
         key={"panelCog"}
-        className="relative w-full h-full bg-green-400"
+        className="relative w-full h-full will-change-transform"
       >
         <img
           src={panelCogBase}

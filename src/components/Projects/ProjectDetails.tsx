@@ -56,7 +56,7 @@ const ProjectDetails = (props: DetailsProps) => {
       <div className="absolute top-1/2 left-0 h-[90%] transform -translate-y-[50%] -translate-x-[50%] z-50">
         <motion.div
           key={props.name}
-          className=" w-full h-full"
+          className="w-full h-full will-change-transform"
           initial="close"
           animate="open"
           variants={detailsVariants}

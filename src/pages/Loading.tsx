@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import GearBox from "../components/GearBox/GearBox";
 import { AnimatePresence, motion } from "framer-motion";
@@ -8,17 +8,19 @@ import loadingPanelLeft from "../images/loading_panel_left.png";
 import loadingPanelRight from "../images/loading_panel_right.png";
 import panelCog from "../images/panel_cog.png";
 import { useAppSelector, useAppDispatch } from "../reducers/hooks";
-import { setMarqueeMsg } from "../reducers/projectSlice";
+import { setMarqueeMsg, setPrevState } from "../reducers/projectSlice";
 
 const Loading = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const prevState = useAppSelector((state) => state.project.prevState);
 
   useEffect(() => {
     dispatch(setMarqueeMsg(`Loading please wait...`));
     const timer = setTimeout(() => {
       navigate(state ? `/${state.value}` : "/home");
+      dispatch(state ? setPrevState(state.value): dispatch(setPrevState("home")))
     }, 1000);
 
     return () => {
@@ -26,11 +28,13 @@ const Loading = () => {
     };
   }, []);
 
+  // console.log('Loading page loaded')
+
   return (
     <>
       <GearBox animationDir={"none"} />
       <div className="absolute top-[0%] left-[0%] w-full h-full">
-        <PanelCog nextRoute={state ? state.value : "home"} />
+        <PanelCog nextRoute={state ? state.value : 'home'}/>
         <img
           src={loadingPanelLeft}
           className="absolute top-[50%] -left-[0%] h-full transform -translate-y-[50%]"
