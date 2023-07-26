@@ -28,7 +28,6 @@ const PanelCog = ({ nextRoute }: RouteType) => {
   const prevState = useAppSelector((state) => state.project.prevState);
   const [isPresent, safeToRemove] = usePresence();
   const [scope, animate] = useAnimate();
-  const state = useLocation();
 
   useEffect(() => {
     if (isPresent) {

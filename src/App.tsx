@@ -11,7 +11,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import panelSlice from "./reducers/projectSlice";
 // import store from "./reducers/store";
 
-import { persistor, store } from './redux/store';
+import { persistor, store } from './reducers/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import AnimatedRoutes from "./routes";
