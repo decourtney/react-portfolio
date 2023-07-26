@@ -18,23 +18,30 @@ const Loading = () => {
 
   useEffect(() => {
     dispatch(setMarqueeMsg(`Loading please wait...`));
-    const timer = setTimeout(() => {
-      navigate(state ? `/${state.value}` : "/home");
-      dispatch(state ? setPrevState(state.value): dispatch(setPrevState("home")))
-    }, 1000);
+    // navigate(state ? `/${state.value}` : "/home");
+    dispatch(state ? setPrevState(state.value) : dispatch(setPrevState("home")));
+    // const timer = setTimeout(() => {
+    //   navigate(state ? `/${state.value}` : "/home");
+    //   dispatch(state ? setPrevState(state.value): dispatch(setPrevState("home")))
+    // }, 1000);
 
-    return () => {
-      clearTimeout(timer);
-    };
+    // return () => {
+    //   clearTimeout(timer);
+    // };
   }, []);
 
-  // console.log('Loading page loaded')
+  const CogAnimComplete = () =>{
+    console.log('anim complete')
+    // navigate(state ? `/${state.value}` : "/home");
+  }
 
   return (
     <>
       <GearBox animationDir={"none"} />
       <div className="absolute top-[0%] left-[0%] w-full h-full">
-        <PanelCog nextRoute={state ? state.value : 'home'}/>
+        <AnimatePresence>
+          <PanelCog nextRoute={state ? state.value : 'home'} CogAnimComplete={CogAnimComplete}/>
+        </AnimatePresence>
         <img
           src={loadingPanelLeft}
           className="absolute top-[50%] -left-[0%] h-full transform -translate-y-[50%]"
