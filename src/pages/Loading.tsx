@@ -10,44 +10,38 @@ import panelCog from "../images/panel_cog.png";
 import { useAppSelector, useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg, setPrevState } from "../reducers/projectSlice";
 
-const Loading = () => {
+const Loading = () =>
+{
   const { state } = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const prevState = useAppSelector((state) => state.project.prevState);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     dispatch(setMarqueeMsg(`Loading please wait...`));
-    // navigate(state ? `/${state.value}` : "/home");
     dispatch(state ? setPrevState(state.value) : dispatch(setPrevState("home")));
-    // const timer = setTimeout(() => {
-    //   navigate(state ? `/${state.value}` : "/home");
-    //   dispatch(state ? setPrevState(state.value): dispatch(setPrevState("home")))
-    // }, 1000);
-
-    // return () => {
-    //   clearTimeout(timer);
-    // };
   }, []);
 
-  const CogAnimComplete = () =>{
+  const CogAnimComplete = () =>
+  {
     console.log('anim complete')
-    // navigate(state ? `/${state.value}` : "/home");
+    navigate(state ? `/${ state.value }` : "/home");
   }
+
+  console.log('loading painted')
 
   return (
     <>
-      <GearBox animationDir={"none"} />
+      <GearBox animationDir={ "none" } />
       <div className="absolute top-[0%] left-[0%] w-full h-full">
-        <AnimatePresence>
-          <PanelCog nextRoute={state ? state.value : 'home'} CogAnimComplete={CogAnimComplete}/>
-        </AnimatePresence>
+        <PanelCog nextRoute={ state ? state.value : 'home' } CogAnimComplete={ CogAnimComplete } />
         <img
-          src={loadingPanelLeft}
+          src={ loadingPanelLeft }
           className="absolute top-[50%] -left-[0%] h-full transform -translate-y-[50%]"
         />
         <img
-          src={loadingPanelRight}
+          src={ loadingPanelRight }
           className="absolute top-[50%] -right-[0%] h-full transform -translate-y-[50%]"
         />
       </div>
