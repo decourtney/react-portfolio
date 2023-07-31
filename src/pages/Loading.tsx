@@ -25,11 +25,9 @@ const Loading = () =>
 
   const CogAnimComplete = () =>
   {
-    console.log('anim complete')
+    // console.log('anim complete')
     navigate(state ? `/${ state.value }` : "/home");
   }
-
-  console.log('loading painted')
 
   return (
     <>

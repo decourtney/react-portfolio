@@ -18,6 +18,8 @@ const ContactLeft = ({ data }: ContactProps) => {
 
 const ContactRight = ({ data }: ContactProps) => {
   const [terminalPower, setTerminalPower] = useState(false);
+  const [isPowerBtnDisabled, setIsPowerBtnDisabled] = useState(false)
+
   const variants = {
     initial: {
       translateX: "-50%",
@@ -53,6 +55,7 @@ const ContactRight = ({ data }: ContactProps) => {
                 onClick={(e) => {
                   handleButtonClick(e);
                 }}
+                disabled={isPowerBtnDisabled}
               >
                 <img
                   src={tPwr}
@@ -61,13 +64,16 @@ const ContactRight = ({ data }: ContactProps) => {
               </button>
             </div>
           </div>
-            <AnimatePresence mode="wait">
-              {terminalPower ? (
-                <TerminalDisplay key={"terminal"} />
-              ) : (
-                <div className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
-              )}
-            </AnimatePresence>
+          <AnimatePresence mode="wait">
+            {terminalPower ? (
+              <TerminalDisplay
+                key={"terminal"}
+                setIsPowerBtnDisabled={setIsPowerBtnDisabled}
+              />
+            ) : (
+              <div className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>
