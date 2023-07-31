@@ -1,44 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import GearBox from "../components/GearBox/GearBox";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import PanelCog from "../components/Loading/PanelCog";
 import panelCogBase from "../images/panel_cog_base.png";
 import loadingPanelLeft from "../images/loading_panel_left.png";
 import loadingPanelRight from "../images/loading_panel_right.png";
 import panelCog from "../images/panel_cog.png";
 import { useAppSelector, useAppDispatch } from "../reducers/hooks";
-import { setMarqueeMsg } from "../reducers/projectSlice";
+import { setMarqueeMsg, setPrevState } from "../reducers/projectSlice";
 
-const Loading = () => {
+const Loading = () =>
+{
   const { state } = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const prevState = useAppSelector((state) => state.project.prevState);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     dispatch(setMarqueeMsg(`Loading please wait...`));
-    const timer = setTimeout(() => {
-      navigate(state ? `${state.value}` : "/home");
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    dispatch(state ? setPrevState(state.value) : dispatch(setPrevState("home")));
   }, []);
+
+  const CogAnimComplete = () =>
+  {
+    // console.log('anim complete')
+    navigate(state ? `/${ state.value }` : "/home");
+  }
 
   return (
     <>
-      <GearBox animationDir={"none"} />
+      <GearBox animationDir={ "none" } />
       <div className="absolute top-[0%] left-[0%] w-full h-full">
+        <PanelCog nextRoute={ state ? state.value : 'home' } CogAnimComplete={ CogAnimComplete } />
         <img
-          src={panelCogBase}
-          className="absolute top-[50%] -left-[6.1%] w-[8.5%] h-[10%] transform -translate-y-[50%]"
-        />
-        <img
-          src={loadingPanelLeft}
+          src={ loadingPanelLeft }
           className="absolute top-[50%] -left-[0%] h-full transform -translate-y-[50%]"
         />
         <img
-          src={loadingPanelRight}
+          src={ loadingPanelRight }
           className="absolute top-[50%] -right-[0%] h-full transform -translate-y-[50%]"
         />
       </div>

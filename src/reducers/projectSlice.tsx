@@ -7,6 +7,7 @@ const projectSlice = createSlice({
     nextIndex: 0,
     isLoading: true,
     marqueeMsg: '',
+    prevState: '',
   },
   reducers: {
     setNextIndex: (state, action) => {
@@ -18,9 +19,12 @@ const projectSlice = createSlice({
     setMarqueeMsg: (state, action) => {
       state.marqueeMsg = action.payload;
     },
+    setPrevState: (state, action)=>{
+      state.prevState = action.payload;
+    }
   },
 });
 
-export const { setNextIndex, setIsLoading, setMarqueeMsg } = projectSlice.actions;
+export const { setNextIndex, setIsLoading, setMarqueeMsg, setPrevState } = projectSlice.actions;
 
 export default projectSlice.reducer;

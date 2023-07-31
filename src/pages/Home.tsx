@@ -5,6 +5,7 @@ import GearBox from "../components/GearBox/GearBox";
 import { HomeLeft, HomeRight } from "../components/Home";
 import { useAppSelector, useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg } from "../reducers/projectSlice";
+import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const location = useLocation();

@@ -73,7 +73,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
         <AnimatePresence custom={direction}>
           <motion.div
             key={currentPage}
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 w-full h-full will-change-transform"
             data-page={currentPage}
             variants={carouselVariants}
             initial="enter"
@@ -138,12 +138,12 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   return (
     <div className="flex w-full mx-[3%] mt-[2%] mb-[5%] overflow-auto scrollbar-hide bg-black">
       <div className="flex justify-end w-full h-full">
-        <ul className="flex-col list-none space-y-24">
+        <ul className="flex-col list-none space-y-[5vw]">
           {data.map((project, index) => {
             return (
               <li key={project.name} className="cursor-pointer bg-orange-400">
                 <p
-                  className="text-8xl hover:bg-green-400"
+                  className="text-[5vw] hover:bg-green-400"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
                   onClick={() => handleDetailsDisplay(true, index)}

@@ -18,7 +18,7 @@ const AboutLeft = () => {
       const pos = (100 / (numberOfSlices - 1)) * i;
       const sliceWidth = 100 / numberOfSlices;
 
-      console.log(`Index ${i}: `,delay)
+      // console.log(`Index ${i}: `,delay)
 
       slicesArray.push(
         <ImageSlice
@@ -118,10 +118,10 @@ const AboutRight = () => {
       onMouseLeave={() => setMousePos({ x: middlePos.x, y: middlePos.y })} // Reset box if not mouse over panel
     >
       <motion.div
-        className="relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl"
+        className="relative flex-col justify-center items-center w-[80%] h-[75%] shadow-2xl will-change-transform"
         style={{ transformStyle: "preserve-3d" }}
         animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
-        transition={{ type: "spring", ease: "easeInOut" }}
+        transition={{ type: "tween", ease: "easeOut" }}
       >
         <div className="flex w-full h-full text-2xl overflow-scroll scrollbar-hide">
           <img src={lilith} className="w-full" />
@@ -143,7 +143,7 @@ const AboutRight = () => {
           >
             <motion.div
               id="glass-glare"
-              className="absolute top-1/2 left-1/2 w-[600%] h-[600%] opacity-20 blur-sm pointer-events-none"
+              className="absolute top-1/2 left-1/2 w-[600%] h-[600%] opacity-20 blur-sm pointer-events-none will-change-transform"
               style={{
                 background:
                   "linear-gradient(0.4turn, #00000000 58%, #ffffff, #00000000 60%)",
@@ -153,7 +153,7 @@ const AboutRight = () => {
                 translateX: offset.x + -50 + "%",
                 translateY: offset.y + -50 + "%",
               }}
-              transition={{ type: "spring", ease: "easeInOut" }}
+              transition={{ type: "tween", ease: "easeOut" }}
             />
           </div>
           <div

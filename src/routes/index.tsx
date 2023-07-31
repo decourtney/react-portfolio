@@ -20,8 +20,8 @@ function AnimatedRoutes() {
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<Loading />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="*" element={<Home />}/> */}{/*Need to make a 404 not found page here*/}
           </Routes>

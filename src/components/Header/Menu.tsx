@@ -56,11 +56,11 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
   const isLoading = useAppSelector((state) => state.project.isLoading);
   const dispatch = useAppDispatch();
   const location = useLocation();
-  const pages = ["contact", "about", "projects", "home"];
+  const pages = ["contact", "projects", "about", "home"];
 
   return (
     <motion.div
-      className="absolute bottom-[35%] right-[0%] w-full z-10 pointer-events-none drop-shadow-2xl"
+      className="absolute bottom-[35%] right-[0%] w-full z-10 pointer-events-none drop-shadow-2xl will-change-transform"
       key="Menu"
       variants={direction}
       initial="close"
@@ -89,7 +89,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                 src={menu_plate}
                 className={`absolute bottom-[${
                   17 * (index + 1)
-                }%] right-[5.6%] w-[7%] drop-shadow-lg`}
+                }%] right-[5.6%] w-[7%] drop-shadow-lg will-change-transform`}
                 variants={options}
               />
             </Link>

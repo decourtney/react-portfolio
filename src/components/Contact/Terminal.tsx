@@ -8,7 +8,11 @@ import React, {
 import { AnimatePresence, motion } from "framer-motion";
 import EmailForm from "./EmailForm";
 
-const TerminalDisplay = () => {
+interface TerminalProps {
+  setIsPowerBtnDisabled(def: boolean): void;
+}
+
+const TerminalDisplay = ({ setIsPowerBtnDisabled }: TerminalProps) => {
   const [displayMenu, setDisplayMenu] = useState(false);
   const [menuSelection, setMenuSelection] = useState("emailForm");
   const [menuOption, setMenuOption] = useState(0);
@@ -65,9 +69,11 @@ const TerminalDisplay = () => {
 
   const animComplete = (anim: any) => {
     if (anim === "on") setDisplayMenu(true);
+    setIsPowerBtnDisabled(false);
   };
   const animStart = (anim: any) => {
     if (anim === "off") setDisplayMenu(false);
+    setIsPowerBtnDisabled(true);
   };
 
   const selectMenu = (selection: string) => {

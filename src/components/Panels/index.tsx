@@ -24,14 +24,14 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
 
   const variantsLeft = {
     close: {
-      x: "0%",
+      x: ["-99%", "0%"],
       transition: {
         duration: 1.5,
         ease: "easeInOut",
       },
     },
     open: {
-      x: "-99%",
+      x: ["0%", "-99%"],
       transition: {
         duration: 2,
         ease: "easeInOut",
@@ -46,39 +46,37 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
   };
 
   return (
-    <>
-      <motion.div
-        id="left-panel"
-        className="flex w-1/2 h-full"
-        key={contentLeft ? contentLeft.props.data : null}
-        variants={variantsLeft}
-        initial="open"
-        animate="close"
-        exit="open"
-        onAnimationComplete={(variant) => handleAnimationComplete(variant)}
-      >
-        <img
-          src={panelCogBase}
-          className="absolute top-[50%] -right-[4.5%] w-[17%] h-[10%] transform -translate-y-[50%] -z-20"
-        />
-        <div className="leftpanel-border absolute w-[101%] h-full left-0 pointer-events-none z-40"></div>
-        <div className="flex w-full h-full">{contentLeft}</div>
-      </motion.div>
-    </>
+    <motion.div
+      id="left-panel"
+      className="flex w-1/2 h-full will-change-transform"
+      key={contentLeft ? contentLeft.props.data : null}
+      variants={variantsLeft}
+      initial="open"
+      animate="close"
+      exit="open"
+      onAnimationComplete={(variant) => handleAnimationComplete(variant)}
+    >
+      <img
+        src={panelCogBase}
+        className="absolute top-[50%] -right-[4.5%] w-[17%] h-[10%] transform -translate-y-[50%] -z-20"
+      />
+      <div className="leftpanel-border absolute w-[101%] h-full left-0 pointer-events-none z-40" />
+      <div className="flex w-full h-full">{contentLeft}</div>
+    </motion.div>
   );
 };
 
 const RightPanel = ({ contentRight }: RightPanelProps) => {
   const variantsRight = {
     close: {
-      x: "0%",
+      x: ["99%", "0%"],
       transition: {
         duration: 1.5,
         ease: "easeInOut",
       },
     },
     open: {
-      x: "99%",
+      x: ["0%", "99%"],
       transition: {
         duration: 2,
         ease: "easeInOut",
@@ -87,27 +85,25 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
   };
 
   return (
-    <>
-      <motion.div
-        id="right-panel"
-        className="flex w-1/2 h-full"
-        key={contentRight ? contentRight.props.data : null}
-        variants={variantsRight}
-        initial="open"
-        animate="close"
-        exit="open"
-      >
-        {/* Moving the cog has gotten weird. Trying to animate it made it weirder.
+    <motion.div
+      id="right-panel"
+      className="flex w-1/2 h-full will-change-transform"
+      key={contentRight ? contentRight.props.data : null}
+      variants={variantsRight}
+      initial="open"
+      animate="close"
+      exit="open"
+    >
+      {/* Moving the cog has gotten weird. Trying to animate it made it weirder.
         Stick with simple solution - have cog display page icon and move(scale) up maybe. 
         Can probably get rid of the cog. Can adjust PNGs to match changes*/}
-        {/* <img
+      {/* <img
           src={panelCogAlt}
           className="absolute top-[50%] -left-[4%] w-[8%] h-[8%] z-10"
         /> */}
-        <div className="rightpanel-border absolute w-[101%] h-full right-0 pointer-events-none z-40" />
-        <div className="flex w-full h-full">{contentRight}</div>
-      </motion.div>
-    </>
+      <div className="rightpanel-border absolute w-[101%] h-full right-0 pointer-events-none z-40" />
+      <div className="flex w-full h-full">{contentRight}</div>
+    </motion.div>
   );
 };
 

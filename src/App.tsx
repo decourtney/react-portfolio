@@ -1,4 +1,4 @@
-import React, { useState  } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,7 +9,10 @@ import {
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import panelSlice from "./reducers/projectSlice";
-import store from "./reducers/store";
+// import store from "./reducers/store";
+
+import { persistor, store } from './reducers/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import AnimatedRoutes from "./routes";
 import Home from "./pages/Home";
@@ -24,13 +27,11 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   return (
     <Provider store={store}>
-      <Router >
-        <AnimatedRoutes />
-        {/* Below is for testing */}
-        {/* <Header />
-          <Loading/>
-          <Footer />       */}
-      </Router>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router >
+          <AnimatedRoutes />
+        </Router>
+      </PersistGate>
     </Provider>
   );
 }

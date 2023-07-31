@@ -63,7 +63,7 @@ const TerminalEmailForm = () => {
     <div className="flex w-full h-full justify-center items-center py-[5%] px-[5%]">
       {/* add intro splash stuff eventually */}
       <form
-        className="w-full h-full font-vt323 text-5xl text-green-400"
+        className="w-full h-full font-vt323 text-[2vw] text-green-400 leading-snug space-y-2"
         onSubmit={sendEmail}
       >
         <motion.div ref={scope}>
