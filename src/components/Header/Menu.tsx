@@ -74,7 +74,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
 
       {pages.map((page, index) => {
         return (
-          <div key={page} className={`absolute bottom-0 left-0 w-full h-full `}>
+          <div key={page} className={`absolute bottom-0 left-0 w-full h-full`}>
             <Link
               className={`${
                 location.pathname === "/" + page
@@ -87,9 +87,8 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
             >
               <motion.img
                 src={menu_plate}
-                className={`absolute bottom-[${
-                  17 * (index + 1)
-                }%] right-[5.6%] w-[7%] drop-shadow-lg will-change-transform`}
+                className={`absolute right-[5.6%] w-[7%] drop-shadow-lg will-change-transform`}
+                style={{ bottom: `${17 * (index + 0.7)}%` }}
                 variants={options}
               />
             </Link>

@@ -4,7 +4,7 @@ import { setMarqueeMsg } from "../reducers/projectSlice";
 import { useLocation } from "react-router-dom";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import { ContactLeft, ContactRight } from "../components/Contact";
-import GearBox from "../components/GearBox/GearBox";
+import GearBox from "../components/GearBox";
 
 const Contact = () => {
   const [loadContent, setLoadContent] = useState("");

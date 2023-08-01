@@ -14,7 +14,7 @@ const AboutLeft = () => {
     const slicesArray = [];
 
     for (let i = 0; i < numberOfSlices; i++) {
-      const delay = ((i + 1) + Math.random() * 100) / 100;
+      const delay = (i + 1 + Math.random() * 100) / 100;
       const pos = (100 / (numberOfSlices - 1)) * i;
       const sliceWidth = 100 / numberOfSlices;
 
@@ -35,7 +35,7 @@ const AboutLeft = () => {
 
   return (
     <div className="flex justify-center items-center w-full mr-[4%] pl-[4%] pr-[2%] -z-10 bg-blue-400">
-      <div className="image-container relative w-full h-fit ">
+      <div className="trivision-board relative w-full h-fit ">
         <img src={forrest} className="w-full invisible" />
         <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
           {getDivSlices().map((s) => {
@@ -123,8 +123,33 @@ const AboutRight = () => {
         animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
         transition={{ type: "tween", ease: "easeOut" }}
       >
-        <div className="flex w-full h-full text-2xl overflow-scroll scrollbar-hide">
-          <img src={lilith} className="w-full" />
+        <div className="flex items-center w-full h-full overflow-scroll scrollbar-hide">
+          {/* <img src={lilith} className="w-full" /> */}
+          <div className="w-full p-5 text-2xl space-y-3">
+            <p>
+              As a dedicated web developer, my coding journey spans several
+              years, with a formal focus on web development beginning in 2022.
+              Throughout my experience, I've worked with the MERN stack and
+              MySQL, building full-stack web applications that showcase my
+              abilities in both front-end and back-end development.
+            </p>
+            <p>
+              Adaptability is a core strength, and I'm always eager to explore
+              new frameworks and technologies. Keeping my programming skills
+              fresh through side projects, I'm well-prepared to tackle diverse
+              challenges in the ever-evolving field of web development.
+            </p>
+            <p>
+              Beyond coding, you can find me sketching designs and drawing
+              inspiration from various sources. My passion for creativity and
+              problem-solving drives me to create exceptional digital
+              experiences that leave a lasting impact. I'm thrilled to
+              collaborate with like-minded professionals and embark on new
+              ventures, continuously learning and growing in this dynamic
+              industry. Let's bring innovative web applications to life
+              together!
+            </p>
+          </div>
         </div>
         <div
           id="box-top"

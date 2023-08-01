@@ -9,7 +9,6 @@ type ImageSliceProps = {
 };
 
 const ImageSlice = ({ sliceWidth, slicePos, delay, duration }: ImageSliceProps) => {
-
   const variants1 = {
     rotateY: [0, 0, 120, 120, 240, 240, 360],
     transformPerspective: [1000, 1000, 2000, 2000, 2000, 2000, 1000],
@@ -35,6 +34,8 @@ const ImageSlice = ({ sliceWidth, slicePos, delay, duration }: ImageSliceProps) 
     delay: delay,
   };
 
+  // Replace images with:
+  // Passion, Resilience, Creativity
   return (
     <div className={`img relative h-full`} style={{ width: `${sliceWidth}%` }}>
       <motion.span

@@ -81,7 +81,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             exit="exit"
             custom={direction}
           >
-            <div className="image-border absolute top-0 left-0 w-full h-full"></div>
+            <div className="project-image-border border-ws absolute top-0 left-0 w-full h-full"></div>
             <img
               className="h-full w-full px-[4%] py-[3%]"
               src={

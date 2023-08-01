@@ -46,7 +46,6 @@ const detailsVariants = {
 };
 
 const ProjectDetails = (props: DetailsProps) => {
-  // console.log(data);
   return (
     <>
       <div
@@ -56,13 +55,13 @@ const ProjectDetails = (props: DetailsProps) => {
       <div className="absolute top-1/2 left-0 h-[90%] transform -translate-y-[50%] -translate-x-[50%] z-50">
         <motion.div
           key={props.name}
-          className="w-full h-full will-change-transform"
+          className="w-full h-full"
           initial="close"
           animate="open"
           variants={detailsVariants}
           exit="close"
         >
-          <div className="details-border absolute flex flex-grow top-0 left-0 w-full h-full pointer-events-none z-50"></div>
+          <div className="details-border border-ws absolute flex flex-grow top-0 left-0 w-full h-full pointer-events-none z-50"></div>
           <div className="details-lighting flex flex-col h-full px-[10%] py-[10%] text-[#ffffff] bg-black overflow-scroll scrollbar-hide">
             <div className="flex w-full justify-between items-center">
               <h1 className="text-[5vw] pb-[2%] mr-[1%]">{props.name}</h1>
