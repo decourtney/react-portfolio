@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ImageSlice from "./ImageSlice";
 import Lenticular from "./Lenticular";
+import LenticularToo from "./LenticularToo";
 import { AnimatePresence, motion, useAnimate, useScroll } from "framer-motion";
 import forrest from "../../images/forrest1.png";
 import lilith from "../../images/lilith.png";
@@ -124,7 +125,9 @@ const AboutRight = () => {
         animate={{ rotateX: -1 * offset.y + "deg", rotateY: offset.x + "deg" }}
         transition={{ type: "tween", ease: "easeOut" }}
       >
-        <div className="flex items-center w-full h-full overflow-scroll scrollbar-hide">
+        <div className=" w-full h-full  scrollbar-hide">
+          <LenticularToo key={"lenticular"} />
+          
           {/* <div className="w-full p-5 text-2xl space-y-3">
             <p>
               As a dedicated web developer, my coding journey spans several
@@ -150,9 +153,6 @@ const AboutRight = () => {
               together!
             </p>
           </div> */}
-
-          <Lenticular key={'lenticular'}/>
-
         </div>
         <div
           id="box-top"
