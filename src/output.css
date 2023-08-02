@@ -940,22 +940,6 @@ video {
   height: 100vh;
 }
 
-.h-\[\] {
-  height: ;
-}
-
-.h-\[pixelHeight\] {
-  height: pixelHeight;
-}
-
-.h-\[\$pixelHeight\] {
-  height: $pixelHeight;
-}
-
-.h-\[\$\(pixelHeight\)\] {
-  height: $(pixelHeight);
-}
-
 .max-h-screen {
   max-height: 100vh;
 }
@@ -1066,14 +1050,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[\$\{\}\] {
-  width: ${};
 }
 
 .flex-shrink {
@@ -1847,75 +1823,6 @@ code {
     rgba(255, 255, 255, 0) 70%,
     rgba(0, 0, 0, 1) 100%
   );
-}
-
-.first-letter\:w-full::first-letter {
-  width: 100%;
-}
-
-.before\:bg-\[\]::before {
-  content: var(--tw-content);
-  background-color: ;
-}
-
-.before\:bg-\[SIZE\]::before {
-  content: var(--tw-content);
-  background-color: SIZE;
-}
-
-.before\:bg-\[POSIT\]::before {
-  content: var(--tw-content);
-  background-color: POSIT;
-}
-
-.before\:bg-\[POSITION\]::before {
-  content: var(--tw-content);
-  background-color: POSITION;
-}
-
-.before\:bg-\[size\]::before {
-  content: var(--tw-content);
-  background-color: size;
-}
-
-.before\:bg-\[0200\]::before {
-  content: var(--tw-content);
-  background-color: 0200;
-}
-
-.before\:bg-\[200\]::before {
-  content: var(--tw-content);
-  background-color: 200;
-}
-
-.before\:bg-\[\$\]::before {
-  content: var(--tw-content);
-  background-color: $;
-}
-
-.before\:bg-\[\$\{\}\]::before {
-  content: var(--tw-content);
-  background-color: ${};
-}
-
-.before\:bg-\[calc\(\)\]::before {
-  content: var(--tw-content);
-  background-position: calc();
-}
-
-.before\:bg-\[200px\]::before {
-  content: var(--tw-content);
-  background-position: 200px;
-}
-
-.before\:bg-\[100\%\]::before {
-  content: var(--tw-content);
-  background-position: 100%;
-}
-
-.before\:bg-no-repeat::before {
-  content: var(--tw-content);
-  background-repeat: no-repeat;
 }
 
 .after\:absolute::after {

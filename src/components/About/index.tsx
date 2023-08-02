@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import ImageSlice from "./ImageSlice";
+import Lenticular from "./Lenticular";
 import { AnimatePresence, motion, useAnimate, useScroll } from "framer-motion";
 import forrest from "../../images/forrest1.png";
 import lilith from "../../images/lilith.png";
@@ -95,7 +96,7 @@ const AboutRight = () => {
       x: ((mousePos.x - middlePos.x) / middlePos.x) * 30,
       y: ((mousePos.y - middlePos.y) / middlePos.y) * 30,
     });
-  }, [mousePos]);
+  }, [mousePos, middlePos]);
 
   // Calc center of panel when window resizes
   useEffect(() => {
@@ -124,8 +125,7 @@ const AboutRight = () => {
         transition={{ type: "tween", ease: "easeOut" }}
       >
         <div className="flex items-center w-full h-full overflow-scroll scrollbar-hide">
-          {/* <img src={lilith} className="w-full" /> */}
-          <div className="w-full p-5 text-2xl space-y-3">
+          {/* <div className="w-full p-5 text-2xl space-y-3">
             <p>
               As a dedicated web developer, my coding journey spans several
               years, with a formal focus on web development beginning in 2022.
@@ -149,7 +149,10 @@ const AboutRight = () => {
               industry. Let's bring innovative web applications to life
               together!
             </p>
-          </div>
+          </div> */}
+
+          <Lenticular key={'lenticular'}/>
+
         </div>
         <div
           id="box-top"
