@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimate } from "framer-motion";
+ import shadowbox_rod from "../../images/shadowbox_rod.png"
 
 type ImageSliceProps = {
   sliceWidth: number;
@@ -37,29 +38,34 @@ const ImageSlice = ({ sliceWidth, slicePos, delay, duration }: ImageSliceProps) 
   // Replace images with:
   // Passion, Resilience, Creativity
   return (
-    <div className={`img relative h-full`} style={{ width: `${sliceWidth}%` }}>
-      <motion.span
-        className={`image-1 absolute top-0 left-0 w-full h-full will-change-transform`}
-        style={{ backgroundPosition: `${slicePos}%` }}
-        initial={{ rotateY: 0, x: "0%" }}
-        animate={variants1}
-        transition={transition}
-      />
-      <motion.span
-        className={`image-2 absolute top-0 left-0 w-full h-full will-change-transform`}
-        style={{ backgroundPosition: `${slicePos}%` }}
-        initial={{ rotateY: 240, x: "-45%" }}
-        animate={variants2}
-        transition={transition}
-      />
-      <motion.span
-        className={`image-3 absolute top-0 left-0 w-full h-full will-change-transform`}
-        style={{ backgroundPosition: `${slicePos}%` }}
-        initial={{ rotateY: 120, x: "45%" }}
-        animate={variants3}
-        transition={transition}
-      />
-    </div>
+    <>
+      <div
+        className={`img relative h-full`}
+        style={{ width: `${sliceWidth}%` }}
+      >
+        <motion.span
+          className={`image-1 absolute top-0 left-0 w-full h-full will-change-transform`}
+          style={{ backgroundPosition: `${slicePos}%` }}
+          initial={{ rotateY: 0, x: "0%" }}
+          animate={variants1}
+          transition={transition}
+        />
+        <motion.span
+          className={`image-2 absolute top-0 left-0 w-full h-full will-change-transform`}
+          style={{ backgroundPosition: `${slicePos}%` }}
+          initial={{ rotateY: 240, x: "-45%" }}
+          animate={variants2}
+          transition={transition}
+        />
+        <motion.span
+          className={`image-3 absolute top-0 left-0 w-full h-full will-change-transform`}
+          style={{ backgroundPosition: `${slicePos}%` }}
+          initial={{ rotateY: 120, x: "45%" }}
+          animate={variants3}
+          transition={transition}
+        />
+      </div>
+    </>
   );
 };
 
