@@ -90,6 +90,11 @@ code {
   border-image-source: url(./images/proj_border.png);
 }
 
+.trivision-border {
+  border-image-source: url(./images/trivision_frame.png);
+  border-image-outset: 1.6vw;
+}
+
 .border-ws {
   border-image-width: 100%;
   border-image-slice: 50%;
@@ -207,7 +212,7 @@ code {
   background-image: url(./images/forrest3.png);
 }
 
-.trivision-board .img span{
+.trivision-board .img span {
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: hidden;

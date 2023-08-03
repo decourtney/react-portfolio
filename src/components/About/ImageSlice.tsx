@@ -43,6 +43,11 @@ const ImageSlice = ({ sliceWidth, slicePos, delay, duration }: ImageSliceProps) 
         className={`img relative h-full`}
         style={{ width: `${sliceWidth}%` }}
       >
+        <div
+          className={`absolute flex justify-center top-1/2 left-1/2 w-fit h-screen`} style={{transform: 'translateX(-50%) translateY(-50%) translateZ(-100px)'}}
+        >
+          <img src={shadowbox_rod} width="50%"/>
+        </div>
         <motion.span
           className={`image-1 absolute top-0 left-0 w-full h-full will-change-transform`}
           style={{ backgroundPosition: `${slicePos}%` }}
