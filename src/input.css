@@ -246,3 +246,10 @@ code {
     rgba(0, 0, 0, 1) 100%
   );
 }
+
+.masktest {
+  mask-image: url(./images/testImg.png);
+  mask-size: 96%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}

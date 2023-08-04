@@ -41,40 +41,53 @@ const AboutLeft = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full mr-[4%] ml-[3%] p-[5%] -z-10">
-      <div className="absolute w-full h-full">
+    <div className="relative flex flex-col justify-center items-center w-full mr-[4%] -z-10">
+      {/* Top Border */}
+      <div
+        className="w-full h-full z-10"
+        style={{
+          backgroundImage: `url(${panel_bg})`,
+        }}
+      />
+
+      {/* Trivision Container */}
+      <div className="flex flex-row justify-center items-center w-full h-fit">
+        {/* Left Border */}
         <div
-          className="absolute top-0 left-0 w-full h-full z-10"
+          className="w-[8%] h-full"
           style={{
             backgroundImage: `url(${panel_bg})`,
-            clipPath: `polygon(
-              0% 0%, 
-              0% 100%, 
-              7% 100%, 
-              7% 23%, 
-              93% 23%, 
-              93% 77%, 
-              7% 77%, 
-              7% 100%, 
-              100% 100%, 
-              100% 0%)`,
+          }}
+        />
+
+        {/* Trivision Board */}
+        <div className="trivision-board relative w-[100%] h-fit my-[2%] mx-[2%]">
+          <div
+            className="trivision-border border-ws absolute w-full h-full z-50"
+            style={{ boxShadow: "0px 0px 10px 5px" }}
+          />
+          <img src={forrest} className="w-full h-full invisible" />
+          <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
+            {getDivSlices().map((s) => {
+              return s;
+            })}
+          </div>
+        </div>
+
+        {/* Right Border */}
+        <div
+          className="w-[5%] h-full"
+          style={{
+            backgroundImage: `url(${panel_bg})`,
           }}
         />
       </div>
 
-      <div className="trivision-board relative w-full h-fit">
-        <div
-          className="trivision-border border-ws absolute w-full h-full z-10"
-          style={{ boxShadow: "0px 0px 10px 5px" }}
-        />
-
-        <img src={forrest} className="w-full invisible" />
-        <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
-          {getDivSlices().map((s) => {
-            return s;
-          })}
-        </div>
-      </div>
+      {/* Bottom Border */}
+      <div
+        className="w-full h-full z-10"
+        style={{ backgroundImage: `url(${panel_bg})` }}
+      />
     </div>
   );
 };
@@ -261,3 +274,68 @@ const AboutRight = () => {
 };
 
 export { AboutLeft, AboutRight };
+
+{
+  /* <div
+        className="absolute top-0 left-0 w-full h-full z-10"
+        style={{
+          backgroundImage: `url(${panel_bg})`,
+          clipPath: `polygon(
+              0% 0%, 
+              0% 100%, 
+              7% 100%, 
+              7% 23%, 
+              93% 23%, 
+              93% 77%, 
+              7% 77%, 
+              7% 100%, 
+              100% 100%, 
+              100% 0%)`,
+        }}
+      /> */
+}
+
+{
+  /* <div className="relative flex flex-row justify-center items-center w-full mr-[2%] -z-10">
+  <div
+    className="w-[10%] h-[10%]"
+    style={{
+      backgroundImage: `url(${panel_bg})`,
+      backgroundRepeat: "no-repeat",
+    }}
+  />
+
+  <div className="flex flex-col justify-center items-center w-[85%] h-full">
+    <div
+      className="w-[10%] h-[100%] z-10"
+      style={{
+        backgroundImage: `url(${panel_bg})`,
+        backgroundRepeat: "repeat",
+      }}
+    />
+
+    <div className="trivision-board relative w-[100%] h-fit my-[4%]">
+      <div
+        className="trivision-border border-ws absolute w-full h-full z-50"
+        style={{ boxShadow: "0px 0px 10px 5px" }}
+      />
+      <img src={forrest} className="w-full h-full invisible" />
+      <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
+        {getDivSlices().map((s) => {
+          return s;
+        })}
+      </div>
+    </div>
+
+    <div
+      className="w-[10%] h-[100%] z-10"
+      style={{ backgroundImage: `url(${panel_bg})` }}
+    />
+  </div>
+
+  <div
+    className="w-[10%] h-[10%]"
+    style={{ backgroundImage: `url(${panel_bg})` }}
+  />
+</div> */
+}
