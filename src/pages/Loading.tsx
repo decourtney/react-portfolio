@@ -33,7 +33,7 @@ const Loading = () => {
       <GearBox animationDir={"none"} />
       <div className="absolute top-[0%] left-[0%] w-full h-full">
         <PanelCog
-          nextRoute={state ? state.value : "home"}
+          nextRoute={state ? state.value : "initial"}
           CogAnimComplete={CogAnimComplete}
         />
         <img
