@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import projectsData from "../components/Projects/Projects.json";
-import GearBox from "../components/GearBox/GearBox";
+import GearBox from "../components/GearBox";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import { ProjectLeft, ProjectRight } from "../components/Projects";
 import { useAppSelector, useAppDispatch } from "../reducers/hooks";

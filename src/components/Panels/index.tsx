@@ -60,7 +60,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
         src={panelCogBase}
         className="absolute top-[50%] -right-[4.5%] w-[17%] h-[10%] transform -translate-y-[50%] -z-20"
       />
-      <div className="leftpanel-border absolute w-[101%] h-full left-0 pointer-events-none z-40" />
+      <div className="leftpanel-border border-ws absolute w-[101%] h-full left-0 pointer-events-none z-40" />
       <div className="flex w-full h-full">{contentLeft}</div>
     </motion.div>
   );
@@ -101,7 +101,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
           src={panelCogAlt}
           className="absolute top-[50%] -left-[4%] w-[8%] h-[8%] z-10"
         /> */}
-      <div className="rightpanel-border absolute w-[101%] h-full right-0 pointer-events-none z-40" />
+      <div className="rightpanel-border border-ws absolute w-[101%] h-full right-0 pointer-events-none z-40" />
       <div className="flex w-full h-full">{contentRight}</div>
     </motion.div>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import { AboutLeft, AboutRight } from "../components/About";
-import GearBox from "../components/GearBox/GearBox";
+import GearBox from "../components/GearBox";
 import { useAppSelector, useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg } from "../reducers/projectSlice";
 
