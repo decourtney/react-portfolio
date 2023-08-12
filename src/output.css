@@ -1488,6 +1488,12 @@ video {
   outline-offset: 2px;
 }
 
+.blur {
+  --tw-blur: blur(8px);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .blur-sm {
   --tw-blur: blur(4px);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1692,116 +1698,36 @@ code {
     radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
   -webkit-backdrop-filter: blur(100px);
           backdrop-filter: blur(100px);
-  -webkit-animation: glitch1 10s infinite;
-          animation: glitch1 10s infinite;
 }
 
-@-webkit-keyframes glitch1 {
-  0% {
-    opacity: 1;
-  }
-
-  7% {
-    opacity: 0.75;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  27% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0.75;
-  }
-
-  35% {
-    opacity: 1;
-  }
-
-  52% {
-    opacity: 1;
-  }
-
-  55% {
-    opacity: 0.75;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  72% {
-    opacity: 1;
-  }
-
-  75% {
-    opacity: 0.75;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.centerLight {
+  background-image: radial-gradient(circle at center, #ffdbdb, transparent 40%);
+  -webkit-mask-image: radial-gradient(circle at center, #000000 0%, transparent 50%);
+          mask-image: radial-gradient(circle at center, #000000 0%, transparent 50%);
 }
 
-@keyframes glitch1 {
-  0% {
-    opacity: 1;
-  }
+.topleftLight {
+  background-image: radial-gradient(circle at 0% 0%, #ffdbdb, transparent 40%);
+  -webkit-mask-image: radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
+          mask-image: radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
+}
 
-  7% {
-    opacity: 0.75;
-  }
+.toprightLight {
+  background-image: radial-gradient(circle at 100% 0%, #ffdbdb, transparent 40%);
+  -webkit-mask-image: radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%);
+          mask-image: radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%);
+}
 
-  10% {
-    opacity: 1;
-  }
+.bottomleftLight {
+  background-image: radial-gradient(circle at 0% 100%, #ffdbdb, transparent 40%);
+  -webkit-mask-image: radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%);
+          mask-image: radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%);
+}
 
-  27% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0.75;
-  }
-
-  35% {
-    opacity: 1;
-  }
-
-  52% {
-    opacity: 1;
-  }
-
-  55% {
-    opacity: 0.75;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  72% {
-    opacity: 1;
-  }
-
-  75% {
-    opacity: 0.75;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.bottomrightLight {
+  background-image: radial-gradient(circle at 100% 100%, #ffdbdb, transparent 40%);
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%);
+          mask-image: radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%);
 }
 
 .trivision-board .img .image-1 {
