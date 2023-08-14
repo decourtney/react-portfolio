@@ -9,6 +9,7 @@ import shadowbox_rod from "../../images/shadowbox_rod.png";
 import trivision_frame from "../../images/trivision_frame.png";
 import panel_bg from "../../images/panel_background.png";
 import testimg from "../../images/testImg.png";
+import cert_paper from "../../images/cert_paper.png";
 
 const AboutLeft = () => {
   const numberOfSlices = 20;
@@ -168,7 +169,7 @@ const AboutRight = () => {
         </div>
 
         <motion.div
-          className="relative flex-col justify-center items-center w-[90%] h-[80%] will-change-transform bg-slate-600"
+          className=" flex-col justify-center items-center w-[90%] h-[80%] will-change-transform bg-slate-600"
           style={{
             transformStyle: "preserve-3d",
             boxShadow: "0px 0px 10px 0px rgb(23 23 23)",
@@ -179,8 +180,14 @@ const AboutRight = () => {
           }}
           transition={{ type: "tween", ease: "easeOut" }}
         >
-          <div className=" w-full h-full overflow-scroll scrollbar-hide">
-            <div className="w-full p-5 text-2xl space-y-3">
+          {/* <img
+            src={cert_paper}
+            className="absolute top-1/2 left-1/2 w-[95%] h-[95%] -translate-x-1/2 -translate-y-1/2 -z-10"
+          /> */}
+          <div
+            className={`w-full h-full py-[3%] px-[5%] overflow-scroll scrollbar-hide`}
+          >
+            <div className="cert-border w-full pt-[20%] pb-[25%] px-[6%] text-2xl space-y-3">
               <p>
                 As a dedicated web developer, my coding journey spans several
                 years, with a formal focus on web development beginning in 2022.

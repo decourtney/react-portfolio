@@ -944,6 +944,10 @@ video {
   height: 90%;
 }
 
+.h-\[95\%\] {
+  height: 95%;
+}
+
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1070,6 +1074,10 @@ video {
   width: 90%;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1112,6 +1120,12 @@ video {
           transform-origin: top;
 }
 
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .-translate-x-\[1\%\] {
   --tw-translate-x: -1%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1120,6 +1134,12 @@ video {
 
 .-translate-x-\[50\%\] {
   --tw-translate-x: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1365,6 +1385,10 @@ video {
   padding: 2rem;
 }
 
+.p-\[5\%\] {
+  padding: 5%;
+}
+
 .px-\[10\%\] {
   padding-left: 10%;
   padding-right: 10%;
@@ -1390,13 +1414,62 @@ video {
   padding-bottom: 3%;
 }
 
+.py-\[30\%\] {
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+
 .py-\[5\%\] {
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
+.py-\[\] {
+  padding-top: ;
+  padding-bottom: ;
+}
+
+.py-\[20\%\] {
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.px-\[\] {
+  padding-left: ;
+  padding-right: ;
+}
+
+.px-\[6\%\] {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
 .pb-\[2\%\] {
   padding-bottom: 2%;
+}
+
+.pt-\[20\%\] {
+  padding-top: 20%;
+}
+
+.pb-\[\] {
+  padding-bottom: ;
+}
+
+.pb-\[15\%\] {
+  padding-bottom: 15%;
+}
+
+.pb-\[25\%\] {
+  padding-bottom: 25%;
+}
+
+.pb-\[20\%\] {
+  padding-bottom: 20%;
+}
+
+.pb-\[29\%\] {
+  padding-bottom: 29%;
 }
 
 .text-center {
@@ -1645,6 +1718,12 @@ code {
   border-image-outset: 1.6vw;
 }
 
+.cert-border {
+  border-image-source: url(./images/cert_paper.png);
+  border-image-width: 100%;
+  border-image-slice: 50%;
+}
+
 .border-ws {
   border-image-width: 100%;
   border-image-slice: 50%;
@@ -1713,19 +1792,31 @@ code {
 }
 
 .toprightLight {
-  background-image: radial-gradient(circle at 100% 0%, #ffdbdb, transparent 40%);
+  background-image: radial-gradient(
+    circle at 100% 0%,
+    #ffdbdb,
+    transparent 40%
+  );
   -webkit-mask-image: radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%);
           mask-image: radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%);
 }
 
 .bottomleftLight {
-  background-image: radial-gradient(circle at 0% 100%, #ffdbdb, transparent 40%);
+  background-image: radial-gradient(
+    circle at 0% 100%,
+    #ffdbdb,
+    transparent 40%
+  );
   -webkit-mask-image: radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%);
           mask-image: radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%);
 }
 
 .bottomrightLight {
-  background-image: radial-gradient(circle at 100% 100%, #ffdbdb, transparent 40%);
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    #ffdbdb,
+    transparent 40%
+  );
   -webkit-mask-image: radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%);
           mask-image: radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%);
 }
