@@ -96,7 +96,7 @@ code {
 }
 
 .cert-border {
-  border-image-source: url(./images/cert_paper.png);
+  border-image-source: url(./images/cert_paper_middle.png);
   border-image-width: 100%;
   border-image-slice: 50%;
 }
