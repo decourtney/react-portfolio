@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import ProjectDetails from "./ProjectDetails";
 import namePlateBorder from "../../images/proj_nameplate_border.png";
+import namePlateBG from "../../images/proj_nameplate_bg.png"
 
 interface Project {
   name: string;
@@ -138,21 +139,22 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
 
   return (
     <div className="flex w-full mx-[3%] mt-[2%] mb-[5%] overflow-auto scrollbar-hide bg-black">
-      <div className="w-full mt-[5%] mr-[1%] ml-[3%] bg-blue-400">
-        <ul className="flex-col columns-2 w-full list-none space-y-4">
+      <div className=" w-full h-full mt-[5%] ml-[2%] bg-[#aaaa8c]">
+        <img src={namePlateBG} className="w-full" />
+        <ul className="flex-col columns-2 w-full list-none space-y-4 bg-[#aaaa8c]">
           {data.map((project, index) => {
             return (
               <>
-                <div className="relative h-fit z-10 bg-red-400">
+                <div className="relative h-fit">
                   <div className="project-nameplate-border border-ws pointer-events-none">
                     <img src={namePlateBorder} className="w-[75%] invisible" />
                   </div>
                   <li
                     key={project.name}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full cursor-pointer -z-20 bg-orange-400"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full cursor-pointer"
                   >
                     <p
-                      className="text-[2.4vw] text-center text-white"
+                      className="text-[2.4vw] text-center text-black"
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
                       onClick={() => handleDetailsDisplay(true, index)}
