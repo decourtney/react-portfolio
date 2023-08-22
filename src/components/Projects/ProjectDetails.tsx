@@ -109,13 +109,12 @@ const ProjectDetails = (props: DetailsProps) => {
                 <div
                   key={i}
                   ref={item[0]}
-                  className={`${item[1]} bg-black absolute top-0 left-0 h-full w-full px-[10%] py-[10%] text-[#ffffff] overflow-scroll scrollbar-hide`}
+                  className={`${item[1]} bg-black absolute top-0 left-0 h-full w-full px-[10%] py-[10%] text-[#ffffff] overflow-scroll scrollbar-hide rounded-[50px]`}
                   style={{
                     textShadow: "0px 0px 1px #FFFFFF, 0px 0px 5px #FFFFFF",
                     backdropFilter: "blur(3px)",
                   }}
                 >
-                  {/* <div className="details-border border-ws absolute flex flex-grow top-0 left-0 w-full h-full pointer-events-none z-50" /> */}
                   <div className="flex w-full justify-between items-center">
                     <h1 className="text-[5vw] pb-[2%] mr-[1%]">{props.name}</h1>
                     <div className="flex flex-row h-0 space-x-2 ml-[5%]">

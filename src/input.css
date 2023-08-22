@@ -90,6 +90,10 @@ code {
   border-image-source: url(./images/proj_border.png);
 }
 
+.project-nameplate-border {
+    border-image-source: url(./images/proj_nameplate_border.png);
+}
+
 .trivision-border {
   border-image-source: url(./images/trivision_frame.png);
   border-image-outset: 1.6vw;

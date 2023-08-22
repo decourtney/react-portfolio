@@ -10,6 +10,7 @@ import {
   useAnimation,
 } from "framer-motion";
 import ProjectDetails from "./ProjectDetails";
+import namePlateBorder from "../../images/proj_nameplate_border.png";
 
 interface Project {
   name: string;
@@ -137,20 +138,30 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
 
   return (
     <div className="flex w-full mx-[3%] mt-[2%] mb-[5%] overflow-auto scrollbar-hide bg-black">
-      <div className="flex justify-end w-full h-full">
-        <ul className="flex-col list-none space-y-[5vw]">
+      <div className="w-full mt-[5%] mr-[1%] ml-[3%] bg-blue-400">
+        <ul className="flex-col columns-2 w-full list-none space-y-4">
           {data.map((project, index) => {
             return (
-              <li key={project.name} className="cursor-pointer bg-orange-400">
-                <p
-                  className="text-[5vw] hover:bg-green-400"
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
-                  onClick={() => handleDetailsDisplay(true, index)}
-                >
-                  <span>{project.name}</span>
-                </p>
-              </li>
+              <>
+                <div className="relative h-fit z-10 bg-red-400">
+                  <div className="project-nameplate-border border-ws pointer-events-none">
+                    <img src={namePlateBorder} className="w-[75%] invisible" />
+                  </div>
+                  <li
+                    key={project.name}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full cursor-pointer -z-20 bg-orange-400"
+                  >
+                    <p
+                      className="text-[2.4vw] text-center text-white"
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={() => handleDetailsDisplay(true, index)}
+                    >
+                      <span>{project.name}</span>
+                    </p>
+                  </li>
+                </div>
+              </>
             );
           })}
         </ul>
