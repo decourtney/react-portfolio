@@ -86,12 +86,16 @@ code {
   border-image-source: url(./images/image_border.png);
 }
 
-.details-border {
-  border-image-source: url(./images/proj_border.png);
+.project-nameplate-border {
+  border-image-source: url(./images/proj_nameplate_border.png);
 }
 
-.project-nameplate-border {
-    border-image-source: url(./images/proj_nameplate_border.png);
+.project-nameplate-bg {
+  border-image-source: url(./images/proj_nameplate_bg.png);
+}
+
+.project-details-border {
+  border-image-source: url(./images/proj_border.png);
 }
 
 .trivision-border {
