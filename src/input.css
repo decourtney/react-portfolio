@@ -86,13 +86,27 @@ code {
   border-image-source: url(./images/image_border.png);
 }
 
-.details-border {
+.project-nameplate-border {
+  border-image-source: url(./images/proj_nameplate_border.png);
+}
+
+.project-nameplate-bg {
+  border-image-source: url(./images/proj_nameplate_bg.png);
+}
+
+.project-details-border {
   border-image-source: url(./images/proj_border.png);
 }
 
 .trivision-border {
   border-image-source: url(./images/trivision_frame.png);
   border-image-outset: 1.6vw;
+}
+
+.cert-border {
+  border-image-source: url(./images/cert_paper_middle.png);
+  border-image-width: 100%;
+  border-image-slice: 50%;
 }
 
 .border-ws {
@@ -142,7 +156,6 @@ code {
     radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%),
     radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
   backdrop-filter: blur(100px);
-
 }
 
 .centerLight {
@@ -156,17 +169,29 @@ code {
 }
 
 .toprightLight {
-  background-image: radial-gradient(circle at 100% 0%, #ffdbdb, transparent 40%);
+  background-image: radial-gradient(
+    circle at 100% 0%,
+    #ffdbdb,
+    transparent 40%
+  );
   mask-image: radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%);
 }
 
 .bottomleftLight {
-  background-image: radial-gradient(circle at 0% 100%, #ffdbdb, transparent 40%);
+  background-image: radial-gradient(
+    circle at 0% 100%,
+    #ffdbdb,
+    transparent 40%
+  );
   mask-image: radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%);
 }
 
 .bottomrightLight {
-  background-image: radial-gradient(circle at 100% 100%, #ffdbdb, transparent 40%);
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    #ffdbdb,
+    transparent 40%
+  );
   mask-image: radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%);
 }
 

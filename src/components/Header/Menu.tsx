@@ -8,6 +8,7 @@ import menu_plate from "../../images/menu_plate.png";
 
 type MenuProps = {
   isMenuOpen?: boolean;
+  handleMouseClick: () => void;
 };
 
 const direction = {
@@ -52,11 +53,25 @@ const options = {
   },
 };
 
-const Menu = ({ isMenuOpen }: MenuProps) => {
+const Menu = (props: MenuProps) => {
   const isLoading = useAppSelector((state) => state.project.isLoading);
   const dispatch = useAppDispatch();
   const location = useLocation();
   const pages = ["contact", "projects", "about", "home"];
+
+  const handleMouseLeave = () => {
+    // props.handleMouseClick();
+  };
+
+  useEffect(()=>{
+
+    const closeMenu=()=>{
+
+    }
+    setTimeout(() => {
+      
+    }, 3000);
+  })
 
   return (
     <motion.div
@@ -64,8 +79,8 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
       key="Menu"
       variants={direction}
       initial="close"
-      animate={isMenuOpen && !isLoading ? "open" : "close"}
-      exit="close"
+      animate={props.isMenuOpen && !isLoading ? "open" : "close"}
+      exit="close"  
     >
       <img
         src={menu_pole}
@@ -81,7 +96,10 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                   ? "pointer-events-none"
                   : "cursor-pointer pointer-events-auto"
               }`}
-              onClick={() => dispatch(setIsLoading(true))}
+              onClick={() => {
+                props.handleMouseClick();
+                dispatch(setIsLoading(true));
+              }}
               to="/"
               state={{ value: page }}
             >

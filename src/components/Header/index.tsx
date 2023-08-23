@@ -74,18 +74,24 @@ const Header = () => {
   };
 
   // Add code to close the menu if user clicks anywhere else on screen
-  const handleMouseClick = (event: React.MouseEvent) => {
+  const handleMouseClick = (event?: React.MouseEvent) => {
     setIsMenuOpen(!isMenuOpen);
 
-    if (!buttonGlow !== null) {
-      const ele = buttonGlow.current;
-      ele?.classList.remove("bg-[#929292]" || "bg-[#b6b6b6]", "animate-pulse");
-      ele?.classList.add("blink");
+    // Only play when button is clicked
+    if (event) {
+      if (!buttonGlow !== null) {
+        const ele = buttonGlow.current;
+        ele?.classList.remove(
+          "bg-[#929292]" || "bg-[#b6b6b6]",
+          "animate-pulse"
+        );
+        ele?.classList.add("blink");
 
-      setTimeout(() => {
-        ele?.classList.remove("blink");
-        ele?.classList.add("bg-[#929292]" || "bg-[#b6b6b6]", "animate-pulse");
-      }, 1400);
+        setTimeout(() => {
+          ele?.classList.remove("blink");
+          ele?.classList.add("bg-[#929292]" || "bg-[#b6b6b6]", "animate-pulse");
+        }, 1400);
+      }
     }
   };
 
@@ -126,10 +132,13 @@ const Header = () => {
             />
             <img
               src={button}
-              className="absolute w-[2%] top-[10%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.45%]"
+              className="absolute w-[2%] top-[10%] right-[10.5%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.49%]"
             />
             <AnimatePresence mode="wait">
-              <Menu isMenuOpen={isMenuOpen} />
+              <Menu
+                isMenuOpen={isMenuOpen}
+                handleMouseClick={handleMouseClick}
+              />
             </AnimatePresence>
           </button>
         </div>
