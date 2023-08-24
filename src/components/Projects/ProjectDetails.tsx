@@ -90,7 +90,7 @@ const ProjectDetails = (props: DetailsProps) => {
   return (
     <>
       <div
-        className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[5px] z-40"
+        className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px] z-40"
         onClick={() => props.handleDetailsDisplay()}
       />
       <div className="absolute top-1/2 left-0 h-[90%] w-full transform -translate-y-[50%] -translate-x-[50%] z-50">

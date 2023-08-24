@@ -10,6 +10,7 @@ import borderPad from "../../images/border_pad.png";
 import panelCogBase from "../../images/panel_cog_base.png";
 import panelCog from "../../images/panel_cog.png";
 import panelCogAlt from "../../images/panel_cogALT.png";
+import home_icon from "../../images/home_icon.svg"
 
 type LeftPanelProps = {
   contentLeft: React.ReactElement;
@@ -56,9 +57,14 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       exit="open"
       onAnimationComplete={(variant) => handleAnimationComplete(variant)}
     >
+      {/* removed 'transform' class in case something gets effed up */}
       <img
         src={panelCogBase}
-        className="absolute top-[50%] -right-[4.5%] w-[17%] h-[10%] transform -translate-y-[50%] -z-20"
+        className="absolute top-1/2 -right-[4.5%] w-[17%] h-[10%] -translate-y-1/2 -z-20"
+      />
+      <img
+        src={home_icon}
+        className="home-icon absolute top-1/2 -right-[3%] w-[15%] -translate-y-1/2 z-50 drop-shadow-[0_0_50px_50px_#09ff00]"
       />
       <div className="leftpanel-border border-ws absolute w-[101%] h-full left-0 pointer-events-none z-40" />
       <div className="flex w-full h-full">{contentLeft}</div>
