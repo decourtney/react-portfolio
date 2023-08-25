@@ -9,7 +9,7 @@ const HomeLeft = () => {
     <>
       <div className="panel-bg flex justify-center items-center w-full ml-[0%] mr-[4%] -z-10">
         <div className="w-full h-fit mx-[5%]">
-          <img src={label} className=" w-full shadow-[0px_0px_3px_black]" />
+          <img src={label} className=" w-full drop-shadow-[0px_0px_3px_black]" />
         </div>
       </div>
     </>
