@@ -62,27 +62,27 @@ const ProjectDetails = (props: DetailsProps) => {
   useEffect(() => {
     animateCenter(
       centerLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateTopleft(
       topleftLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateTopright(
       toprightLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateBottomleft(
       bottomleftLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateBottomright(
       bottomrightLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
   }, []);
