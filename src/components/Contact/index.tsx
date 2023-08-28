@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import TerminalDisplay from "./Terminal";
 import tFrame from "../../images/terminal_frame.png";
-import tPwr from "../../images/terminal_pwr.jpg";
+import tPwr from "../../images/terminal_pwr.png";
+import tDial from "../../images/terminal_dial.png"
 
 type ContactProps = {
   data: string;

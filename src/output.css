@@ -1014,16 +1014,16 @@ video {
   width: 25%;
 }
 
+.w-\[2vw\] {
+  width: 2vw;
+}
+
 .w-\[3\%\] {
   width: 3%;
 }
 
 .w-\[30\%\] {
   width: 30%;
-}
-
-.w-\[35\%\] {
-  width: 35%;
 }
 
 .w-\[40\%\] {
@@ -1494,12 +1494,12 @@ video {
   font-size: 1.2vw;
 }
 
-.text-\[2vw\] {
-  font-size: 2vw;
+.text-\[1vw\] {
+  font-size: 1vw;
 }
 
-.text-\[5vw\] {
-  font-size: 5vw;
+.text-\[2vw\] {
+  font-size: 2vw;
 }
 
 .leading-\[80\%\] {
@@ -1932,6 +1932,13 @@ code {
 .after\:rounded-xl::after {
   content: var(--tw-content);
   border-radius: 0.75rem;
+}
+
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .active\:right-\[10\.49\%\]:active {

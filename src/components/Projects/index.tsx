@@ -91,11 +91,11 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             <img
               className="h-full w-full px-[4%] py-[3%]"
               src={
-                !data[currentPage].image
-                  ? "/images/project-management.jpg"
-                  : data[currentPage].image
+                data[currentPage]
+                  ? data[currentPage].image
+                  : "/images/project-management.jpg"
               }
-              alt={data[currentPage].name}
+              alt={data[currentPage] ? data[currentPage].name : "missing image"}
               draggable="false"
             />
           </motion.div>
@@ -159,7 +159,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                     <img src={namePlateButtonFrame} className="w-[100%]" />
                     <img
                       src={namePlateButton}
-                      className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer active:scale-95"
+                      className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:scale-105 active:scale-95"
                       onClick={() => handleDetailsDisplay(true, index)}
                     />
                   </div>
