@@ -27,7 +27,7 @@ const Loading = () => {
     // console.log('anim complete')
     navigate(state ? `/${state.value}` : "/home");
   };
-
+  
   return (
     <>
       <GearBox animationDir={"none"} />

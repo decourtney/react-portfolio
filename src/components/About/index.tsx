@@ -25,18 +25,15 @@ const AboutLeft = () => {
       const pos = (100 / (numberOfSlices - 1)) * i;
       const sliceWidth = 100 / numberOfSlices;
 
-      // console.log(`Index ${i}: `,delay)
-
       slicesArray.push(
-        <>
-          <ImageSlice
-            key={`div-slice-${i}`}
-            sliceWidth={sliceWidth}
-            slicePos={pos}
-            delay={delay}
-            duration={duration}
-          />
-        </>
+        <ImageSlice
+          key={i}
+          index={i}
+          sliceWidth={sliceWidth}
+          slicePos={pos}
+          delay={delay}
+          duration={duration}
+        />
       );
     }
     return slicesArray;
@@ -63,9 +60,7 @@ const AboutLeft = () => {
           />
           <img src={forrest} className="w-full h-full invisible" />
           <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
-            {getDivSlices().map((s) => {
-              return s;
-            })}
+            {getDivSlices()}
           </div>
         </div>
 
@@ -161,7 +156,7 @@ const AboutRight = () => {
             boxShadow: "0px 0px 10px 0px rgb(23 23 23)",
           }}
           animate={{
-            // rotateX: -1 * offset.y + "deg", // Not needed right now
+            // rotateX: -1 * offset.y + "deg", // Y-axis movement not needed right now
             rotateY: offset.x + "deg",
           }}
           transition={{ type: "tween", ease: "easeOut" }}
@@ -212,6 +207,7 @@ const AboutRight = () => {
                 boxShadow: "0px 0px 30px 10px inset",
               }}
             />
+
             {/* Container for the glass glare effect */}
             <div
               id="glass"
@@ -232,7 +228,7 @@ const AboutRight = () => {
                 initial={{ translateX: "-50%", translateY: "-50%" }}
                 animate={{
                   translateX: offset.x + -50 + "%",
-                  translateY: offset.y + -50 + "%",
+                  translateY: offset.y + -65 + "%",
                 }}
                 transition={{ type: "tween", ease: "easeOut" }}
               />
