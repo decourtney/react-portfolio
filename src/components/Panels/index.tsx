@@ -9,7 +9,7 @@ import borderRightImage from "../../images/border_right.svg";
 import borderLeftImage from "../../images/border_left.svg";
 import borderPad from "../../images/border_pad.png";
 import iconFrame from "../../images/icon_frame.png";
-import iconLens from "../../images/panel_cog_lens.png"
+import iconLens from "../../images/panel_cog_lens.png";
 import panelCog from "../../images/panel_cog.png";
 import panelCogAlt from "../../images/panel_cogALT.png";
 import home_icon from "../../images/home_icon.png";
@@ -17,7 +17,8 @@ import about_icon from "../../images/about_icon.png";
 import projects_icon from "../../images/work_icon.png";
 import contact_icon from "../../images/contact_icon.png";
 import { GetIcon } from "../../utils/utilities";
-
+import leftStraight from "../../images/straightLeftCog.png";
+import rightStraight from "../../images/straightRightCog.png";
 
 type LeftPanelProps = {
   contentLeft: React.ReactElement;
@@ -64,7 +65,6 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
       exit="open"
       onAnimationComplete={(variant) => handleAnimationComplete(variant)}
     >
-
       <div className="leftpanel-border border-ws absolute w-[101%] h-full left-0 pointer-events-none z-40" />
       <div className="flex w-full h-full">{contentLeft}</div>
     </motion.div>

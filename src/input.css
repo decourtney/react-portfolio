@@ -252,3 +252,9 @@ code {
   mask-repeat: no-repeat;
   mask-position: center;
 }
+
+.testBackground {
+  background-image: url(./images/gearbox_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

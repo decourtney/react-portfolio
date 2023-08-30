@@ -68,6 +68,7 @@ const ContactRight = ({ data }: ContactProps) => {
               ref={powerButton}
               className={`absolute bottom-[13.3%] right-[11.4%] w-[8%] pointer-events-auto`}
               initial={{ rotate: 45 }}
+              whileHover={{ scale: 1.1 }}
               onClick={(e) => {
                 handlePowerButtonClick(e);
               }}
@@ -77,9 +78,12 @@ const ContactRight = ({ data }: ContactProps) => {
             </motion.button>
 
             {/* Unused Button */}
-            <button className="absolute bottom-[13.3%] right-[27%] w-[8%] rotate-45">
+            <motion.button
+              className="absolute bottom-[13.3%] right-[27%] w-[8%] rotate-45"
+              initial={{ rotate: 45 }}
+            >
               <img src={tPwr} />
-            </button>
+            </motion.button>
 
             {/* Expansion of terminal functionality - move dial to Terminal for terminal display of links */}
             {/* Social Dial Group */}
@@ -137,18 +141,7 @@ const ContactRight = ({ data }: ContactProps) => {
             )}
           </AnimatePresence>
         </div>
-        {/* <AnimatePresence mode="wait">
-            {terminalPower ? (
-              <TerminalDisplay
-                key={"terminal"}
-                setIsPowerBtnDisabled={setIsPowerBtnDisabled}
-              />
-            ) : (
-              <div className="absolute top-1/2 left-1/2 w-[75%] h-[57%] p-8 -translate-x-[50%] -translate-y-[66%] bg-black" />
-            )}
-          </AnimatePresence> */}
       </div>
-      {/* </div> */}
     </div>
   );
 };
