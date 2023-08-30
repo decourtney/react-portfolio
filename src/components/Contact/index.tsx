@@ -7,6 +7,11 @@ import tDial from "../../images/terminal_dial.png";
 import github_icon from "../../images/github_icon_white.png";
 import facebook_icon from "../../images/facebook_icon_white.png";
 import linkedin_icon from "../../images/linkedin_icon_white.png";
+import left_panel_fg from "../../images/contact_left_fg.png";
+import left_panel_bg from "../../images/contact_left_bg.png";
+import crane from "../../images/contact_crane.png";
+import cog_single from "../../images/cog_single.png";
+import cog_large from "../../images/cog_large.png";
 
 type ContactProps = {
   data: string;
@@ -17,9 +22,77 @@ const facebookAddress = "https://www.facebook.com/Donovan.Courtney78";
 const linkedinAddress = "https://www.linkedin.com/in/decourtney/";
 
 const ContactLeft = ({ data }: ContactProps) => {
+  const [smallCog, animateSmallCog] = useAnimate();
+  const [largeCog, animateLargeCog] = useAnimate();
+  let cogAnimTimer = 3000;
+
+  useEffect(() => {
+    const animateCogs = async () => {
+      animateSmallCog(
+        smallCog.current,
+        { rotate: ["0deg", "-4deg", "-3deg", "-4deg", "0deg"] },
+        { duration: 0.5 }
+      );
+      animateLargeCog(
+        largeCog.current,
+        { rotate: ["0deg", "4deg", "3deg", "4deg", "0deg"] },
+        { duration: 0.5 }
+      );
+
+      setTimeout(() => {
+        cogAnimTimer = Math.floor(Math.random() * 15) * 1000;
+        animateCogs();
+      }, cogAnimTimer);
+    };
+
+    animateCogs();
+  }, []);
+
+  const craneVariants = {
+    initial: {
+      translateY: "-10%",
+      translateX: "45%",
+    },
+    enter: {
+      transition: { duration: 400, ease: "linear", delay: 1, repeat: Infinity },
+      translateY: ["-10%", "-50%", "-10%"],
+    },
+  };
+
   return (
-    <div className="w-full mr-[4%] bg-blue-400">
-      <p className="text-6xl">{data}</p>
+    <div className="relative w-full mr-[4%]">
+      <div className="construction-bg absolute top-0 left-0 w-full h-full blur-[1px] brightness-50" />
+
+      <div className="absolute top-0 left-0 w-full ">
+        <motion.img
+          src={crane}
+          className="w-[20%] origin-top"
+          variants={craneVariants}
+          initial="initial"
+          animate="enter"
+        />
+      </div>
+
+      <div className="absolute top-0 left-0 w-full">
+        <motion.img
+          ref={smallCog}
+          src={cog_single}
+          className="w-[30%]"
+          initial={{ translateY: "38%", translateX: "106%" }}
+        />
+      </div>
+
+      <div className="absolute top-0 left-0 w-full">
+        <motion.img
+          ref={largeCog}
+          src={cog_large}
+          className="w-[50%]"
+          initial={{ translateY: "-50%", translateX: "100%" }}
+        />
+      </div>
+
+      <div className="construction-fg absolute top-0 left-0 w-full h-full" />
+      <div className="construction-mesh absolute top-0 left-0 w-full h-full" />
     </div>
   );
 };

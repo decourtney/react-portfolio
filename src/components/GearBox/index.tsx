@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useAnimate, motion, stagger } from "framer-motion";
 import Cog from "./Cog";
 
-import smallDoubleCog from "../../images/doubleCog.png";
-import smallSingleCog from "../../images/singleCog.png";
-import spoke1 from "../../images/largeCog.png";
+import cog_double from "../../images/cog_double.png";
+import cog_single from "../../images/cog_single.png";
+import cog_large from "../../images/cog_large.png";
 import leftStraight from "../../images/straightLeftCog.png";
 import rightStraight from "../../images/straightRightCog.png";
 import gearBoxBG from "../../images/gearbox_bg.png";
@@ -79,7 +79,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
       },
     },
     close: {
-      translateX: "-60%",
+      translateX: "-99%",
       transition: {
         duration: 2,
         ease: "easeInOut",
@@ -102,9 +102,9 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[10%] -translate-y-[26%]">
           <motion.img
-            src={spoke1}
+            src={cog_large}
             className={`h-[45%] will-change-transform`}
-            key={"spoke1"}
+            key={"cog_large"}
             variants={counterClockwise}
             initial="close"
             animate={animationDir}
@@ -114,7 +114,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[108%] -translate-y-[0%]">
           <motion.img
-            src={spoke1}
+            src={cog_large}
             className={`h-[38%] will-change-transform`}
             key={"spoke2"}
             variants={clockwise}
@@ -126,9 +126,9 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[53%] -translate-y-[6.5%]">
           <motion.img
-            src={smallDoubleCog}
+            src={cog_double}
             className={`h-[25%] will-change-transform`}
-            key={"smallDoubleCog"}
+            key={"cog_double"}
             variants={counterClockwise}
             initial="close"
             animate={animationDir}
@@ -138,9 +138,9 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
 
         <div className="absolute top-1/2 right-1/2 h-full translate-x-[131%] translate-y-[6.5%]">
           <motion.img
-            src={smallSingleCog}
+            src={cog_single}
             className={`h-[23%] will-change-transform`}
-            key={"smallSingleCog"}
+            key={"cog_single"}
             variants={clockwise}
             initial="close"
             animate={animationDir}
@@ -160,7 +160,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
           />
         </div>
 
-        <div className="absolute top-1/2 left-1/2 h-full -translate-x-[40%] -translate-y-[4%]">
+        <div className="absolute top-1/2 left-1/2 h-full -translate-x-[5%] -translate-y-[4%]">
           <motion.img
             src={rightStraight}
             className="h-[4%] will-change-transform"

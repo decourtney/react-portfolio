@@ -246,15 +246,27 @@ code {
   );
 }
 
-.masktest {
+.construction-bg {
+  background-image: url(./images/contact_left_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.construction-fg {
+  background-image: url(./images/contact_left_fg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.construction-mesh {
+  background-image: url(./images/contact_mesh.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .masktest {
   mask-image: url(./images/testImg.png);
   mask-size: 96%;
   mask-repeat: no-repeat;
   mask-position: center;
-}
-
-.testBackground {
-  background-image: url(./images/gearbox_bg.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+} */

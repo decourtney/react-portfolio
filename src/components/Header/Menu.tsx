@@ -63,15 +63,10 @@ const Menu = (props: MenuProps) => {
     // props.handleMouseClick();
   };
 
-  useEffect(()=>{
-
-    const closeMenu=()=>{
-
-    }
-    setTimeout(() => {
-      
-    }, 3000);
-  })
+  useEffect(() => {
+    const closeMenu = () => {};
+    setTimeout(() => {}, 3000);
+  },[]);
 
   return (
     <motion.div
@@ -80,7 +75,7 @@ const Menu = (props: MenuProps) => {
       variants={direction}
       initial="close"
       animate={props.isMenuOpen && !isLoading ? "open" : "close"}
-      exit="close"  
+      exit="close"
     >
       <img
         src={menu_pole}
@@ -103,12 +98,42 @@ const Menu = (props: MenuProps) => {
               to="/"
               state={{ value: page }}
             >
-              <motion.img
-                src={menu_plate}
-                className={`absolute right-[5.6%] w-[7%] drop-shadow-lg will-change-transform`}
+              <motion.div
+                className="absolute right-[5.6%] w-[7%] drop-shadow-lg will-change-transform"
                 style={{ bottom: `${17 * (index + 0.7)}%` }}
                 variants={options}
-              />
+              >
+                <div
+                  className={`absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-[53%] ${
+                    location.pathname === "/" + page
+                      ? "text-black"
+                      : "text-white"
+                  }`}
+                >
+                  <motion.p
+                    className="text-[1vw] text-center tracking-widest"
+                    // style={{ color: "#fff", textShadow: "0 0 10px #2eff00" }}
+                    animate={{
+                      textShadow: `${
+                        location.pathname !== "/" + page
+                          ? [
+                              "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #167a00, 0 0 40px #167a00, 0 0 50px #167a00, 0 0 60px #167a00, 0 0 70px #167a00",
+                              "0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #2eff00, 0 0 50px #2eff00, 0 0 60px #2eff00, 0 0 70px #2eff00, 0 0 80px #2eff00",
+                            ]
+                          : null
+                      }`,
+                      transition: {
+                        duration: 1,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                      },
+                    }}
+                  >
+                    {page.toUpperCase()}
+                  </motion.p>
+                </div>
+                <img src={menu_plate} className="w-[100%]" />
+              </motion.div>
             </Link>
           </div>
         );
