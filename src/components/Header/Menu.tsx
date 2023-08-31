@@ -2,13 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setIsLoading } from "../../reducers/projectSlice";
-import { motion, stagger, useAnimation, useAnimate } from "framer-motion";
+import {
+  motion,
+  stagger,
+  useAnimation,
+  useAnimate,
+  AnimatePresence,
+} from "framer-motion";
 import menu_pole from "../../images/menu_pole.png";
 import menu_plate from "../../images/menu_plate.png";
 
 type MenuProps = {
-  isMenuOpen?: boolean;
-  handleMouseClick: () => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const direction = {
@@ -57,24 +63,39 @@ const Menu = (props: MenuProps) => {
   const isLoading = useAppSelector((state) => state.project.isLoading);
   const dispatch = useAppDispatch();
   const location = useLocation();
+  const [menuOptions, animateMenuOptions] = useAnimate();
   const pages = ["contact", "projects", "about", "home"];
-
-  const handleMouseLeave = () => {
-    // props.handleMouseClick();
-  };
 
   useEffect(() => {
     const closeMenu = () => {};
     setTimeout(() => {}, 3000);
-  },[]);
+  }, []);
+
+  const AnimateMenuOptions = (page: String) => {
+    if (location.pathname === "/" + page) {
+      animateMenuOptions(
+        menuOptions.current,
+        {
+          textShadow: `${
+            location.pathname === "/" + page
+              ? ["0 0 10px #000000"]
+              : [
+                  "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #167a00, 0 0 40px #167a00, 0 0 50px #167a00, 0 0 60px #167a00, 0 0 70px #167a00",
+                  "0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2eff00, 0 0 50px #2eff00, 0 0 60px #2eff00, 0 0 70px #2eff00, 0 0 80px #2eff00",
+                ]
+          }`,
+        },
+        { duration: 1, repeat: Infinity, repeatType: "reverse" }
+      );
+    }
+  };
 
   return (
     <motion.div
       className="absolute bottom-[35%] right-[0%] w-full z-10 pointer-events-none drop-shadow-2xl will-change-transform"
-      key="Menu"
       variants={direction}
       initial="close"
-      animate={props.isMenuOpen && !isLoading ? "open" : "close"}
+      animate={props.isMenuOpen ? "open" : "close"}
       exit="close"
     >
       <img
@@ -91,8 +112,8 @@ const Menu = (props: MenuProps) => {
                   ? "pointer-events-none"
                   : "cursor-pointer pointer-events-auto"
               }`}
-              onClick={() => {
-                props.handleMouseClick();
+              onClick={(event) => {
+                props.setIsMenuOpen(false);
                 dispatch(setIsLoading(true));
               }}
               to="/"
@@ -111,16 +132,16 @@ const Menu = (props: MenuProps) => {
                   }`}
                 >
                   <motion.p
+                    ref={menuOptions}
                     className="text-[1vw] text-center tracking-widest"
-                    // style={{ color: "#fff", textShadow: "0 0 10px #2eff00" }}
                     animate={{
                       textShadow: `${
-                        location.pathname !== "/" + page
-                          ? [
+                        location.pathname === "/" + page
+                          ? ["0 0 10px #000000"]
+                          : [
                               "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #167a00, 0 0 40px #167a00, 0 0 50px #167a00, 0 0 60px #167a00, 0 0 70px #167a00",
-                              "0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #2eff00, 0 0 50px #2eff00, 0 0 60px #2eff00, 0 0 70px #2eff00, 0 0 80px #2eff00",
+                              "0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2eff00, 0 0 50px #2eff00, 0 0 60px #2eff00, 0 0 70px #2eff00, 0 0 80px #2eff00",
                             ]
-                          : null
                       }`,
                       transition: {
                         duration: 1,

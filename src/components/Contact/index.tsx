@@ -38,14 +38,16 @@ const ContactLeft = ({ data }: ContactProps) => {
         { rotate: ["0deg", "4deg", "3deg", "4deg", "0deg"] },
         { duration: 0.5 }
       );
-
-      setTimeout(() => {
-        cogAnimTimer = Math.floor(Math.random() * 15) * 1000;
-        animateCogs();
-      }, cogAnimTimer);
     };
 
-    animateCogs();
+    const interval = setInterval(() => {
+      cogAnimTimer = Math.floor(Math.random() * 15) * 1000;
+      animateCogs();
+    }, cogAnimTimer);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const craneVariants = {
@@ -78,7 +80,7 @@ const ContactLeft = ({ data }: ContactProps) => {
           ref={smallCog}
           src={cog_single}
           className="w-[30%]"
-          initial={{ translateY: "38%", translateX: "106%" }}
+          initial={{ translateY: "44%", translateX: "113%" }}
         />
       </div>
 

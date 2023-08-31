@@ -104,7 +104,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
           <motion.img
             src={cog_large}
             className={`h-[45%] will-change-transform`}
-            key={"cog_large"}
+            key={"cog_large1"}
             variants={counterClockwise}
             initial="close"
             animate={animationDir}
@@ -116,7 +116,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
           <motion.img
             src={cog_large}
             className={`h-[38%] will-change-transform`}
-            key={"spoke2"}
+            key={"cog_large2"}
             variants={clockwise}
             initial="close"
             animate={animationDir}

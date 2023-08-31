@@ -4,6 +4,7 @@ import Menu from "./Menu";
 import Marquee from "./Marquee";
 import navbar from "../../images/navbar.png";
 import button_housing from "../../images/button_housing.png";
+import menu_cap from "../../images/button_housing_cap.png"
 import button from "../../images/button.png";
 import loading from "../../images/loading.png";
 import { AnimatePresence } from "framer-motion";
@@ -21,6 +22,22 @@ const Header = () => {
   const displayedMessage = useRef("");
   const displayTimer = 2000;
   const timeouts: NodeJS.Timeout[] = [];
+  const menuRef = useRef<HTMLDivElement>(null);
+  const isLoading = useAppSelector((state) => state.project.isLoading);
+
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      if (!menuRef.current?.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    });
+
+    return document.removeEventListener("click", (e) => {
+      if (!menuRef.current?.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    });
+  }, []);
 
   // Save message in case one is already being displayed
   useEffect(() => {
@@ -74,7 +91,7 @@ const Header = () => {
   };
 
   // Add code to close the menu if user clicks anywhere else on screen
-  const handleMouseClick = (event?: React.MouseEvent) => {
+  const handleMouseClick = (event: React.MouseEvent) => {
     setIsMenuOpen(!isMenuOpen);
 
     // Only play when button is clicked
@@ -100,21 +117,25 @@ const Header = () => {
       <nav className="navbar-bg relative w-full h-full bg-black">
         <div className="marquee-container absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[51%] pointer-events-none bg-neutral-900 overflow-hidden">
           <div className="marquee-overlay absolute w-full h-full z-10" />
-          <AnimatePresence mode="wait">
-            {isDisplayMessage ? (
+          {isDisplayMessage && (
+            <AnimatePresence mode="wait">
               <Marquee
                 msg={displayedMessage.current}
                 marqueeAnimComplete={marqueeAnimComplete}
               />
-            ) : null}
-          </AnimatePresence>
+            </AnimatePresence>
+          )}
         </div>
         <img
           src={loading}
           className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"
         />
 
-        <div id="navbar-button" className="absolute w-full h-full top-0 left-0">
+        <div
+          ref={menuRef}
+          id="navbar-button"
+          className="absolute w-full h-full top-0 left-0"
+        >
           <img
             src={button_housing}
             className="absolute w-[5.5%] -top-[23%] right-[8%] z-20"
@@ -132,15 +153,17 @@ const Header = () => {
             />
             <img
               src={button}
-              className="absolute w-[2%] top-[10%] right-[10.5%] z-20 cursor-pointer active:w-[1.95%] active:top-[12.5%] active:right-[10.49%]"
+              className="absolute w-[2%] top-[14%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[15%] "
             />
-            <AnimatePresence mode="wait">
+          </button>
+          <AnimatePresence mode="wait">
+            {isMenuOpen && !isLoading ? (
               <Menu
                 isMenuOpen={isMenuOpen}
-                handleMouseClick={handleMouseClick}
+                setIsMenuOpen={setIsMenuOpen}
               />
-            </AnimatePresence>
-          </button>
+            ) : null}
+          </AnimatePresence>
         </div>
       </nav>
     </header>
