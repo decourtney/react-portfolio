@@ -40,7 +40,7 @@ const TerminalEmailForm = () => {
         "contact_service",
         "contact_form",
         form.current,
-        "WiUmD3gJ4iafdCR1R"
+        process.env.REACT_APP_EMAILJS_KEY
       )
       .then(
         (result) => {
