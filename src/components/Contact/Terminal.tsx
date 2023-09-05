@@ -63,7 +63,7 @@ const TerminalDisplay = ({ setIsPowerBtnDisabled }: TerminalProps) => {
     },
     off: {
       opacity: 0,
-      transition: { duration: 2 },
+      transition: { duration: 1.5 },
     },
   };
 

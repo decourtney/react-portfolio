@@ -8,7 +8,7 @@
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://polar-plateau-51344.herokuapp.com/",
     "repo": "https://github.com/decourtney/tech-messages",
-    "image": "images/techmessages.png"
+    "image": "images/proj1.png"
   },
   {
     "name": "Break-Sweat",
@@ -19,7 +19,7 @@
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://intense-everglades-85455.herokuapp.com/",
     "repo": "https://github.com/decourtney/break-sweat",
-    "image": "images/techmessages.png"
+    "image": "images/proj1.png"
   },
   {
     "name": "Weather Ornought",
@@ -30,7 +30,7 @@
     "tags": ["JQuery", "Bootstrap"],
     "url": "https://decourtney.github.io/weather-ornought/",
     "repo": "https://github.com/decourtney/weather-ornought",
-    "image": "images/proj3.png"
+    "image": "images/proj1.png"
   },
   {
     "name": "Coding Kombat Quiz",
@@ -41,7 +41,7 @@
     "tags": ["JS", "HTML", "CSS"],
     "url": "https://decourtney.github.io/coding-kombat-quiz/",
     "repo": "https://github.com/decourtney/coding-kombat-quiz",
-    "image": "images/proj4.png"
+    "image": "images/proj1.png"
   },
   {
     "name": "RealityCheck News",
@@ -52,7 +52,7 @@
     "tags": ["Mongo", "Express", "React", "Node"],
     "url": "https://sleepy-brushlands-04075.herokuapp.com/",
     "repo": "https://github.com/decourtney/reality-check-news",
-    "image": "images/proj5.png"
+    "image": "images/proj1.png"
   },
   {
     "name": "React Portfolio",
@@ -63,6 +63,6 @@
     "tags": ["Express", "React", "Node", "Typescript"],
     "url": "",
     "repo": "https://github.com/decourtney/react-portfolio",
-    "image": "images/proj6.png"
+    "image": "images/proj1.png"
   }
 ]

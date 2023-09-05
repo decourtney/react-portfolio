@@ -10,7 +10,7 @@ import trivision_frame from "../../images/trivision_frame.png";
 import panel_bg from "../../images/panel_background.png";
 import testimg from "../../images/testImg.png";
 import cert_paper_top from "../../images/cert_paper_top.png";
-import cert_paper_bottom from "../../images/cert_paper_bottom.png"
+import cert_paper_bottom from "../../images/cert_paper_bottom.png";
 
 const AboutLeft = () => {
   const numberOfSlices = 20;
@@ -25,18 +25,15 @@ const AboutLeft = () => {
       const pos = (100 / (numberOfSlices - 1)) * i;
       const sliceWidth = 100 / numberOfSlices;
 
-      // console.log(`Index ${i}: `,delay)
-
       slicesArray.push(
-        <>
-          <ImageSlice
-            key={`div-slice-${i}`}
-            sliceWidth={sliceWidth}
-            slicePos={pos}
-            delay={delay}
-            duration={duration}
-          />
-        </>
+        <ImageSlice
+          key={i}
+          index={i}
+          sliceWidth={sliceWidth}
+          slicePos={pos}
+          delay={delay}
+          duration={duration}
+        />
       );
     }
     return slicesArray;
@@ -44,52 +41,35 @@ const AboutLeft = () => {
 
   return (
     <div className="relative flex flex-col justify-center items-center w-full mr-[4%] -z-10">
-      {/* Top Border */}
-      <div
-        className="w-full h-full z-10"
-        style={{
-          backgroundImage: `url(${panel_bg})`,
-        }}
-      />
+      {/* Top Background */}
+      <div className="panel-bg w-full h-full z-10" />
 
       {/* Trivision Container */}
       <div className="flex flex-row justify-center items-center w-full h-fit">
-        {/* Left Border */}
-        <div
-          className="w-[8%] h-full"
-          style={{
-            backgroundImage: `url(${panel_bg})`,
-          }}
-        />
+        {/* Left Background */}
+        <div className="panel-bg w-[8%] h-full" />
 
         {/* Trivision Board */}
-        <div className="trivision-board relative w-[100%] h-fit my-[2%] mx-[2%]">
+        <div
+          className="trivision-board relative w-[100%] h-fit my-[2%] mx-[2%]"
+          style={{ boxShadow: "inset 0px 0px 100px 50px" }}
+        >
           <div
             className="trivision-border border-ws absolute w-full h-full z-50"
-            style={{ boxShadow: "0px 0px 10px 5px" }}
+            style={{ boxShadow: "0px 0px 10px 8px" }}
           />
           <img src={forrest} className="w-full h-full invisible" />
           <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
-            {getDivSlices().map((s) => {
-              return s;
-            })}
+            {getDivSlices()}
           </div>
         </div>
 
-        {/* Right Border */}
-        <div
-          className="w-[5%] h-full"
-          style={{
-            backgroundImage: `url(${panel_bg})`,
-          }}
-        />
+        {/* Right Background */}
+        <div className="panel-bg w-[5%] h-full" />
       </div>
 
-      {/* Bottom Border */}
-      <div
-        className="w-full h-full z-10"
-        style={{ backgroundImage: `url(${panel_bg})` }}
-      />
+      {/* Bottom Background */}
+      <div className="panel-bg w-full h-full z-10" />
     </div>
   );
 };
@@ -176,7 +156,7 @@ const AboutRight = () => {
             boxShadow: "0px 0px 10px 0px rgb(23 23 23)",
           }}
           animate={{
-            // rotateX: -1 * offset.y + "deg", // Not needed right now
+            // rotateX: -1 * offset.y + "deg", // Y-axis movement not needed right now
             rotateY: offset.x + "deg",
           }}
           transition={{ type: "tween", ease: "easeOut" }}
@@ -184,33 +164,33 @@ const AboutRight = () => {
           <div
             className={`w-full h-full py-[3%] px-[5%] overflow-scroll scrollbar-hide`}
           >
-            <img src={cert_paper_top} />
+            <img src={cert_paper_top} className="w-full" />
             <div className="cert-border w-full px-[6%] text-2xl space-y-3">
               <p>
                 As a dedicated web developer, my coding journey spans several
                 years, with a formal focus on web development beginning in 2022.
-                Throughout my experience, I've worked with the MERN stack and
+                Throughout my experience, Ive worked with the MERN stack and
                 MySQL, building full-stack web applications that showcase my
                 abilities in both front-end and back-end development.
               </p>
               <p>
-                Adaptability is a core strength, and I'm always eager to explore
+                Adaptability is a core strength, and Im always eager to explore
                 new frameworks and technologies. Keeping my programming skills
-                fresh through side projects, I'm well-prepared to tackle diverse
+                fresh through side projects, Im well-prepared to tackle diverse
                 challenges in the ever-evolving field of web development.
               </p>
               <p>
                 Beyond coding, you can find me sketching designs and drawing
                 inspiration from various sources. My passion for creativity and
                 problem-solving drives me to create exceptional digital
-                experiences that leave a lasting impact. I'm thrilled to
+                experiences that leave a lasting impact. Im thrilled to
                 collaborate with like-minded professionals and embark on new
                 ventures, continuously learning and growing in this dynamic
-                industry. Let's bring innovative web applications to life
+                industry. Lets bring innovative web applications to life
                 together!
               </p>
             </div>
-            <img src={cert_paper_bottom} />
+            <img src={cert_paper_bottom} className="w-full" />
           </div>
           <div
             id="box-top"
@@ -227,6 +207,7 @@ const AboutRight = () => {
                 boxShadow: "0px 0px 30px 10px inset",
               }}
             />
+
             {/* Container for the glass glare effect */}
             <div
               id="glass"
@@ -247,7 +228,7 @@ const AboutRight = () => {
                 initial={{ translateX: "-50%", translateY: "-50%" }}
                 animate={{
                   translateX: offset.x + -50 + "%",
-                  translateY: offset.y + -50 + "%",
+                  translateY: offset.y + -65 + "%",
                 }}
                 transition={{ type: "tween", ease: "easeOut" }}
               />

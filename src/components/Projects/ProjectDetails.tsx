@@ -62,27 +62,27 @@ const ProjectDetails = (props: DetailsProps) => {
   useEffect(() => {
     animateCenter(
       centerLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateTopleft(
       topleftLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateTopright(
       toprightLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateBottomleft(
       bottomleftLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
     animateBottomright(
       bottomrightLight.current,
-      { opacity: [1, 0, 1, 0, 1] },
+      { opacity: [1, 0.5, 1, 0.5, 1] },
       { duration: 3, times: [0.3, 0.4, 0.6, 0.8, 1], repeat: Infinity }
     );
   }, []);
@@ -90,7 +90,7 @@ const ProjectDetails = (props: DetailsProps) => {
   return (
     <>
       <div
-        className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[5px] z-40"
+        className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[2px] z-40"
         onClick={() => props.handleDetailsDisplay()}
       />
       <div className="absolute top-1/2 left-0 h-[90%] w-full transform -translate-y-[50%] -translate-x-[50%] z-50">
@@ -109,22 +109,22 @@ const ProjectDetails = (props: DetailsProps) => {
                 <div
                   key={i}
                   ref={item[0]}
-                  className={`${item[1]} bg-black absolute top-0 left-0 h-full w-full px-[10%] py-[10%] text-[#ffffff] overflow-scroll scrollbar-hide rounded-[8%]`}
+                  className={`${item[1]} bg-black absolute top-0 left-0 h-full w-full px-[10%] py-[10%] text-[#ffffff] rounded-[8%]`}
                   style={{
                     textShadow: "0px 0px 1px #FFFFFF, 0px 0px 5px #FFFFFF",
                     backdropFilter: "blur(3px)",
                   }}
                 >
                   <div className="flex w-full justify-between items-center">
-                    <h1 className="text-[5vw] pb-[2%] mr-[1%]">{props.name}</h1>
-                    <div className="flex flex-row h-0 space-x-2 ml-[5%]">
-                      <div className="w-[30%]">
-                        <a href={props.repo}>
+                    <h1 className="text-[2vw] pb-[2%] mr-[1%]">{props.name}</h1>
+                    <div className="flex flex-row h-0 space-x-2 ml-[5%] mb-[5%]">
+                      <div className="w-[2vw]">
+                        <a href={props.repo} target="blank">
                           <img src={githubIcon} className="w-full" />
                         </a>
                       </div>
                       {props.url && (
-                        <div className="w-[35%]">
+                        <div className="w-[2vw]">
                           <a href={props.url} target="blank">
                             <img src={websiteLinkIcon} className="w-full" />
                           </a>
@@ -135,7 +135,7 @@ const ProjectDetails = (props: DetailsProps) => {
                   {props.description &&
                     props.description.map((p, i) => {
                       return (
-                        <p key={i} className="text-[2vw] pb-[2%]">
+                        <p key={i} className="text-[1vw] pb-[2%]">
                           {p}
                         </p>
                       );

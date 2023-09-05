@@ -91,11 +91,11 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             <img
               className="h-full w-full px-[4%] py-[3%]"
               src={
-                !data[currentPage].image
-                  ? "/images/project-management.jpg"
-                  : data[currentPage].image
+                data[currentPage]
+                  ? data[currentPage].image
+                  : "/images/project-management.jpg"
               }
-              alt={data[currentPage].name}
+              alt={data[currentPage] ? data[currentPage].name : "missing image"}
               draggable="false"
             />
           </motion.div>
@@ -142,16 +142,16 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
   };
 
   return (
-    <div className="panel-bg border-ws flex justify-center items-center w-full mx-[3%] mt-[2%] mb-[5%] overflow-auto scrollbar-hide ">
-      <div className="w-full px-[10%]">
-        <img src={namePlateHead} className="w-full" />
-        <ul className="project-nameplate-bg border-ws flex-col columns-2 space-y-[5%] py-[3%] list-none ">
-          {data.map((project, index) => {
-            return (
-              <>
+    <div className="panel-bg w-full h-full ml-[4%] mr-[2%] overflow-auto scrollbar-hide">
+      <div className="relative w-full h-full">
+        <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-[15%] drop-shadow-md">
+          <img src={namePlateHead} className="w-full drop-shadow-md" />
+          <ul className="project-nameplate-bg flex-col columns-2 space-y-[5%] py-[3%] list-none">
+            {data.map((project, index) => {
+              return (
                 <li
                   key={project.name}
-                  className="relative flex space-x-[2%] mx-[5%]"
+                  className="relative flex space-x-[2%] mx-[5%] group"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -159,34 +159,38 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                     <img src={namePlateButtonFrame} className="w-[100%]" />
                     <img
                       src={namePlateButton}
-                      className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer active:scale-95"
+                      className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:scale-105 active:scale-95"
                       onClick={() => handleDetailsDisplay(true, index)}
                     />
                   </div>
 
-                  <div className="project-nameplate-border border-ws relative w-full">
-                    <img src={namePlateBorder} className="w-[75%] invisible" />
+                  <div className="relative w-full">
+                    {/* <img src={namePlateBorder} className="w-[75%] invisible" /> */}
+                    <div className="project-nameplate-border absolute border-ws w-full h-full z-20" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[86%] h-[80%] rounded-sm group-hover:shadow-[inset_0px_0px_20px_5px_#35ff00] z-10" />
                     <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
-                      <p className="text-[1.2vw] text-center tracking-tight leading-[80%] text-black">
+                      <p
+                        className={`text-[1.2vw] text-center tracking-tight leading-[80%] text-black`}
+                      >
                         <span>{project.name}</span>
                       </p>
                     </div>
                   </div>
                 </li>
-              </>
-            );
-          })}
-        </ul>
-        <img src={namePlateTail} className="w-full" />
-        <AnimatePresence mode="wait">
-          {isDetails.display && (
-            <ProjectDetails
-              {...data[isDetails.index]}
-              handleDetailsDisplay={handleDetailsDisplay}
-            />
-          )}
-        </AnimatePresence>
+              );
+            })}
+          </ul>
+          <img src={namePlateTail} className="w-full" />
+        </div>
       </div>
+      <AnimatePresence mode="wait">
+        {isDetails.display && (
+          <ProjectDetails
+            {...data[isDetails.index]}
+            handleDetailsDisplay={handleDetailsDisplay}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
