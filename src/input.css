@@ -129,7 +129,7 @@ code {
   background-size: 100% 4px, 4px 100%;
 }
 
-/* .blink {
+.blink {
   animation-name: blink;
   animation-duration: 0.2s;
   animation-iteration-count: infinite;
@@ -144,7 +144,7 @@ code {
   100% {
     background-color: #f6ff00;
   }
-} */
+}
 
 .details-lighting {
   --c: #ffffff;

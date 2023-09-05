@@ -3,27 +3,29 @@ import { Link, useLocation } from "react-router-dom";
 import Menu from "./Menu";
 import Marquee from "./Marquee";
 import navbar from "../../images/navbar.png";
-import button_housing from "../../images/button_housing.png";
-import menu_cap from "../../images/button_housing_cap.png"
-import button from "../../images/button.png";
-import loading from "../../images/loading.png";
-import { AnimatePresence } from "framer-motion";
+import menu_frame from "../../images/menu_frame.png";
+import menu_housing from "../../images/menu_housing.png";
+import menu_cap from "../../images/menu_cap.png";
+import menu_button from "../../images/menu_button.png";
+import marquee_frame from "../../images/marquee_frame.png";
+import { AnimatePresence, AnimationDefinition } from "framer-motion";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 
 // Header button animations are still using CSS 'blink' class = change to framer-motion for conditional colors red/green
 // animate-pulse is Tailwind class
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const buttonGlow = useRef<HTMLDivElement>(null);
   const incMessage = useAppSelector((state) => state.project.marqueeMsg);
+  const isLoading = useAppSelector((state) => state.project.isLoading);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDisplayMessage, setIsDisplayMessage] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isDisplayMenuCap, setIsDisplayMenuCap] = useState(true);
+  const buttonGlow = useRef<HTMLDivElement>(null);
   const waitingMessage = useRef("");
   const displayedMessage = useRef("");
+  const menuRef = useRef<HTMLDivElement>(null);
   const displayTimer = 2000;
   const timeouts: NodeJS.Timeout[] = [];
-  const menuRef = useRef<HTMLDivElement>(null);
-  const isLoading = useAppSelector((state) => state.project.isLoading);
 
   useEffect(() => {
     document.addEventListener("click", (e) => {
@@ -75,7 +77,7 @@ const Header = () => {
   };
 
   const handleMouseEnter = () => {
-    if (!buttonGlow !== null) {
+    if (buttonGlow !== null) {
       const ele = buttonGlow.current;
       ele?.classList.remove("bg-[#929292]", "animate-pulse");
       ele?.classList.add("bg-[#b6b6b6]");
@@ -83,7 +85,7 @@ const Header = () => {
   };
 
   const handleMouseLeave = () => {
-    if (!buttonGlow !== null) {
+    if (buttonGlow !== null) {
       const ele = buttonGlow.current;
       ele?.classList.remove("bg-[#b6b6b6]");
       ele?.classList.add("bg-[#929292]", "animate-pulse");
@@ -93,10 +95,11 @@ const Header = () => {
   // Add code to close the menu if user clicks anywhere else on screen
   const handleMouseClick = (event: React.MouseEvent) => {
     setIsMenuOpen(!isMenuOpen);
+    setIsDisplayMenuCap(false);
 
     // Only play when button is clicked
     if (event) {
-      if (!buttonGlow !== null) {
+      if (buttonGlow !== null) {
         const ele = buttonGlow.current;
         ele?.classList.remove(
           "bg-[#929292]" || "bg-[#b6b6b6]",
@@ -112,59 +115,74 @@ const Header = () => {
     }
   };
 
+  const handleMenuCapDisplay = (anim: AnimationDefinition) => {
+    // if(anim === "open") setIsDisplayMenuCap(false);
+    if (anim === "close") setIsDisplayMenuCap(true);
+  };
+
   return (
     <header>
       <nav className="navbar-bg relative w-full h-full bg-black">
         <div className="marquee-container absolute top-1/2 left-1/2 w-[21%] h-[75%] -translate-x-[50%] -translate-y-[51%] pointer-events-none bg-neutral-900 overflow-hidden">
           <div className="marquee-overlay absolute w-full h-full z-10" />
-          {isDisplayMessage && (
-            <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait">
+            {isDisplayMessage && (
               <Marquee
                 msg={displayedMessage.current}
                 marqueeAnimComplete={marqueeAnimComplete}
               />
-            </AnimatePresence>
-          )}
+            )}
+          </AnimatePresence>
         </div>
         <img
-          src={loading}
+          src={marquee_frame}
           className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"
         />
 
         <div
           ref={menuRef}
           id="navbar-button"
-          className="absolute w-full h-full top-0 left-0"
+          className="absolute h-full top-0 right-[8%] "
         >
+          <img src={menu_frame} className="h-full" />
           <img
-            src={button_housing}
-            className="absolute w-[5.5%] -top-[23%] right-[8%] z-20"
+            src={menu_housing}
+            className="absolute bottom-0 left-[23%] h-full z-20"
           />
+          {isDisplayMenuCap && (
+            <img
+              src={menu_cap}
+              className="absolute top-0 left-[23%] h-full pointer-events-none z-50"
+            />
+          )}
+
           <button
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={(e) => {
               handleMouseClick(e);
             }}
+            disabled={isLoading}
           >
             <div
               ref={buttonGlow}
-              className={`button-backlit absolute top-[17%] right-[10.5%] w-[1.8%] h-[40%] rounded-full z-20 transition ease-in-out bg-[#929292] animate-pulse`}
+              className={`button-backlit absolute top-[44%] left-[50%] h-[45%] w-[45%] -translate-x-1/2 -translate-y-1/2 rounded-full z-20 transition ease-in-out bg-[#929292] animate-pulse`}
             />
             <img
-              src={button}
-              className="absolute w-[2%] top-[14%] right-[10.4%] z-20 cursor-pointer active:w-[1.95%] active:top-[15%] "
+              src={menu_button}
+              className="absolute top-0 left-0 h-full z-20 cursor-pointer active:scale-[95%]"
             />
           </button>
-          <AnimatePresence mode="wait">
-            {isMenuOpen && !isLoading ? (
-              <Menu
-                isMenuOpen={isMenuOpen}
-                setIsMenuOpen={setIsMenuOpen}
-              />
-            ) : null}
-          </AnimatePresence>
         </div>
+        <AnimatePresence mode="wait">
+          {isMenuOpen ? (
+            <Menu
+              isMenuOpen={isMenuOpen}
+              setIsMenuOpen={setIsMenuOpen}
+              handleMenuCapDisplay={handleMenuCapDisplay}
+            />
+          ) : null}
+        </AnimatePresence>
       </nav>
     </header>
   );
