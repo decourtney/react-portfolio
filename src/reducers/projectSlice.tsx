@@ -5,7 +5,7 @@ const projectSlice = createSlice({
   initialState: {
     // state: value
     nextIndex: 0,
-    isLoading: true,
+    isLoading: false,
     marqueeMsg: '',
     prevState: '',
   },

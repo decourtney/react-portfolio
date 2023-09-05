@@ -109,6 +109,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
 const ProjectRight = ({ data }: { data: Project[] }) => {
   const dispatch = useAppDispatch();
   const [isDetails, setIsDetails] = useState({ display: false, index: -1 });
+  const isLoading = useAppSelector((state) => state.project.isLoading);
 
   // Listen for ESC key press
   useEffect(() => {
@@ -184,7 +185,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
         </div>
       </div>
       <AnimatePresence mode="wait">
-        {isDetails.display && (
+        {isDetails.display && !isLoading &&  (
           <ProjectDetails
             {...data[isDetails.index]}
             handleDetailsDisplay={handleDetailsDisplay}

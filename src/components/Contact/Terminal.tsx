@@ -14,6 +14,7 @@ interface TerminalProps {
 
 const TerminalDisplay = ({ setIsPowerBtnDisabled }: TerminalProps) => {
   const [displayMenu, setDisplayMenu] = useState(false);
+  // For now only the email form is available
   const [menuSelection, setMenuSelection] = useState("emailForm");
   const [menuOption, setMenuOption] = useState(0);
 

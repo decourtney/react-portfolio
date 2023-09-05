@@ -6,30 +6,26 @@ import { setMarqueeMsg } from "../../reducers/projectSlice";
 import TextareaAutosize from "react-textarea-autosize";
 
 const TerminalEmailForm = () => {
-  const [isButtonDisabled, setIsButtonDisenabled] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [formValues, setFormValues] = useState({
     user_name: "",
     user_email: "",
     user_message: "",
   });
   const dispatch = useAppDispatch();
-  const [scope, animate] = useAnimate();
-
-  const buttonVariants = {
-    hidden: { x: "80%" },
-    visible: { x: "5%" },
-  };
+  const [submitBtnAnim, animate] = useAnimate();
+  const form = useRef<any>();
 
   useEffect(() => {
     const formValuesArray = Object.values(formValues);
 
-    setIsButtonDisenabled(!formValuesArray.every((value) => value !== ""));
+    setIsButtonDisabled(!formValuesArray.every((value) => value !== ""));
   }, [formValues]);
 
   useEffect(() => {
     if (!isButtonDisabled)
       animate(
-        scope.current,
+        submitBtnAnim.current,
         { x: ["50%", "5%"], opacity: [0, 100] },
         { duration: 0.3 }
       );
@@ -37,19 +33,19 @@ const TerminalEmailForm = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-    e.target.reset();
-    setIsButtonDisenabled(true);
+    setIsButtonDisabled(true);
 
     emailjs
       .sendForm(
         "contact_service",
         "contact_form",
-        e.target,
+        form.current,
         "WiUmD3gJ4iafdCR1R"
       )
       .then(
         (result) => {
           dispatch(setMarqueeMsg("Thank You!"));
+          e.target.reset();
           // console.log(result.status, result.text);
         },
         (error) => {
@@ -61,13 +57,14 @@ const TerminalEmailForm = () => {
 
   return (
     <div className="flex w-full h-full justify-center items-center py-[5%] px-[5%]">
-      {/* add intro splash stuff eventually */}
       <form
+        ref={form}
         className="w-full h-full font-vt323 text-[2vw] text-green-400 leading-snug space-y-2"
         onSubmit={sendEmail}
       >
-        <motion.div ref={scope}>
+        <motion.div ref={submitBtnAnim}>
           <button
+            type="submit"
             className={`text-green-400 text-green-glow ${
               isButtonDisabled ? "invisible" : "visible"
             }`}
@@ -76,6 +73,7 @@ const TerminalEmailForm = () => {
             SEND
           </button>
         </motion.div>
+
         <div>
           <input
             id="user_name"
@@ -93,6 +91,7 @@ const TerminalEmailForm = () => {
             required
           />
         </div>
+
         <div>
           <input
             id="user_email"
@@ -110,6 +109,7 @@ const TerminalEmailForm = () => {
             required
           />
         </div>
+
         <div>
           <TextareaAutosize
             maxRows={5}
