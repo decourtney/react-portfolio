@@ -21,13 +21,16 @@ const Loading = () => {
     dispatch(
       state ? setPrevState(state.value) : dispatch(setPrevState("home"))
     );
+
+    console.log(state)
+    if (!state) navigate("/home");
   }, []);
 
   const CogAnimComplete = () => {
-    // console.log('anim complete')
+    console.log("panel cog anim complete")
     navigate(state ? `/${state.value}` : "/home");
   };
-  
+
   return (
     <>
       <GearBox animationDir={"none"} />
