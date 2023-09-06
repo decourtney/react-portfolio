@@ -14,23 +14,21 @@ function AnimatedRoutes() {
 
   return (
     <>
-      <React.StrictMode>
-        <Header />
-        <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
-          <AnimatePresence mode="wait">
-            <Routes key={location.pathname} location={location}>
-              <Route path="/" element={<Loading />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-              {/* <Route path="*" element={<Home />}/> */}
-              {/*Need to make a 404 not found page here*/}
-            </Routes>
-          </AnimatePresence>
-        </main>
-        <Footer />
-      </React.StrictMode>
+      <Header />
+      <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
+        <AnimatePresence mode="wait">
+          <Routes key={location.pathname} location={location}>
+            <Route path="/" element={<Loading />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* <Route path="*" element={<Home />}/> */}
+            {/*Need to make a 404 not found page here*/}
+          </Routes>
+        </AnimatePresence>
+      </main>
+      <Footer />
     </>
   );
 }
