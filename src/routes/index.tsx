@@ -20,7 +20,10 @@ function AnimatedRoutes() {
           matches.small ? (
             <MobileHome />
           ) : (
-            <>
+            <section
+              id="Non-mobile-wrapper"
+              className="flex flex-col w-full h-screen min-w-[600px] max-h-screen"
+            >
               <Header />
               <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
                 <AnimatePresence mode="wait">
@@ -36,7 +39,7 @@ function AnimatedRoutes() {
                 </AnimatePresence>
               </main>
               <Footer />
-            </>
+            </section>
           )
         }
       </Media>
@@ -45,3 +48,5 @@ function AnimatedRoutes() {
 }
 
 export default AnimatedRoutes;
+
+// flex flex-col w-full h-screen min-w-[700px] max-h-screen

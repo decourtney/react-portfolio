@@ -7,21 +7,15 @@ import tDial from "../../images/terminal_dial.png";
 import github_icon from "../../images/github_icon_white.png";
 import facebook_icon from "../../images/facebook_icon_white.png";
 import linkedin_icon from "../../images/linkedin_icon_white.png";
-import left_panel_fg from "../../images/contact_left_fg.png";
-import left_panel_bg from "../../images/contact_left_bg.png";
 import crane from "../../images/contact_crane.png";
 import cog_single from "../../images/cog_single.png";
 import cog_large from "../../images/cog_large.png";
-
-type ContactProps = {
-  data: string;
-};
 
 const githubAddress = "https://github.com/decourtney";
 const facebookAddress = "https://www.facebook.com/Donovan.Courtney78";
 const linkedinAddress = "https://www.linkedin.com/in/decourtney/";
 
-const ContactLeft = ({ data }: ContactProps) => {
+const ContactLeft = () => {
   const [smallCog, animateSmallCog] = useAnimate();
   const [largeCog, animateLargeCog] = useAnimate();
   let cogAnimTimer = 3000;
@@ -99,27 +93,11 @@ const ContactLeft = ({ data }: ContactProps) => {
   );
 };
 
-const ContactRight = ({ data }: ContactProps) => {
+const ContactRight = () => {
   const [terminalPower, setTerminalPower] = useState(false);
   const [isPowerBtnDisabled, setIsPowerBtnDisabled] = useState(false);
   const [powerButton, animatePowerButton] = useAnimate();
   const [socialDial, animateSocialDial] = useAnimate();
-
-  const variants = {
-    initial: {
-      translateX: "-50%",
-      translateY: "-65%",
-    },
-    on: {
-      translateY: "-64.5%",
-      transition: { duration: 0.2, repeat: Infinity, ease: "linear" },
-    },
-    off: {
-      opacity: [0],
-      x: "100%",
-      transition: { duration: 2, ease: "linear" },
-    },
-  };
 
   const handlePowerButtonClick = (event: React.MouseEvent) => {
     setTerminalPower(!terminalPower);

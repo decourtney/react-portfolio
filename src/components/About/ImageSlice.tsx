@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { motion, useAnimate } from "framer-motion";
+import { motion } from "framer-motion";
 import shadowbox_rod from "../../images/shadowbox_rod.png";
 
 type ImageSliceProps = {
