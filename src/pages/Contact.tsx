@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useAppSelector, useAppDispatch } from "../reducers/hooks";
+import { useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg } from "../reducers/projectSlice";
-import { useLocation } from "react-router-dom";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import { ContactLeft, ContactRight } from "../components/Contact";
 import GearBox from "../components/GearBox";
 
 const Contact = () => {
-  const [loadContent, setLoadContent] = useState("");
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -17,8 +15,8 @@ const Contact = () => {
   return (
     <>
       <GearBox animationDir={"open"} />
-      <LeftPanel contentLeft={<ContactLeft data={"Contact Me"} />} />
-      <RightPanel contentRight={<ContactRight data={"Under Construction"} />} />
+      <LeftPanel contentLeft={<ContactLeft />} />
+      <RightPanel contentRight={<ContactRight />} />
     </>
   );
 };

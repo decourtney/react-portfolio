@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import GearBox from "../components/GearBox";
 import { HomeLeft, HomeRight } from "../components/Home";

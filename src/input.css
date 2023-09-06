@@ -109,8 +109,6 @@ code {
 
 .cert-border {
   border-image-source: url(./images/cert_paper_middle.png);
-  border-image-width: 100%;
-  border-image-slice: 50%;
 }
 
 .border-ws {
@@ -147,8 +145,7 @@ code {
 }
 
 .details-lighting {
-  --c: #ffffff;
-  text-shadow: 0px 0px 1px var(--c), 0px 0px 5px var(--c);
+  text-shadow: 0px 0px 1px #ffffff, 0px 0px 5px #ffffff;
   background-image: radial-gradient(circle at center, #ffdbdb, transparent 40%),
     radial-gradient(circle at 100% 0%, #ffdbdb, transparent 40%),
     radial-gradient(circle at 100% 100%, #ffdbdb, transparent 40%),
@@ -263,13 +260,6 @@ code {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-/* .masktest {
-  mask-image: url(./images/testImg.png);
-  mask-size: 96%;
-  mask-repeat: no-repeat;
-  mask-position: center;
-} */
 
 
 /* Below is for Mobile Styles */

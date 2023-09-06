@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
-import { motion, useAnimationControls, AnimatePresence } from "framer-motion";
-import { useAppDispatch, useAppSelector } from "../../reducers/hooks";
+import { motion } from "framer-motion";
+import { useAppDispatch } from "../../reducers/hooks";
 import { setIsLoading } from "../../reducers/projectSlice";
 import { GetIconVariants } from "../../utils/utilities";
-import { current } from "@reduxjs/toolkit";
-import borderRightImage from "../../images/border_right.svg";
-import borderLeftImage from "../../images/border_left.svg";
-import borderPad from "../../images/border_pad.png";
-import iconFrame from "../../images/icon_frame.png";
 import iconLens from "../../images/panel_cog_lens.png";
-import panelCog from "../../images/panel_cog.png";
-import panelCogAlt from "../../images/panel_cogALT.png";
-import home_icon from "../../images/home_icon.png";
-import about_icon from "../../images/about_icon.png";
-import projects_icon from "../../images/work_icon.png";
-import contact_icon from "../../images/contact_icon.png";
 import { GetIcon } from "../../utils/utilities";
-import leftStraight from "../../images/straightLeftCog.png";
-import rightStraight from "../../images/straightRightCog.png";
 
 type LeftPanelProps = {
   contentLeft: React.ReactElement;
