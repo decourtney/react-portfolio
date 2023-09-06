@@ -12,19 +12,21 @@ import Loading from "../pages/Loading";
 function AnimatedRoutes() {
   const location = useLocation();
 
-  console.log(location.pathname)
+  console.log(location.pathname);
   return (
     <>
       <Header />
       <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
         <AnimatePresence mode="wait">
-          <Routes >
+          {/* <Routes key={location.pathname} location={location}> */}
+          <Routes>
             <Route path="/" element={<Loading />} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
             <Route path="contact" element={<Contact />} />
-            {/* <Route path="*" element={<Home />}/> */}{/*Need to make a 404 not found page here*/}
+            {/* <Route path="*" element={<Home />}/> */}
+            {/*Need to make a 404 not found page here*/}
           </Routes>
         </AnimatePresence>
       </main>

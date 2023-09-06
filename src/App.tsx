@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import { Provider } from "react-redux";
 import { persistor, store } from "./reducers/store";
 import { PersistGate } from "redux-persist/integration/react";
