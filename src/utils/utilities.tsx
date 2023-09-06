@@ -6,8 +6,6 @@ import contact_icon from "../images/contact_icon.png";
 export const GetIcon = (location: string) => {
   const cleanLocation = location.replace(/[/]/g, "");
 
-  // console.log(cleanLocation);
-
   switch (cleanLocation) {
     case "home":
       return home_icon;
