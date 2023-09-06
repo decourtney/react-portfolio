@@ -12,12 +12,13 @@ import Loading from "../pages/Loading";
 function AnimatedRoutes() {
   const location = useLocation();
 
+  console.log(location.pathname)
   return (
     <>
       <Header />
       <main className="relative flex flex-grow overflow-hidden scrollbar-hide">
         <AnimatePresence mode="wait">
-          <Routes key={location.pathname} location={location}>
+          <Routes >
             <Route path="/" element={<Loading />} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
