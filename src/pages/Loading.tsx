@@ -1,20 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
-import { redirect, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import GearBox from "../components/GearBox";
-import { AnimatePresence, motion } from "framer-motion";
 import PanelCog from "../components/Loading/PanelCog";
-import panelCogBase from "../images/panel_cog_base.png";
 import loadingPanelLeft from "../images/loading_panel_left.png";
 import loadingPanelRight from "../images/loading_panel_right.png";
-import panelCog from "../images/panel_cog.png";
-import { useAppSelector, useAppDispatch } from "../reducers/hooks";
+import { useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg, setPrevState } from "../reducers/projectSlice";
 
 const Loading = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const prevState = useAppSelector((state) => state.project.prevState);
 
   useEffect(() => {
     dispatch(setMarqueeMsg(`Loading please wait...`));
