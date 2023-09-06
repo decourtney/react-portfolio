@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { LeftPanel, RightPanel } from "../components/Panels";
 import { AboutLeft, AboutRight } from "../components/About";
 import GearBox from "../components/GearBox";
-import { useAppSelector, useAppDispatch } from "../reducers/hooks";
+import { useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg } from "../reducers/projectSlice";
 
 const About = () => {
-  const [loadContent, setLoadContent] = useState("");
   const dispatch = useAppDispatch();
 
   useEffect(() => {
