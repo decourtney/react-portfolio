@@ -21,13 +21,13 @@ const Loading = () => {
     dispatch(
       state ? setPrevState(state.value) : dispatch(setPrevState("home"))
     );
+    if (!state) navigate("/home");
   }, []);
 
   const CogAnimComplete = () => {
-    // console.log('anim complete')
     navigate(state ? `/${state.value}` : "/home");
   };
-  
+
   return (
     <>
       <GearBox animationDir={"none"} />
