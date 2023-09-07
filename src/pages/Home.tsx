@@ -9,7 +9,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg("Welcome Home"));
+    dispatch(setMarqueeMsg("Hello!"));
   }, []);
 
   return (
