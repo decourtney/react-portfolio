@@ -635,10 +635,6 @@ video {
   bottom: 0px;
 }
 
-.bottom-\[0\%\] {
-  bottom: 0%;
-}
-
 .bottom-\[12\.8\%\] {
   bottom: 12.8%;
 }
@@ -665,10 +661,6 @@ video {
 
 .left-\[23\%\] {
   left: 23%;
-}
-
-.left-\[4\%\] {
-  left: 4%;
 }
 
 .left-\[40\%\] {
@@ -1160,12 +1152,6 @@ video {
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-translate-y-\[20\%\] {
-  --tw-translate-y: -20%;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .-translate-y-\[25\%\] {
   --tw-translate-y: -25%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1505,10 +1491,6 @@ video {
 
 .indent-\[1\%\] {
   text-indent: 1%;
-}
-
-.font-swissSymbol {
-  font-family: Swiss Grit Dingbats;
 }
 
 .font-vt323 {
