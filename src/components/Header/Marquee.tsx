@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, stagger, useAnimation } from "framer-motion";
 
 interface MarqueeProps {
@@ -8,7 +8,8 @@ interface MarqueeProps {
 
 // Marquee needs more styling and breakpoints
 const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
-  const [numberOfAnims, setNumberOfAnims] = useState(1);
+  // const [numberOfAnims, setNumberOfAnims] = useState(1);
+  const number = useRef(1)
 
   const containerVariants = {
     start: {},
@@ -27,7 +28,8 @@ const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
       },
     },
     exit: {
-      x: `calc(-7cqw * ${msg.length})`, // This is roughly the minimum space necessary to be off screen
+      // x: `calc(-10cqw * ${msg.length})`, // This is roughly the minimum space necessary to be off screen
+      x: "-100cqw",
       transition: {
         type: "tween",
         ease: "linear",
@@ -57,13 +59,16 @@ const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
                 key={j}
                 className="whitespace-pre will-change-transform"
                 variants={marqueeVariants}
+
                 // Once all Exit or Scroll anims are complete 
                 onAnimationComplete={(definition) => {
-                  if (numberOfAnims === msg.length) {
+                  if (number.current === msg.length) {
                     marqueeAnimComplete(definition.toString());
-                    setNumberOfAnims(1);
+                    // setNumberOfAnims(1);
+                    number.current = 1;
                   } else {
-                    setNumberOfAnims(numberOfAnims + 1);
+                    // setNumberOfAnims(numberOfAnims + 1);
+                    number.current += 1
                   }
                 }}
               >

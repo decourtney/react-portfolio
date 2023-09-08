@@ -56,22 +56,26 @@ const TerminalEmailForm = () => {
   };
 
   return (
-    <div className="flex w-full h-full justify-center items-center py-[5%] px-[5%]">
+    <div className="flex-col w-full h-full justify-center items-center py-[5%] px-[5%] text-green-400 font-vt323">
+      <div className="text-[2vh] text-center text-green-glow">
+        <p className="underline">Functional Utility for Sending Emails</p>
+      </div>
       <form
         ref={form}
-        className="w-full h-full font-vt323 text-[2vw] text-green-400 leading-snug space-y-2"
+        className="w-full h-full text-[2vh] leading-snug space-y-2"
         onSubmit={sendEmail}
       >
         <motion.div ref={submitBtnAnim}>
-          <button
+          <motion.button
             type="submit"
             className={`text-green-400 text-green-glow ${
               isButtonDisabled ? "invisible" : "visible"
             }`}
+            whileHover={{scale: 1.1}}
             disabled={isButtonDisabled}
           >
-            SEND
-          </button>
+            <p> &#60;SEND&#62;</p>
+          </motion.button>
         </motion.div>
 
         <div>

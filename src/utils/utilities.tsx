@@ -45,3 +45,7 @@ export const GetIconVariants = (color: string = "0072ff") => {
 
   return iconVariants;
 };
+
+export const GetRandomNumber = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};

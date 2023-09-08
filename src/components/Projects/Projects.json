@@ -1,4 +1,15 @@
 [
+    {
+    "name": "React Portfolio",
+    "date": "May 2023",
+    "description": [
+      "This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website"
+    ],
+    "tags": ["Express", "React", "Node", "Typescript"],
+    "url": "",
+    "repo": "https://github.com/decourtney/react-portfolio",
+    "image": "images/proj1.png"
+  },
   {
     "name": "Tech Messages",
     "date": "March 2023",
@@ -52,17 +63,6 @@
     "tags": ["Mongo", "Express", "React", "Node"],
     "url": "https://sleepy-brushlands-04075.herokuapp.com/",
     "repo": "https://github.com/decourtney/reality-check-news",
-    "image": "images/proj1.png"
-  },
-  {
-    "name": "React Portfolio",
-    "date": "May 2023",
-    "description": [
-      "This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website"
-    ],
-    "tags": ["Express", "React", "Node", "Typescript"],
-    "url": "",
-    "repo": "https://github.com/decourtney/react-portfolio",
     "image": "images/proj1.png"
   }
 ]

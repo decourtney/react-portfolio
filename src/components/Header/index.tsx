@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import Menu from "./Menu";
 import Marquee from "./Marquee";
-import navbar from "../../images/navbar.png";
 import menu_frame from "../../images/menu_frame.png";
 import menu_housing from "../../images/menu_housing.png";
 import menu_cap from "../../images/menu_cap.png";
@@ -11,8 +9,6 @@ import marquee_frame from "../../images/marquee_frame.png";
 import { AnimatePresence, AnimationDefinition } from "framer-motion";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 
-// Header button animations are still using CSS 'blink' class = change to framer-motion for conditional colors red/green
-// animate-pulse is Tailwind class
 const Header = () => {
   const incMessage = useAppSelector((state) => state.project.marqueeMsg);
   const isLoading = useAppSelector((state) => state.project.isLoading);
@@ -97,7 +93,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
     setIsDisplayMenuCap(false);
 
-    // Only play when button is clicked
+    // Only pulse when button is clicked
     if (event) {
       if (buttonGlow !== null) {
         const ele = buttonGlow.current;

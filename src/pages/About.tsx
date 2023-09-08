@@ -9,7 +9,7 @@ const About = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg(`About page`));
+    dispatch(setMarqueeMsg(`whoami`));
   }, []);
 
   return (

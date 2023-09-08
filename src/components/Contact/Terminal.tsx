@@ -1,11 +1,5 @@
-import React, {
-  useEffect,
-  useState,
-  useRef,
-  ReactComponentElement,
-  ReactElement,
-} from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import EmailForm from "./EmailForm";
 
 interface TerminalProps {

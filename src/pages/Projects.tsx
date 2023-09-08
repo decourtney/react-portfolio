@@ -12,7 +12,7 @@ const Projects = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg(`Projects page`));
+    dispatch(setMarqueeMsg(`Some of my work`));
   }, []);
 
   return (

@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
-import {
-  motion,
-  AnimatePresence,
-  transform,
-  LayoutGroup,
-  useAnimate,
-  useAnimation,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import ProjectDetails from "./ProjectDetails";
-import namePlateBorder from "../../images/proj_nameplate_border.png";
 import namePlateHead from "../../images/proj_nameplate_head.png";
 import namePlateTail from "../../images/proj_nameplate_tail.png";
 import namePlateButtonFrame from "../../images/proj_nameplate_button_frame.png";
@@ -163,10 +155,10 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                       className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:scale-105 active:scale-95"
                       onClick={() => handleDetailsDisplay(true, index)}
                     />
+                    <div className="absolute top-1/2 left-1/2 w-2/3 h-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 group-hover:shadow-[inset_0px_0px_5px_5px_#35ff00] pointer-events-none"></div>
                   </div>
 
                   <div className="relative w-full">
-                    {/* <img src={namePlateBorder} className="w-[75%] invisible" /> */}
                     <div className="project-nameplate-border absolute border-ws w-full h-full z-20" />
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[86%] h-[80%] rounded-sm group-hover:shadow-[inset_0px_0px_20px_5px_#35ff00] z-10" />
                     <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
@@ -185,7 +177,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
         </div>
       </div>
       <AnimatePresence mode="wait">
-        {isDetails.display && !isLoading &&  (
+        {isDetails.display && !isLoading && (
           <ProjectDetails
             {...data[isDetails.index]}
             handleDetailsDisplay={handleDetailsDisplay}

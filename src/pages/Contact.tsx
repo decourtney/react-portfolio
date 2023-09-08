@@ -9,7 +9,7 @@ const Contact = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setMarqueeMsg(`Contact Page`));
+    dispatch(setMarqueeMsg(`Let's connect!`));
   }, []);
 
   return (
