@@ -165,7 +165,7 @@ const AboutRight = () => {
             className={`w-full h-full py-[3%] px-[5%] overflow-scroll scrollbar-hide`}
           >
             <img src={cert_paper_top} className="w-full" />
-            <div className="cert-border border-ws w-full px-[6%] text-2xl space-y-3">
+            <div className="cert-border border-ws w-full px-[6%] text-[2.1vh] space-y-3">
               <p>
                 As a dedicated web developer, my coding journey spans several
                 years, with a formal focus on web development beginning in 2022.

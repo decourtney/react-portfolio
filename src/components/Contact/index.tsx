@@ -20,6 +20,7 @@ const ContactLeft = () => {
   const [largeCog, animateLargeCog] = useAnimate();
   let cogAnimTimer = 3000;
 
+  // Anims just to give some life to the panel
   useEffect(() => {
     const animateCogs = async () => {
       animateSmallCog(
@@ -34,6 +35,7 @@ const ContactLeft = () => {
       );
     };
 
+    // Recursive loop to keep cogs moving with time variations between
     const interval = setInterval(() => {
       cogAnimTimer = Math.floor(Math.random() * 15) * 1000;
       animateCogs();
@@ -44,6 +46,7 @@ const ContactLeft = () => {
     };
   }, []);
 
+  // Very slowly raises and lowers the crane
   const craneVariants = {
     initial: {
       translateY: "-10%",
@@ -108,7 +111,6 @@ const ContactRight = () => {
 
   return (
     <div className="relative flex w-full mr-[3%] ml-[4%] mt-[2%] mb-[5%] justify-center items-center bg-green-400">
-      {/* <div className="relative w-full h-full"> */}
       <div className="absolute top-1/2 left-1/2 w-[90%] h-auto -translate-x-[50%] -translate-y-[50%]">
         <div className="relative flex w-full h-full">
           <img
@@ -120,6 +122,12 @@ const ContactRight = () => {
             <motion.button
               ref={powerButton}
               className={`absolute bottom-[13.3%] right-[11.4%] w-[8%] pointer-events-auto`}
+              style={{
+                filter: terminalPower
+                  ? "drop-shadow(0px 0px 4px green)"
+                  : "drop-shadow(0px 0px 4px red)",
+              }}
+              // style={{ filter: "drop-shadow(0px 0px 3px red)" }}
               initial={{ rotate: 45 }}
               whileHover={{ scale: 1.1 }}
               onClick={(e) => {
@@ -132,7 +140,7 @@ const ContactRight = () => {
 
             {/* Unused Button */}
             <motion.button
-              className="absolute bottom-[13.3%] right-[27%] w-[8%] rotate-45"
+              className="absolute bottom-[13.3%] right-[27%] w-[8%] rotate-45 drop-shadow-md"
               initial={{ rotate: 45 }}
             >
               <img src={tPwr} />
@@ -140,7 +148,7 @@ const ContactRight = () => {
 
             {/* Expansion of terminal functionality - move dial to Terminal for terminal display of links */}
             {/* Social Dial Group */}
-            <div className="absolute bottom-[12.8%] left-[40%] w-[9%]">
+            <div className="absolute bottom-[12.8%] left-[40%] w-[9%] drop-shadow-md">
               <motion.img
                 ref={socialDial}
                 src={tDial}
@@ -152,6 +160,7 @@ const ContactRight = () => {
                 <motion.img
                   src={github_icon}
                   className="absolute -top-[10%] left-[95%] w-[30%] pointer-events-auto cursor-pointer"
+                  style={{ filter: "drop-shadow(0px 0px 3px #1bb200)" }}
                   whileHover={{ scale: 1.2 }}
                   onClick={(e) => {
                     animateSocialDial(socialDial.current, { rotate: 45 });
@@ -163,6 +172,7 @@ const ContactRight = () => {
                 <motion.img
                   src={facebook_icon}
                   className="absolute top-1/2 left-[105%] w-[30%] pointer-events-auto cursor-pointer"
+                  style={{ filter: "drop-shadow(0px 0px 3px #1bb200)" }}
                   initial={{ translateY: "-50%" }}
                   whileHover={{ scale: 1.2 }}
                   onClick={(e) => {
@@ -175,6 +185,7 @@ const ContactRight = () => {
                 <motion.img
                   src={linkedin_icon}
                   className="absolute -bottom-[10%] left-[95%] w-[30%] pointer-events-auto cursor-pointer"
+                  style={{ filter: "drop-shadow(0px 0px 3px #1bb200)" }}
                   whileHover={{ scale: 1.2 }}
                   onClick={(e) => {
                     animateSocialDial(socialDial.current, { rotate: 135 });

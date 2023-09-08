@@ -65,19 +65,19 @@ const ProjectDetails = (props: DetailsProps) => {
     switch (el) {
       case "topleftLight":
         tShadow =
-          "0px 0px 1px #62adff, -1px -1px 1px #62adff, -3px -3px 1px #76b7ff, -6px -6px 1px #95c8ff, -10px -10px 1px #b0d6ff, -15px -15px 1px #cae3ff, -20px -20px 1px #e7f2ff, -25px -25px 1px #ffffff";
+          "0px 0px 1px #62adff, -1px -1px 1px #62adff, -3px -3px 1px #76b7ff, -6px -6px 1px #95c8ff, -10px -10px 1px #b0d6ff, -15px -15px 1px #cae3ff, -20px -20px 1px #e7f2ff, -23px -23px 1px #ffffff";
         break;
       case "toprightLight":
         tShadow =
-          "0px 0px 1px #62adff, 1px -1px 1px #62adff, 3px -3px 1px #76b7ff, 6px -6px 1px #95c8ff, 10px -10px 1px #b0d6ff, 15px -15px 1px #cae3ff, 20px -20px 1px #e7f2ff, 25px -25px 1px #ffffff";
+          "0px 0px 1px #62adff, 1px -1px 1px #62adff, 3px -3px 1px #76b7ff, 6px -6px 1px #95c8ff, 10px -10px 1px #b0d6ff, 15px -15px 1px #cae3ff, 20px -20px 1px #e7f2ff, 23px -23px 1px #ffffff";
         break;
       case "bottomleftLight":
         tShadow =
-          "0px 0px 1px #62adff, -1px 1px 1px #62adff, -3px 3px 1px #76b7ff, -6px 6px 1px #95c8ff, -10px 10px 1px #b0d6ff, -15px 15px 1px #cae3ff, -20px 20px 1px #e7f2ff, -25px 25px 1px #ffffff";
+          "0px 0px 1px #62adff, -1px 1px 1px #62adff, -3px 3px 1px #76b7ff, -6px 6px 1px #95c8ff, -10px 10px 1px #b0d6ff, -15px 15px 1px #cae3ff, -20px 20px 1px #e7f2ff, -23px 23px 1px #ffffff";
         break;
       case "bottomrightLight":
         tShadow =
-          "0px 0px 1px #62adff, 1px 1px 1px #62adff, 3px 3px 1px #76b7ff, 6px 6px 1px #95c8ff, 10px 10px 1px #b0d6ff, 15px 15px 1px #cae3ff, 20px 20px 1px #e7f2ff, 25px 25px 1px #ffffff";
+          "0px 0px 1px #62adff, 1px 1px 1px #62adff, 3px 3px 1px #76b7ff, 6px 6px 1px #95c8ff, 10px 10px 1px #b0d6ff, 15px 15px 1px #cae3ff, 20px 20px 1px #e7f2ff, 23px 23px 1px #ffffff";
         break;
       default:
         tShadow =
@@ -89,15 +89,18 @@ const ProjectDetails = (props: DetailsProps) => {
   };
 
   useEffect(() => {
+    // Generates an array sizing between 6 - 10 of numbers between 0.x - 1
     const getOpacity = () => {
       let opacityArr: number[] = [];
 
       for (let index = 0; index < GetRandomNumber(6, 10); index++) {
-        opacityArr.push(GetRandomNumber(3, 10) / 10);
+        opacityArr.push(GetRandomNumber(4, 10) / 10);
       }
 
       return opacityArr;
     };
+
+    // Generates an array sizing between 6 - 10 of monotonic numbers up to 10
     const getTimes = () => {
       let timesArr: number[] = [];
       let num = 1;
@@ -152,6 +155,8 @@ const ProjectDetails = (props: DetailsProps) => {
           variants={detailsVariants}
           exit="close"
         >
+          {/* This will create a div of the proj details for each animation needed - 5. */}
+          {/* Each div set */}
           {anims.map((item, i) => {
             return (
               <div
@@ -205,7 +210,6 @@ const ProjectDetails = (props: DetailsProps) => {
               </div>
             );
           })}
-          {/* </div> */}
         </motion.div>
       </div>
     </>
