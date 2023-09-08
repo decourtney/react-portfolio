@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useRef, Component } from "react";
-import { Route, useLocation, useNavigate } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import { useState, useEffect } from "react";
+import { useAppSelector } from "../../reducers/hooks";
 import {
   AnimatePresence,
   motion,
   useAnimate,
   usePresence,
 } from "framer-motion";
-import { GetIcon, GetIconVariants } from "../../utils/utilities";
+import { GetIcon } from "../../utils/utilities";
 import iconFrame from "../../images/icon_frame.png";
 import panelCog from "../../images/panel_cog.png";
 import iconLens from "../../images/panel_cog_lens.png";
@@ -77,7 +76,6 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
               { y: ["55%", "0%"] },
               { duration: 0.5, ease: "linear" }
             );
-
           } else {
             animateCog(
               cogAnim.current,
@@ -143,10 +141,11 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
           key={icon}
           src={icon}
           className="home-icon absolute top-1/2 -right-[.8%] w-[1.5%] h-[3%] -translate-y-[45%] z-50"
-          variants={GetIconVariants("c10000")}
-          initial="display"
-          animate="display"
-          exit="display"
+          animate={{
+            filter: [
+              "drop-shadow(0 0 5px #c10000) drop-shadow(0 0 10px #c10000) drop-shadow(0 0 20px #c10000) drop-shadow(0 0 30px #c10000)",
+            ],
+          }}
         />
         <img
           src={iconLens}

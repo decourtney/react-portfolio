@@ -31,13 +31,13 @@ code {
 }
 
 .text-red-glow {
-  text-shadow: 0 0 10px rgb(239 68 68);
+  text-shadow: 0 0 10px #ef4444;
 }
 .text-green-glow {
-  text-shadow: 0 0 10px rgb(74 222 128);
+  text-shadow: 0 0 5px #4ade80, 0 0 10px #75f3a3;
 }
 .text-blue-glow {
-  text-shadow: 0 0 10px rgb(59 130 246);
+  text-shadow: 0 0 10px #3b82f6;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -142,21 +142,6 @@ code {
   100% {
     background-color: #f6ff00;
   }
-}
-
-.details-lighting {
-  text-shadow: 0px 0px 1px #ffffff, 0px 0px 5px #ffffff;
-  background-image: radial-gradient(circle at center, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 100% 0%, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 100% 100%, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 0% 100%, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 0% 0%, #ffdbdb, transparent 40%);
-  mask-image: radial-gradient(circle at center, #000000 0%, transparent 50%),
-    radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%),
-    radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%),
-    radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
-  backdrop-filter: blur(100px);
 }
 
 .centerLight {

@@ -1,14 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import ImageSlice from "./ImageSlice";
-import { AnimatePresence, motion, useAnimate, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import forrest from "../../images/forrest1.png";
-import lilith from "../../images/lilith.png";
-import biden from "../../images/biden.png";
 import shadowbox_frame from "../../images/shadowbox_frame.png";
 import shadowbox_rod from "../../images/shadowbox_rod.png";
-import trivision_frame from "../../images/trivision_frame.png";
-import panel_bg from "../../images/panel_background.png";
-import testimg from "../../images/testImg.png";
 import cert_paper_top from "../../images/cert_paper_top.png";
 import cert_paper_bottom from "../../images/cert_paper_bottom.png";
 

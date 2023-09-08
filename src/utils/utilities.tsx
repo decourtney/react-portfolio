@@ -20,32 +20,6 @@ export const GetIcon = (location: string) => {
   }
 };
 
-export const GetIconVariants = (color: string = "0072ff") => {
-  const iconVariants = {
-    display: {
-      filter: [
-        `drop-shadow(0 0 5px #${color}) drop-shadow(0 0 10px #${color})
-    drop-shadow(0 0 20px #${color}) drop-shadow(0 0 30px #${color})`,
-      ],
-      // opacity: [1, 0, 1, 0, 1],
-    },
-    enter: {
-      filter: [
-        `drop-shadow(0 0 5px #${color}) drop-shadow(0 0 10px #${color})
-    drop-shadow(0 0 20px #${color}) drop-shadow(0 0 30px #${color})`,
-      ],
-    },
-    exit: {
-      filter: [
-        `drop-shadow(0 0 5px #${color}) drop-shadow(0 0 10px #${color})
-    drop-shadow(0 0 20px #${color}) drop-shadow(0 0 30px #${color})`,
-      ],
-    },
-  };
-
-  return iconVariants;
-};
-
 export const GetRandomNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };

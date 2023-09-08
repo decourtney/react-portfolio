@@ -6,8 +6,8 @@ import menu_housing from "../../images/menu_housing.png";
 import menu_cap from "../../images/menu_cap.png";
 import menu_button from "../../images/menu_button.png";
 import marquee_frame from "../../images/marquee_frame.png";
-import { AnimatePresence, AnimationDefinition } from "framer-motion";
-import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import { AnimatePresence, AnimationDefinition, motion } from "framer-motion";
+import { useAppSelector } from "../../reducers/hooks";
 
 const Header = () => {
   const incMessage = useAppSelector((state) => state.project.marqueeMsg);
@@ -16,13 +16,13 @@ const Header = () => {
   const [isDisplayMessage, setIsDisplayMessage] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isDisplayMenuCap, setIsDisplayMenuCap] = useState(true);
-  const buttonGlow = useRef<HTMLDivElement>(null);
-  const waitingMessage = useRef("");
+  const waitingMessage = useRef(""); // Can use an array for queing multiple messages
   const displayedMessage = useRef("");
   const menuRef = useRef<HTMLDivElement>(null);
   const displayTimer = 2000;
   const timeouts: NodeJS.Timeout[] = [];
 
+  // Closes menu when clicked anywhere except the menu button section
   useEffect(() => {
     document.addEventListener("click", (e) => {
       if (!menuRef.current?.contains(e.target as Node)) {
@@ -51,12 +51,11 @@ const Header = () => {
       setIsAnimating(true);
       setIsDisplayMessage(true);
 
-      // Clear waiting messages - can be converted to array if necessary
       waitingMessage.current = "";
     }
   }, [isAnimating, incMessage]);
 
-  // Let us know when a scroll or exit anim is complete
+  // A scroll or exit anim is complete
   const marqueeAnimComplete = (def: string) => {
     if (def === "scroll") {
       const t = setTimeout(() => {
@@ -64,7 +63,7 @@ const Header = () => {
       }, displayTimer);
       timeouts.push(t);
     } else {
-      // Clear timers for any standing displayed messages
+      // Clear timers for any currently displayed messages
       for (var i = 0; i < timeouts.length; i++) {
         clearTimeout(timeouts[i]);
       }
@@ -72,47 +71,13 @@ const Header = () => {
     }
   };
 
-  const handleMouseEnter = () => {
-    if (buttonGlow !== null) {
-      const ele = buttonGlow.current;
-      ele?.classList.remove("bg-[#929292]", "animate-pulse");
-      ele?.classList.add("bg-[#b6b6b6]");
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (buttonGlow !== null) {
-      const ele = buttonGlow.current;
-      ele?.classList.remove("bg-[#b6b6b6]");
-      ele?.classList.add("bg-[#929292]", "animate-pulse");
-    }
-  };
-
-  // Add code to close the menu if user clicks anywhere else on screen
+  // Open/close menu
   const handleMouseClick = (event: React.MouseEvent) => {
     setIsMenuOpen(!isMenuOpen);
     setIsDisplayMenuCap(false);
-
-    // Only pulse when button is clicked
-    if (event) {
-      if (buttonGlow !== null) {
-        const ele = buttonGlow.current;
-        ele?.classList.remove(
-          "bg-[#929292]" || "bg-[#b6b6b6]",
-          "animate-pulse"
-        );
-        ele?.classList.add("blink");
-
-        setTimeout(() => {
-          ele?.classList.remove("blink");
-          ele?.classList.add("bg-[#929292]" || "bg-[#b6b6b6]", "animate-pulse");
-        }, 1400);
-      }
-    }
   };
 
   const handleMenuCapDisplay = (anim: AnimationDefinition) => {
-    // if(anim === "open") setIsDisplayMenuCap(false);
     if (anim === "close") setIsDisplayMenuCap(true);
   };
 
@@ -135,7 +100,8 @@ const Header = () => {
           className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"
         />
 
-        <div
+        {/* Menu button section */}
+        <section
           ref={menuRef}
           id="navbar-button"
           className="absolute h-full top-0 right-[8%] "
@@ -153,23 +119,33 @@ const Header = () => {
           )}
 
           <button
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
             onClick={(e) => {
               handleMouseClick(e);
             }}
             disabled={isLoading}
           >
-            <div
-              ref={buttonGlow}
-              className={`button-backlit absolute top-[44%] left-[50%] h-[45%] w-[45%] -translate-x-1/2 -translate-y-1/2 rounded-full z-20 transition ease-in-out bg-[#929292] animate-pulse`}
-            />
-            <img
+            <motion.img
               src={menu_button}
-              className="absolute top-0 left-0 h-full z-20 cursor-pointer active:scale-[95%]"
+              className="absolute top-0 left-0 h-full z-20 cursor-pointer drop-shadow-none"
+              animate={{
+                filter: [
+                  "drop-shadow(0px 0px 1px #00ff5d)",
+                  "drop-shadow(0px 0px 3px #30ff30)",
+                ],
+                transition: {
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                },
+              }}
+              whileTap={{ scale: 0.9 }}
+              whileHover={{
+                filter:
+                  "drop-shadow(0px 0px 1px #00ff00) drop-shadow(0px 0px 2px #30ff30) drop-shadow(0px 0px 3px #67ff67)",
+              }}
             />
           </button>
-        </div>
+        </section>
         <AnimatePresence mode="wait">
           {isMenuOpen ? (
             <Menu

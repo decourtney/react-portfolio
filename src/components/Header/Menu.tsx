@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setIsLoading } from "../../reducers/projectSlice";
-import {
-  motion,
-  stagger,
-  useAnimation,
-  useAnimate,
-  AnimatePresence,
-  AnimationDefinition,
-} from "framer-motion";
+import { motion, useAnimate, AnimationDefinition } from "framer-motion";
 import menu_pole from "../../images/menu_pole.png";
 import menu_plate from "../../images/menu_plate.png";
 
@@ -33,11 +26,11 @@ const menuDirectionVariants = {
     y: "90%",
     transition: {
       type: "spring",
-
       duration: 1,
       ease: "easeOut",
       staggerChildren: 0.1,
       staggerDirection: 1,
+      delayChildren: 0.1
     },
   },
 };
@@ -65,32 +58,7 @@ const Menu = (props: MenuProps) => {
   const isLoading = useAppSelector((state) => state.project.isLoading);
   const dispatch = useAppDispatch();
   const location = useLocation();
-  const [menuOptionAnimRef, animateMenuOptionAnimRef] = useAnimate();
   const pages = ["contact", "projects", "about", "home"];
-
-  useEffect(() => {
-    const closeMenu = () => {};
-    setTimeout(() => {}, 3000);
-  }, []);
-
-  const AnimateMenuOptions = (page: String) => {
-    if (location.pathname === "/" + page) {
-      animateMenuOptionAnimRef(
-        menuOptionAnimRef.current,
-        {
-          textShadow: `${
-            location.pathname === "/" + page
-              ? ["0 0 10px #000000"]
-              : [
-                  "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #167a00, 0 0 40px #167a00, 0 0 50px #167a00, 0 0 60px #167a00, 0 0 70px #167a00",
-                  "0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2eff00, 0 0 50px #2eff00, 0 0 60px #2eff00, 0 0 70px #2eff00",
-                ]
-          }`,
-        },
-        { duration: 1, repeat: Infinity, repeatType: "reverse" }
-      );
-    }
-  };
 
   return (
     <motion.div
@@ -123,7 +91,7 @@ const Menu = (props: MenuProps) => {
             >
               <motion.div
                 className="absolute w-[6%] right-[4.9%] drop-shadow-lg will-change-transform"
-                style={{ bottom: `${17 * (index + .9)}%` }}
+                style={{ bottom: `${17 * (index + 0.9)}%` }}
                 variants={menuOptionsVariants}
               >
                 <div
@@ -134,19 +102,18 @@ const Menu = (props: MenuProps) => {
                   }`}
                 >
                   <motion.p
-                    // ref={menuOptionAnimRef}
                     className="text-[1vw] text-center tracking-widest"
                     animate={{
                       textShadow: `${
                         location.pathname === "/" + page || isLoading
                           ? ["0 0 0px #000000"]
                           : [
-                              "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #167a00, 0 0 40px #167a00, 0 0 50px #167a00, 0 0 60px #167a00, 0 0 70px #167a00",
-                              "0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2eff00, 0 0 50px #2eff00, 0 0 60px #2eff00, 0 0 70px #2eff00, 0 0 80px #2eff00",
+                              "0 0 5px #fff, 0 0 8px #fff, 0 0 10px #167a00, 0 0 13px #167a00",
+                              "0 0 5px #fff, 0 0 8px #fff, 0 0 10px #2eff00, 0 0 13px #2eff00",
                             ]
                       }`,
                       transition: {
-                        duration: 1,
+                        duration: 2,
                         repeat: Infinity,
                         repeatType: "reverse",
                       },

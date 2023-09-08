@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 type CogProps = {
@@ -19,7 +18,6 @@ const Cog = ({ size, image, rotate, delay, duration, position, animate }: CogPro
       animate={animate ? { rotate }: {}}
       transition={{
         ease: "linear",
-        // repeat: Infinity,
         duration: duration,
         delay,
       }}

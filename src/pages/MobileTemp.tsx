@@ -1,6 +1,4 @@
 // This will be the temporary mobile page until I can create/rewrite for mobile devices
-import React from "react";
-import { motion } from "framer-motion";
 import construction_site from "../images/construction_site.jpg"
 
 const MobileHome = () => {
