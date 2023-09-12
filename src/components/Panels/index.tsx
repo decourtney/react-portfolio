@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAppDispatch } from "../../reducers/hooks";
 import { setIsLoading } from "../../reducers/projectSlice";
-import { GetIconVariants } from "../../utils/utilities";
 import iconLens from "../../images/panel_cog_lens.png";
 import { GetIcon } from "../../utils/utilities";
 
@@ -35,8 +34,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
     },
   };
 
-  // Currently this prevents the menu from dropping down until this panel has finished the close animation.
-  // For now this is the easiest fix to prevent breaking the routes from spam clicking page links
+  // Once the panel has completed its close anim then the menu drop down is reenabled.
   const handleAnimationComplete = (variant: any) => {
     if (variant === "close") dispatch(setIsLoading(false));
   };
@@ -45,7 +43,6 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
     <motion.div
       id="left-panel"
       className="relative flex w-1/2 h-full will-change-transform"
-      // key={contentLeft ? contentLeft.props.data : null}
       variants={variantsLeft}
       initial="open"
       animate="close"
@@ -78,29 +75,6 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
     },
   };
 
-  // needs adjustments
-  const indicatorVariants = {
-    display: {
-      filter: [
-        `drop-shadow(0 0 5px #0072ff) drop-shadow(0 0 10px #0072ff)
-    drop-shadow(0 0 20px #0072ff) drop-shadow(0 0 30px #0072ff)`,
-      ],
-      opacity: [1, 0, 1, 0, 1],
-    },
-    enter: {
-      filter: [
-        `drop-shadow(0 0 5px #c10000) drop-shadow(0 0 10px #c10000)
-    drop-shadow(0 0 20px #c10000) drop-shadow(0 0 30px #c10000)`,
-      ],
-    },
-    exit: {
-      filter: [
-        `drop-shadow(0 0 5px #c10000) drop-shadow(0 0 10px #c10000)
-    drop-shadow(0 0 20px #c10000) drop-shadow(0 0 30px #c10000)`,
-      ],
-    },
-  };
-
   return (
     <motion.div
       id="right-panel"
@@ -110,22 +84,15 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
       animate="close"
       exit="open"
     >
-      {/* <img
-        src={panelCog}
-        className="absolute top-1/2 left-[4%] w-[8.5%] h-[10%] -translate-y-[49%] z-50"
-      /> */}
       <motion.img
         src={GetIcon(location.pathname)}
         className="home-icon absolute top-1/2 -left-[1.3%] w-[3%] h-[3%] -translate-y-[40%] z-50"
-        variants={GetIconVariants("0072ff")}
-        initial="display"
-        animate="display"
-        exit="display"
+        animate={{
+          filter: [
+            "drop-shadow(0 0 5px #0072ff) drop-shadow(0 0 10px #0072ff) drop-shadow(0 0 20px #0072ff) drop-shadow(0 0 30px #0072ff)",
+          ],
+        }}
       />
-      {/* <img
-        src={iconFrame}
-        className="absolute top-1/2 -left-[2.5%] w-[15%] h-[9.5%] -translate-y-[48%] -z-50"
-      /> */}
       <img
         src={iconLens}
         className="absolute top-1/2 -left-[2.5%] w-[15%] h-[9.5%] -translate-y-[48%] z-50"

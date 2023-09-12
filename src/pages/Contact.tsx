@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch } from "../reducers/hooks";
 import { setMarqueeMsg } from "../reducers/projectSlice";
 import { LeftPanel, RightPanel } from "../components/Panels";

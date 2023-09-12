@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useAnimate, motion, stagger } from "framer-motion";
-import Cog from "./Cog";
-
+import  { useState} from "react";
+import { motion } from "framer-motion";
 import cog_double from "../../images/cog_double.png";
 import cog_single from "../../images/cog_single.png";
 import cog_large from "../../images/cog_large.png";
@@ -17,8 +15,6 @@ type GearBoxProps = {
 
 // Still need to control direction of animation
 const GearBox = ({ animationDir }: GearBoxProps) => {
-  const [direction, setDirection] = useState<"close" | "open" | "none">("none");
-
   const clockwise = {
     open: {
       rotate: -360,

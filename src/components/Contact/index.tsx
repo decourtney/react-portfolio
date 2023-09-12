@@ -2,11 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import TerminalDisplay from "./Terminal";
 import tFrame from "../../images/terminal_frame.png";
-import tPwr from "../../images/terminal_pwr.png";
-import tDial from "../../images/terminal_dial.png";
-import github_icon from "../../images/github_icon_white.png";
-import facebook_icon from "../../images/facebook_icon_white.png";
-import linkedin_icon from "../../images/linkedin_icon_white.png";
+import tPwr from "../../images/contact_terminal_power.png";
+import tDial from "../../images/contact_terminal_dial.png";
+import github_icon from "../../images/social_github_icon.png";
+import facebook_icon from "../../images/social_facebook_icon.png";
+import linkedin_icon from "../../images/social_linkedin_icon.png";
 import crane from "../../images/contact_crane.png";
 import cog_single from "../../images/cog_single.png";
 import cog_large from "../../images/cog_large.png";
@@ -18,7 +18,7 @@ const linkedinAddress = "https://www.linkedin.com/in/decourtney/";
 const ContactLeft = () => {
   const [smallCog, animateSmallCog] = useAnimate();
   const [largeCog, animateLargeCog] = useAnimate();
-  let cogAnimTimer = 3000;
+  let cogAnimTimer = 5000;
 
   // Anims just to give some life to the panel
   useEffect(() => {
@@ -35,9 +35,7 @@ const ContactLeft = () => {
       );
     };
 
-    // Recursive loop to keep cogs moving with time variations between
     const interval = setInterval(() => {
-      cogAnimTimer = Math.floor(Math.random() * 15) * 1000;
       animateCogs();
     }, cogAnimTimer);
 
@@ -110,7 +108,7 @@ const ContactRight = () => {
   };
 
   return (
-    <div className="relative flex w-full mr-[3%] ml-[4%] mt-[2%] mb-[5%] justify-center items-center bg-green-400">
+    <div className="relative flex w-full mr-[3%] ml-[4%] mt-[2%] mb-[5%] justify-center items-center panel-bg">
       <div className="absolute top-1/2 left-1/2 w-[90%] h-auto -translate-x-[50%] -translate-y-[50%]">
         <div className="relative flex w-full h-full">
           <img
@@ -118,16 +116,16 @@ const ContactRight = () => {
             className="w-[100%] rounded-3xl z-20 pointer-events-none"
           />
           <div className="absolute w-full h-full z-20 pointer-events-none">
+
             {/* Power Button */}
             <motion.button
               ref={powerButton}
               className={`absolute bottom-[13.3%] right-[11.4%] w-[8%] pointer-events-auto`}
               style={{
                 filter: terminalPower
-                  ? "drop-shadow(0px 0px 4px green)"
-                  : "drop-shadow(0px 0px 4px red)",
+                  ? "drop-shadow(0px 0px 4px green) drop-shadow(0px 0px 6px green)"
+                  : "drop-shadow(0px 0px 4px white) drop-shadow(0px 0px 6px white)",
               }}
-              // style={{ filter: "drop-shadow(0px 0px 3px red)" }}
               initial={{ rotate: 45 }}
               whileHover={{ scale: 1.1 }}
               onClick={(e) => {
@@ -160,7 +158,7 @@ const ContactRight = () => {
                 <motion.img
                   src={github_icon}
                   className="absolute -top-[10%] left-[95%] w-[30%] pointer-events-auto cursor-pointer"
-                  style={{ filter: "drop-shadow(0px 0px 3px #1bb200)" }}
+                  style={{ filter: "drop-shadow(0px 0px 3px green)" }}
                   whileHover={{ scale: 1.2 }}
                   onClick={(e) => {
                     animateSocialDial(socialDial.current, { rotate: 45 });
@@ -172,7 +170,7 @@ const ContactRight = () => {
                 <motion.img
                   src={facebook_icon}
                   className="absolute top-1/2 left-[105%] w-[30%] pointer-events-auto cursor-pointer"
-                  style={{ filter: "drop-shadow(0px 0px 3px #1bb200)" }}
+                  style={{ filter: "drop-shadow(0px 0px 3px green)" }}
                   initial={{ translateY: "-50%" }}
                   whileHover={{ scale: 1.2 }}
                   onClick={(e) => {
@@ -185,7 +183,7 @@ const ContactRight = () => {
                 <motion.img
                   src={linkedin_icon}
                   className="absolute -bottom-[10%] left-[95%] w-[30%] pointer-events-auto cursor-pointer"
-                  style={{ filter: "drop-shadow(0px 0px 3px #1bb200)" }}
+                  style={{ filter: "drop-shadow(0px 0px 3px green)" }}
                   whileHover={{ scale: 1.2 }}
                   onClick={(e) => {
                     animateSocialDial(socialDial.current, { rotate: 135 });

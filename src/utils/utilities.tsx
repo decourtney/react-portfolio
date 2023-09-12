@@ -1,7 +1,7 @@
-import home_icon from "../images/home_icon.png";
-import about_icon from "../images/about_icon.png";
-import projects_icon from "../images/work_icon.png";
-import contact_icon from "../images/contact_icon.png";
+import home_icon from "../images/panel_home_icon.png";
+import about_icon from "../images/panel_about_icon.png";
+import projects_icon from "../images/panel_work_icon.png";
+import contact_icon from "../images/panel_contact_icon.png";
 
 export const GetIcon = (location: string) => {
   const cleanLocation = location.replace(/[/]/g, "");
@@ -18,32 +18,6 @@ export const GetIcon = (location: string) => {
     default:
       return home_icon;
   }
-};
-
-export const GetIconVariants = (color: string = "0072ff") => {
-  const iconVariants = {
-    display: {
-      filter: [
-        `drop-shadow(0 0 5px #${color}) drop-shadow(0 0 10px #${color})
-    drop-shadow(0 0 20px #${color}) drop-shadow(0 0 30px #${color})`,
-      ],
-      // opacity: [1, 0, 1, 0, 1],
-    },
-    enter: {
-      filter: [
-        `drop-shadow(0 0 5px #${color}) drop-shadow(0 0 10px #${color})
-    drop-shadow(0 0 20px #${color}) drop-shadow(0 0 30px #${color})`,
-      ],
-    },
-    exit: {
-      filter: [
-        `drop-shadow(0 0 5px #${color}) drop-shadow(0 0 10px #${color})
-    drop-shadow(0 0 20px #${color}) drop-shadow(0 0 30px #${color})`,
-      ],
-    },
-  };
-
-  return iconVariants;
 };
 
 export const GetRandomNumber = (min: number, max: number) => {

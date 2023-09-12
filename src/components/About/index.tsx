@@ -1,14 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import ImageSlice from "./ImageSlice";
-import { AnimatePresence, motion, useAnimate, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import forrest from "../../images/forrest1.png";
-import lilith from "../../images/lilith.png";
-import biden from "../../images/biden.png";
 import shadowbox_frame from "../../images/shadowbox_frame.png";
 import shadowbox_rod from "../../images/shadowbox_rod.png";
-import trivision_frame from "../../images/trivision_frame.png";
-import panel_bg from "../../images/panel_background.png";
-import testimg from "../../images/testImg.png";
 import cert_paper_top from "../../images/cert_paper_top.png";
 import cert_paper_bottom from "../../images/cert_paper_bottom.png";
 
@@ -235,22 +230,22 @@ const AboutRight = () => {
             </div>
             <div
               id="left-wall"
-              className="absolute top-0 left-0 w-[40px] h-full origin-left bg-slate-800"
+              className="absolute top-0 left-0 w-[40px] h-full origin-left bg-slate-900"
               style={{ transform: "rotateY(-90deg)" }}
             />
             <div
               id="right-wall"
-              className="absolute top-0 right-0 w-[40px] h-full origin-right bg-slate-800"
+              className="absolute top-0 right-0 w-[40px] h-full origin-right bg-slate-900"
               style={{ transform: "rotateY(90deg)" }}
             />
             <div
               id="top-wall"
-              className="absolute top-0 right-0 w-full h-[40px] origin-top shadow-lg bg-slate-800"
+              className="absolute top-0 right-0 w-full h-[40px] origin-top shadow-lg bg-slate-900"
               style={{ transform: "rotateX(90deg)" }}
             />
             <div
               id="bottom-wall"
-              className="absolute bottom-0 left-0 w-full h-[40px] origin-bottom bg-slate-800"
+              className="absolute bottom-0 left-0 w-full h-[40px] origin-bottom bg-slate-900"
               style={{ transform: "rotateX(-90deg)" }}
             />
           </div>
@@ -261,68 +256,3 @@ const AboutRight = () => {
 };
 
 export { AboutLeft, AboutRight };
-
-{
-  /* <div
-        className="absolute top-0 left-0 w-full h-full z-10"
-        style={{
-          backgroundImage: `url(${panel_bg})`,
-          clipPath: `polygon(
-              0% 0%, 
-              0% 100%, 
-              7% 100%, 
-              7% 23%, 
-              93% 23%, 
-              93% 77%, 
-              7% 77%, 
-              7% 100%, 
-              100% 100%, 
-              100% 0%)`,
-        }}
-      /> */
-}
-
-{
-  /* <div className="relative flex flex-row justify-center items-center w-full mr-[2%] -z-10">
-  <div
-    className="w-[10%] h-[10%]"
-    style={{
-      backgroundImage: `url(${panel_bg})`,
-      backgroundRepeat: "no-repeat",
-    }}
-  />
-
-  <div className="flex flex-col justify-center items-center w-[85%] h-full">
-    <div
-      className="w-[10%] h-[100%] z-10"
-      style={{
-        backgroundImage: `url(${panel_bg})`,
-        backgroundRepeat: "repeat",
-      }}
-    />
-
-    <div className="trivision-board relative w-[100%] h-fit my-[4%]">
-      <div
-        className="trivision-border border-ws absolute w-full h-full z-50"
-        style={{ boxShadow: "0px 0px 10px 5px" }}
-      />
-      <img src={forrest} className="w-full h-full invisible" />
-      <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
-        {getDivSlices().map((s) => {
-          return s;
-        })}
-      </div>
-    </div>
-
-    <div
-      className="w-[10%] h-[100%] z-10"
-      style={{ backgroundImage: `url(${panel_bg})` }}
-    />
-  </div>
-
-  <div
-    className="w-[10%] h-[10%]"
-    style={{ backgroundImage: `url(${panel_bg})` }}
-  />
-</div> */
-}

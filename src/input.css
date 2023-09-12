@@ -31,13 +31,13 @@ code {
 }
 
 .text-red-glow {
-  text-shadow: 0 0 10px rgb(239 68 68);
+  text-shadow: 0 0 10px #ef4444;
 }
 .text-green-glow {
-  text-shadow: 0 0 10px rgb(74 222 128);
+  text-shadow: 0 0 5px #4ade80, 0 0 10px #75f3a3;
 }
 .text-blue-glow {
-  text-shadow: 0 0 10px rgb(59 130 246);
+  text-shadow: 0 0 10px #3b82f6;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -79,7 +79,7 @@ code {
 }
 
 .project-nameplate-bg {
-  background-image: url(./images/proj_nameplate_bg.png);
+  background-image: url(./images/proj_nameplate_middle.png);
 }
 
 .leftpanel-border {
@@ -91,7 +91,7 @@ code {
 }
 
 .project-image-border {
-  border-image-source: url(./images/image_border.png);
+  border-image-source: url(./images/proj_image_border.png);
 }
 
 .project-nameplate-border {
@@ -99,7 +99,7 @@ code {
 }
 
 .project-details-border {
-  border-image-source: url(./images/proj_border.png);
+  border-image-source: url(./images/proj_details_border.png);
 }
 
 .trivision-border {
@@ -142,21 +142,6 @@ code {
   100% {
     background-color: #f6ff00;
   }
-}
-
-.details-lighting {
-  text-shadow: 0px 0px 1px #ffffff, 0px 0px 5px #ffffff;
-  background-image: radial-gradient(circle at center, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 100% 0%, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 100% 100%, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 0% 100%, #ffdbdb, transparent 40%),
-    radial-gradient(circle at 0% 0%, #ffdbdb, transparent 40%);
-  mask-image: radial-gradient(circle at center, #000000 0%, transparent 50%),
-    radial-gradient(circle at 100% 0%, #000000 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%),
-    radial-gradient(circle at 0% 100%, #000000 0%, transparent 50%),
-    radial-gradient(circle at 0% 0%, #000000 0%, transparent 50%);
-  backdrop-filter: blur(100px);
 }
 
 .centerLight {
@@ -244,19 +229,19 @@ code {
 }
 
 .construction-bg {
-  background-image: url(./images/contact_left_bg.png);
+  background-image: url(./images/contact_construction_bg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .construction-fg {
-  background-image: url(./images/contact_left_fg.png);
+  background-image: url(./images/contact_construction_fg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .construction-mesh {
-  background-image: url(./images/contact_mesh.png);
+  background-image: url(./images/contact_construction_mesh.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

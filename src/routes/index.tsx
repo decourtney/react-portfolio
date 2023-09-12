@@ -33,8 +33,7 @@ function AnimatedRoutes() {
                     <Route path="about" element={<About />} />
                     <Route path="projects" element={<Projects />} />
                     <Route path="contact" element={<Contact />} />
-                    {/* <Route path="*" element={<Home />}/> */}
-                    {/*Need to make a 404 not found page here*/}
+                    <Route path="*" element={<Home />}/> 
                   </Routes>
                 </AnimatePresence>
               </main>

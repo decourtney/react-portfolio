@@ -3,10 +3,11 @@ import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectDetails from "./ProjectDetails";
-import namePlateHead from "../../images/proj_nameplate_head.png";
-import namePlateTail from "../../images/proj_nameplate_tail.png";
+import namePlateHead from "../../images/proj_nameplate_top.png";
+import namePlateTail from "../../images/proj_nameplate_bottom.png";
 import namePlateButtonFrame from "../../images/proj_nameplate_button_frame.png";
 import namePlateButton from "../../images/proj_nameplate_button.png";
+import namePlateBacking from "../../images/proj_nameplate_backing.png";
 
 interface Project {
   name: string;
@@ -138,42 +139,45 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
     <div className="panel-bg w-full h-full ml-[4%] mr-[2%] overflow-auto scrollbar-hide">
       <div className="relative w-full h-full">
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-[15%] drop-shadow-md">
-          <img src={namePlateHead} className="w-full drop-shadow-md" />
-          <ul className="project-nameplate-bg flex-col columns-2 space-y-[5%] py-[3%] list-none">
-            {data.map((project, index) => {
-              return (
-                <li
-                  key={project.name}
-                  className="relative flex space-x-[2%] mx-[5%] group"
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <div className="relative w-[30%]">
-                    <img src={namePlateButtonFrame} className="w-[100%]" />
-                    <img
-                      src={namePlateButton}
-                      className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:scale-105 active:scale-95"
-                      onClick={() => handleDetailsDisplay(true, index)}
-                    />
-                    <div className="absolute top-1/2 left-1/2 w-2/3 h-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 group-hover:shadow-[inset_0px_0px_5px_5px_#35ff00] pointer-events-none"></div>
-                  </div>
-
-                  <div className="relative w-full">
-                    <div className="project-nameplate-border absolute border-ws w-full h-full z-20" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[86%] h-[80%] rounded-sm group-hover:shadow-[inset_0px_0px_20px_5px_#35ff00] z-10" />
-                    <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
-                      <p
-                        className={`text-[1.2vw] text-center tracking-tight leading-[80%] text-black`}
-                      >
-                        <span>{project.name}</span>
-                      </p>
+          <div className="relative">
+            <img src={namePlateHead} className="w-full drop-shadow-md" />
+            <ul className="project-nameplate-bg flex-col columns-2 space-y-[5%] py-[3%] list-none">
+              {data.map((project, index) => {
+                return (
+                  <li
+                    key={project.name}
+                    className="relative flex space-x-[2%] mx-[5%] group pointer-events-auto cursor-pointer"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleDetailsDisplay(true, index)}
+                  >
+                    <div className="relative w-[30%]">
+                      <img src={namePlateButtonFrame} className="w-[100%]" />
+                      <img
+                        src={namePlateButton}
+                        className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 group-active:scale-95"
+                      />
+                      <div className="absolute top-1/2 left-1/2 w-2/3 h-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 group-hover:shadow-[inset_0px_0px_5px_5px_#35ff00] pointer-events-none" />
                     </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-          <img src={namePlateTail} className="w-full" />
+
+                    <div className="relative w-full">
+                      <img src={namePlateBacking} className="absolute w-full h-full"></img>
+                      <div className="project-nameplate-border absolute border-ws w-full h-full z-20"></div>
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[86%] h-[80%] rounded-sm group-hover:shadow-[inset_0px_0px_20px_5px_#35ff00] z-10" />
+                      <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+                        <p
+                          className={`text-[1.2vw] text-center tracking-tight leading-[80%] text-black`}
+                        >
+                          <span>{project.name}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <img src={namePlateTail} className="w-full" />
+          </div>
         </div>
       </div>
       <AnimatePresence mode="wait">

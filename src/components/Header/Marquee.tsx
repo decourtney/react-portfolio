@@ -1,15 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, stagger, useAnimation } from "framer-motion";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 interface MarqueeProps {
   msg: string;
   marqueeAnimComplete(def: string): void;
 }
 
-// Marquee needs more styling and breakpoints
 const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
-  // const [numberOfAnims, setNumberOfAnims] = useState(1);
-  const number = useRef(1)
+  const number = useRef(1);
 
   const containerVariants = {
     start: {},
@@ -24,23 +22,23 @@ const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
       transition: {
         type: "tween",
         ease: "linear",
-        duration: 0.5,
+        duration: 0.4,
       },
     },
     exit: {
-      // x: `calc(-10cqw * ${msg.length})`, // This is roughly the minimum space necessary to be off screen
+      // x: `calc(-10cqw * ${msg.length})`, // Doesnt work as well as I had hoped
       x: "-100cqw",
       transition: {
         type: "tween",
         ease: "linear",
-        duration: 0.5,
+        duration: 0.4,
       },
     },
   };
 
   return (
     <div className="flex justify-center items-center w-full h-full -translate-y-[10%]">
-      <h1 className="inline-flex font-vt323 text-[2vw] text-green-400">
+      <h1 className="inline-flex font-vt323 text-[2vw] text-green-400 text-green-glow">
         {msg.split("").map<React.ReactNode>((word, i) => (
           <motion.span
             key={i}
@@ -59,16 +57,12 @@ const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
                 key={j}
                 className="whitespace-pre will-change-transform"
                 variants={marqueeVariants}
-
-                // Once all Exit or Scroll anims are complete 
                 onAnimationComplete={(definition) => {
                   if (number.current === msg.length) {
                     marqueeAnimComplete(definition.toString());
-                    // setNumberOfAnims(1);
                     number.current = 1;
                   } else {
-                    // setNumberOfAnims(numberOfAnims + 1);
-                    number.current += 1
+                    number.current += 1;
                   }
                 }}
               >

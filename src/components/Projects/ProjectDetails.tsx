@@ -1,19 +1,8 @@
-import React, { useState, useEffect, useRef, createRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import {
-  motion,
-  stagger,
-  useAnimation,
-  useAnimate,
-  AnimatePresence,
-  useTransform,
-  AnimationScope,
-} from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useAnimate, AnimationScope } from "framer-motion";
 import { GetRandomNumber } from "../../utils/utilities";
 import githubIcon from "../../images/github-mark-white.svg";
 import websiteLinkIcon from "../../images/websiteLink.svg";
-import detailsBorder from "../../images/proj_border.png";
-import { create } from "domain";
 
 interface DetailsProps {
   name: string;
@@ -88,6 +77,7 @@ const ProjectDetails = (props: DetailsProps) => {
     return tShadow;
   };
 
+  // Array cap of 10 is abitrary
   useEffect(() => {
     // Generates an array sizing between 6 - 10 of numbers between 0.x - 1
     const getOpacity = () => {
@@ -142,14 +132,17 @@ const ProjectDetails = (props: DetailsProps) => {
 
   return (
     <>
+      {/* Div catches any clicks outside the details display and closes details */}
       <div
         className="absolute w-screen h-screen top-1/2 left-0 -translate-y-[50%] -translate-x-[50%] backdrop-blur-[5px] z-40"
         onClick={() => props.handleDetailsDisplay()}
       />
-      <div className="absolute flex top-1/2 left-0 w-full h-full -translate-y-[50%] -translate-x-[50%] z-50">
+
+      {/* Details Display section */}
+      <section className="absolute flex top-1/2 left-0 w-full h-full -translate-y-[50%] -translate-x-[50%] z-50 pointer-events-none">
         <motion.div
           key={props.name}
-          className="relative w-full h-full"
+          className="relative w-full"
           initial="close"
           animate="open"
           variants={detailsVariants}
@@ -161,7 +154,7 @@ const ProjectDetails = (props: DetailsProps) => {
             return (
               <div
                 key={i}
-                className={`absolute flex top-1/2 left-0 w-full max-h-full -translate-y-1/2 text-blue-700 font-vt323`}
+                className={`absolute flex top-1/2 left-0 w-full max-h-full -translate-y-1/2 text-blue-500 font-vt323 pointer-events-auto`}
               >
                 <div className="project-details-border border-ws absolute top-0 left-0 w-full h-full pointer-events-none z-50" />
 
@@ -211,7 +204,7 @@ const ProjectDetails = (props: DetailsProps) => {
             );
           })}
         </motion.div>
-      </div>
+      </section>
     </>
   );
 };
