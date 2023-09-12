@@ -94,7 +94,7 @@ const TerminalDisplay = ({ setIsPowerBtnDisabled }: TerminalProps) => {
       onAnimationStart={(definition) => animStart(definition)}
     >
       <motion.div
-        className="video-overlay absolute flex justify-center content-center top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-[50%] -translate-y-[50%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full will-change-transform pointer-events-none z-10 "
+        className="video-overlay absolute flex justify-center content-center top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-[50%] -translate-y-[50%] rounded-xl after:rounded-xl after:absolute after:w-full after:h-full  pointer-events-none z-10 "
         key="video-overlay"
         variants={tOverlayVariants}
         initial="initial"

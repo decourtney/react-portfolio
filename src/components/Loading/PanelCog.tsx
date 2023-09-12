@@ -123,7 +123,7 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
       <motion.div
         ref={containerAnim}
         key={"cogContainer"}
-        className="relative w-full h-full will-change-transform"
+        className="relative w-full h-full "
       >
         <div className="absolute flex top-1/2 w-[5%] -right-[7%] -translate-y-[50%]">
           <motion.img

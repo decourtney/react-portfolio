@@ -1675,10 +1675,6 @@ video {
   transition-duration: 150ms;
 }
 
-.will-change-transform {
-  will-change: transform;
-}
-
 @font-face {
   font-family: "Swiss Grit";
 
@@ -1810,36 +1806,6 @@ code {
   background-size: 100% 4px, 4px 100%;
 }
 
-.blink {
-  -webkit-animation-name: blink;
-          animation-name: blink;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
-}
-
-@-webkit-keyframes blink {
-  0% {
-    background-color: #929292;
-  }
-
-  100% {
-    background-color: #f6ff00;
-  }
-}
-
-@keyframes blink {
-  0% {
-    background-color: #929292;
-  }
-
-  100% {
-    background-color: #f6ff00;
-  }
-}
-
 .centerLight {
   background-image: radial-gradient(circle at center, #ffdbdb, transparent 40%);
   -webkit-mask-image: radial-gradient(circle at center, #000000 0%, transparent 50%);
@@ -1949,7 +1915,7 @@ code {
   background-repeat: no-repeat;
 }
 
-/* Below is for Mobile Styles */
+/* For Mobile temp png */
 
 .mobile-construction {
   background-image: url(./images/mobile_construction.png);

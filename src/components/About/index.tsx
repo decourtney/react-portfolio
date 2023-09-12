@@ -145,7 +145,7 @@ const AboutRight = () => {
         </div>
 
         <motion.div
-          className=" flex-col justify-center items-center w-[90%] h-[80%] will-change-transform bg-slate-600"
+          className=" flex-col justify-center items-center w-[90%] h-[80%]  bg-slate-600"
           style={{
             transformStyle: "preserve-3d",
             boxShadow: "0px 0px 10px 0px rgb(23 23 23)",
@@ -215,7 +215,7 @@ const AboutRight = () => {
             >
               <motion.div
                 id="glass-glare"
-                className="absolute top-1/2 left-1/2 w-[600%] h-[600%] opacity-20 blur-sm pointer-events-none will-change-transform"
+                className="absolute top-1/2 left-1/2 w-[600%] h-[600%] opacity-20 blur-sm pointer-events-none "
                 style={{
                   background:
                     "linear-gradient(0.4turn, #00000000 58%, #ffffff, #00000000 60%)",
