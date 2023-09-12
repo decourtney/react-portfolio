@@ -99,7 +99,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[10%] -translate-y-[26%]">
           <motion.img
             src={cog_large}
-            className={`h-[45%] will-change-transform`}
+            className={`h-[45%] `}
             key={"cog_large1"}
             variants={counterClockwise}
             initial="close"
@@ -111,7 +111,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[108%] -translate-y-[0%]">
           <motion.img
             src={cog_large}
-            className={`h-[38%] will-change-transform`}
+            className={`h-[38%] `}
             key={"cog_large2"}
             variants={clockwise}
             initial="close"
@@ -123,7 +123,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[53%] -translate-y-[6.5%]">
           <motion.img
             src={cog_double}
-            className={`h-[25%] will-change-transform`}
+            className={`h-[25%] `}
             key={"cog_double"}
             variants={counterClockwise}
             initial="close"
@@ -135,7 +135,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 right-1/2 h-full translate-x-[131%] translate-y-[6.5%]">
           <motion.img
             src={cog_single}
-            className={`h-[23%] will-change-transform`}
+            className={`h-[23%] `}
             key={"cog_single"}
             variants={clockwise}
             initial="close"
@@ -147,7 +147,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[99%] translate-y-[11%]">
           <motion.img
             src={leftStraight}
-            className="h-[4%] will-change-transform"
+            className="h-[4%] "
             key={"rightStraight"}
             variants={slideLeft}
             initial="close"
@@ -159,7 +159,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[5%] -translate-y-[4%]">
           <motion.img
             src={rightStraight}
-            className="h-[4%] will-change-transform"
+            className="h-[4%] "
             key={"leftStraight"}
             variants={slideRight}
             initial="close"

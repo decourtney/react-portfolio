@@ -42,7 +42,7 @@ const LeftPanel = ({ contentLeft }: LeftPanelProps) => {
   return (
     <motion.div
       id="left-panel"
-      className="relative flex w-1/2 h-full will-change-transform"
+      className="relative flex w-1/2 h-full "
       variants={variantsLeft}
       initial="open"
       animate="close"
@@ -78,7 +78,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
   return (
     <motion.div
       id="right-panel"
-      className="relative flex w-1/2 h-full will-change-transform"
+      className="relative flex w-1/2 h-full "
       variants={variantsRight}
       initial="open"
       animate="close"

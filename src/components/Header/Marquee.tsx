@@ -55,7 +55,7 @@ const Marquee = ({ msg, marqueeAnimComplete }: MarqueeProps) => {
             {word.split("").map<React.ReactNode>((character, j) => (
               <motion.span
                 key={j}
-                className="whitespace-pre will-change-transform"
+                className="whitespace-pre "
                 variants={marqueeVariants}
                 onAnimationComplete={(definition) => {
                   if (number.current === msg.length) {

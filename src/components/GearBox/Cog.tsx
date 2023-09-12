@@ -21,7 +21,7 @@ const Cog = ({ size, image, rotate, delay, duration, position, animate }: CogPro
         duration: duration,
         delay,
       }}
-      className={`absolute ${position} will-change-transform`}
+      className={`absolute ${position} `}
       style={{ width: size, height: size }}
     />
   );

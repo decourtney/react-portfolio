@@ -62,7 +62,7 @@ const Menu = (props: MenuProps) => {
 
   return (
     <motion.div
-      className="absolute bottom-0 left-0 w-full drop-shadow-2xl will-change-transform pointer-events-none z-10"
+      className="absolute bottom-0 left-0 w-full drop-shadow-2xl  pointer-events-none z-10"
       variants={menuDirectionVariants}
       initial="close"
       animate={props.isMenuOpen ? "open" : "close"}
@@ -90,7 +90,7 @@ const Menu = (props: MenuProps) => {
               state={{ value: page }}
             >
               <motion.div
-                className="absolute w-[6%] right-[6%] drop-shadow-lg will-change-transform"
+                className="absolute w-[6%] right-[6%] drop-shadow-lg "
                 style={{ bottom: `${17 * (index + 1)}%` }}
                 variants={menuOptionsVariants}
               >
