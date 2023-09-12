@@ -238,7 +238,7 @@ code {
 
 /* For Mobile temp png */
 .mobile-construction {
-  background-image: url(./images/mobile_construction.png);
+  background-image: url(./images/mobile_construction_mesh.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
