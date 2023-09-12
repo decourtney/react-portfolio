@@ -4,7 +4,7 @@ import Marquee from "./Marquee";
 import menu_frame from "../../images/menu_frame.png";
 import menu_cap from "../../images/menu_cap.png";
 import menu_button from "../../images/menu_button.png";
-import menu_marquee from "../../images/menu_marquee.avif";
+import menu_marquee from "../../images/menu_marquee.png";
 import { AnimatePresence, AnimationDefinition, motion } from "framer-motion";
 import { useAppSelector } from "../../reducers/hooks";
 

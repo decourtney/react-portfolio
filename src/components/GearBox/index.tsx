@@ -86,7 +86,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
   return (
     <div
       id="gear-box"
-      className="absolute flex items-center justify-center inset-0 top-0 left-0 w-full h-full -z-50 bg-black bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-slate-950 overflow-hidden"
+      className="gear-bg absolute flex items-center justify-center inset-0 top-0 left-0 w-full h-full bg-slate-900 overflow-hidden"
     >
       <div className="relative w-full h-full">
         <img

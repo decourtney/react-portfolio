@@ -21,7 +21,7 @@ interface Project {
 
 const carouselVariants = {
   enter: (direction: number) => ({
-    y: direction > 0 ? "51%" : "-51%",
+    y: direction > 0 ? "1%" : "-91%",
     opacity: 0,
     scale: 0.7,
     rotateX: direction > 0 ? -90 : 90,
@@ -32,7 +32,8 @@ const carouselVariants = {
     },
   }),
   active: {
-    y: "0%",
+    y: "-50%",
+    x: "-50%",
     opacity: 1,
     scale: 1,
     rotateX: 0,
@@ -44,7 +45,7 @@ const carouselVariants = {
     zIndex: 1,
   },
   exit: (direction: number) => ({
-    y: direction > 0 ? "-51%" : "51%",
+    y: direction > 0 ? "-91%" : "1%",
     opacity: 0,
     scale: 0.7,
     rotateX: direction > 0 ? 90 : -90,
@@ -68,11 +69,11 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
   return (
     <>
       {/* Carousel repurposed from https://dev.to/satel/animated-carousel-with-framer-motion-2fp */}
-      <div className="relative w-full mx-[3%] my-[4%] -translate-x-[1%] -translate-y-[2%] bg-black">
+      <div className="relative w-full h-full ml-[3%] mr-[4%]">
         <AnimatePresence custom={direction}>
           <motion.div
             key={currentPage}
-            className="absolute top-0 left-0 w-full h-full "
+            className="absolute top-1/2 left-1/2 w-full"
             data-page={currentPage}
             variants={carouselVariants}
             initial="enter"
@@ -80,17 +81,21 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             exit="exit"
             custom={direction}
           >
-            <div className="project-image-border border-ws absolute top-0 left-0 w-full h-full" />
-            <img
-              className="h-full w-full px-[4%] py-[3%]"
-              src={
-                data[currentPage]
-                  ? data[currentPage].image
-                  : "/images/project-management.jpg"
-              }
-              alt={data[currentPage] ? data[currentPage].name : "missing image"}
-              draggable="false"
-            />
+            <div className="relative">
+              <div className="project-image-border border-ws absolute top-0 left-0 w-full h-full" />
+              <img
+                className=""
+                src={
+                  data[currentPage]
+                    ? data[currentPage].image
+                    : "/images/project-management.jpg"
+                }
+                alt={
+                  data[currentPage] ? data[currentPage].name : "missing image"
+                }
+                draggable="false"
+              />
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -161,7 +166,10 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                     </div>
 
                     <div className="relative w-full">
-                      <img src={namePlateBacking} className="absolute w-full h-full"></img>
+                      <img
+                        src={namePlateBacking}
+                        className="absolute w-full h-full"
+                      ></img>
                       <div className="project-nameplate-border absolute border-ws w-full h-full z-20"></div>
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[86%] h-[80%] rounded-sm group-hover:shadow-[inset_0px_0px_20px_5px_#35ff00] z-10" />
                       <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
