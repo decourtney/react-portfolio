@@ -1,4 +1,4 @@
-import nameplate from "../../images/nameplate.png"
+import nameplate from "../../images/footer_nameplate.png"
 
 const Footer = () => {
   return (

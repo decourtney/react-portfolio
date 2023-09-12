@@ -2,10 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Menu from "./Menu";
 import Marquee from "./Marquee";
 import menu_frame from "../../images/menu_frame.png";
-import menu_housing from "../../images/menu_housing.png";
 import menu_cap from "../../images/menu_cap.png";
 import menu_button from "../../images/menu_button.png";
-import marquee_frame from "../../images/marquee_frame.png";
+import menu_marquee from "../../images/menu_marquee.avif";
 import { AnimatePresence, AnimationDefinition, motion } from "framer-motion";
 import { useAppSelector } from "../../reducers/hooks";
 
@@ -96,7 +95,7 @@ const Header = () => {
           </AnimatePresence>
         </div>
         <img
-          src={marquee_frame}
+          src={menu_marquee}
           className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"
         />
 
@@ -104,17 +103,14 @@ const Header = () => {
         <section
           ref={menuRef}
           id="navbar-button"
-          className="absolute h-full top-0 right-[8%] "
+          className="absolute h-full top-0 right-[8%] z-20"
         >
-          <img src={menu_frame} className="h-full" />
-          <img
-            src={menu_housing}
-            className="absolute bottom-0 left-[23%] h-full z-20"
-          />
+          <img src={menu_frame} className="h-full drop-shadow-lg"/>
+
           {isDisplayMenuCap && (
             <img
               src={menu_cap}
-              className="absolute top-0 left-[23%] h-full pointer-events-none z-50"
+              className="absolute top-0 left-0 h-full pointer-events-none z-50"
             />
           )}
 
@@ -126,11 +122,11 @@ const Header = () => {
           >
             <motion.img
               src={menu_button}
-              className="absolute top-0 left-0 h-full z-20 cursor-pointer drop-shadow-none"
+              className="absolute top-0 left-0 h-[96%] z-20 cursor-pointer"
               animate={{
                 filter: [
                   "drop-shadow(0px 0px 1px #00ff5d)",
-                  "drop-shadow(0px 0px 3px #30ff30)",
+                  "drop-shadow(0px 0px 2px #30ff30)",
                 ],
                 transition: {
                   duration: 1,
@@ -138,10 +134,10 @@ const Header = () => {
                   repeatType: "reverse",
                 },
               }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.92 }}
               whileHover={{
                 filter:
-                  "drop-shadow(0px 0px 1px #00ff00) drop-shadow(0px 0px 2px #30ff30) drop-shadow(0px 0px 3px #67ff67)",
+                  "drop-shadow(0px 0px 0px #00ff00) drop-shadow(0px 0px 1px #30ff30) drop-shadow(0px 0px 2px #67ff67)",
               }}
             />
           </button>

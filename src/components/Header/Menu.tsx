@@ -71,7 +71,7 @@ const Menu = (props: MenuProps) => {
         props.handleMenuCapDisplay(anim);
       }}
     >
-      <img src={menu_pole} className="w-[6%] ml-[89.1%] drop-shadow-lg" />
+      <img src={menu_pole} className="w-[1.7%] ml-[90.2%] drop-shadow-lg" />
 
       {pages.map((page, index) => {
         return (
@@ -90,8 +90,8 @@ const Menu = (props: MenuProps) => {
               state={{ value: page }}
             >
               <motion.div
-                className="absolute w-[6%] right-[4.9%] drop-shadow-lg will-change-transform"
-                style={{ bottom: `${17 * (index + 0.9)}%` }}
+                className="absolute w-[6%] right-[6%] drop-shadow-lg will-change-transform"
+                style={{ bottom: `${17 * (index + 1)}%` }}
                 variants={menuOptionsVariants}
               >
                 <div

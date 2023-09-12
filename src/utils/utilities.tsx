@@ -1,7 +1,7 @@
-import home_icon from "../images/home_icon.png";
-import about_icon from "../images/about_icon.png";
-import projects_icon from "../images/work_icon.png";
-import contact_icon from "../images/contact_icon.png";
+import home_icon from "../images/panel_home_icon.png";
+import about_icon from "../images/panel_about_icon.png";
+import projects_icon from "../images/panel_work_icon.png";
+import contact_icon from "../images/panel_contact_icon.png";
 
 export const GetIcon = (location: string) => {
   const cleanLocation = location.replace(/[/]/g, "");

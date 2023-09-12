@@ -79,7 +79,7 @@ code {
 }
 
 .project-nameplate-bg {
-  background-image: url(./images/proj_nameplate_bg.png);
+  background-image: url(./images/proj_nameplate_middle.png);
 }
 
 .leftpanel-border {
@@ -91,7 +91,7 @@ code {
 }
 
 .project-image-border {
-  border-image-source: url(./images/image_border.png);
+  border-image-source: url(./images/proj_image_border.png);
 }
 
 .project-nameplate-border {
@@ -99,7 +99,7 @@ code {
 }
 
 .project-details-border {
-  border-image-source: url(./images/proj_border.png);
+  border-image-source: url(./images/proj_details_border.png);
 }
 
 .trivision-border {
@@ -229,19 +229,19 @@ code {
 }
 
 .construction-bg {
-  background-image: url(./images/contact_left_bg.png);
+  background-image: url(./images/contact_construction_bg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .construction-fg {
-  background-image: url(./images/contact_left_fg.png);
+  background-image: url(./images/contact_construction_fg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .construction-mesh {
-  background-image: url(./images/contact_mesh.png);
+  background-image: url(./images/contact_construction_mesh.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

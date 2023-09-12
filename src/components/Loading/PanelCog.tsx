@@ -7,9 +7,9 @@ import {
   usePresence,
 } from "framer-motion";
 import { GetIcon } from "../../utils/utilities";
-import iconFrame from "../../images/icon_frame.png";
+import panelCogFrame from "../../images/panel_cog_frame.png";
 import panelCog from "../../images/panel_cog.png";
-import iconLens from "../../images/panel_cog_lens.png";
+import panelCogLens from "../../images/panel_cog_lens.png";
 
 interface Props {
   nextRoute: string;
@@ -134,7 +134,7 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
           />
         </div>
         <img
-          src={iconFrame}
+          src={panelCogFrame}
           className="absolute top-1/2 -right-[7%] w-[8.5%] h-[10%] -translate-y-[49%]"
         />
         <motion.img
@@ -148,7 +148,7 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
           }}
         />
         <img
-          src={iconLens}
+          src={panelCogLens}
           className="absolute top-1/2 -right-[7%] w-[8.5%] h-[10%] -translate-y-[49%] z-50"
         />
       </motion.div>
