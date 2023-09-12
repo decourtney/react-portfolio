@@ -229,6 +229,13 @@ code {
   background-repeat: no-repeat;
 }
 
+.gear-bg {
+  background-image: url(./images/gears_bg.jpg);
+  background-size: cover;
+  background-blend-mode: hard-light;
+  background-repeat: no-repeat;
+}
+
 /* For Mobile temp png */
 .mobile-construction {
   background-image: url(./images/mobile_construction.png);

@@ -739,14 +739,13 @@ video {
   z-index: 50;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-\[2\%\] {
   margin-left: 2%;
   margin-right: 2%;
-}
-
-.mx-\[3\%\] {
-  margin-left: 3%;
-  margin-right: 3%;
 }
 
 .mx-\[5\%\] {
@@ -759,9 +758,9 @@ video {
   margin-bottom: 2%;
 }
 
-.my-\[4\%\] {
-  margin-top: 4%;
-  margin-bottom: 4%;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mb-\[3\%\] {
@@ -774,6 +773,10 @@ video {
 
 .ml-\[0\%\] {
   margin-left: 0%;
+}
+
+.ml-\[3\%\] {
+  margin-left: 3%;
 }
 
 .ml-\[4\%\] {
@@ -806,6 +809,14 @@ video {
 
 .mt-\[2\%\] {
   margin-top: 2%;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .inline {
@@ -1040,12 +1051,20 @@ video {
   width: 100vw;
 }
 
+.w-\[\] {
+  width: ;
+}
+
 .min-w-\[600px\] {
   min-width: 600px;
 }
 
 .min-w-\[700px\] {
   min-width: 700px;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-shrink {
@@ -1078,12 +1097,6 @@ video {
 
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-x-\[1\%\] {
-  --tw-translate-x: -1%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1138,12 +1151,6 @@ video {
 
 .-translate-y-\[10\%\] {
   --tw-translate-y: -10%;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-\[2\%\] {
-  --tw-translate-y: -2%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1416,6 +1423,26 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.bg-slate-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+}
+
+.bg-orange-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+}
+
 .bg-\[radial-gradient\(circle_at_center\2c _var\(--tw-gradient-stops\)\)\] {
   background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
 }
@@ -1430,6 +1457,18 @@ video {
   --tw-gradient-to: #020617 var(--tw-gradient-to-position);
 }
 
+.to-slate-900 {
+  --tw-gradient-to: #0f172a var(--tw-gradient-to-position);
+}
+
+.to-slate-500 {
+  --tw-gradient-to: #64748b var(--tw-gradient-to-position);
+}
+
+.to-blue-950 {
+  --tw-gradient-to: #172554 var(--tw-gradient-to-position);
+}
+
 .p-8 {
   padding: 2rem;
 }
@@ -1441,11 +1480,6 @@ video {
 .px-\[15\%\] {
   padding-left: 15%;
   padding-right: 15%;
-}
-
-.px-\[4\%\] {
-  padding-left: 4%;
-  padding-right: 4%;
 }
 
 .px-\[5\%\] {
@@ -1912,6 +1946,13 @@ code {
 .construction-mesh {
   background-image: url(./images/contact_construction_mesh.png);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gear-bg {
+  background-image: url(./images/gears_bg.jpg);
+  background-size: cover;
+  background-blend-mode: hard-light;
   background-repeat: no-repeat;
 }
 
