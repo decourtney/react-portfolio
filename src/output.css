@@ -1447,6 +1447,10 @@ video {
   text-indent: 1%;
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
 .font-vt323 {
   font-family: VT323;
 }
