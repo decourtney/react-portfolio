@@ -1,4 +1,4 @@
-# A Portfolio Made with React and Framer-motion
+# A Portfolio Made With React and Framer-motion
 
 [![License: MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 
@@ -22,20 +22,23 @@ Welcome to my portfolio! I've had my finger tips on keyboards since I was first 
 ## Description
 
 That's cool but - what's up with this portfolio?
-A portfolio is a developers greatest tool for sharing projects and displaying their skillset to potential employers or clients. First impressions are lasting and set the tone so the portfolio shouldn't just be a path to your projects but also an extension of you and your creativity. With this project I set out to create something that doesn't reseamble a typical web site.
+A portfolio is a developers greatest tool for sharing projects and displaying their skillset to potential employers or clients. First impressions are lasting and set the tone so the portfolio shouldn't just be a path to your projects but also an extension of you and your creativity. With this project I set out to create something that doesn't resemble a typical web site.
 
-Being my first React project I wanted to keep additional libraries to a minimum so more focus could be applied to learning React. However, I also wanted to attempt to give the site a 3D feel without using the HTML Canvas to manipulate 3D objects. This meant layer depths were artificial and required 'smoke and mirrors' to achieve a 3D effect. Animations were initially performed in CSS but I quickly switched to using Framer-motion since the CSS was becoming bloated and animations were too cumbersome to tweak. The end-result, in my opinion, gives the site a very unique feel.
+This being my first React project I wanted to keep additional libraries to a minimum so more focus could be applied to learning React. However, I also wanted to attempt to give the site a 3D feel without using the HTML Canvas to manipulate 3D objects. This meant layer depths were artificial and required 'smoke and mirrors' to achieve a 3D effect. Animations were initially performed in CSS but I quickly switched to using Framer-motion since the CSS was becoming bloated and animations were too cumbersome to tweak. The end-result, in my opinion, gives the site a very unique feel.
 
-Deployed Project: SOON!
+Deployed Project: https://donovancourtney.dev/
    
 <img src="./portfolio.png" target="_blank" alt="Book Search" style="max-width: 384px; display: block;" /><br>
 
 ## Lessons Learned
 
 What did I learn from this project?
+
 The absolute greatest lesson I learned from this project is... MOBILE FIRST! I knew the concept going in but didn't give it any thought until too late.
+
 Second greatest lesson... SCOPE! Don't let your kids control your scope with "you know what would be cool."
-Not to diminish the importance of those two lessons but I did learn a great deal about React and Framer-motion animations. I also discovered that building site visuals with mostly absolute positioned PNGs makes styling increadiably difficult - BUT I am much more comfortable with the process now.
+
+Not to diminish the importance of those two lessons but I did learn a great deal about React and Framer-motion animations. I also discovered that building site visuals with mostly absolute positioned PNGs makes styling incredibly difficult - BUT I am much more comfortable with the process now.
 
 
 
