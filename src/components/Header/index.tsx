@@ -97,6 +97,7 @@ const Header = () => {
         <img
           src={menu_marquee}
           className="absolute w-[24%] top-[52%] left-[48.5%] -translate-x-[50%] -translate-y-[50%]"
+          alt="Marquee"
         />
 
         {/* Menu button section */}
@@ -105,12 +106,13 @@ const Header = () => {
           id="navbar-button"
           className="absolute h-full top-0 right-[8%] z-20"
         >
-          <img src={menu_frame} className="h-full drop-shadow-lg"/>
+          <img src={menu_frame} className="h-full drop-shadow-lg" alt="Menu Options Frame"/>
 
           {isDisplayMenuCap && (
             <img
               src={menu_cap}
               className="absolute top-0 left-0 h-full pointer-events-none z-50"
+              alt="Menu Button Frame Cap"
             />
           )}
 
