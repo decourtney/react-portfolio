@@ -36,10 +36,12 @@ const Loading = () => {
         <img
           src={loadingPanelLeft}
           className="absolute top-[50%] -left-[0%] h-full transform -translate-y-[50%]"
+          alt="Left Loading Panel"
         />
         <img
           src={loadingPanelRight}
           className="absolute top-[50%] -right-[0%] h-full transform -translate-y-[50%]"
+          alt="Right Loading Panel"
         />
       </div>
     </>

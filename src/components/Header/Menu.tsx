@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setIsLoading } from "../../reducers/projectSlice";
-import { motion, useAnimate, AnimationDefinition } from "framer-motion";
+import { motion, AnimationDefinition } from "framer-motion";
 import menu_pole from "../../images/menu_pole.png";
 import menu_plate from "../../images/menu_plate.png";
 
@@ -30,7 +30,7 @@ const menuDirectionVariants = {
       ease: "easeOut",
       staggerChildren: 0.1,
       staggerDirection: 1,
-      delayChildren: 0.1
+      delayChildren: 0.1,
     },
   },
 };
@@ -71,7 +71,11 @@ const Menu = (props: MenuProps) => {
         props.handleMenuCapDisplay(anim);
       }}
     >
-      <img src={menu_pole} className="w-[1.7%] ml-[90.2%] drop-shadow-lg" />
+      <img
+        src={menu_pole}
+        className="w-[1.7%] ml-[90.2%] drop-shadow-lg"
+        alt="Menu Pole"
+      />
 
       {pages.map((page, index) => {
         return (
@@ -123,7 +127,11 @@ const Menu = (props: MenuProps) => {
                   </motion.p>
                 </div>
 
-                <img src={menu_plate} className="w-[100%] h-full" />
+                <img
+                  src={menu_plate}
+                  className="w-[100%] h-full"
+                  alt="Menu Option Plate"
+                />
               </motion.div>
             </Link>
           </div>

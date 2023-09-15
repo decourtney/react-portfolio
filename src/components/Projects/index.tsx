@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
 import { motion, AnimatePresence } from "framer-motion";
@@ -145,7 +145,11 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
       <div className="relative w-full h-full">
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-[15%] drop-shadow-md">
           <div className="relative">
-            <img src={namePlateHead} className="w-full drop-shadow-md" />
+            <img
+              src={namePlateHead}
+              className="w-full drop-shadow-md"
+              alt="Right Panel Head"
+            />
             <ul className="project-nameplate-bg flex-col columns-2 space-y-[5%] py-[3%] list-none">
               {data.map((project, index) => {
                 return (
@@ -157,10 +161,15 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                     onClick={() => handleDetailsDisplay(true, index)}
                   >
                     <div className="relative w-[30%]">
-                      <img src={namePlateButtonFrame} className="w-[100%]" />
+                      <img
+                        src={namePlateButtonFrame}
+                        className="w-[100%]"
+                        alt="Nameplate button frame"
+                      />
                       <img
                         src={namePlateButton}
                         className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 group-active:scale-95"
+                        alt="Nameplate button"
                       />
                       <div className="absolute top-1/2 left-1/2 w-2/3 h-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 group-hover:shadow-[inset_0px_0px_5px_5px_#35ff00] pointer-events-none" />
                     </div>
@@ -169,7 +178,8 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                       <img
                         src={namePlateBacking}
                         className="absolute w-full h-full"
-                      ></img>
+                        alt="Nameplate backing"
+                      />
                       <div className="project-nameplate-border absolute border-ws w-full h-full z-20"></div>
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[86%] h-[80%] rounded-sm group-hover:shadow-[inset_0px_0px_20px_5px_#35ff00] z-10" />
                       <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">

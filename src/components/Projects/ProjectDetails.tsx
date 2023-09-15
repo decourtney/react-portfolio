@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useAnimate, AnimationScope } from "framer-motion";
 import { GetRandomNumber } from "../../utils/utilities";
 import githubIcon from "../../images/github-mark-white.svg";
@@ -175,6 +175,7 @@ const ProjectDetails = (props: DetailsProps) => {
                           <img
                             src={githubIcon}
                             className="w-full bg-blue-700"
+                            alt="Github Icon"
                           />
                         </a>
                       </div>
@@ -184,6 +185,7 @@ const ProjectDetails = (props: DetailsProps) => {
                             <img
                               src={websiteLinkIcon}
                               className="w-full bg-blue-700"
+                              alt="Website Link Icon"
                             />
                           </a>
                         </div>

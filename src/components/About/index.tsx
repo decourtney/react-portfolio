@@ -53,7 +53,7 @@ const AboutLeft = () => {
             className="trivision-border border-ws absolute w-full h-full z-50"
             style={{ boxShadow: "0px 0px 10px 8px" }}
           />
-          <img src={forrest} className="w-full h-full invisible" />
+          <img src={forrest} className="w-full h-full invisible" alt="" />
           <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
             {getDivSlices()}
           </div>
@@ -141,7 +141,7 @@ const AboutRight = () => {
         onMouseLeave={() => setMousePos({ x: middlePos.x, y: middlePos.y })} // Reset box if not mouse over panel
       >
         <div className="absolute flex top-0 left-1/2 w-fit h-full -translate-x-[50%] bg-blue-400">
-          <img src={shadowbox_rod} />
+          <img src={shadowbox_rod} alt="Shadowbox Rod" />
         </div>
 
         <motion.div
@@ -159,7 +159,11 @@ const AboutRight = () => {
           <div
             className={`w-full h-full py-[3%] px-[5%] overflow-scroll scrollbar-hide`}
           >
-            <img src={cert_paper_top} className="w-full" />
+            <img
+              src={cert_paper_top}
+              className="w-full"
+              alt="Certification Paper Top"
+            />
             <div className="cert-border border-ws w-full px-[6%] text-[2.1vh] space-y-3">
               <p>
                 As a dedicated web developer, my coding journey spans several
@@ -185,7 +189,11 @@ const AboutRight = () => {
                 together!
               </p>
             </div>
-            <img src={cert_paper_bottom} className="w-full" />
+            <img
+              src={cert_paper_bottom}
+              className="w-full"
+              alt="Certification Paper Bottom"
+            />
           </div>
           <div
             id="box-top"

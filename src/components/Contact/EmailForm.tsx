@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef, ChangeEventHandler } from "react";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useAnimate } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
+import { useAppDispatch } from "../../reducers/hooks";
 import { setMarqueeMsg } from "../../reducers/projectSlice";
 import TextareaAutosize from "react-textarea-autosize";
 
@@ -71,7 +71,7 @@ const TerminalEmailForm = () => {
             className={`text-green-400 text-green-glow ${
               isButtonDisabled ? "invisible" : "visible"
             }`}
-            whileHover={{scale: 1.1}}
+            whileHover={{ scale: 1.1 }}
             disabled={isButtonDisabled}
           >
             <p> &#60;SEND&#62;</p>
