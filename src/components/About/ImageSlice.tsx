@@ -49,7 +49,7 @@ const ImageSlice = ({
           transform: "translateX(-50%) translateY(-50%) translateZ(-100px)",
         }}
       >
-        <img src={shadowbox_rod} width="50%" />
+        <img src={shadowbox_rod} width="50%" alt="Shadowbox Rod" />
       </div>
       <motion.span
         className={`image-1 absolute top-0 left-0 w-full h-full `}

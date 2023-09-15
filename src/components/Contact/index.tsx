@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import TerminalDisplay from "./Terminal";
 import tFrame from "../../images/terminal_frame.png";
@@ -114,9 +114,9 @@ const ContactRight = () => {
           <img
             src={tFrame}
             className="w-[100%] rounded-3xl z-20 pointer-events-none"
+            alt="Terminal Frame"
           />
           <div className="absolute w-full h-full z-20 pointer-events-none">
-
             {/* Power Button */}
             <motion.button
               ref={powerButton}
@@ -133,7 +133,7 @@ const ContactRight = () => {
               }}
               disabled={isPowerBtnDisabled}
             >
-              <img src={tPwr} />
+              <img src={tPwr} alt="Terminal Button" />
             </motion.button>
 
             {/* Unused Button */}
@@ -141,7 +141,7 @@ const ContactRight = () => {
               className="absolute bottom-[13.3%] right-[27%] w-[8%] rotate-45 drop-shadow-md"
               initial={{ rotate: 45 }}
             >
-              <img src={tPwr} />
+              <img src={tPwr} alt="Terminal Power Button" />
             </motion.button>
 
             {/* Expansion of terminal functionality - move dial to Terminal for terminal display of links */}

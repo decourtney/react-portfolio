@@ -96,6 +96,7 @@ const RightPanel = ({ contentRight }: RightPanelProps) => {
       <img
         src={iconLens}
         className="absolute top-1/2 -left-[2.5%] w-[15%] h-[9.5%] -translate-y-[48%] z-50"
+        alt="Page Icon Lens"
       />
 
       <div className="rightpanel-border border-ws absolute w-[101%] h-full right-0 pointer-events-none z-40" />

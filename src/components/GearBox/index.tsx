@@ -1,4 +1,3 @@
-import  { useState} from "react";
 import { motion } from "framer-motion";
 import cog_double from "../../images/cog_double.png";
 import cog_single from "../../images/cog_single.png";
@@ -94,6 +93,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
           className={
             "absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2 -z-50"
           }
+          alt="Gearbox Background"
         />
 
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[10%] -translate-y-[26%]">
@@ -171,11 +171,13 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <img
           src={gearBoxFG}
           className="absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2"
+          alt="Gearbox Foreground"
         />
 
         <img
           src={gearBoxPipe}
           className="absolute top-1/2 left-1/2 h-[50%] translate-x-[95%] -translate-y-[25%]"
+          alt="Gearbox Pipe"
         />
       </div>
     </div>

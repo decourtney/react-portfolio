@@ -136,6 +136,7 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
         <img
           src={panelCogFrame}
           className="absolute top-1/2 -right-[7%] w-[8.5%] h-[10%] -translate-y-[49%]"
+          alt="Panel Cog Frame"
         />
         <motion.img
           key={icon}
@@ -150,6 +151,7 @@ const PanelCog = ({ nextRoute, CogAnimComplete }: Props) => {
         <img
           src={panelCogLens}
           className="absolute top-1/2 -right-[7%] w-[8.5%] h-[10%] -translate-y-[49%] z-50"
+          alt="Panel Cog Lens"
         />
       </motion.div>
     </AnimatePresence>
