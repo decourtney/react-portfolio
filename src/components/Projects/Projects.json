@@ -6,7 +6,7 @@
       "This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website"
     ],
     "tags": ["Express", "React", "Node", "Typescript"],
-    "url": "",
+    "url": "https://www.donovancourtney.dev",
     "repo": "https://github.com/decourtney/react-portfolio",
     "image": "images/proj1.png"
   },
@@ -17,7 +17,7 @@
       "Tech Messages is a simplistic forum application that allows you to share thoughts and comments with a like minded community. The app utilizes Sequelize for database queries, Express for routing and API requests, and Handlebars for HTML templating. Initially, I thought Handlebars was as a basic templating tool with limited dynamic page creation capabilities. However, with further exploration, it has revealed more techniques for creating dynamic pages, leading to several code refactoring instances. "
     ],
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
-    "url": "https://polar-plateau-51344.herokuapp.com/",
+    "url": "https://www.techmessages.donovancourtney.dev/",
     "repo": "https://github.com/decourtney/tech-messages",
     "image": "images/proj1.png"
   },
@@ -28,7 +28,7 @@
       "Break Sweat is a fitness web application that empowers users to achieve their workout goals. With access to a comprehensive database of exercises and workouts, personalized recommendations, and progress tracking features, Break Sweat provides a tailored fitness experience for users of all levels."
     ],
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
-    "url": "https://intense-everglades-85455.herokuapp.com/",
+    "url": "https://www.breaksweat.donovancourtney.dev",
     "repo": "https://github.com/decourtney/break-sweat",
     "image": "images/proj1.png"
   },
@@ -39,7 +39,7 @@
       "Weather Ornought is a simple weather app that provides current weather data and a 5 day forecast for a searched location. The app also saves up to 5 recent searches for easy weather retreival. Currently, the site will only search for U.S. cities and states. The purpose of this project was to apply my understanding of JQuery, Bootstrap, and making API calls. So, most of the design and html elements are programmatically built and updated via the JS script. Bootstrap is utilized in the HTML doc and JS script and the Openweathermap API is used to query for weather data."
     ],
     "tags": ["JQuery", "Bootstrap"],
-    "url": "https://decourtney.github.io/weather-ornought/",
+    "url": "https://www.weatherornought.donovancourtney.dev",
     "repo": "https://github.com/decourtney/weather-ornought",
     "image": "images/proj1.png"
   },
@@ -50,7 +50,7 @@
       "The objective of this project was to develop a timed quiz using advanced Javascript techniques to dynamically manipulate HTML elements. I aimed to enhance the user experience by incorporating visually appealing features such as an HTML canvas and animated spritesheets that respond to the user's selected answers. While the combat aspect of the quiz is purely aesthetic and does not affect the user's score, it serves to engage the user and adds an extra layer of interactivity."
     ],
     "tags": ["JS", "HTML", "CSS"],
-    "url": "https://decourtney.github.io/coding-kombat-quiz/",
+    "url": "https://www.codingkombatquiz.donovancourtney.dev",
     "repo": "https://github.com/decourtney/coding-kombat-quiz",
     "image": "images/proj1.png"
   },
@@ -61,7 +61,7 @@
       "This is a news application that allows users to browse articles and search for specific topics. Users can view trending articles, filter articles by category, and search for articles by keyword."
     ],
     "tags": ["Mongo", "Express", "React", "Node"],
-    "url": "https://sleepy-brushlands-04075.herokuapp.com/",
+    "url": "https://www.realitychecknews.donovancourtney.dev",
     "repo": "https://github.com/decourtney/reality-check-news",
     "image": "images/proj1.png"
   }
