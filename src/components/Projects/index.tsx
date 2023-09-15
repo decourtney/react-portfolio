@@ -148,7 +148,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
             <img
               src={namePlateHead}
               className="w-full drop-shadow-md"
-              alt="Right Panel Head"
+              alt="Right Panel Top"
             />
             <ul className="project-nameplate-bg flex-col columns-2 space-y-[5%] py-[3%] list-none">
               {data.map((project, index) => {
@@ -194,7 +194,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                 );
               })}
             </ul>
-            <img src={namePlateTail} className="w-full" />
+            <img src={namePlateTail} className="w-full" alt="Right Panel Bottom" />
           </div>
         </div>
       </div>
