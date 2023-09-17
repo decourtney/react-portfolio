@@ -1,4 +1,4 @@
-import label from "../../images/home_label.png";
+import label from "../../images/home_label.jpg";
 import cert from "../../images/home_cert.png";
 
 const HomeLeft = () => {

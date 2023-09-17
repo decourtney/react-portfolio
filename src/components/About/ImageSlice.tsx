@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import shadowbox_rod from "../../images/shadowbox_rod.png";
+import shadowbox_rod from "../../images/shadowbox_rod.jpg";
 
 type ImageSliceProps = {
   index: number;

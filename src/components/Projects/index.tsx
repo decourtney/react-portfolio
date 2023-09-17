@@ -3,8 +3,8 @@ import { useAppSelector, useAppDispatch } from "../../reducers/hooks";
 import { setNextIndex } from "../../reducers/projectSlice";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectDetails from "./ProjectDetails";
-import namePlateHead from "../../images/proj_nameplate_top.png";
-import namePlateTail from "../../images/proj_nameplate_bottom.png";
+import namePlateTop from "../../images/proj_nameplate_top.jpg";
+import namePlateBottom from "../../images/proj_nameplate_bottom.jpg";
 import namePlateButtonFrame from "../../images/proj_nameplate_button_frame.png";
 import namePlateButton from "../../images/proj_nameplate_button.png";
 import namePlateBacking from "../../images/proj_nameplate_backing.png";
@@ -149,7 +149,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-[15%] drop-shadow-md">
           <div className="relative">
             <img
-              src={namePlateHead}
+              src={namePlateTop}
               className="w-full drop-shadow-md"
               alt="Right Panel Top"
             />
@@ -198,7 +198,7 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
               })}
             </ul>
             <img
-              src={namePlateTail}
+              src={namePlateBottom}
               className="w-full"
               alt="Right Panel Bottom"
             />

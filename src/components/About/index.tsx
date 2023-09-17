@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import ImageSlice from "./ImageSlice";
 import { motion } from "framer-motion";
-import forrest from "../../images/forrest1.png";
+import placeHolder from "../../images/portfolio_pic.jpg";
 import shadowbox_frame from "../../images/shadowbox_frame.png";
-import shadowbox_rod from "../../images/shadowbox_rod.png";
+import shadowbox_rod from "../../images/shadowbox_rod.jpg";
 import cert_paper_top from "../../images/cert_paper_top.png";
 import cert_paper_bottom from "../../images/cert_paper_bottom.png";
 
@@ -53,7 +53,7 @@ const AboutLeft = () => {
             className="trivision-border border-ws absolute w-full h-full z-50"
             style={{ boxShadow: "0px 0px 10px 8px" }}
           />
-          <img src={forrest} className="w-full h-full invisible" alt="" />
+          <img src={placeHolder} className="w-full h-full invisible" alt="" />
           <div className="absolute top-0 left-0 flex w-[100%] h-full space-x-0">
             {getDivSlices()}
           </div>
