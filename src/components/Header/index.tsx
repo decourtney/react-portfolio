@@ -106,7 +106,11 @@ const Header = () => {
           id="navbar-button"
           className="absolute h-full top-0 right-[8%] z-20"
         >
-          <img src={menu_frame} className="h-full drop-shadow-lg" alt="Menu Options Frame"/>
+          <img
+            src={menu_frame}
+            className="h-full drop-shadow-lg"
+            alt="Menu Options Frame"
+          />
 
           {isDisplayMenuCap && (
             <img
@@ -122,26 +126,37 @@ const Header = () => {
             }}
             disabled={isLoading}
           >
-            <motion.img
-              src={menu_button}
-              className="absolute top-0 left-0 h-[96%] z-20 cursor-pointer"
-              animate={{
-                filter: [
-                  "drop-shadow(0px 0px 1px #00ff5d)",
-                  "drop-shadow(0px 0px 2px #30ff30)",
-                ],
-                transition: {
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                },
-              }}
-              whileTap={{ scale: 0.92 }}
-              whileHover={{
-                filter:
-                  "drop-shadow(0px 0px 0px #00ff00) drop-shadow(0px 0px 1px #30ff30) drop-shadow(0px 0px 2px #67ff67)",
-              }}
-            />
+            {isLoading ? (
+              <img
+                src={menu_button}
+                className="absolute top-0 left-0 h-[96%] z-20 cursor-pointer"
+                style={{
+                  filter:
+                    "drop-shadow(0px 0px 1px red) drop-shadow(0px 0px 2px red)",
+                }}
+              />
+            ) : (
+              <motion.img
+                src={menu_button}
+                className="absolute top-0 left-0 h-[96%] z-20 cursor-pointer"
+                animate={{
+                  filter: [
+                    "drop-shadow(0px 0px 1px #00ff5d)",
+                    "drop-shadow(0px 0px 2px #30ff30)",
+                  ],
+                  transition: {
+                    duration: 1,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  },
+                }}
+                whileTap={{ scale: 0.92 }}
+                whileHover={{
+                  filter:
+                    "drop-shadow(0px 0px 0px #00ff00) drop-shadow(0px 0px 1px #30ff30) drop-shadow(0px 0px 2px #67ff67)",
+                }}
+              />
+            )}
           </button>
         </section>
         <AnimatePresence mode="wait">

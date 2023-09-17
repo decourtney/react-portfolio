@@ -30,14 +30,8 @@ code {
     monospace;
 }
 
-.text-red-glow {
-  text-shadow: 0 0 10px #ef4444;
-}
 .text-green-glow {
   text-shadow: 0 0 5px #4ade80, 0 0 10px #75f3a3;
-}
-.text-blue-glow {
-  text-shadow: 0 0 10px #3b82f6;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -164,25 +158,25 @@ code {
   mask-image: radial-gradient(circle at 100% 100%, #000000 0%, transparent 50%);
 }
 
-.trivision-board .img .image-1 {
-  background-image: url(./images/forrest1.png);
+.trivision-board .image .image-1 {
+  background-image: url(./images/quote.png);
 }
 
-.trivision-board .img .image-2 {
-  background-image: url(./images/forrest2.png);
+.trivision-board .image .image-2 {
+  background-image: url(./images/portfolio_pic.jpg);
 }
 
-.trivision-board .img .image-3 {
-  background-image: url(./images/forrest3.png);
+.trivision-board .image .image-3 {
+  background-image: url(./images/collage.png);
 }
 
-.trivision-board .img span {
+.trivision-board .image span {
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: hidden;
 }
 
-.trivision-board .img {
+.trivision-board .image {
   transform-style: preserve-3d;
 }
 

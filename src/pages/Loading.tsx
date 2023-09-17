@@ -23,6 +23,7 @@ const Loading = () => {
 
   const CogAnimComplete = () => {
     navigate(state ? `${state.value}` : "home");
+    console.log(state)
   };
 
   return (

@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Loading from "../pages/Loading";
 import MobileHome from "../pages/MobileTemp";
+import NotFound from "../pages/NotFound";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -33,7 +34,8 @@ function AnimatedRoutes() {
                     <Route path="about" element={<About />} />
                     <Route path="projects" element={<Projects />} />
                     <Route path="contact" element={<Contact />} />
-                    <Route path="*" element={<Home />}/> 
+                    {/* <Route path="/*" element="index.html" /> */}
+                    <Route path="/*" element={<NotFound />} />
                   </Routes>
                 </AnimatePresence>
               </main>

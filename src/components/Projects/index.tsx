@@ -21,8 +21,9 @@ interface Project {
 
 const carouselVariants = {
   enter: (direction: number) => ({
-    y: direction > 0 ? "1%" : "-91%",
-    opacity: 0,
+    y: direction > 0 ? "0%" : "-100%",
+    // x: "-50%",
+    opacity: [0.5, 1],
     scale: 0.7,
     rotateX: direction > 0 ? -90 : 90,
     transformPerspective: 5000,
@@ -33,10 +34,11 @@ const carouselVariants = {
   }),
   active: {
     y: "-50%",
-    x: "-50%",
+    // x: "-50%",
     opacity: 1,
     scale: 1,
     rotateX: 0,
+    // transformPerspective: 0,
     transition: {
       delay: 0.2,
       duration: 1,
@@ -45,10 +47,11 @@ const carouselVariants = {
     zIndex: 1,
   },
   exit: (direction: number) => ({
-    y: direction > 0 ? "-91%" : "1%",
-    opacity: 0,
+    y: direction > 0 ? "-100%" : "0%",
+    // x: "-50%",
+    opacity: [1, 0.5],
     scale: 0.7,
-    rotateX: direction > 0 ? 90 : -90,
+    rotateX: direction > 0 ? 80 : -90,
     transformPerspective: 5000,
     transition: {
       duration: 1,
@@ -73,7 +76,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
         <AnimatePresence custom={direction}>
           <motion.div
             key={currentPage}
-            className="absolute top-1/2 left-1/2 w-full"
+            className="absolute top-1/2 w-full"
             data-page={currentPage}
             variants={carouselVariants}
             initial="enter"
@@ -81,10 +84,10 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             exit="exit"
             custom={direction}
           >
-            <div className="relative">
+            <div className="relative w-full bg-blue-400">
               <div className="project-image-border border-ws absolute top-0 left-0 w-full h-full" />
               <img
-                className=""
+                className="w-full"
                 src={
                   data[currentPage]
                     ? data[currentPage].image
@@ -194,7 +197,11 @@ const ProjectRight = ({ data }: { data: Project[] }) => {
                 );
               })}
             </ul>
-            <img src={namePlateTail} className="w-full" alt="Right Panel Bottom" />
+            <img
+              src={namePlateTail}
+              className="w-full"
+              alt="Right Panel Bottom"
+            />
           </div>
         </div>
       </div>
