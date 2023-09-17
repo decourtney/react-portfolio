@@ -1,25 +1,27 @@
 [
-    {
+  {
     "name": "React Portfolio",
     "date": "May 2023",
     "description": [
-      "This is my portfolio site, built using React and TypeScript. As my first React project, I'm excited to showcase my development skills and my own unique art style through this website"
+      "The objective of this portfolio was to craft an exceptional website that transcends the conventional web experience, delivering a captivating and interactive interface. Without resorting to WebGL frameworks or the canvas API, the challenge was to create an illusion where users feel like they are engaging with 3D objects.",
+      "To accomplish this, I embarked on a creative journey, designing custom artwork and skillfully adjusting image scales and perspective properties to infuse depth into the visuals. Intricate animations were meticulously woven together and synchronized, offering users a unique sensation of operating a dynamic machine rather than just browsing a typical website."
     ],
     "tags": ["Express", "React", "Node", "Typescript"],
     "url": "https://www.donovancourtney.dev",
     "repo": "https://github.com/decourtney/react-portfolio",
-    "image": "../../images/portfolio.png"
+    "image": "../../images/portfolio.jpg"
   },
   {
     "name": "Tech Messages",
     "date": "March 2023",
     "description": [
-      "Tech Messages is a simplistic forum application that allows you to share thoughts and comments with a like minded community. The app utilizes Sequelize for database queries, Express for routing and API requests, and Handlebars for HTML templating. Initially, I thought Handlebars was as a basic templating tool with limited dynamic page creation capabilities. However, with further exploration, it has revealed more techniques for creating dynamic pages, leading to several code refactoring instances. "
+      "Tech Messages is a user-friendly forum application designed to foster connections within a like-minded community. This platform leverages a robust tech stack, utilizing Sequelize for efficient database queries, Express for seamless routing and API requests, and Handlebars for dynamic HTML templating.",
+      "At first glance, Handlebars may appear as a simple templating tool, seemingly limited in its ability to create dynamic pages. However, upon deeper exploration, it unveiled a rich set of techniques for crafting dynamic pages. This discovery led to several instances of code refactoring, enhancing the application's overall flexibility and performance."
     ],
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://www.techmessages.donovancourtney.dev/",
     "repo": "https://github.com/decourtney/tech-messages",
-    "image": "../../images/techmessages.png"
+    "image": "../../images/techmessages.jpg"
   },
   {
     "name": "Break-Sweat",
@@ -30,39 +32,40 @@
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://www.breaksweat.donovancourtney.dev",
     "repo": "https://github.com/decourtney/break-sweat",
-    "image": "../../images/breaksweat.png"
+    "image": "../../images/breaksweat.jpg"
   },
   {
     "name": "Weather Ornought",
     "date": "January 2023",
     "description": [
-      "Weather Ornought is a simple weather app that provides current weather data and a 5 day forecast for a searched location. The app also saves up to 5 recent searches for easy weather retreival. Currently, the site will only search for U.S. cities and states. The purpose of this project was to apply my understanding of JQuery, Bootstrap, and making API calls. So, most of the design and html elements are programmatically built and updated via the JS script. Bootstrap is utilized in the HTML doc and JS script and the Openweathermap API is used to query for weather data."
+      "Weather Ornought is a sleek and user-friendly weather application designed to provide users with real-time weather data and a 5-day forecast for their desired location. Additionally, the app offers the convenience of saving up to five recent searches, making it effortless to retrieve weather information for frequently checked places.",
+      "While the app's current functionality is limited to searching for U.S. cities and states, its primary objective was to showcase my proficiency in using jQuery, Bootstrap, and making API calls. To achieve this, a majority of the design elements and HTML components are dynamically constructed and updated through JavaScript scripting. Bootstrap plays a pivotal role in enhancing the app's visual aesthetics and functionality, seamlessly integrated into both the HTML document and JavaScript script. Furthermore, the OpenWeatherMap API serves as the foundation for retrieving comprehensive and up-to-date weather data."
     ],
     "tags": ["JQuery", "Bootstrap"],
     "url": "https://www.weatherornought.donovancourtney.dev",
     "repo": "https://github.com/decourtney/weather-ornought",
-    "image": "../../images/weatherornought.png"
+    "image": "../../images/weatherornought.jpg"
   },
   {
     "name": "Coding Kombat Quiz",
     "date": "December 2023",
     "description": [
-      "The objective of this project was to develop a timed quiz using advanced Javascript techniques to dynamically manipulate HTML elements. I aimed to enhance the user experience by incorporating visually appealing features such as an HTML canvas and animated spritesheets that respond to the user's selected answers. While the combat aspect of the quiz is purely aesthetic and does not affect the user's score, it serves to engage the user and adds an extra layer of interactivity."
+      "The primary goal of this project was to craft an engaging timed quiz using advanced JavaScript techniques to dynamically manipulate HTML elements. The aim was to elevate the user experience by seamlessly integrating visually captivating elements, including an HTML canvas and animated spritesheets, that react to the user's selected answers. While the combat aspect of the quiz purely contributes to aesthetics and doesn't impact the user's score, it serves as an immersive engagement feature, adding an exciting layer of interactivity to the quiz."
     ],
     "tags": ["JS", "HTML", "CSS"],
     "url": "https://www.codingkombatquiz.donovancourtney.dev",
     "repo": "https://github.com/decourtney/coding-kombat-quiz",
-    "image": "../../images/codingkombatquiz.png"
+    "image": "../../images/codingkombatquiz.jpg"
   },
   {
     "name": "RealityCheck News",
     "date": "April 2023",
     "description": [
-      "This is a news application that allows users to browse articles and search for specific topics. Users can view trending articles, filter articles by category, and search for articles by keyword."
+      "Reality Check News is a collaborative social media platform designed to transform how we consume news. Our MERN stack-based app empowers users to create, share, and rate news content, including articles, videos, and images. Creators' ratings evolve based on their work, while users' ratings reflect their influence in the community. We've introduced GraphQL for efficient data querying. This project showcases our proficiency in full-stack development, user-driven content systems, and the integration of emerging technologies."
     ],
     "tags": ["Mongo", "Express", "React", "Node"],
     "url": "https://www.realitychecknews.donovancourtney.dev",
     "repo": "https://github.com/decourtney/reality-check-news",
-    "image": "../../images/realitychecknews.png"
+    "image": "../../images/realitychecknews.jpg"
   }
 ]
