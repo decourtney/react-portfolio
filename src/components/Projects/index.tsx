@@ -84,7 +84,7 @@ const ProjectLeft = ({ data }: { data: Project[] }) => {
             exit="exit"
             custom={direction}
           >
-            <div className="relative w-full bg-blue-400">
+            <div className="relative w-full bg-slate-900">
               <div className="project-image-border border-ws absolute top-0 left-0 w-full h-full" />
               <img
                 className="w-full"
