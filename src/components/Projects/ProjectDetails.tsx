@@ -154,7 +154,7 @@ const ProjectDetails = (props: DetailsProps) => {
             return (
               <div
                 key={i}
-                className={`absolute flex top-1/2 left-0 w-full max-h-full -translate-y-1/2 text-blue-500 font-vt323 pointer-events-auto`}
+                className={`absolute flex top-1/2 left-1/2 w-full max-h-full -translate-x-1/2 -translate-y-1/2 text-blue-900 font-vt323 pointer-events-auto`}
               >
                 <div className="project-details-border border-ws absolute top-0 left-0 w-full h-full pointer-events-none z-50" />
 

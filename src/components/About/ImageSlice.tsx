@@ -10,7 +10,6 @@ type ImageSliceProps = {
 };
 
 const ImageSlice = ({
-  index,
   sliceWidth,
   slicePos,
   delay,
@@ -42,9 +41,9 @@ const ImageSlice = ({
   };
 
   return (
-    <div className={`img relative h-full`} style={{ width: `${sliceWidth}%` }}>
+    <div className="image relative h-full" style={{ width: `${sliceWidth}%` }}>
       <div
-        className={`absolute flex justify-center top-1/2 left-1/2 w-fit h-screen`}
+        className="absolute flex justify-center top-1/2 left-1/2 w-fit h-screen"
         style={{
           transform: "translateX(-50%) translateY(-50%) translateZ(-100px)",
         }}
@@ -52,21 +51,21 @@ const ImageSlice = ({
         <img src={shadowbox_rod} width="50%" alt="Shadowbox Rod" />
       </div>
       <motion.span
-        className={`image-1 absolute top-0 left-0 w-full h-full `}
+        className="image-1 absolute top-0 left-0 w-full h-full"
         style={{ backgroundPosition: `${slicePos}%` }}
         initial={{ rotateY: 0, x: "0%" }}
         animate={variants1}
         transition={transition}
       />
       <motion.span
-        className={`image-2 absolute top-0 left-0 w-full h-full `}
+        className="image-2 absolute top-0 left-0 w-full h-full"
         style={{ backgroundPosition: `${slicePos}%` }}
         initial={{ rotateY: 240, x: "-45%" }}
         animate={variants2}
         transition={transition}
       />
       <motion.span
-        className={`image-3 absolute top-0 left-0 w-full h-full `}
+        className="image-3 absolute top-0 left-0 w-full h-full"
         style={{ backgroundPosition: `${slicePos}%` }}
         initial={{ rotateY: 120, x: "45%" }}
         animate={variants3}

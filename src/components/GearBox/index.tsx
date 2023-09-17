@@ -5,14 +5,12 @@ import cog_large from "../../images/cog_large.png";
 import leftStraight from "../../images/straightLeftCog.png";
 import rightStraight from "../../images/straightRightCog.png";
 import gearBoxBG from "../../images/gearbox_bg.png";
-import gearBoxFG from "../../images/gearbox.png";
-import gearBoxPipe from "../../images/gearbox_pipe.png";
+import gearBoxFG from "../../images/gearbox_fg.png";
 
 type GearBoxProps = {
   animationDir: string;
 };
 
-// Still need to control direction of animation
 const GearBox = ({ animationDir }: GearBoxProps) => {
   const clockwise = {
     open: {
@@ -91,7 +89,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <img
           src={gearBoxBG}
           className={
-            "absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2 -z-50"
+            "absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2"
           }
           alt="Gearbox Background"
         />
@@ -111,7 +109,7 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
         <div className="absolute top-1/2 left-1/2 h-full -translate-x-[108%] -translate-y-[0%]">
           <motion.img
             src={cog_large}
-            className={`h-[38%] `}
+            className={`h-[38%]`}
             key={"cog_large2"}
             variants={clockwise}
             initial="close"
@@ -172,12 +170,6 @@ const GearBox = ({ animationDir }: GearBoxProps) => {
           src={gearBoxFG}
           className="absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2"
           alt="Gearbox Foreground"
-        />
-
-        <img
-          src={gearBoxPipe}
-          className="absolute top-1/2 left-1/2 h-[50%] translate-x-[95%] -translate-y-[25%]"
-          alt="Gearbox Pipe"
         />
       </div>
     </div>

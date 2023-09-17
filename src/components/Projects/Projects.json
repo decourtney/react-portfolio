@@ -8,7 +8,7 @@
     "tags": ["Express", "React", "Node", "Typescript"],
     "url": "https://www.donovancourtney.dev",
     "repo": "https://github.com/decourtney/react-portfolio",
-    "image": "images/proj1.png"
+    "image": "../../images/portfolio.png"
   },
   {
     "name": "Tech Messages",
@@ -19,7 +19,7 @@
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://www.techmessages.donovancourtney.dev/",
     "repo": "https://github.com/decourtney/tech-messages",
-    "image": "images/proj1.png"
+    "image": "../../images/techmessages.png"
   },
   {
     "name": "Break-Sweat",
@@ -30,7 +30,7 @@
     "tags": ["MySQL", "Express", "Handlebars", "Node"],
     "url": "https://www.breaksweat.donovancourtney.dev",
     "repo": "https://github.com/decourtney/break-sweat",
-    "image": "images/proj1.png"
+    "image": "../../images/breaksweat.png"
   },
   {
     "name": "Weather Ornought",
@@ -41,7 +41,7 @@
     "tags": ["JQuery", "Bootstrap"],
     "url": "https://www.weatherornought.donovancourtney.dev",
     "repo": "https://github.com/decourtney/weather-ornought",
-    "image": "images/proj1.png"
+    "image": "../../images/weatherornought.png"
   },
   {
     "name": "Coding Kombat Quiz",
@@ -52,7 +52,7 @@
     "tags": ["JS", "HTML", "CSS"],
     "url": "https://www.codingkombatquiz.donovancourtney.dev",
     "repo": "https://github.com/decourtney/coding-kombat-quiz",
-    "image": "images/proj1.png"
+    "image": "../../images/codingkombatquiz.png"
   },
   {
     "name": "RealityCheck News",
@@ -63,6 +63,6 @@
     "tags": ["Mongo", "Express", "React", "Node"],
     "url": "https://www.realitychecknews.donovancourtney.dev",
     "repo": "https://github.com/decourtney/reality-check-news",
-    "image": "images/proj1.png"
+    "image": "../../images/realitychecknews.png"
   }
 ]
