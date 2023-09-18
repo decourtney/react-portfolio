@@ -26,7 +26,7 @@ A portfolio is a developers greatest tool for sharing projects and displaying th
 
 This being my first React project I wanted to keep additional libraries to a minimum so more focus could be applied to learning React. However, I also wanted to attempt to give the site a 3D feel without using the HTML Canvas to manipulate 3D objects. This meant layer depths were artificial and required 'smoke and mirrors' to achieve a 3D effect. Animations were initially performed in CSS but I quickly switched to using Framer-motion since the CSS was becoming bloated and animations were too cumbersome to tweak. The end-result, in my opinion, gives the site a very unique feel.
 
-Deployed Project: https://donovancourtney.dev/
+Deployed Site: https://donovancourtney.dev/
 
 <img src="./portfolio.png" target="_blank" alt="Book Search" style="max-width: 384px; display: block;" /><br>
 
@@ -42,12 +42,11 @@ Finally, not to diminish the importance of those two but I did learn a great dea
 
 ## Installation
 
-You'll need [Node.js](https://nodejs.org/) and [React](https://www.npmjs.com/package/react)
+React app generated using create-react-app with the typescript switch option: --templates typescript
 
-Then:
-
-- start: "npm run start"
-- build: "npm run build"
+- Install packages: npm i
+- start: npm run start
+- build: npm run build
 
 ## Usage
 

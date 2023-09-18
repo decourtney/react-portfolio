@@ -134,6 +134,7 @@ const Header = () => {
                   filter:
                     "drop-shadow(0px 0px 1px red) drop-shadow(0px 0px 2px red)",
                 }}
+                alt="Dropdown Menu Button"
               />
             ) : (
               <motion.img
