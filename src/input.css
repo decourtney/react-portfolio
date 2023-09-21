@@ -74,6 +74,8 @@ code {
 
 .project-nameplate-bg {
   background-image: url(./images/proj_nameplate_middle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .leftpanel-border {
